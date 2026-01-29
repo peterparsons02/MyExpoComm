@@ -113,6 +113,8 @@ class QLearner:
             )
 
         # Calculate 1-step Q-Learning targets
+        if target_max_qvals.shape[1] != rewards.shape[1]:
+            target_max_qvals = target_max_qvals.transpose(1, 2)
         if self.global_reward:
             targets = (
                 rewards + self.args.gamma * (1 - terminated) * target_max_qvals.detach()
@@ -317,6 +319,8 @@ class AuxQLearner(QLearner):
             )
 
         # Calculate 1-step Q-Learning targets
+        if target_max_qvals.shape[1] != rewards.shape[1]:
+            target_max_qvals = target_max_qvals.transpose(1, 2)
         if self.global_reward:
             targets = (
                 rewards + self.args.gamma * (1 - terminated) * target_max_qvals.detach()
@@ -414,6 +418,7 @@ class ContQLearner(QLearner):
         self.cont_t_interval = args.topk_neighbors - 1
         self.temperature = args.temperature
         self.neg_num = args.neg_num
+        self.global_reward = True # FORCE FIX, (SANDBOX TESTING, delete afterwards) (kind of)
         assert self.global_reward, "Contrastive Q-Learner only supports global reward"
 
     def train(self, batch: EpisodeBatch, t_env: int, episode_num: int):
@@ -486,6 +491,10 @@ class ContQLearner(QLearner):
             )
 
         # Calculate 1-step Q-Learning targets
+        if rewards.ndim == 4 and target_max_qvals.ndim == 3:
+            rewards = rewards.sum(dim=2)       
+        if target_max_qvals.shape[1] != rewards.shape[1]:
+            target_max_qvals = target_max_qvals.transpose(1, 2)
         targets = (
             rewards + self.args.gamma * (1 - terminated) * target_max_qvals.detach()
         )

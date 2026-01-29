@@ -17,6 +17,7 @@ from pathlib import Path
 import time
 import os.path as osp
 
+np.bool = bool
 
 def main(config_dict):
     # Setting the random seed throughout the modules
@@ -76,6 +77,7 @@ def _get_config(params, arg_name, subfolder):
 
 
 def recursive_dict_update(d, u):
+    if u is None: return d
     for k, v in u.items():
         if isinstance(v, collections.Mapping):
             d[k] = recursive_dict_update(d.get(k, {}), v)

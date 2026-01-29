@@ -30,9 +30,11 @@ class IDQN_Battle:
         self.device = "cpu"
         self.agent = RNNAgent(input_shape, args).to(self.device)
 
-        model_path = os.path.join(os.path.dirname(__file__), pretrained_ckpt)
-        save_dict = torch.load(model_path, map_location=self.device)
-        self.agent.load_state_dict(save_dict)
+        if (pretrained_ckpt is not None):
+            model_path = os.path.join(os.path.dirname(__file__), pretrained_ckpt)
+            save_dict = torch.load(model_path, map_location=self.device)
+            self.agent.load_state_dict(save_dict)
+        
         self.agent.eval()
         self.hidden_states = self.agent.init_hidden()  # a positional argument, no use
 
