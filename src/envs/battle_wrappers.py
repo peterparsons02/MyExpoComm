@@ -231,8 +231,28 @@ class Battle_w_PretrainedOpp(MultiAgentEnv):
 
     def step(self, actions):
         blue_team_avali_actions = self._env.get_avail_actions()[-self.n_agents :]
+
+        # --- FIX START: Downsample observations for the blind opponent ---
+        # 1. Reshape flat observation back to (Batch, 13, 26) 
+        #    (13 rows, with two 13-wide features side-by-side)
+        obs_full = self.blue_team_obss
+        n_blue = len(obs_full)
+        obs_grid = obs_full.reshape(n_blue, 13, 26)
+        
+        # 2. Crop the Center 7x7 for the "Blind" Opponent
+        #    Rows: 3 to 10 (7 rows)
+        #    Feature 1 Cols: 3 to 10. Feature 2 Cols: 16 to 23.
+        feat1 = obs_grid[:, 3:10, 3:10]
+        feat2 = obs_grid[:, 3:10, 16:23]
+        
+        # 3. Stitch back together and flatten to 98 (7*7*2)
+        obs_low_res = np.concatenate((feat1, feat2), axis=-1)
+        obs_for_blue = obs_low_res.reshape(n_blue, -1)
+        # --- FIX END ---
+
         blue_team_actions = self.blue_agents_policy.step(
-            obss=self.blue_team_obss, avail_actions=blue_team_avali_actions
+            # BEFORE FIX: obss=self.blue_team_obss, avail_actions=blue_team_avali_actions
+            obss=obs_for_blue, avail_actions=blue_team_avali_actions
         )
         # actions should be of shape (n_agents, ),
         actions = torch.tensor(actions, dtype=torch.long)

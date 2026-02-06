@@ -45,7 +45,6 @@ def main(config_dict):
     wandb.init(
         project=exp_name,
         name=run_name + "-" + algo_name + "-" + timestamp,
-        entity="lxxxxr",
         config=config,
     )
     run(config, console_logger)
