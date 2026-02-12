@@ -9,12 +9,12 @@ from gym.envs import registry as gym_registry
 from gym.spaces import flatdim
 import numpy as np
 from gym.wrappers import TimeLimit as GymTimeLimit
-# from imp_marl.imp_wrappers.epymarl_wrapper.epymarl_wrap_ma_struct import EPymarlMAStruct
+from imp_marl.imp_wrappers.epymarl_wrapper.epymarl_wrap_ma_struct import EPymarlMAStruct
 
 
-# from .adv_pursuit_wrappers import (
-#     AdvPursuit_w_PretrainedOpp,
-# )
+from .adv_pursuit_wrappers import (
+    AdvPursuit_w_PretrainedOpp,
+)
 from .battle_wrappers import (
     Battle_w_PretrainedOpp,
 )
@@ -26,7 +26,7 @@ def env_fn(env, **kwargs) -> MultiAgentEnv:
 
 REGISTRY = {}
 # REGISTRY["sc2"] = partial(env_fn, env=StarCraft2Env)
-# REGISTRY["struct_marl"] = partial(env_fn, env=EPymarlMAStruct)
+REGISTRY["struct_marl"] = partial(env_fn, env=EPymarlMAStruct)
 
 if sys.platform == "linux":
     os.environ.setdefault(
@@ -200,5 +200,5 @@ class _GymmaWrapper(MultiAgentEnv):
 
 
 # REGISTRY["gymma"] = partial(env_fn, env=_GymmaWrapper)
-# REGISTRY["MAgent_AdvPursuit"] = partial(env_fn, env=AdvPursuit_w_PretrainedOpp)
+REGISTRY["MAgent_AdvPursuit"] = partial(env_fn, env=AdvPursuit_w_PretrainedOpp)
 REGISTRY["MAgent_Battle"] = partial(env_fn, env=Battle_w_PretrainedOpp)

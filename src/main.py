@@ -111,9 +111,12 @@ if __name__ == "__main__":
     env_config = _get_config(params, "--env-config", "envs")
     alg_config = _get_config(params, "--config", "algs")
     exp_config = _get_config(params, "--exp-config", "exp")
+    profile_config = _get_config(params, "--profile", "profiles")
+
     # config_dict = {**config_dict, **env_config, **alg_config}
     config_dict = recursive_dict_update(config_dict, env_config)
     config_dict = recursive_dict_update(config_dict, alg_config)
     config_dict = recursive_dict_update(config_dict, exp_config)
+    config_dict = recursive_dict_update(config_dict, profile_config)
 
     main(config_dict)

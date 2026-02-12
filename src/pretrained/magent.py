@@ -59,7 +59,43 @@ class IDQN_AdvPursuit(IDQN_Battle):
 
         model_path = os.path.join(os.path.dirname(__file__), pretrained_ckpt)
         save_dict = torch.load(model_path, map_location=self.device)
-        save_dict = _convert_keys(save_dict)
-        self.agent.load_state_dict(save_dict)
+
+        # 1. Extract params if nested in a dictionary wrapper
+        if isinstance(save_dict, dict) and "agent_params" in save_dict:
+            save_dict = save_dict["agent_params"]
+
+        # 2. Handle List format (Fix for prey_params.pt) vs Dict format
+        if isinstance(save_dict, list):
+            # Get the keys from the initialized agent
+            model_keys = list(self.agent.state_dict().keys())
+            
+            # Map the list of loaded weights to the model keys
+            if len(save_dict) == len(model_keys):
+                save_dict = {k: v for k, v in zip(model_keys, save_dict)}
+                self.agent.load_state_dict(save_dict)
+            else:
+                print(f"Warning: Loaded {len(save_dict)} layers but model has {len(model_keys)} layers.")
+        else:
+            # Fallback to the old logic for dictionary-based checkpoints (like battle.pt)
+            save_dict = _convert_keys(save_dict)
+            self.agent.load_state_dict(save_dict)
+
         self.agent.eval()
         self.hidden_states = self.agent.init_hidden()  # a positional argument, no use
+
+    def step(self, obss, avail_actions):
+        # --- FIX: Handle input shape mismatch (200 vs 128) ---
+        # The environment gives 200 features, but the old brain expects 128.
+        # We slice the input to keep only the first 128 features.
+        if obss.shape[1] > 128:
+            obss = obss[:, :128]
+        # -----------------------------------------------------
+
+        with torch.no_grad():
+            obss = torch.tensor(obss, device=self.device, dtype=torch.float32)
+            avail_actions = torch.tensor(avail_actions, device=self.device)
+            agent_outputs, _ = self.agent.forward(obss, self.hidden_states)
+
+            agent_outputs[avail_actions == 0.0] = -float("inf")
+            actions = agent_outputs.max(dim=-1)[1]
+        return actions

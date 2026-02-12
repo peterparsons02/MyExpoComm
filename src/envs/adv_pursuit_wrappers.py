@@ -5,7 +5,7 @@ import supersuit as ss
 import numpy as np
 import torch as th
 from gym.spaces import Dict as GymDict, Box
-from pettingzoo.magent import adversarial_pursuit_view8_v3
+from pettingzoo.magent import adversarial_pursuit_v3 as adversarial_pursuit_view8_v3
 
 from pretrained.magent import IDQN_AdvPursuit
 from .multiagentenv import MultiAgentEnv

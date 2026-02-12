@@ -15,3 +15,7 @@ REGISTRY["ExpoComm_static"] = ExpoCommSAgent
 REGISTRY["ExpoComm_one_peer"] = ExpoCommOAgent
 REGISTRY["ExpoComm_static_cont"] = ExpoCommSContAgent
 REGISTRY["ExpoComm_one_peer_cont"] = ExpoCommOContAgent
+
+REGISTRY["rnn"] = RNNAgent
+REGISTRY["rnn_ns"] = RNNNSAgent
+REGISTRY["rnn_feat"] = RNNFeatureAgent
