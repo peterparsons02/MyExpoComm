@@ -104,6 +104,28 @@ class HybridCommLearner(QLearner):
         elif mask.dim() == 2:
             mask = mask.unsqueeze(-1).unsqueeze(-1)
 
+        '''
+        # --- DEBUGGING START ---
+        print("\n>>> DEBUG TENSOR SHAPES <<<")
+        print(f"1. rewards:          {rewards.shape}")
+        print(f"2. terminated:       {terminated.shape}")
+        print(f"3. target_max_qvals: {target_max_qvals.shape}")
+        
+        # Check if we need to unsqueeze rewards (common PyMarl issue)
+        if rewards.shape[-1] != target_max_qvals.shape[-1] and rewards.shape[-1] == 1:
+             print("NOTE: Rewards have last dim 1 (Shared Reward). Broadcasting might be failing if dims are permuted.")
+        
+        # Determine strict definitions based on your config
+        # Batch: 64, Time: 30 (from log), Agents: 50
+        print(f"EXPECTED DIMS -> Batch: {self.args.batch_size}, Time: 30-ish, Agents: {self.args.n_agents}")
+        print(">>> DEBUG END <<<\n")
+        # --- DEBUGGING END ---
+        '''
+
+        # FIX: Ensure rewards has the same number of dimensions as targets
+        if rewards.ndim == 3:
+             rewards = rewards.unsqueeze(2) # Becomes [Batch, Time, 1, 1]
+
         # --- 3. Calculate Independent TD Error ---
         if self.global_reward:
             # THIS IS WHERE IT WAS CRASHING

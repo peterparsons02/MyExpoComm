@@ -1,0 +1,786 @@
+Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
+Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
+Users of this version of Gym should be able to simply replace 'import gym' with 'import gymnasium as gym' in the vast majority of cases.
+See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
+src/main.py:81: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+  if isinstance(v, collections.Mapping):
+wandb: [wandb.login()] Loaded credentials for https://api.wandb.ai from /home/pparsons/.netrc.
+wandb: Currently logged in as: peterparsons02 (peterparsons02-eth-z-rich) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+wandb: setting up run f5to2t3p
+wandb: Tracking run with wandb version 0.24.1
+wandb: Run data is saved locally in /usr/itetnas04/data-scratch-01/pparsons/data/MyExpoComm/wandb/run-20260217_225122-f5to2t3p
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run my_run-IMPc100_IQL_RNN-20260217_225121
+wandb: ⭐️ View project at https://wandb.ai/peterparsons02-eth-z-rich/my_experiment
+wandb: 🚀 View run at https://wandb.ai/peterparsons02-eth-z-rich/my_experiment/runs/f5to2t3p
+2026-02-17 22:51:23,641 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Current directory: /usr/itetnas04/data-scratch-01/pparsons/data/MyExpoComm.
+2026-02-17 22:51:23,642 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Experiment Parameters:
+2026-02-17 22:51:23,643 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - 
+
+{   'action_selector': 'epsilon_greedy',
+    'add_value_last_step': True,
+    'agent': 'rnn',
+    'agent_output_type': 'q',
+    'batch_size': 64,
+    'batch_size_run': 1,
+    'buffer_cpu_only': True,
+    'buffer_size': 2000,
+    'checkpoint_path': '',
+    'common_reward': True,
+    'double_q': True,
+    'env': 'struct_marl',
+    'env_args': {   'campaign_cost': True,
+                    'custom_param': {   'k_comp': 95},
+                    'discount_reward': 0.95,
+                    'env_correlation': True,
+                    'map_name': 'struct_c_100',
+                    'n_comp': 100,
+                    'obs_all_d_rate': False,
+                    'obs_alphas': True,
+                    'obs_d_rate': False,
+                    'obs_multiple': False,
+                    'seed': 42,
+                    'state_alphas': True,
+                    'state_d_rate': True,
+                    'state_obs': True,
+                    'struct_type': 'struct'},
+    'epsilon_anneal_time': 5000,
+    'epsilon_finish': 0.05,
+    'epsilon_start': 1.0,
+    'evaluate': False,
+    'evaluation_epsilon': 0.0,
+    'exp_name': 'my_experiment',
+    'gamma': 0.95,
+    'global_reward': False,
+    'grad_norm_clip': 10,
+    'hidden_dim': 64,
+    'hypergroup': None,
+    'label': 'default_label',
+    'learner': 'q_learner',
+    'learner_log_interval': 25000,
+    'load_step': 0,
+    'local_results_path': 'results',
+    'log_interval': 25000,
+    'lr': 0.0005,
+    'mac': 'basic_mac',
+    'mixer': None,
+    'name': 'IMPc100_IQL_RNN',
+    'obs_agent_id': True,
+    'obs_individual_obs': False,
+    'obs_last_action': True,
+    'optim_alpha': 0.99,
+    'optim_eps': 1e-05,
+    'render': False,
+    'repeat_id': 1,
+    'run_name': 'my_run',
+    'runner': 'episode',
+    'runner_log_interval': 25000,
+    'save_model': True,
+    'save_model_interval': 50000,
+    'save_replay': False,
+    'seed': 42,
+    'standardise_returns': False,
+    'standardise_rewards': True,
+    't_max': 2050000,
+    'target_update_interval_or_tau': 200,
+    'test_greedy': True,
+    'test_interval': 25000,
+    'test_nepisode': 50,
+    'use_cuda': True,
+    'use_rnn': True,
+    'use_tensorboard': True,
+    'work_dir': 'work_dirs/my_experiment/IMPc100_IQL_RNN/my_run/20260217_225121'}
+
+2026-02-17 22:51:26,361 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Beginning training for 2050000 timesteps
+2026-02-17 22:51:28,029 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - t_env: 30 / 2050000
+2026-02-17 22:51:28,029 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Estimated time left: 2 minutes, 16 seconds. Time passed: 1 seconds
+2026-02-17 22:51:37,948 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Saving models to work_dirs/my_experiment/IMPc100_IQL_RNN/my_run/20260217_225121/models/30
+2026-02-17 22:57:54,398 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Recent Stats | t_env:      25020 | Episode:      834
+action_0_mean:             0.3450	action_1_mean:             0.3307	action_2_mean:             0.3243	ep_length_mean:           30.0000
+epsilon:                   1.0000	grad_norm:                 0.2191	loss:                      0.9977	q_taken_mean:             -0.0001
+return_mean:             -10338.1938	return_std:                0.0000	target_mean:               0.0002	td_error_abs:              0.8229
+test_action_0_mean:        0.9661	test_action_1_mean:        0.0339	test_action_2_mean:        0.0000	test_ep_length_mean:      30.0000
+test_return_mean:        -372.2343	test_return_std:         692.2220	
+2026-02-17 22:57:54,978 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - t_env: 25050 / 2050000
+2026-02-17 22:57:54,979 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Estimated time left: 8 hours, 41 minutes, 57 seconds. Time passed: 6 minutes, 28 seconds
+2026-02-17 23:04:51,761 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Saving models to work_dirs/my_experiment/IMPc100_IQL_RNN/my_run/20260217_225121/models/50040
+2026-02-17 23:04:51,772 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Recent Stats | t_env:      50040 | Episode:     1668
+action_0_mean:             0.2546	action_1_mean:             0.5589	action_2_mean:             0.1865	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 0.5173	loss:                      0.6847	q_taken_mean:              0.0130
+return_mean:             -6222.9070	return_std:              1171.3698	target_mean:               0.0133	td_error_abs:              0.5691
+test_action_0_mean:        0.5413	test_action_1_mean:        0.4586	test_action_2_mean:        0.0001	test_ep_length_mean:      30.0000
+test_return_mean:        -574.4822	test_return_std:         787.6928	
+2026-02-17 23:04:52,257 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - t_env: 50070 / 2050000
+2026-02-17 23:04:52,258 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Estimated time left: 9 hours, 15 minutes, 54 seconds. Time passed: 13 minutes, 25 seconds
+2026-02-17 23:11:36,537 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Recent Stats | t_env:      75060 | Episode:     2502
+action_0_mean:             0.1969	action_1_mean:             0.6711	action_2_mean:             0.1320	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 0.5618	loss:                      0.5369	q_taken_mean:              0.0194
+return_mean:             -4540.9361	return_std:              1044.6708	target_mean:               0.0195	td_error_abs:              0.4552
+test_action_0_mean:        0.3800	test_action_1_mean:        0.6199	test_action_2_mean:        0.0001	test_ep_length_mean:      30.0000
+test_return_mean:        -617.2251	test_return_std:         785.9067	
+2026-02-17 23:11:37,036 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - t_env: 75090 / 2050000
+2026-02-17 23:11:37,037 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Estimated time left: 8 hours, 52 minutes, 30 seconds. Time passed: 20 minutes, 10 seconds
+2026-02-17 23:18:08,325 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Saving models to work_dirs/my_experiment/IMPc100_IQL_RNN/my_run/20260217_225121/models/100050
+2026-02-17 23:18:08,883 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Recent Stats | t_env:     100080 | Episode:     3336
+action_0_mean:             0.1906	action_1_mean:             0.7050	action_2_mean:             0.1044	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 0.5972	loss:                      0.4438	q_taken_mean:              0.0242
+return_mean:             -3689.8138	return_std:              999.8636	target_mean:               0.0242	td_error_abs:              0.3859
+test_action_0_mean:        0.3319	test_action_1_mean:        0.6647	test_action_2_mean:        0.0034	test_ep_length_mean:      30.0000
+test_return_mean:        -660.7711	test_return_std:         752.2728	
+2026-02-17 23:18:09,379 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - t_env: 100110 / 2050000
+2026-02-17 23:18:09,379 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Estimated time left: 8 hours, 29 minutes, 36 seconds. Time passed: 26 minutes, 43 seconds
+2026-02-17 23:24:26,199 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Recent Stats | t_env:     125100 | Episode:     4170
+action_0_mean:             0.2004	action_1_mean:             0.7124	action_2_mean:             0.0872	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 0.8088	loss:                      0.3843	q_taken_mean:              0.0268
+return_mean:             -3191.5575	return_std:              1003.6456	target_mean:               0.0269	td_error_abs:              0.3500
+test_action_0_mean:        0.3073	test_action_1_mean:        0.6899	test_action_2_mean:        0.0028	test_ep_length_mean:      30.0000
+test_return_mean:        -670.7428	test_return_std:         765.1086	
+2026-02-17 23:24:26,591 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - t_env: 125130 / 2050000
+2026-02-17 23:24:26,591 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Estimated time left: 8 hours, 3 minutes, 40 seconds. Time passed: 33 minutes, 0 seconds
+2026-02-17 23:30:03,814 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Saving models to work_dirs/my_experiment/IMPc100_IQL_RNN/my_run/20260217_225121/models/150060
+2026-02-17 23:30:04,590 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Recent Stats | t_env:     150120 | Episode:     5004
+action_0_mean:             0.1985	action_1_mean:             0.7754	action_2_mean:             0.0261	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 1.1544	loss:                      0.2405	q_taken_mean:              0.0329
+return_mean:             -1342.8410	return_std:              1153.0750	target_mean:               0.0330	td_error_abs:              0.2363
+test_action_0_mean:        0.2025	test_action_1_mean:        0.7946	test_action_2_mean:        0.0029	test_ep_length_mean:      30.0000
+test_return_mean:        -773.4538	test_return_std:         808.7271	
+2026-02-17 23:30:04,989 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - t_env: 150150 / 2050000
+2026-02-17 23:30:04,989 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Estimated time left: 7 hours, 8 minutes, 15 seconds. Time passed: 38 minutes, 38 seconds
+2026-02-17 23:35:00,704 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Recent Stats | t_env:     175140 | Episode:     5838
+action_0_mean:             0.2785	action_1_mean:             0.7016	action_2_mean:             0.0199	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 1.4618	loss:                      0.2920	q_taken_mean:              0.0328
+return_mean:             -1115.0700	return_std:              813.8101	target_mean:               0.0329	td_error_abs:              0.2303
+test_action_0_mean:        0.3464	test_action_1_mean:        0.6506	test_action_2_mean:        0.0030	test_ep_length_mean:      30.0000
+test_return_mean:        -725.1738	test_return_std:         826.5700	
+2026-02-17 23:35:01,094 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - t_env: 175170 / 2050000
+2026-02-17 23:35:01,094 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Estimated time left: 6 hours, 9 minutes, 48 seconds. Time passed: 43 minutes, 34 seconds
+2026-02-17 23:39:36,146 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Saving models to work_dirs/my_experiment/IMPc100_IQL_RNN/my_run/20260217_225121/models/200070
+2026-02-17 23:39:37,105 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Recent Stats | t_env:     200160 | Episode:     6672
+action_0_mean:             0.4220	action_1_mean:             0.5593	action_2_mean:             0.0187	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 1.8434	loss:                      0.3102	q_taken_mean:              0.0322
+return_mean:             -1069.5506	return_std:              815.7650	target_mean:               0.0324	td_error_abs:              0.2358
+test_action_0_mean:        0.5151	test_action_1_mean:        0.4818	test_action_2_mean:        0.0030	test_ep_length_mean:      30.0000
+test_return_mean:        -669.9659	test_return_std:         858.9107	
+2026-02-17 23:39:37,428 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - t_env: 200190 / 2050000
+2026-02-17 23:39:37,429 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Estimated time left: 5 hours, 40 minutes, 30 seconds. Time passed: 48 minutes, 11 seconds
+2026-02-17 23:44:42,054 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Recent Stats | t_env:     225180 | Episode:     7506
+action_0_mean:             0.5696	action_1_mean:             0.4124	action_2_mean:             0.0179	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 2.3976	loss:                      0.3260	q_taken_mean:              0.0306
+return_mean:             -1030.0673	return_std:              819.0241	target_mean:               0.0310	td_error_abs:              0.2532
+test_action_0_mean:        0.6650	test_action_1_mean:        0.3305	test_action_2_mean:        0.0045	test_ep_length_mean:      30.0000
+test_return_mean:        -646.8444	test_return_std:         824.2655	
+2026-02-17 23:44:42,463 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - t_env: 225210 / 2050000
+2026-02-17 23:44:42,463 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Estimated time left: 6 hours, 10 minutes, 47 seconds. Time passed: 53 minutes, 16 seconds
+2026-02-17 23:49:55,698 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Saving models to work_dirs/my_experiment/IMPc100_IQL_RNN/my_run/20260217_225121/models/250080
+2026-02-17 23:49:57,023 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Recent Stats | t_env:     250200 | Episode:     8340
+action_0_mean:             0.6669	action_1_mean:             0.3152	action_2_mean:             0.0179	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 2.4213	loss:                      0.3307	q_taken_mean:              0.0291
+return_mean:             -975.8176	return_std:              729.8904	target_mean:               0.0295	td_error_abs:              0.2626
+test_action_0_mean:        0.7393	test_action_1_mean:        0.2561	test_action_2_mean:        0.0045	test_ep_length_mean:      30.0000
+test_return_mean:        -610.2406	test_return_std:         790.0052	
+2026-02-17 23:49:57,346 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - t_env: 250230 / 2050000
+2026-02-17 23:49:57,346 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Estimated time left: 6 hours, 17 minutes, 30 seconds. Time passed: 58 minutes, 30 seconds
+2026-02-17 23:54:41,854 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Recent Stats | t_env:     275220 | Episode:     9174
+action_0_mean:             0.7376	action_1_mean:             0.2441	action_2_mean:             0.0183	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 2.2056	loss:                      0.3427	q_taken_mean:              0.0286
+return_mean:             -944.3037	return_std:              717.9242	target_mean:               0.0289	td_error_abs:              0.2747
+test_action_0_mean:        0.8387	test_action_1_mean:        0.1569	test_action_2_mean:        0.0044	test_ep_length_mean:      30.0000
+test_return_mean:        -521.1273	test_return_std:         764.3821	
+2026-02-17 23:54:42,191 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - t_env: 275250 / 2050000
+2026-02-17 23:54:42,192 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Estimated time left: 5 hours, 36 minutes, 45 seconds. Time passed: 1 hours, 3 minutes, 15 seconds
+2026-02-17 23:59:19,385 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Saving models to work_dirs/my_experiment/IMPc100_IQL_RNN/my_run/20260217_225121/models/300090
+2026-02-17 23:59:21,136 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Recent Stats | t_env:     300240 | Episode:    10008
+action_0_mean:             0.7967	action_1_mean:             0.1850	action_2_mean:             0.0183	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 2.2327	loss:                      0.4116	q_taken_mean:              0.0279
+return_mean:             -920.8937	return_std:              697.6254	target_mean:               0.0282	td_error_abs:              0.2993
+test_action_0_mean:        0.8608	test_action_1_mean:        0.1349	test_action_2_mean:        0.0043	test_ep_length_mean:      30.0000
+test_return_mean:        -502.3837	test_return_std:         745.8742	
+2026-02-17 23:59:21,478 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - t_env: 300270 / 2050000
+2026-02-17 23:59:21,478 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Estimated time left: 5 hours, 25 minutes, 31 seconds. Time passed: 1 hours, 7 minutes, 55 seconds
+2026-02-18 00:04:05,549 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Recent Stats | t_env:     325260 | Episode:    10842
+action_0_mean:             0.8138	action_1_mean:             0.1668	action_2_mean:             0.0195	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 1.8861	loss:                      0.4892	q_taken_mean:              0.0263
+return_mean:             -904.9448	return_std:              646.6411	target_mean:               0.0266	td_error_abs:              0.3316
+test_action_0_mean:        0.8377	test_action_1_mean:        0.1565	test_action_2_mean:        0.0058	test_ep_length_mean:      30.0000
+test_return_mean:        -502.6767	test_return_std:         728.2678	
+2026-02-18 00:04:05,872 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - t_env: 325290 / 2050000
+2026-02-18 00:04:05,872 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Estimated time left: 5 hours, 26 minutes, 44 seconds. Time passed: 1 hours, 12 minutes, 39 seconds
+2026-02-18 00:08:41,059 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Saving models to work_dirs/my_experiment/IMPc100_IQL_RNN/my_run/20260217_225121/models/350100
+2026-02-18 00:08:43,043 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Recent Stats | t_env:     350280 | Episode:    11676
+action_0_mean:             0.8025	action_1_mean:             0.1760	action_2_mean:             0.0215	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 1.8247	loss:                      0.6032	q_taken_mean:              0.0234
+return_mean:             -927.0771	return_std:              703.5617	target_mean:               0.0237	td_error_abs:              0.3770
+test_action_0_mean:        0.8438	test_action_1_mean:        0.1481	test_action_2_mean:        0.0082	test_ep_length_mean:      30.0000
+test_return_mean:        -682.7155	test_return_std:         632.6389	
+2026-02-18 00:08:43,388 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - t_env: 350310 / 2050000
+2026-02-18 00:08:43,389 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Estimated time left: 5 hours, 14 minutes, 12 seconds. Time passed: 1 hours, 17 minutes, 17 seconds
+2026-02-18 00:13:28,681 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Recent Stats | t_env:     375300 | Episode:    12510
+action_0_mean:             0.8363	action_1_mean:             0.1408	action_2_mean:             0.0229	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 1.9103	loss:                      0.6847	q_taken_mean:              0.0219
+return_mean:             -919.4405	return_std:              678.0941	target_mean:               0.0221	td_error_abs:              0.4067
+test_action_0_mean:        0.9039	test_action_1_mean:        0.0870	test_action_2_mean:        0.0090	test_ep_length_mean:      30.0000
+test_return_mean:        -640.6289	test_return_std:         570.1973	
+2026-02-18 00:13:29,144 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - t_env: 375330 / 2050000
+2026-02-18 00:13:29,144 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Estimated time left: 5 hours, 18 minutes, 46 seconds. Time passed: 1 hours, 22 minutes, 2 seconds
+2026-02-18 00:18:27,452 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Saving models to work_dirs/my_experiment/IMPc100_IQL_RNN/my_run/20260217_225121/models/400110
+2026-02-18 00:18:29,933 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Recent Stats | t_env:     400320 | Episode:    13344
+action_0_mean:             0.8685	action_1_mean:             0.1086	action_2_mean:             0.0229	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 2.1412	loss:                      0.8097	q_taken_mean:              0.0202
+return_mean:             -896.8485	return_std:              609.0002	target_mean:               0.0203	td_error_abs:              0.4332
+test_action_0_mean:        0.8536	test_action_1_mean:        0.1374	test_action_2_mean:        0.0090	test_ep_length_mean:      30.0000
+test_return_mean:        -634.7530	test_return_std:         568.9244	
+2026-02-18 00:18:30,284 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - t_env: 400350 / 2050000
+2026-02-18 00:18:30,285 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Estimated time left: 5 hours, 30 minutes, 55 seconds. Time passed: 1 hours, 27 minutes, 3 seconds
+2026-02-18 00:23:14,282 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Recent Stats | t_env:     425340 | Episode:    14178
+action_0_mean:             0.8442	action_1_mean:             0.1323	action_2_mean:             0.0235	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 1.8167	loss:                      0.7536	q_taken_mean:              0.0197
+return_mean:             -918.1920	return_std:              639.3964	target_mean:               0.0199	td_error_abs:              0.4262
+test_action_0_mean:        0.8083	test_action_1_mean:        0.1820	test_action_2_mean:        0.0097	test_ep_length_mean:      30.0000
+test_return_mean:        -616.5733	test_return_std:         474.0513	
+2026-02-18 00:23:14,600 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - t_env: 425370 / 2050000
+2026-02-18 00:23:14,601 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Estimated time left: 5 hours, 7 minutes, 41 seconds. Time passed: 1 hours, 31 minutes, 48 seconds
+2026-02-18 00:27:45,815 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Saving models to work_dirs/my_experiment/IMPc100_IQL_RNN/my_run/20260217_225121/models/450120
+2026-02-18 00:27:48,304 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Recent Stats | t_env:     450360 | Episode:    15012
+action_0_mean:             0.8347	action_1_mean:             0.1420	action_2_mean:             0.0234	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 1.9933	loss:                      0.7079	q_taken_mean:              0.0199
+return_mean:             -904.0024	return_std:              603.6215	target_mean:               0.0202	td_error_abs:              0.4126
+test_action_0_mean:        0.8429	test_action_1_mean:        0.1485	test_action_2_mean:        0.0086	test_ep_length_mean:      30.0000
+test_return_mean:        -578.6602	test_return_std:         365.4999	
+2026-02-18 00:27:48,623 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - t_env: 450390 / 2050000
+2026-02-18 00:27:48,624 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Estimated time left: 4 hours, 51 minutes, 59 seconds. Time passed: 1 hours, 36 minutes, 22 seconds
+2026-02-18 00:32:14,813 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Recent Stats | t_env:     475380 | Episode:    15846
+action_0_mean:             0.8427	action_1_mean:             0.1353	action_2_mean:             0.0220	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 1.5516	loss:                      0.6677	q_taken_mean:              0.0205
+return_mean:             -861.3517	return_std:              434.5565	target_mean:               0.0205	td_error_abs:              0.3859
+test_action_0_mean:        0.8399	test_action_1_mean:        0.1552	test_action_2_mean:        0.0049	test_ep_length_mean:      30.0000
+test_return_mean:        -350.4826	test_return_std:         440.1969	
+2026-02-18 00:32:15,135 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - t_env: 475410 / 2050000
+2026-02-18 00:32:15,136 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Estimated time left: 4 hours, 39 minutes, 32 seconds. Time passed: 1 hours, 40 minutes, 48 seconds
+2026-02-18 00:36:48,167 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Saving models to work_dirs/my_experiment/IMPc100_IQL_RNN/my_run/20260217_225121/models/500130
+2026-02-18 00:36:51,220 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Recent Stats | t_env:     500400 | Episode:    16680
+action_0_mean:             0.8493	action_1_mean:             0.1292	action_2_mean:             0.0215	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 1.5108	loss:                      0.6181	q_taken_mean:              0.0202
+return_mean:             -857.8416	return_std:              450.4776	target_mean:               0.0201	td_error_abs:              0.3653
+test_action_0_mean:        0.8636	test_action_1_mean:        0.1325	test_action_2_mean:        0.0039	test_ep_length_mean:      30.0000
+test_return_mean:        -635.8437	test_return_std:         373.6084	
+2026-02-18 00:36:51,547 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - t_env: 500430 / 2050000
+2026-02-18 00:36:51,547 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Estimated time left: 4 hours, 45 minutes, 19 seconds. Time passed: 1 hours, 45 minutes, 25 seconds
+2026-02-18 00:41:30,941 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Recent Stats | t_env:     525420 | Episode:    17514
+action_0_mean:             0.8527	action_1_mean:             0.1254	action_2_mean:             0.0219	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 1.3202	loss:                      0.5718	q_taken_mean:              0.0193
+return_mean:             -867.8640	return_std:              530.1421	target_mean:               0.0193	td_error_abs:              0.3580
+test_action_0_mean:        0.8926	test_action_1_mean:        0.1030	test_action_2_mean:        0.0045	test_ep_length_mean:      30.0000
+test_return_mean:        -604.6038	test_return_std:         282.3814	
+2026-02-18 00:41:31,307 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - t_env: 525450 / 2050000
+2026-02-18 00:41:31,308 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Estimated time left: 4 hours, 44 minutes, 6 seconds. Time passed: 1 hours, 50 minutes, 4 seconds
+2026-02-18 00:46:13,124 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Saving models to work_dirs/my_experiment/IMPc100_IQL_RNN/my_run/20260217_225121/models/550140
+2026-02-18 00:46:16,518 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Recent Stats | t_env:     550440 | Episode:    18348
+action_0_mean:             0.8767	action_1_mean:             0.1014	action_2_mean:             0.0219	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 1.6791	loss:                      0.5344	q_taken_mean:              0.0186
+return_mean:             -837.4808	return_std:              470.3144	target_mean:               0.0187	td_error_abs:              0.3525
+test_action_0_mean:        0.9308	test_action_1_mean:        0.0649	test_action_2_mean:        0.0043	test_ep_length_mean:      30.0000
+test_return_mean:        -575.5407	test_return_std:         274.9943	
+2026-02-18 00:46:16,838 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - t_env: 550470 / 2050000
+2026-02-18 00:46:16,839 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Estimated time left: 4 hours, 45 minutes, 12 seconds. Time passed: 1 hours, 54 minutes, 50 seconds
+2026-02-18 00:51:05,043 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Recent Stats | t_env:     575460 | Episode:    19182
+action_0_mean:             0.8730	action_1_mean:             0.1050	action_2_mean:             0.0219	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 1.5024	loss:                      0.5002	q_taken_mean:              0.0180
+return_mean:             -834.2466	return_std:              453.9349	target_mean:               0.0179	td_error_abs:              0.3499
+test_action_0_mean:        0.9094	test_action_1_mean:        0.0856	test_action_2_mean:        0.0050	test_ep_length_mean:      30.0000
+test_return_mean:        -559.0208	test_return_std:         231.1198	
+2026-02-18 00:51:05,438 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - t_env: 575490 / 2050000
+2026-02-18 00:51:05,439 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Estimated time left: 4 hours, 43 minutes, 28 seconds. Time passed: 1 hours, 59 minutes, 39 seconds
+2026-02-18 00:56:02,297 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Saving models to work_dirs/my_experiment/IMPc100_IQL_RNN/my_run/20260217_225121/models/600150
+2026-02-18 00:56:06,143 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Recent Stats | t_env:     600480 | Episode:    20016
+action_0_mean:             0.8548	action_1_mean:             0.1231	action_2_mean:             0.0222	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 1.4506	loss:                      0.4534	q_taken_mean:              0.0181
+return_mean:             -827.3018	return_std:              442.7787	target_mean:               0.0181	td_error_abs:              0.3461
+test_action_0_mean:        0.8958	test_action_1_mean:        0.1014	test_action_2_mean:        0.0028	test_ep_length_mean:      30.0000
+test_return_mean:        -515.6636	test_return_std:         240.4693	
+2026-02-18 00:56:06,459 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - t_env: 600510 / 2050000
+2026-02-18 00:56:06,459 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Estimated time left: 4 hours, 50 minutes, 39 seconds. Time passed: 2 hours, 4 minutes, 40 seconds
+2026-02-18 01:00:46,111 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Recent Stats | t_env:     625500 | Episode:    20850
+action_0_mean:             0.8142	action_1_mean:             0.1643	action_2_mean:             0.0215	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 1.4042	loss:                      0.4555	q_taken_mean:              0.0178
+return_mean:             -805.4757	return_std:              383.4964	target_mean:               0.0179	td_error_abs:              0.3509
+test_action_0_mean:        0.8694	test_action_1_mean:        0.1272	test_action_2_mean:        0.0034	test_ep_length_mean:      30.0000
+test_return_mean:        -206.2999	test_return_std:         274.5586	
+2026-02-18 01:00:46,430 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - t_env: 625530 / 2050000
+2026-02-18 01:00:46,431 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Estimated time left: 4 hours, 25 minutes, 39 seconds. Time passed: 2 hours, 9 minutes, 20 seconds
+2026-02-18 01:05:20,805 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Saving models to work_dirs/my_experiment/IMPc100_IQL_RNN/my_run/20260217_225121/models/650160
+2026-02-18 01:05:24,762 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Recent Stats | t_env:     650520 | Episode:    21684
+action_0_mean:             0.8108	action_1_mean:             0.1680	action_2_mean:             0.0212	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 1.2395	loss:                      0.3362	q_taken_mean:              0.0194
+return_mean:             -781.1727	return_std:              286.2936	target_mean:               0.0194	td_error_abs:              0.3182
+test_action_0_mean:        0.8836	test_action_1_mean:        0.1131	test_action_2_mean:        0.0033	test_ep_length_mean:      30.0000
+test_return_mean:        -177.2753	test_return_std:         240.6437	
+2026-02-18 01:05:25,178 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - t_env: 650550 / 2050000
+2026-02-18 01:05:25,179 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Estimated time left: 4 hours, 19 minutes, 51 seconds. Time passed: 2 hours, 13 minutes, 58 seconds
+2026-02-18 01:10:05,086 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Recent Stats | t_env:     675540 | Episode:    22518
+action_0_mean:             0.8118	action_1_mean:             0.1670	action_2_mean:             0.0213	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 0.8171	loss:                      0.2888	q_taken_mean:              0.0202
+return_mean:             -780.4518	return_std:              274.5887	target_mean:               0.0201	td_error_abs:              0.3060
+test_action_0_mean:        0.8915	test_action_1_mean:        0.1058	test_action_2_mean:        0.0028	test_ep_length_mean:      30.0000
+test_return_mean:        -178.6028	test_return_std:         216.8903	
+2026-02-18 01:10:05,493 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - t_env: 675570 / 2050000
+2026-02-18 01:10:05,494 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Estimated time left: 4 hours, 16 minutes, 38 seconds. Time passed: 2 hours, 18 minutes, 39 seconds
+2026-02-18 01:14:40,433 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Saving models to work_dirs/my_experiment/IMPc100_IQL_RNN/my_run/20260217_225121/models/700170
+2026-02-18 01:14:45,001 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Recent Stats | t_env:     700560 | Episode:    23352
+action_0_mean:             0.8177	action_1_mean:             0.1614	action_2_mean:             0.0209	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 0.7687	loss:                      0.2992	q_taken_mean:              0.0205
+return_mean:             -779.8921	return_std:              277.7087	target_mean:               0.0204	td_error_abs:              0.2991
+test_action_0_mean:        0.9073	test_action_1_mean:        0.0904	test_action_2_mean:        0.0023	test_ep_length_mean:      30.0000
+test_return_mean:        -191.3438	test_return_std:         281.4161	
+2026-02-18 01:14:45,452 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - t_env: 700590 / 2050000
+2026-02-18 01:14:45,452 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Estimated time left: 4 hours, 11 minutes, 39 seconds. Time passed: 2 hours, 23 minutes, 19 seconds
+2026-02-18 01:19:42,439 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Recent Stats | t_env:     725580 | Episode:    24186
+action_0_mean:             0.8284	action_1_mean:             0.1514	action_2_mean:             0.0201	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 0.7582	loss:                      0.2669	q_taken_mean:              0.0208
+return_mean:             -769.0252	return_std:              274.3269	target_mean:               0.0207	td_error_abs:              0.2854
+test_action_0_mean:        0.8929	test_action_1_mean:        0.1023	test_action_2_mean:        0.0047	test_ep_length_mean:      30.0000
+test_return_mean:        -255.4804	test_return_std:         291.9350	
+2026-02-18 01:19:42,772 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - t_env: 725610 / 2050000
+2026-02-18 01:19:42,772 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Estimated time left: 4 hours, 22 minutes, 18 seconds. Time passed: 2 hours, 28 minutes, 16 seconds
+2026-02-18 01:24:27,631 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Saving models to work_dirs/my_experiment/IMPc100_IQL_RNN/my_run/20260217_225121/models/750180
+2026-02-18 01:24:32,166 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Recent Stats | t_env:     750600 | Episode:    25020
+action_0_mean:             0.8334	action_1_mean:             0.1466	action_2_mean:             0.0199	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 0.5404	loss:                      0.2542	q_taken_mean:              0.0211
+return_mean:             -793.4321	return_std:              345.2723	target_mean:               0.0211	td_error_abs:              0.2741
+test_action_0_mean:        0.8973	test_action_1_mean:        0.0982	test_action_2_mean:        0.0045	test_ep_length_mean:      30.0000
+test_return_mean:        -285.7440	test_return_std:         479.2976	
+2026-02-18 01:24:32,491 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - t_env: 750630 / 2050000
+2026-02-18 01:24:32,492 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Estimated time left: 4 hours, 10 minutes, 46 seconds. Time passed: 2 hours, 33 minutes, 6 seconds
+2026-02-18 01:29:20,089 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Recent Stats | t_env:     775620 | Episode:    25854
+action_0_mean:             0.8227	action_1_mean:             0.1575	action_2_mean:             0.0199	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 0.8150	loss:                      0.3142	q_taken_mean:              0.0202
+return_mean:             -797.0737	return_std:              366.8560	target_mean:               0.0203	td_error_abs:              0.2904
+test_action_0_mean:        0.9021	test_action_1_mean:        0.0931	test_action_2_mean:        0.0048	test_ep_length_mean:      30.0000
+test_return_mean:        -303.6029	test_return_std:         509.9924	
+2026-02-18 01:29:20,460 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - t_env: 775650 / 2050000
+2026-02-18 01:29:20,461 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Estimated time left: 4 hours, 4 minutes, 27 seconds. Time passed: 2 hours, 37 minutes, 54 seconds
+2026-02-18 01:33:50,533 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Saving models to work_dirs/my_experiment/IMPc100_IQL_RNN/my_run/20260217_225121/models/800190
+2026-02-18 01:33:55,240 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Recent Stats | t_env:     800640 | Episode:    26688
+action_0_mean:             0.8106	action_1_mean:             0.1699	action_2_mean:             0.0195	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 0.9172	loss:                      0.3346	q_taken_mean:              0.0197
+return_mean:             -792.6150	return_std:              356.6462	target_mean:               0.0198	td_error_abs:              0.2947
+test_action_0_mean:        0.8545	test_action_1_mean:        0.1406	test_action_2_mean:        0.0049	test_ep_length_mean:      30.0000
+test_return_mean:        -340.5674	test_return_std:         560.7843	
+2026-02-18 01:33:55,556 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - t_env: 800670 / 2050000
+2026-02-18 01:33:55,558 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Estimated time left: 3 hours, 48 minutes, 56 seconds. Time passed: 2 hours, 42 minutes, 29 seconds
+2026-02-18 01:38:43,395 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Recent Stats | t_env:     825660 | Episode:    27522
+action_0_mean:             0.8168	action_1_mean:             0.1632	action_2_mean:             0.0200	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 1.0657	loss:                      0.3698	q_taken_mean:              0.0196
+return_mean:             -802.2844	return_std:              357.3917	target_mean:               0.0196	td_error_abs:              0.2975
+test_action_0_mean:        0.8603	test_action_1_mean:        0.1343	test_action_2_mean:        0.0054	test_ep_length_mean:      30.0000
+test_return_mean:        -393.4832	test_return_std:         597.7360	
+2026-02-18 01:38:43,714 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - t_env: 825690 / 2050000
+2026-02-18 01:38:43,714 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Estimated time left: 3 hours, 55 minutes, 0 seconds. Time passed: 2 hours, 47 minutes, 17 seconds
+2026-02-18 01:43:32,347 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Saving models to work_dirs/my_experiment/IMPc100_IQL_RNN/my_run/20260217_225121/models/850200
+2026-02-18 01:43:37,543 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Recent Stats | t_env:     850680 | Episode:    28356
+action_0_mean:             0.8029	action_1_mean:             0.1764	action_2_mean:             0.0208	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 1.2231	loss:                      0.4086	q_taken_mean:              0.0190
+return_mean:             -812.3735	return_std:              363.5672	target_mean:               0.0189	td_error_abs:              0.3029
+test_action_0_mean:        0.8459	test_action_1_mean:        0.1514	test_action_2_mean:        0.0027	test_ep_length_mean:      30.0000
+test_return_mean:        -326.7475	test_return_std:         556.8693	
+2026-02-18 01:43:37,993 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - t_env: 850710 / 2050000
+2026-02-18 01:43:37,994 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Estimated time left: 3 hours, 55 minutes, 5 seconds. Time passed: 2 hours, 52 minutes, 11 seconds
+2026-02-18 01:48:20,120 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Recent Stats | t_env:     875700 | Episode:    29190
+action_0_mean:             0.8049	action_1_mean:             0.1737	action_2_mean:             0.0213	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 1.4434	loss:                      0.4013	q_taken_mean:              0.0184
+return_mean:             -792.3680	return_std:              301.1875	target_mean:               0.0182	td_error_abs:              0.3057
+test_action_0_mean:        0.8244	test_action_1_mean:        0.1717	test_action_2_mean:        0.0039	test_ep_length_mean:      30.0000
+test_return_mean:        -302.1409	test_return_std:         385.7591	
+2026-02-18 01:48:20,437 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - t_env: 875730 / 2050000
+2026-02-18 01:48:20,437 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Estimated time left: 3 hours, 40 minutes, 55 seconds. Time passed: 2 hours, 56 minutes, 54 seconds
+2026-02-18 01:52:45,344 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Saving models to work_dirs/my_experiment/IMPc100_IQL_RNN/my_run/20260217_225121/models/900210
+2026-02-18 01:52:50,657 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Recent Stats | t_env:     900720 | Episode:    30024
+action_0_mean:             0.8128	action_1_mean:             0.1659	action_2_mean:             0.0213	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 1.2552	loss:                      0.3595	q_taken_mean:              0.0184
+return_mean:             -788.6925	return_std:              275.1998	target_mean:               0.0182	td_error_abs:              0.2954
+test_action_0_mean:        0.8271	test_action_1_mean:        0.1697	test_action_2_mean:        0.0032	test_ep_length_mean:      30.0000
+test_return_mean:        -285.6883	test_return_std:         355.1770	
+2026-02-18 01:52:51,066 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - t_env: 900750 / 2050000
+2026-02-18 01:52:51,066 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Estimated time left: 3 hours, 27 minutes, 10 seconds. Time passed: 3 hours, 1 minutes, 24 seconds
+2026-02-18 01:57:25,273 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Recent Stats | t_env:     925740 | Episode:    30858
+action_0_mean:             0.8326	action_1_mean:             0.1459	action_2_mean:             0.0215	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 1.1382	loss:                      0.3442	q_taken_mean:              0.0184
+return_mean:             -787.5174	return_std:              318.5966	target_mean:               0.0183	td_error_abs:              0.2925
+test_action_0_mean:        0.8744	test_action_1_mean:        0.1216	test_action_2_mean:        0.0040	test_ep_length_mean:      30.0000
+test_return_mean:        -241.7311	test_return_std:         307.8130	
+2026-02-18 01:57:25,589 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - t_env: 925770 / 2050000
+2026-02-18 01:57:25,589 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Estimated time left: 3 hours, 25 minutes, 35 seconds. Time passed: 3 hours, 5 minutes, 59 seconds
+2026-02-18 02:01:56,314 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Saving models to work_dirs/my_experiment/IMPc100_IQL_RNN/my_run/20260217_225121/models/950220
+2026-02-18 02:02:02,101 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Recent Stats | t_env:     950760 | Episode:    31692
+action_0_mean:             0.8315	action_1_mean:             0.1471	action_2_mean:             0.0214	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 1.0915	loss:                      0.3644	q_taken_mean:              0.0174
+return_mean:             -782.5751	return_std:              382.7417	target_mean:               0.0173	td_error_abs:              0.3055
+test_action_0_mean:        0.8714	test_action_1_mean:        0.1253	test_action_2_mean:        0.0033	test_ep_length_mean:      30.0000
+test_return_mean:        -172.6814	test_return_std:         221.5861	
+2026-02-18 02:02:02,522 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - t_env: 950790 / 2050000
+2026-02-18 02:02:02,522 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Estimated time left: 3 hours, 22 minutes, 46 seconds. Time passed: 3 hours, 10 minutes, 36 seconds
+2026-02-18 02:06:41,070 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Recent Stats | t_env:     975780 | Episode:    32526
+action_0_mean:             0.8464	action_1_mean:             0.1325	action_2_mean:             0.0211	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 0.9979	loss:                      0.3217	q_taken_mean:              0.0178
+return_mean:             -772.9778	return_std:              375.5548	target_mean:               0.0177	td_error_abs:              0.3015
+test_action_0_mean:        0.9014	test_action_1_mean:        0.0955	test_action_2_mean:        0.0031	test_ep_length_mean:      30.0000
+test_return_mean:        -163.0002	test_return_std:         207.8135	
+2026-02-18 02:06:41,427 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - t_env: 975810 / 2050000
+2026-02-18 02:06:41,427 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Estimated time left: 3 hours, 19 minutes, 34 seconds. Time passed: 3 hours, 15 minutes, 15 seconds
+2026-02-18 02:11:20,102 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Saving models to work_dirs/my_experiment/IMPc100_IQL_RNN/my_run/20260217_225121/models/1000230
+2026-02-18 02:11:26,314 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Recent Stats | t_env:    1000800 | Episode:    33360
+action_0_mean:             0.8638	action_1_mean:             0.1155	action_2_mean:             0.0207	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 0.7995	loss:                      0.3111	q_taken_mean:              0.0184
+return_mean:             -767.5851	return_std:              387.0805	target_mean:               0.0185	td_error_abs:              0.2968
+test_action_0_mean:        0.9121	test_action_1_mean:        0.0858	test_action_2_mean:        0.0020	test_ep_length_mean:      30.0000
+test_return_mean:        -146.1129	test_return_std:         194.4518	
+2026-02-18 02:11:26,737 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - t_env: 1000830 / 2050000
+2026-02-18 02:11:26,738 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Estimated time left: 3 hours, 19 minutes, 23 seconds. Time passed: 3 hours, 20 minutes, 0 seconds
+2026-02-18 02:16:05,921 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Recent Stats | t_env:    1025820 | Episode:    34194
+action_0_mean:             0.8588	action_1_mean:             0.1205	action_2_mean:             0.0208	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 0.7414	loss:                      0.3178	q_taken_mean:              0.0183
+return_mean:             -768.1659	return_std:              391.2756	target_mean:               0.0184	td_error_abs:              0.3023
+test_action_0_mean:        0.8980	test_action_1_mean:        0.0991	test_action_2_mean:        0.0028	test_ep_length_mean:      30.0000
+test_return_mean:        -151.0008	test_return_std:         185.1409	
+2026-02-18 02:16:06,282 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - t_env: 1025850 / 2050000
+2026-02-18 02:16:06,282 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Estimated time left: 3 hours, 10 minutes, 42 seconds. Time passed: 3 hours, 24 minutes, 39 seconds
+2026-02-18 02:20:43,620 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Saving models to work_dirs/my_experiment/IMPc100_IQL_RNN/my_run/20260217_225121/models/1050240
+2026-02-18 02:20:49,988 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Recent Stats | t_env:    1050840 | Episode:    35028
+action_0_mean:             0.8480	action_1_mean:             0.1312	action_2_mean:             0.0209	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 0.8624	loss:                      0.3250	q_taken_mean:              0.0182
+return_mean:             -759.5094	return_std:              330.7059	target_mean:               0.0181	td_error_abs:              0.3073
+test_action_0_mean:        0.8723	test_action_1_mean:        0.1256	test_action_2_mean:        0.0021	test_ep_length_mean:      30.0000
+test_return_mean:        -142.1344	test_return_std:         164.0496	
+2026-02-18 02:20:50,338 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - t_env: 1050870 / 2050000
+2026-02-18 02:20:50,339 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Estimated time left: 3 hours, 9 minutes, 3 seconds. Time passed: 3 hours, 29 minutes, 23 seconds
+2026-02-18 02:25:35,929 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Recent Stats | t_env:    1075860 | Episode:    35862
+action_0_mean:             0.8364	action_1_mean:             0.1435	action_2_mean:             0.0201	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 0.6963	loss:                      0.2475	q_taken_mean:              0.0190
+return_mean:             -744.3072	return_std:              259.1660	target_mean:               0.0190	td_error_abs:              0.2916
+test_action_0_mean:        0.8580	test_action_1_mean:        0.1395	test_action_2_mean:        0.0025	test_ep_length_mean:      30.0000
+test_return_mean:        -164.5167	test_return_std:         243.3277	
+2026-02-18 02:25:36,438 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - t_env: 1075890 / 2050000
+2026-02-18 02:25:36,439 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Estimated time left: 3 hours, 5 minutes, 38 seconds. Time passed: 3 hours, 34 minutes, 10 seconds
+2026-02-18 02:30:09,692 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Saving models to work_dirs/my_experiment/IMPc100_IQL_RNN/my_run/20260217_225121/models/1100250
+2026-02-18 02:30:16,414 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Recent Stats | t_env:    1100880 | Episode:    36696
+action_0_mean:             0.8254	action_1_mean:             0.1546	action_2_mean:             0.0200	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 0.6095	loss:                      0.2651	q_taken_mean:              0.0190
+return_mean:             -747.5704	return_std:              273.5529	target_mean:               0.0190	td_error_abs:              0.2948
+test_action_0_mean:        0.8208	test_action_1_mean:        0.1761	test_action_2_mean:        0.0031	test_ep_length_mean:      30.0000
+test_return_mean:        -171.3790	test_return_std:         243.0131	
+2026-02-18 02:30:16,737 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - t_env: 1100910 / 2050000
+2026-02-18 02:30:16,737 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Estimated time left: 2 hours, 57 minutes, 12 seconds. Time passed: 3 hours, 38 minutes, 50 seconds
+2026-02-18 02:34:50,190 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Recent Stats | t_env:    1125900 | Episode:    37530
+action_0_mean:             0.8257	action_1_mean:             0.1542	action_2_mean:             0.0201	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 0.5162	loss:                      0.2701	q_taken_mean:              0.0185
+return_mean:             -745.7537	return_std:              269.9147	target_mean:               0.0185	td_error_abs:              0.3020
+test_action_0_mean:        0.8398	test_action_1_mean:        0.1573	test_action_2_mean:        0.0029	test_ep_length_mean:      30.0000
+test_return_mean:        -165.8252	test_return_std:         238.6088	
+2026-02-18 02:34:50,531 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - t_env: 1125930 / 2050000
+2026-02-18 02:34:50,532 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Estimated time left: 2 hours, 48 minutes, 32 seconds. Time passed: 3 hours, 43 minutes, 24 seconds
+2026-02-18 02:39:23,110 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Saving models to work_dirs/my_experiment/IMPc100_IQL_RNN/my_run/20260217_225121/models/1150260
+2026-02-18 02:39:29,957 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Recent Stats | t_env:    1150920 | Episode:    38364
+action_0_mean:             0.8396	action_1_mean:             0.1406	action_2_mean:             0.0199	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 0.8862	loss:                      0.3258	q_taken_mean:              0.0182
+return_mean:             -746.8720	return_std:              284.2395	target_mean:               0.0181	td_error_abs:              0.3115
+test_action_0_mean:        0.8505	test_action_1_mean:        0.1469	test_action_2_mean:        0.0026	test_ep_length_mean:      30.0000
+test_return_mean:        -174.5319	test_return_std:         295.9157	
+2026-02-18 02:39:30,317 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - t_env: 1150950 / 2050000
+2026-02-18 02:39:30,317 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Estimated time left: 2 hours, 47 minutes, 33 seconds. Time passed: 3 hours, 48 minutes, 3 seconds
+2026-02-18 02:44:10,589 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Recent Stats | t_env:    1175940 | Episode:    39198
+action_0_mean:             0.8388	action_1_mean:             0.1416	action_2_mean:             0.0196	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 0.9346	loss:                      0.3381	q_taken_mean:              0.0176
+return_mean:             -754.8943	return_std:              304.8476	target_mean:               0.0176	td_error_abs:              0.3194
+test_action_0_mean:        0.8502	test_action_1_mean:        0.1464	test_action_2_mean:        0.0033	test_ep_length_mean:      30.0000
+test_return_mean:        -206.1137	test_return_std:         334.8426	
+2026-02-18 02:44:10,934 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - t_env: 1175970 / 2050000
+2026-02-18 02:44:10,935 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Estimated time left: 2 hours, 43 minutes, 22 seconds. Time passed: 3 hours, 52 minutes, 44 seconds
+2026-02-18 02:48:39,137 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Saving models to work_dirs/my_experiment/IMPc100_IQL_RNN/my_run/20260217_225121/models/1200270
+2026-02-18 02:48:46,380 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Recent Stats | t_env:    1200960 | Episode:    40032
+action_0_mean:             0.8438	action_1_mean:             0.1362	action_2_mean:             0.0200	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 1.1603	loss:                      0.3807	q_taken_mean:              0.0166
+return_mean:             -760.8838	return_std:              305.9387	target_mean:               0.0167	td_error_abs:              0.3319
+test_action_0_mean:        0.8476	test_action_1_mean:        0.1491	test_action_2_mean:        0.0034	test_ep_length_mean:      30.0000
+test_return_mean:        -190.5694	test_return_std:         269.0499	
+2026-02-18 02:48:46,710 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - t_env: 1200990 / 2050000
+2026-02-18 02:48:46,711 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Estimated time left: 2 hours, 35 minutes, 57 seconds. Time passed: 3 hours, 57 minutes, 20 seconds
+2026-02-18 02:53:24,971 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Recent Stats | t_env:    1225980 | Episode:    40866
+action_0_mean:             0.8571	action_1_mean:             0.1230	action_2_mean:             0.0200	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 1.2332	loss:                      0.4317	q_taken_mean:              0.0160
+return_mean:             -758.0962	return_std:              291.2621	target_mean:               0.0160	td_error_abs:              0.3436
+test_action_0_mean:        0.8957	test_action_1_mean:        0.1017	test_action_2_mean:        0.0026	test_ep_length_mean:      30.0000
+test_return_mean:        -205.1492	test_return_std:         327.8998	
+2026-02-18 02:53:25,357 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - t_env: 1226010 / 2050000
+2026-02-18 02:53:25,358 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Estimated time left: 2 hours, 32 minutes, 56 seconds. Time passed: 4 hours, 1 minutes, 58 seconds
+2026-02-18 02:58:00,946 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Saving models to work_dirs/my_experiment/IMPc100_IQL_RNN/my_run/20260217_225121/models/1250280
+2026-02-18 02:58:08,779 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Recent Stats | t_env:    1251000 | Episode:    41700
+action_0_mean:             0.8573	action_1_mean:             0.1228	action_2_mean:             0.0199	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 1.3744	loss:                      0.4501	q_taken_mean:              0.0154
+return_mean:             -766.1744	return_std:              282.7411	target_mean:               0.0155	td_error_abs:              0.3490
+test_action_0_mean:        0.8406	test_action_1_mean:        0.1568	test_action_2_mean:        0.0026	test_ep_length_mean:      30.0000
+test_return_mean:        -253.3057	test_return_std:         423.2586	
+2026-02-18 02:58:09,164 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - t_env: 1251030 / 2050000
+2026-02-18 02:58:09,165 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Estimated time left: 2 hours, 31 minutes, 2 seconds. Time passed: 4 hours, 6 minutes, 42 seconds
+2026-02-18 03:02:41,516 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Recent Stats | t_env:    1276020 | Episode:    42534
+action_0_mean:             0.8483	action_1_mean:             0.1318	action_2_mean:             0.0199	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 1.1080	loss:                      0.4236	q_taken_mean:              0.0151
+return_mean:             -767.8579	return_std:              279.2299	target_mean:               0.0153	td_error_abs:              0.3423
+test_action_0_mean:        0.8349	test_action_1_mean:        0.1624	test_action_2_mean:        0.0026	test_ep_length_mean:      30.0000
+test_return_mean:        -249.4464	test_return_std:         396.8926	
+2026-02-18 03:02:41,833 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - t_env: 1276050 / 2050000
+2026-02-18 03:02:41,833 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Estimated time left: 2 hours, 20 minutes, 34 seconds. Time passed: 4 hours, 11 minutes, 15 seconds
+2026-02-18 03:07:01,187 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Saving models to work_dirs/my_experiment/IMPc100_IQL_RNN/my_run/20260217_225121/models/1300290
+2026-02-18 03:07:08,857 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Recent Stats | t_env:    1301040 | Episode:    43368
+action_0_mean:             0.8565	action_1_mean:             0.1234	action_2_mean:             0.0201	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 1.1675	loss:                      0.4570	q_taken_mean:              0.0154
+return_mean:             -763.6536	return_std:              268.5767	target_mean:               0.0154	td_error_abs:              0.3416
+test_action_0_mean:        0.8604	test_action_1_mean:        0.1377	test_action_2_mean:        0.0019	test_ep_length_mean:      30.0000
+test_return_mean:        -230.0254	test_return_std:         385.9432	
+2026-02-18 03:07:09,252 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - t_env: 1301070 / 2050000
+2026-02-18 03:07:09,253 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Estimated time left: 2 hours, 13 minutes, 24 seconds. Time passed: 4 hours, 15 minutes, 42 seconds
+2026-02-18 03:11:41,013 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Recent Stats | t_env:    1326060 | Episode:    44202
+action_0_mean:             0.8717	action_1_mean:             0.1085	action_2_mean:             0.0198	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 1.0261	loss:                      0.4123	q_taken_mean:              0.0157
+return_mean:             -762.6060	return_std:              264.2423	target_mean:               0.0157	td_error_abs:              0.3285
+test_action_0_mean:        0.8749	test_action_1_mean:        0.1235	test_action_2_mean:        0.0015	test_ep_length_mean:      30.0000
+test_return_mean:        -245.7829	test_return_std:         392.0622	
+2026-02-18 03:11:41,325 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - t_env: 1326090 / 2050000
+2026-02-18 03:11:41,325 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Estimated time left: 2 hours, 11 minutes, 11 seconds. Time passed: 4 hours, 20 minutes, 14 seconds
+2026-02-18 03:16:11,534 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Saving models to work_dirs/my_experiment/IMPc100_IQL_RNN/my_run/20260217_225121/models/1350300
+2026-02-18 03:16:19,682 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Recent Stats | t_env:    1351080 | Episode:    45036
+action_0_mean:             0.8747	action_1_mean:             0.1057	action_2_mean:             0.0196	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 1.1049	loss:                      0.3418	q_taken_mean:              0.0162
+return_mean:             -767.6760	return_std:              279.9420	target_mean:               0.0161	td_error_abs:              0.3147
+test_action_0_mean:        0.8756	test_action_1_mean:        0.1227	test_action_2_mean:        0.0017	test_ep_length_mean:      30.0000
+test_return_mean:        -234.8063	test_return_std:         409.4664	
+2026-02-18 03:16:20,037 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - t_env: 1351110 / 2050000
+2026-02-18 03:16:20,038 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Estimated time left: 2 hours, 9 minutes, 45 seconds. Time passed: 4 hours, 24 minutes, 53 seconds
+2026-02-18 03:21:06,207 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Recent Stats | t_env:    1376100 | Episode:    45870
+action_0_mean:             0.8737	action_1_mean:             0.1066	action_2_mean:             0.0198	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 1.0990	loss:                      0.3494	q_taken_mean:              0.0158
+return_mean:             -762.2617	return_std:              280.0408	target_mean:               0.0157	td_error_abs:              0.3194
+test_action_0_mean:        0.9245	test_action_1_mean:        0.0729	test_action_2_mean:        0.0025	test_ep_length_mean:      30.0000
+test_return_mean:        -200.4614	test_return_std:         322.6563	
+2026-02-18 03:21:06,545 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - t_env: 1376130 / 2050000
+2026-02-18 03:21:06,546 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Estimated time left: 2 hours, 8 minutes, 36 seconds. Time passed: 4 hours, 29 minutes, 40 seconds
+2026-02-18 03:25:49,968 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Saving models to work_dirs/my_experiment/IMPc100_IQL_RNN/my_run/20260217_225121/models/1400310
+2026-02-18 03:25:58,805 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Recent Stats | t_env:    1401120 | Episode:    46704
+action_0_mean:             0.8672	action_1_mean:             0.1130	action_2_mean:             0.0198	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 1.1694	loss:                      0.3190	q_taken_mean:              0.0163
+return_mean:             -762.6118	return_std:              326.4945	target_mean:               0.0162	td_error_abs:              0.3164
+test_action_0_mean:        0.8701	test_action_1_mean:        0.1271	test_action_2_mean:        0.0028	test_ep_length_mean:      30.0000
+test_return_mean:        -222.2816	test_return_std:         327.0347	
+2026-02-18 03:25:59,129 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - t_env: 1401150 / 2050000
+2026-02-18 03:25:59,129 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Estimated time left: 2 hours, 6 minutes, 27 seconds. Time passed: 4 hours, 34 minutes, 32 seconds
+2026-02-18 03:30:39,183 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Recent Stats | t_env:    1426140 | Episode:    47538
+action_0_mean:             0.8463	action_1_mean:             0.1343	action_2_mean:             0.0194	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 1.2500	loss:                      0.3022	q_taken_mean:              0.0161
+return_mean:             -758.9934	return_std:              332.2347	target_mean:               0.0162	td_error_abs:              0.3144
+test_action_0_mean:        0.8557	test_action_1_mean:        0.1413	test_action_2_mean:        0.0030	test_ep_length_mean:      30.0000
+test_return_mean:        -218.4519	test_return_std:         325.0464	
+2026-02-18 03:30:39,577 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - t_env: 1426170 / 2050000
+2026-02-18 03:30:39,577 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Estimated time left: 1 hours, 56 minutes, 32 seconds. Time passed: 4 hours, 39 minutes, 13 seconds
+2026-02-18 03:35:08,855 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Saving models to work_dirs/my_experiment/IMPc100_IQL_RNN/my_run/20260217_225121/models/1450320
+2026-02-18 03:35:17,846 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Recent Stats | t_env:    1451160 | Episode:    48372
+action_0_mean:             0.8311	action_1_mean:             0.1496	action_2_mean:             0.0193	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 1.3331	loss:                      0.3402	q_taken_mean:              0.0162
+return_mean:             -760.3949	return_std:              336.5829	target_mean:               0.0162	td_error_abs:              0.3201
+test_action_0_mean:        0.8389	test_action_1_mean:        0.1581	test_action_2_mean:        0.0030	test_ep_length_mean:      30.0000
+test_return_mean:        -230.8805	test_return_std:         366.4211	
+2026-02-18 03:35:18,160 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - t_env: 1451190 / 2050000
+2026-02-18 03:35:18,161 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Estimated time left: 1 hours, 51 minutes, 7 seconds. Time passed: 4 hours, 43 minutes, 51 seconds
+2026-02-18 03:39:53,333 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Recent Stats | t_env:    1476180 | Episode:    49206
+action_0_mean:             0.8240	action_1_mean:             0.1567	action_2_mean:             0.0192	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 1.3350	loss:                      0.3864	q_taken_mean:              0.0153
+return_mean:             -755.0653	return_std:              331.8599	target_mean:               0.0154	td_error_abs:              0.3364
+test_action_0_mean:        0.8278	test_action_1_mean:        0.1695	test_action_2_mean:        0.0027	test_ep_length_mean:      30.0000
+test_return_mean:        -244.4055	test_return_std:         351.9674	
+2026-02-18 03:39:53,752 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - t_env: 1476210 / 2050000
+2026-02-18 03:39:53,753 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Estimated time left: 1 hours, 45 minutes, 20 seconds. Time passed: 4 hours, 48 minutes, 27 seconds
+2026-02-18 03:44:23,480 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Saving models to work_dirs/my_experiment/IMPc100_IQL_RNN/my_run/20260217_225121/models/1500330
+2026-02-18 03:44:32,803 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Recent Stats | t_env:    1501200 | Episode:    50040
+action_0_mean:             0.8305	action_1_mean:             0.1508	action_2_mean:             0.0187	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 1.3491	loss:                      0.3923	q_taken_mean:              0.0157
+return_mean:             -754.9408	return_std:              372.9027	target_mean:               0.0157	td_error_abs:              0.3378
+test_action_0_mean:        0.8314	test_action_1_mean:        0.1665	test_action_2_mean:        0.0021	test_ep_length_mean:      30.0000
+test_return_mean:        -243.0238	test_return_std:         352.2331	
+2026-02-18 03:44:33,117 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - t_env: 1501230 / 2050000
+2026-02-18 03:44:33,118 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Estimated time left: 1 hours, 42 minutes, 7 seconds. Time passed: 4 hours, 53 minutes, 6 seconds
+2026-02-18 03:49:06,654 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Recent Stats | t_env:    1526220 | Episode:    50874
+action_0_mean:             0.8399	action_1_mean:             0.1417	action_2_mean:             0.0184	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 1.3362	loss:                      0.4360	q_taken_mean:              0.0155
+return_mean:             -753.4798	return_std:              336.9914	target_mean:               0.0154	td_error_abs:              0.3506
+test_action_0_mean:        0.8934	test_action_1_mean:        0.1053	test_action_2_mean:        0.0014	test_ep_length_mean:      30.0000
+test_return_mean:        -230.9514	test_return_std:         344.2946	
+2026-02-18 03:49:06,968 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - t_env: 1526250 / 2050000
+2026-02-18 03:49:06,968 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Estimated time left: 1 hours, 35 minutes, 32 seconds. Time passed: 4 hours, 57 minutes, 40 seconds
+2026-02-18 03:53:31,338 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Saving models to work_dirs/my_experiment/IMPc100_IQL_RNN/my_run/20260217_225121/models/1550340
+2026-02-18 03:53:40,774 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Recent Stats | t_env:    1551240 | Episode:    51708
+action_0_mean:             0.8589	action_1_mean:             0.1228	action_2_mean:             0.0183	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 1.1675	loss:                      0.4282	q_taken_mean:              0.0155
+return_mean:             -764.9597	return_std:              352.9466	target_mean:               0.0154	td_error_abs:              0.3564
+test_action_0_mean:        0.9062	test_action_1_mean:        0.0926	test_action_2_mean:        0.0012	test_ep_length_mean:      30.0000
+test_return_mean:        -263.2050	test_return_std:         453.5058	
+2026-02-18 03:53:41,090 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - t_env: 1551270 / 2050000
+2026-02-18 03:53:41,090 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Estimated time left: 1 hours, 31 minutes, 4 seconds. Time passed: 5 hours, 2 minutes, 14 seconds
+2026-02-18 03:58:16,084 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Recent Stats | t_env:    1576260 | Episode:    52542
+action_0_mean:             0.8669	action_1_mean:             0.1145	action_2_mean:             0.0186	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 1.1965	loss:                      0.4218	q_taken_mean:              0.0155
+return_mean:             -793.2088	return_std:              479.2166	target_mean:               0.0153	td_error_abs:              0.3623
+test_action_0_mean:        0.9281	test_action_1_mean:        0.0710	test_action_2_mean:        0.0009	test_ep_length_mean:      30.0000
+test_return_mean:        -244.1905	test_return_std:         475.2827	
+2026-02-18 03:58:16,415 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - t_env: 1576290 / 2050000
+2026-02-18 03:58:16,416 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Estimated time left: 1 hours, 26 minutes, 52 seconds. Time passed: 5 hours, 6 minutes, 50 seconds
+2026-02-18 04:02:37,610 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Saving models to work_dirs/my_experiment/IMPc100_IQL_RNN/my_run/20260217_225121/models/1600350
+2026-02-18 04:02:47,302 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Recent Stats | t_env:    1601280 | Episode:    53376
+action_0_mean:             0.8697	action_1_mean:             0.1120	action_2_mean:             0.0183	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 1.3799	loss:                      0.4686	q_taken_mean:              0.0155
+return_mean:             -822.2930	return_std:              558.0294	target_mean:               0.0152	td_error_abs:              0.3734
+test_action_0_mean:        0.9414	test_action_1_mean:        0.0578	test_action_2_mean:        0.0008	test_ep_length_mean:      30.0000
+test_return_mean:        -246.2933	test_return_std:         439.7103	
+2026-02-18 04:02:47,667 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - t_env: 1601310 / 2050000
+2026-02-18 04:02:47,667 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Estimated time left: 1 hours, 21 minutes, 4 seconds. Time passed: 5 hours, 11 minutes, 21 seconds
+2026-02-18 04:07:23,767 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Recent Stats | t_env:    1626300 | Episode:    54210
+action_0_mean:             0.8741	action_1_mean:             0.1075	action_2_mean:             0.0184	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 2.2713	loss:                      0.7235	q_taken_mean:              0.0146
+return_mean:             -835.4911	return_std:              578.3763	target_mean:               0.0141	td_error_abs:              0.4010
+test_action_0_mean:        0.9449	test_action_1_mean:        0.0545	test_action_2_mean:        0.0006	test_ep_length_mean:      30.0000
+test_return_mean:        -251.4727	test_return_std:         458.5511	
+2026-02-18 04:07:24,128 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - t_env: 1626330 / 2050000
+2026-02-18 04:07:24,129 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Estimated time left: 1 hours, 18 minutes, 1 seconds. Time passed: 5 hours, 15 minutes, 57 seconds
+2026-02-18 04:11:52,820 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Saving models to work_dirs/my_experiment/IMPc100_IQL_RNN/my_run/20260217_225121/models/1650360
+2026-02-18 04:12:03,171 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Recent Stats | t_env:    1651320 | Episode:    55044
+action_0_mean:             0.8772	action_1_mean:             0.1044	action_2_mean:             0.0185	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 3.2695	loss:                      1.0446	q_taken_mean:              0.0133
+return_mean:             -855.6229	return_std:              662.4866	target_mean:               0.0127	td_error_abs:              0.4366
+test_action_0_mean:        0.9379	test_action_1_mean:        0.0617	test_action_2_mean:        0.0004	test_ep_length_mean:      30.0000
+test_return_mean:        -252.3154	test_return_std:         518.9673	
+2026-02-18 04:12:03,488 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - t_env: 1651350 / 2050000
+2026-02-18 04:12:03,488 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Estimated time left: 1 hours, 14 minutes, 11 seconds. Time passed: 5 hours, 20 minutes, 37 seconds
+2026-02-18 04:16:38,168 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Recent Stats | t_env:    1676340 | Episode:    55878
+action_0_mean:             0.8723	action_1_mean:             0.1093	action_2_mean:             0.0184	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 3.5760	loss:                      1.1230	q_taken_mean:              0.0120
+return_mean:             -884.5078	return_std:              731.3978	target_mean:               0.0116	td_error_abs:              0.4551
+test_action_0_mean:        0.9320	test_action_1_mean:        0.0678	test_action_2_mean:        0.0001	test_ep_length_mean:      30.0000
+test_return_mean:        -296.7199	test_return_std:         551.6611	
+2026-02-18 04:16:38,485 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - t_env: 1676370 / 2050000
+2026-02-18 04:16:38,486 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Estimated time left: 1 hours, 8 minutes, 26 seconds. Time passed: 5 hours, 25 minutes, 12 seconds
+2026-02-18 04:21:01,634 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Saving models to work_dirs/my_experiment/IMPc100_IQL_RNN/my_run/20260217_225121/models/1700370
+2026-02-18 04:21:12,545 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Recent Stats | t_env:    1701360 | Episode:    56712
+action_0_mean:             0.8703	action_1_mean:             0.1117	action_2_mean:             0.0180	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 5.4816	loss:                      1.2981	q_taken_mean:              0.0096
+return_mean:             -873.5507	return_std:              652.4826	target_mean:               0.0093	td_error_abs:              0.4878
+test_action_0_mean:        0.9271	test_action_1_mean:        0.0728	test_action_2_mean:        0.0001	test_ep_length_mean:      30.0000
+test_return_mean:        -302.8648	test_return_std:         525.1029	
+2026-02-18 04:21:12,862 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - t_env: 1701390 / 2050000
+2026-02-18 04:21:12,862 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Estimated time left: 1 hours, 3 minutes, 42 seconds. Time passed: 5 hours, 29 minutes, 46 seconds
+2026-02-18 04:25:48,633 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Recent Stats | t_env:    1726380 | Episode:    57546
+action_0_mean:             0.8732	action_1_mean:             0.1087	action_2_mean:             0.0181	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 5.6679	loss:                      1.3676	q_taken_mean:              0.0085
+return_mean:             -865.2474	return_std:              620.5153	target_mean:               0.0084	td_error_abs:              0.5020
+test_action_0_mean:        0.9199	test_action_1_mean:        0.0798	test_action_2_mean:        0.0003	test_ep_length_mean:      30.0000
+test_return_mean:        -309.3594	test_return_std:         574.9710	
+2026-02-18 04:25:48,958 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - t_env: 1726410 / 2050000
+2026-02-18 04:25:48,958 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Estimated time left: 59 minutes, 30 seconds. Time passed: 5 hours, 34 minutes, 22 seconds
+2026-02-18 04:30:15,615 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Saving models to work_dirs/my_experiment/IMPc100_IQL_RNN/my_run/20260217_225121/models/1750380
+2026-02-18 04:30:27,630 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Recent Stats | t_env:    1751400 | Episode:    58380
+action_0_mean:             0.8678	action_1_mean:             0.1143	action_2_mean:             0.0180	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 5.1071	loss:                      1.1738	q_taken_mean:              0.0083
+return_mean:             -867.1894	return_std:              613.9821	target_mean:               0.0084	td_error_abs:              0.4880
+test_action_0_mean:        0.9196	test_action_1_mean:        0.0797	test_action_2_mean:        0.0007	test_ep_length_mean:      30.0000
+test_return_mean:        -326.5756	test_return_std:         654.6054	
+2026-02-18 04:30:27,987 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - t_env: 1751430 / 2050000
+2026-02-18 04:30:27,988 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Estimated time left: 55 minutes, 29 seconds. Time passed: 5 hours, 39 minutes, 1 seconds
+2026-02-18 04:35:08,261 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Recent Stats | t_env:    1776420 | Episode:    59214
+action_0_mean:             0.8646	action_1_mean:             0.1171	action_2_mean:             0.0183	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 4.7252	loss:                      1.0112	q_taken_mean:              0.0078
+return_mean:             -867.7803	return_std:              582.0472	target_mean:               0.0080	td_error_abs:              0.4818
+test_action_0_mean:        0.9004	test_action_1_mean:        0.0986	test_action_2_mean:        0.0010	test_ep_length_mean:      30.0000
+test_return_mean:        -335.8575	test_return_std:         598.2638	
+2026-02-18 04:35:08,660 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - t_env: 1776450 / 2050000
+2026-02-18 04:35:08,660 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Estimated time left: 51 minutes, 8 seconds. Time passed: 5 hours, 43 minutes, 42 seconds
+2026-02-18 04:39:41,136 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Saving models to work_dirs/my_experiment/IMPc100_IQL_RNN/my_run/20260217_225121/models/1800390
+2026-02-18 04:39:52,505 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Recent Stats | t_env:    1801440 | Episode:    60048
+action_0_mean:             0.8640	action_1_mean:             0.1177	action_2_mean:             0.0183	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 5.4206	loss:                      1.3868	q_taken_mean:              0.0065
+return_mean:             -833.8074	return_std:              505.0345	target_mean:               0.0065	td_error_abs:              0.4972
+test_action_0_mean:        0.9055	test_action_1_mean:        0.0932	test_action_2_mean:        0.0013	test_ep_length_mean:      30.0000
+test_return_mean:        -276.7756	test_return_std:         482.2916	
+2026-02-18 04:39:52,819 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - t_env: 1801470 / 2050000
+2026-02-18 04:39:52,819 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Estimated time left: 47 minutes, 2 seconds. Time passed: 5 hours, 48 minutes, 26 seconds
+2026-02-18 04:44:32,659 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Recent Stats | t_env:    1826460 | Episode:    60882
+action_0_mean:             0.8533	action_1_mean:             0.1281	action_2_mean:             0.0186	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 3.5770	loss:                      1.2468	q_taken_mean:              0.0080
+return_mean:             -825.2824	return_std:              476.9130	target_mean:               0.0079	td_error_abs:              0.4786
+test_action_0_mean:        0.9012	test_action_1_mean:        0.0968	test_action_2_mean:        0.0020	test_ep_length_mean:      30.0000
+test_return_mean:        -321.1737	test_return_std:         585.7218	
+2026-02-18 04:44:32,974 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - t_env: 1826490 / 2050000
+2026-02-18 04:44:32,975 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Estimated time left: 41 minutes, 42 seconds. Time passed: 5 hours, 53 minutes, 6 seconds
+2026-02-18 04:49:01,781 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Saving models to work_dirs/my_experiment/IMPc100_IQL_RNN/my_run/20260217_225121/models/1850400
+2026-02-18 04:49:14,399 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Recent Stats | t_env:    1851480 | Episode:    61716
+action_0_mean:             0.8454	action_1_mean:             0.1356	action_2_mean:             0.0190	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 3.7417	loss:                      1.2083	q_taken_mean:              0.0082
+return_mean:             -826.0137	return_std:              484.7516	target_mean:               0.0081	td_error_abs:              0.4706
+test_action_0_mean:        0.8951	test_action_1_mean:        0.1023	test_action_2_mean:        0.0026	test_ep_length_mean:      30.0000
+test_return_mean:        -302.7419	test_return_std:         573.9488	
+2026-02-18 04:49:14,712 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - t_env: 1851510 / 2050000
+2026-02-18 04:49:14,713 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Estimated time left: 37 minutes, 15 seconds. Time passed: 5 hours, 57 minutes, 48 seconds
+2026-02-18 04:54:01,156 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Recent Stats | t_env:    1876500 | Episode:    62550
+action_0_mean:             0.8377	action_1_mean:             0.1427	action_2_mean:             0.0195	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 3.6926	loss:                      1.1924	q_taken_mean:              0.0081
+return_mean:             -827.3540	return_std:              479.4139	target_mean:               0.0079	td_error_abs:              0.4665
+test_action_0_mean:        0.8870	test_action_1_mean:        0.1106	test_action_2_mean:        0.0024	test_ep_length_mean:      30.0000
+test_return_mean:        -338.3350	test_return_std:         613.8436	
+2026-02-18 04:54:01,566 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - t_env: 1876530 / 2050000
+2026-02-18 04:54:01,566 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Estimated time left: 33 minutes, 8 seconds. Time passed: 6 hours, 2 minutes, 35 seconds
+2026-02-18 04:58:30,527 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Saving models to work_dirs/my_experiment/IMPc100_IQL_RNN/my_run/20260217_225121/models/1900410
+2026-02-18 04:58:42,917 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Recent Stats | t_env:    1901520 | Episode:    63384
+action_0_mean:             0.8281	action_1_mean:             0.1525	action_2_mean:             0.0194	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 3.6465	loss:                      1.1995	q_taken_mean:              0.0078
+return_mean:             -825.6338	return_std:              471.9324	target_mean:               0.0076	td_error_abs:              0.4589
+test_action_0_mean:        0.8861	test_action_1_mean:        0.1117	test_action_2_mean:        0.0022	test_ep_length_mean:      30.0000
+test_return_mean:        -340.1924	test_return_std:         646.4081	
+2026-02-18 04:58:43,229 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - t_env: 1901550 / 2050000
+2026-02-18 04:58:43,229 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Estimated time left: 27 minutes, 51 seconds. Time passed: 6 hours, 7 minutes, 16 seconds
+2026-02-18 05:03:21,789 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Recent Stats | t_env:    1926540 | Episode:    64218
+action_0_mean:             0.8269	action_1_mean:             0.1532	action_2_mean:             0.0199	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 3.0686	loss:                      0.7402	q_taken_mean:              0.0100
+return_mean:             -824.5859	return_std:              462.3372	target_mean:               0.0099	td_error_abs:              0.4192
+test_action_0_mean:        0.8782	test_action_1_mean:        0.1197	test_action_2_mean:        0.0021	test_ep_length_mean:      30.0000
+test_return_mean:        -318.7266	test_return_std:         596.4884	
+2026-02-18 05:03:22,101 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - t_env: 1926570 / 2050000
+2026-02-18 05:03:22,102 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Estimated time left: 22 minutes, 55 seconds. Time passed: 6 hours, 11 minutes, 55 seconds
+2026-02-18 05:07:57,733 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Saving models to work_dirs/my_experiment/IMPc100_IQL_RNN/my_run/20260217_225121/models/1950420
+2026-02-18 05:08:10,378 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Recent Stats | t_env:    1951560 | Episode:    65052
+action_0_mean:             0.8332	action_1_mean:             0.1471	action_2_mean:             0.0196	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 2.9376	loss:                      0.7081	q_taken_mean:              0.0105
+return_mean:             -817.8276	return_std:              497.9315	target_mean:               0.0104	td_error_abs:              0.4072
+test_action_0_mean:        0.8721	test_action_1_mean:        0.1264	test_action_2_mean:        0.0015	test_ep_length_mean:      30.0000
+test_return_mean:        -280.8126	test_return_std:         542.0288	
+2026-02-18 05:08:10,690 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - t_env: 1951590 / 2050000
+2026-02-18 05:08:10,690 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Estimated time left: 18 minutes, 55 seconds. Time passed: 6 hours, 16 minutes, 44 seconds
+2026-02-18 05:13:04,405 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Recent Stats | t_env:    1976580 | Episode:    65886
+action_0_mean:             0.8239	action_1_mean:             0.1567	action_2_mean:             0.0194	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 2.6959	loss:                      0.6798	q_taken_mean:              0.0114
+return_mean:             -823.9195	return_std:              556.2326	target_mean:               0.0113	td_error_abs:              0.3907
+test_action_0_mean:        0.8752	test_action_1_mean:        0.1241	test_action_2_mean:        0.0007	test_ep_length_mean:      30.0000
+test_return_mean:        -280.1572	test_return_std:         554.2020	
+2026-02-18 05:13:04,749 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - t_env: 1976610 / 2050000
+2026-02-18 05:13:04,749 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Estimated time left: 14 minutes, 22 seconds. Time passed: 6 hours, 21 minutes, 38 seconds
+2026-02-18 05:17:47,695 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Saving models to work_dirs/my_experiment/IMPc100_IQL_RNN/my_run/20260217_225121/models/2000430
+2026-02-18 05:18:00,955 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Recent Stats | t_env:    2001600 | Episode:    66720
+action_0_mean:             0.8085	action_1_mean:             0.1724	action_2_mean:             0.0191	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 2.5335	loss:                      0.6706	q_taken_mean:              0.0119
+return_mean:             -817.0104	return_std:              532.7754	target_mean:               0.0119	td_error_abs:              0.3918
+test_action_0_mean:        0.8352	test_action_1_mean:        0.1630	test_action_2_mean:        0.0018	test_ep_length_mean:      30.0000
+test_return_mean:        -282.5162	test_return_std:         532.7424	
+2026-02-18 05:18:01,323 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - t_env: 2001630 / 2050000
+2026-02-18 05:18:01,324 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Estimated time left: 9 minutes, 33 seconds. Time passed: 6 hours, 26 minutes, 34 seconds
+2026-02-18 05:22:43,567 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Recent Stats | t_env:    2026620 | Episode:    67554
+action_0_mean:             0.7977	action_1_mean:             0.1833	action_2_mean:             0.0191	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 3.0408	loss:                      0.5320	q_taken_mean:              0.0134
+return_mean:             -820.5307	return_std:              527.6104	target_mean:               0.0134	td_error_abs:              0.3734
+test_action_0_mean:        0.8363	test_action_1_mean:        0.1621	test_action_2_mean:        0.0017	test_ep_length_mean:      30.0000
+test_return_mean:        -299.5826	test_return_std:         557.7150	
+2026-02-18 05:22:43,889 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - t_env: 2026650 / 2050000
+2026-02-18 05:22:43,890 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Estimated time left: 4 minutes, 23 seconds. Time passed: 6 hours, 31 minutes, 17 seconds
+2026-02-18 05:27:09,973 - my_experiment - IMPc100_IQL_RNN - my_run - INFO - Finished Training

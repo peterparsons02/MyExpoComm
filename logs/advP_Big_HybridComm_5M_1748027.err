@@ -1,0 +1,825 @@
+Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
+Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
+Users of this version of Gym should be able to simply replace 'import gym' with 'import gymnasium as gym' in the vast majority of cases.
+See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
+src/main.py:81: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+  if isinstance(v, collections.Mapping):
+wandb: [wandb.login()] Loaded credentials for https://api.wandb.ai from /home/pparsons/.netrc.
+wandb: Currently logged in as: peterparsons02 (peterparsons02-eth-z-rich) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.24.1
+wandb: Run data is saved locally in /usr/itetnas04/data-scratch-01/pparsons/data/MyExpoComm/wandb/run-20260212_184119-w44uij0m
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run my_run-advP_BigMap_5M-20260212_184118
+wandb: ⭐️ View project at https://wandb.ai/peterparsons02-eth-z-rich/my_experiment
+wandb: 🚀 View run at https://wandb.ai/peterparsons02-eth-z-rich/my_experiment/runs/w44uij0m
+2026-02-12 18:41:20,965 - my_experiment - advP_BigMap_5M - my_run - INFO - Current directory: /usr/itetnas04/data-scratch-01/pparsons/data/MyExpoComm.
+2026-02-12 18:41:20,966 - my_experiment - advP_BigMap_5M - my_run - INFO - Experiment Parameters:
+2026-02-12 18:41:20,967 - my_experiment - advP_BigMap_5M - my_run - INFO - 
+
+{   'action_selector': 'epsilon_greedy',
+    'add_value_last_step': True,
+    'agent': 'ExpoComm_one_peer_cont',
+    'agent_output_type': 'q',
+    'attention_dim': 32,
+    'aux_coef': 0.1,
+    'batch_size': 32,
+    'batch_size_run': 1,
+    'buffer_cpu_only': True,
+    'buffer_size': 5000,
+    'checkpoint_path': '',
+    'double_q': True,
+    'env': 'MAgent_AdvPursuit',
+    'env_args': {   'global_reward': False,
+                    'map_name': 'adversarial_pursuit_view8',
+                    'map_size': 70,
+                    'max_cycles': 200,
+                    'minimap_mode': True,
+                    'pretrained_ckpt': 'prey_params.pt',
+                    'seed': 42},
+    'epsilon_anneal_time': 1000000,
+    'epsilon_finish': 0.05,
+    'epsilon_start': 1.0,
+    'evaluate': False,
+    'evaluation_epsilon': 0.0,
+    'exp_name': 'my_experiment',
+    'gamma': 0.99,
+    'global_reward': True,
+    'grad_norm_clip': 10,
+    'hidden_dim': 64,
+    'hypergroup': None,
+    'label': 'default_label',
+    'learner': 'hybrid_comm_learner',
+    'learner_log_interval': 10000,
+    'load_step': 0,
+    'local_results_path': 'results',
+    'log_interval': 50000,
+    'lr': 0.0005,
+    'mac': 'ExpoComm_mac',
+    'mixer': None,
+    'name': 'advP_BigMap_5M',
+    'neg_num': 20,
+    'obs_agent_id': True,
+    'obs_individual_obs': False,
+    'obs_last_action': True,
+    'one_peer': True,
+    'optim_alpha': 0.99,
+    'optim_eps': 1e-05,
+    'render': False,
+    'repeat_id': 1,
+    'run_name': 'my_run',
+    'runner': 'episode',
+    'runner_log_interval': 10000,
+    'save_model': True,
+    'save_model_interval': 500000,
+    'save_replay': False,
+    'seed': 42,
+    'standardise_returns': False,
+    'standardise_rewards': True,
+    't_max': 5050000,
+    'target_update_interval_or_tau': 200,
+    'temperature': 0.07,
+    'test_greedy': True,
+    'test_interval': 50000,
+    'test_nepisode': 16,
+    'topk_neighbors': 7,
+    'use_cuda': True,
+    'use_rnn': True,
+    'use_tensorboard': True,
+    'work_dir': 'work_dirs/my_experiment/advP_BigMap_5M/my_run/20260212_184118'}
+
+/usr/itetnas04/data-scratch-01/pparsons/data/conda_envs/ExpoComm/lib/python3.8/site-packages/pettingzoo/utils/conversions.py:41: UserWarning: The `from_parallel` function is deprecated. Use the `parallel_to_aec` function instead.
+  warnings.warn("The `from_parallel` function is deprecated. Use the `parallel_to_aec` function instead.")
+/usr/itetnas04/data-scratch-01/pparsons/data/conda_envs/ExpoComm/lib/python3.8/site-packages/pettingzoo/utils/wrappers/base.py:44: UserWarning: The `observation_spaces` dictionary is deprecated. Use the `observation_space` function instead.
+  warnings.warn("The `observation_spaces` dictionary is deprecated. Use the `observation_space` function instead.")
+/usr/itetnas04/data-scratch-01/pparsons/data/conda_envs/ExpoComm/lib/python3.8/site-packages/pettingzoo/utils/conversions.py:36: UserWarning: The `to_parallel` function is deprecated. Use the `aec_to_parallel` function instead.
+  warnings.warn("The `to_parallel` function is deprecated. Use the `aec_to_parallel` function instead.")
+/usr/itetnas04/data-scratch-01/pparsons/data/conda_envs/ExpoComm/lib/python3.8/site-packages/pettingzoo/utils/conversions.py:80: UserWarning: The `action_spaces` dictionary is deprecated. Use the `action_space` function instead.
+  warnings.warn("The `action_spaces` dictionary is deprecated. Use the `action_space` function instead.")
+/usr/itetnas04/data-scratch-01/pparsons/data/conda_envs/ExpoComm/lib/python3.8/site-packages/pettingzoo/utils/wrappers/base.py:52: UserWarning: The `action_spaces` dictionary is deprecated. Use the `action_space` function instead.
+  warnings.warn("The `action_spaces` dictionary is deprecated. Use the `action_space` function instead.")
+/usr/itetnas04/data-scratch-01/pparsons/data/conda_envs/ExpoComm/lib/python3.8/site-packages/pettingzoo/utils/conversions.py:72: UserWarning: The `observation_spaces` dictionary is deprecated. Use the `observation_space` function instead.
+  warnings.warn("The `observation_spaces` dictionary is deprecated. Use the `observation_space` function instead.")
+2026-02-12 18:41:38,308 - my_experiment - advP_BigMap_5M - my_run - INFO - Beginning training for 5050000 timesteps
+/usr/itetnas04/data-scratch-01/pparsons/data/MyExpoComm/src/envs/adv_pursuit_wrappers.py:240: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  actions = th.tensor(actions, dtype=th.long)
+2026-02-12 18:41:44,840 - my_experiment - advP_BigMap_5M - my_run - INFO - t_env: 200 / 5050000
+2026-02-12 18:41:44,841 - my_experiment - advP_BigMap_5M - my_run - INFO - Estimated time left: 10 minutes, 57 seconds. Time passed: 6 seconds
+2026-02-12 18:43:02,700 - my_experiment - advP_BigMap_5M - my_run - INFO - Saving models to work_dirs/my_experiment/advP_BigMap_5M/my_run/20260212_184118/models/200
+2026-02-12 19:06:25,199 - my_experiment - advP_BigMap_5M - my_run - INFO - Recent Stats | t_env:      50000 | Episode:      250
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.9620	grad_norm:                 0.8295
+info_nce_loss:             3.0046	loss:                      0.9885	q_loss:                    0.8986	return_mean:             -20.4299
+return_std:                0.5138	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        -34.9793
+test_return_std:           3.5135	
+2026-02-12 19:06:30,990 - my_experiment - advP_BigMap_5M - my_run - INFO - t_env: 50200 / 5050000
+2026-02-12 19:06:30,991 - my_experiment - advP_BigMap_5M - my_run - INFO - Estimated time left: 1 days, 17 hours, 16 minutes, 49 seconds. Time passed: 24 minutes, 52 seconds
+2026-02-12 19:31:25,499 - my_experiment - advP_BigMap_5M - my_run - INFO - Recent Stats | t_env:     100000 | Episode:      500
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.9145	grad_norm:                 2.1074
+info_nce_loss:             3.0592	loss:                      1.2866	q_loss:                    1.1696	return_mean:             -17.7142
+return_std:                0.8926	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        -10.6636
+test_return_std:           5.1353	
+2026-02-12 19:31:31,236 - my_experiment - advP_BigMap_5M - my_run - INFO - t_env: 100200 / 5050000
+2026-02-12 19:31:31,238 - my_experiment - advP_BigMap_5M - my_run - INFO - Estimated time left: 1 days, 17 hours, 15 minutes, 18 seconds. Time passed: 49 minutes, 52 seconds
+2026-02-12 19:56:08,318 - my_experiment - advP_BigMap_5M - my_run - INFO - Recent Stats | t_env:     150000 | Episode:      750
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.8670	grad_norm:                 5.9504
+info_nce_loss:             2.4355	loss:                      2.4258	q_loss:                    2.2053	return_mean:             -11.5793
+return_std:                1.2568	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:         29.0863
+test_return_std:           6.6212	
+2026-02-12 19:56:13,960 - my_experiment - advP_BigMap_5M - my_run - INFO - t_env: 150200 / 5050000
+2026-02-12 19:56:13,961 - my_experiment - advP_BigMap_5M - my_run - INFO - Estimated time left: 1 days, 16 hours, 21 minutes, 40 seconds. Time passed: 1 hours, 14 minutes, 35 seconds
+2026-02-12 20:20:52,378 - my_experiment - advP_BigMap_5M - my_run - INFO - Recent Stats | t_env:     200000 | Episode:     1000
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.8195	grad_norm:                11.0971
+info_nce_loss:             1.5680	loss:                      4.0832	q_loss:                    3.7120	return_mean:              -6.0606
+return_std:                1.4514	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:         54.2290
+test_return_std:           6.5310	
+2026-02-12 20:20:57,966 - my_experiment - advP_BigMap_5M - my_run - INFO - t_env: 200200 / 5050000
+2026-02-12 20:20:57,967 - my_experiment - advP_BigMap_5M - my_run - INFO - Estimated time left: 1 days, 15 hours, 59 minutes, 2 seconds. Time passed: 1 hours, 39 minutes, 19 seconds
+2026-02-12 20:45:32,626 - my_experiment - advP_BigMap_5M - my_run - INFO - Recent Stats | t_env:     250000 | Episode:     1250
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.7720	grad_norm:                37.3506
+info_nce_loss:             0.9458	loss:                      8.3392	q_loss:                    7.5811	return_mean:               1.3313
+return_std:                1.8245	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:         69.0152
+test_return_std:           6.8878	
+2026-02-12 20:45:38,218 - my_experiment - advP_BigMap_5M - my_run - INFO - t_env: 250200 / 5050000
+2026-02-12 20:45:38,219 - my_experiment - advP_BigMap_5M - my_run - INFO - Estimated time left: 1 days, 15 hours, 28 minutes, 18 seconds. Time passed: 2 hours, 3 minutes, 59 seconds
+2026-02-12 21:10:11,735 - my_experiment - advP_BigMap_5M - my_run - INFO - Recent Stats | t_env:     300000 | Episode:     1500
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.7245	grad_norm:                42.0725
+info_nce_loss:             0.6481	loss:                      6.9564	q_loss:                    6.3240	return_mean:               9.3400
+return_std:                2.0344	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:         99.7623
+test_return_std:           7.7001	
+2026-02-12 21:10:17,377 - my_experiment - advP_BigMap_5M - my_run - INFO - t_env: 300200 / 5050000
+2026-02-12 21:10:17,378 - my_experiment - advP_BigMap_5M - my_run - INFO - Estimated time left: 1 days, 15 hours, 1 minutes, 54 seconds. Time passed: 2 hours, 28 minutes, 39 seconds
+2026-02-12 21:34:48,481 - my_experiment - advP_BigMap_5M - my_run - INFO - Recent Stats | t_env:     350000 | Episode:     1750
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.6770	grad_norm:                73.7563
+info_nce_loss:             0.5667	loss:                      8.1447	q_loss:                    7.4043	return_mean:              18.1242
+return_std:                2.0839	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        122.4914
+test_return_std:           7.2496	
+2026-02-12 21:34:54,130 - my_experiment - advP_BigMap_5M - my_run - INFO - t_env: 350200 / 5050000
+2026-02-12 21:34:54,131 - my_experiment - advP_BigMap_5M - my_run - INFO - Estimated time left: 1 days, 14 hours, 33 minutes, 28 seconds. Time passed: 2 hours, 53 minutes, 15 seconds
+2026-02-12 21:59:29,329 - my_experiment - advP_BigMap_5M - my_run - INFO - Recent Stats | t_env:     400000 | Episode:     2000
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.6295	grad_norm:               166.1941
+info_nce_loss:             0.4780	loss:                      8.5990	q_loss:                    7.8172	return_mean:              26.6287
+return_std:                2.2031	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        126.9878
+test_return_std:           6.5925	
+2026-02-12 21:59:34,908 - my_experiment - advP_BigMap_5M - my_run - INFO - t_env: 400200 / 5050000
+2026-02-12 21:59:34,909 - my_experiment - advP_BigMap_5M - my_run - INFO - Estimated time left: 1 days, 14 hours, 15 minutes, 6 seconds. Time passed: 3 hours, 17 minutes, 56 seconds
+2026-02-12 22:24:09,059 - my_experiment - advP_BigMap_5M - my_run - INFO - Recent Stats | t_env:     450000 | Episode:     2250
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.5820	grad_norm:               211.5502
+info_nce_loss:             0.5019	loss:                     10.6316	q_loss:                    9.6651	return_mean:              34.8191
+return_std:                2.3854	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        127.0734
+test_return_std:           7.0833	
+2026-02-12 22:24:14,645 - my_experiment - advP_BigMap_5M - my_run - INFO - t_env: 450200 / 5050000
+2026-02-12 22:24:14,646 - my_experiment - advP_BigMap_5M - my_run - INFO - Estimated time left: 1 days, 13 hours, 48 minutes, 49 seconds. Time passed: 3 hours, 42 minutes, 36 seconds
+2026-02-12 22:48:49,074 - my_experiment - advP_BigMap_5M - my_run - INFO - Recent Stats | t_env:     500000 | Episode:     2500
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.5345	grad_norm:               359.4500
+info_nce_loss:             0.4889	loss:                     10.1763	q_loss:                    9.2512	return_mean:              43.5005
+return_std:                2.4632	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        127.2957
+test_return_std:           6.7184	
+2026-02-12 22:48:54,724 - my_experiment - advP_BigMap_5M - my_run - INFO - t_env: 500200 / 5050000
+2026-02-12 22:48:54,725 - my_experiment - advP_BigMap_5M - my_run - INFO - Estimated time left: 1 days, 13 hours, 24 minutes, 41 seconds. Time passed: 4 hours, 7 minutes, 16 seconds
+2026-02-12 22:50:11,905 - my_experiment - advP_BigMap_5M - my_run - INFO - Saving models to work_dirs/my_experiment/advP_BigMap_5M/my_run/20260212_184118/models/500200
+2026-02-12 23:13:29,780 - my_experiment - advP_BigMap_5M - my_run - INFO - Recent Stats | t_env:     550000 | Episode:     2750
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.4870	grad_norm:               379.6985
+info_nce_loss:             0.6494	loss:                      8.7420	q_loss:                    7.9473	return_mean:              51.7774
+return_std:                2.4861	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        130.9209
+test_return_std:           6.3010	
+2026-02-12 23:13:35,415 - my_experiment - advP_BigMap_5M - my_run - INFO - t_env: 550200 / 5050000
+2026-02-12 23:13:35,416 - my_experiment - advP_BigMap_5M - my_run - INFO - Estimated time left: 1 days, 13 hours, 56 seconds. Time passed: 4 hours, 31 minutes, 57 seconds
+2026-02-12 23:38:10,279 - my_experiment - advP_BigMap_5M - my_run - INFO - Recent Stats | t_env:     600000 | Episode:     3000
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.4395	grad_norm:               286.9328
+info_nce_loss:             0.6383	loss:                      7.8231	q_loss:                    7.1119	return_mean:              60.1397
+return_std:                2.5802	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        132.0049
+test_return_std:           6.4888	
+2026-02-12 23:38:15,887 - my_experiment - advP_BigMap_5M - my_run - INFO - t_env: 600200 / 5050000
+2026-02-12 23:38:15,888 - my_experiment - advP_BigMap_5M - my_run - INFO - Estimated time left: 1 days, 12 hours, 35 minutes, 56 seconds. Time passed: 4 hours, 56 minutes, 37 seconds
+2026-02-13 00:02:50,429 - my_experiment - advP_BigMap_5M - my_run - INFO - Recent Stats | t_env:     650000 | Episode:     3250
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.3920	grad_norm:               423.1332
+info_nce_loss:             0.4557	loss:                      9.3060	q_loss:                    8.4600	return_mean:              68.3439
+return_std:                2.7124	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        132.8079
+test_return_std:           6.7335	
+2026-02-13 00:02:56,094 - my_experiment - advP_BigMap_5M - my_run - INFO - t_env: 650200 / 5050000
+2026-02-13 00:02:56,095 - my_experiment - advP_BigMap_5M - my_run - INFO - Estimated time left: 1 days, 12 hours, 10 minutes, 52 seconds. Time passed: 5 hours, 21 minutes, 17 seconds
+2026-02-13 00:27:30,434 - my_experiment - advP_BigMap_5M - my_run - INFO - Recent Stats | t_env:     700000 | Episode:     3500
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.3445	grad_norm:               881.4648
+info_nce_loss:             0.4253	loss:                     11.7536	q_loss:                   10.6851	return_mean:              76.2945
+return_std:                2.9311	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        132.9687
+test_return_std:           6.8067	
+2026-02-13 00:27:36,053 - my_experiment - advP_BigMap_5M - my_run - INFO - t_env: 700200 / 5050000
+2026-02-13 00:27:36,054 - my_experiment - advP_BigMap_5M - my_run - INFO - Estimated time left: 1 days, 11 hours, 45 minutes, 50 seconds. Time passed: 5 hours, 45 minutes, 57 seconds
+2026-02-13 00:52:11,005 - my_experiment - advP_BigMap_5M - my_run - INFO - Recent Stats | t_env:     750000 | Episode:     3750
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.2970	grad_norm:               625.8405
+info_nce_loss:             0.4502	loss:                     10.0301	q_loss:                    9.1183	return_mean:              84.7034
+return_std:                3.0543	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        133.6778
+test_return_std:           6.7474	
+2026-02-13 00:52:16,613 - my_experiment - advP_BigMap_5M - my_run - INFO - t_env: 750200 / 5050000
+2026-02-13 00:52:16,614 - my_experiment - advP_BigMap_5M - my_run - INFO - Estimated time left: 1 days, 11 hours, 22 minutes, 2 seconds. Time passed: 6 hours, 10 minutes, 38 seconds
+2026-02-13 01:16:47,114 - my_experiment - advP_BigMap_5M - my_run - INFO - Recent Stats | t_env:     800000 | Episode:     4000
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.2495	grad_norm:               807.8988
+info_nce_loss:             0.4304	loss:                     10.4085	q_loss:                    9.4623	return_mean:              92.7822
+return_std:                3.0482	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        132.7246
+test_return_std:           6.6919	
+2026-02-13 01:16:52,636 - my_experiment - advP_BigMap_5M - my_run - INFO - t_env: 800200 / 5050000
+2026-02-13 01:16:52,637 - my_experiment - advP_BigMap_5M - my_run - INFO - Estimated time left: 1 days, 10 hours, 50 minutes, 56 seconds. Time passed: 6 hours, 35 minutes, 14 seconds
+2026-02-13 01:40:56,554 - my_experiment - advP_BigMap_5M - my_run - INFO - Recent Stats | t_env:     850000 | Episode:     4250
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.2020	grad_norm:               575.5923
+info_nce_loss:             0.4309	loss:                     10.0786	q_loss:                    9.1624	return_mean:             100.9451
+return_std:                3.5076	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        133.9514
+test_return_std:           6.8757	
+2026-02-13 01:41:02,060 - my_experiment - advP_BigMap_5M - my_run - INFO - t_env: 850200 / 5050000
+2026-02-13 01:41:02,061 - my_experiment - advP_BigMap_5M - my_run - INFO - Estimated time left: 1 days, 9 hours, 49 minutes, 5 seconds. Time passed: 6 hours, 59 minutes, 23 seconds
+2026-02-13 02:05:04,181 - my_experiment - advP_BigMap_5M - my_run - INFO - Recent Stats | t_env:     900000 | Episode:     4500
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.1545	grad_norm:               866.7733
+info_nce_loss:             0.2827	loss:                      9.8284	q_loss:                    8.9349	return_mean:             109.1962
+return_std:                3.6665	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        134.1704
+test_return_std:           6.8649	
+2026-02-13 02:05:09,672 - my_experiment - advP_BigMap_5M - my_run - INFO - t_env: 900200 / 5050000
+2026-02-13 02:05:09,673 - my_experiment - advP_BigMap_5M - my_run - INFO - Estimated time left: 1 days, 9 hours, 22 minutes, 26 seconds. Time passed: 7 hours, 23 minutes, 31 seconds
+2026-02-13 02:29:10,340 - my_experiment - advP_BigMap_5M - my_run - INFO - Recent Stats | t_env:     950000 | Episode:     4750
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.1070	grad_norm:               977.8174
+info_nce_loss:             0.4511	loss:                      9.4500	q_loss:                    8.5909	return_mean:             116.7111
+return_std:                4.3362	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        135.3694
+test_return_std:           6.3036	
+2026-02-13 02:29:15,834 - my_experiment - advP_BigMap_5M - my_run - INFO - t_env: 950200 / 5050000
+2026-02-13 02:29:15,835 - my_experiment - advP_BigMap_5M - my_run - INFO - Estimated time left: 1 days, 8 hours, 56 minutes, 19 seconds. Time passed: 7 hours, 47 minutes, 37 seconds
+2026-02-13 02:53:19,142 - my_experiment - advP_BigMap_5M - my_run - INFO - Recent Stats | t_env:    1000000 | Episode:     5000
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0595	grad_norm:               895.9507
+info_nce_loss:             0.4989	loss:                      9.5948	q_loss:                    8.7225	return_mean:             124.7357
+return_std:                4.3090	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        135.9698
+test_return_std:           6.1334	
+2026-02-13 02:53:24,631 - my_experiment - advP_BigMap_5M - my_run - INFO - t_env: 1000200 / 5050000
+2026-02-13 02:53:24,632 - my_experiment - advP_BigMap_5M - my_run - INFO - Estimated time left: 1 days, 8 hours, 35 minutes, 46 seconds. Time passed: 8 hours, 11 minutes, 46 seconds
+2026-02-13 02:54:40,312 - my_experiment - advP_BigMap_5M - my_run - INFO - Saving models to work_dirs/my_experiment/advP_BigMap_5M/my_run/20260212_184118/models/1000200
+2026-02-13 03:17:27,165 - my_experiment - advP_BigMap_5M - my_run - INFO - Recent Stats | t_env:    1050000 | Episode:     5250
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               1016.1767
+info_nce_loss:             0.5673	loss:                     10.1227	q_loss:                    9.2025	return_mean:             130.2426
+return_std:                5.1118	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        136.4720
+test_return_std:           6.6997	
+2026-02-13 03:17:32,642 - my_experiment - advP_BigMap_5M - my_run - INFO - t_env: 1050200 / 5050000
+2026-02-13 03:17:32,644 - my_experiment - advP_BigMap_5M - my_run - INFO - Estimated time left: 1 days, 8 hours, 10 minutes, 35 seconds. Time passed: 8 hours, 35 minutes, 54 seconds
+2026-02-13 03:41:35,057 - my_experiment - advP_BigMap_5M - my_run - INFO - Recent Stats | t_env:    1100000 | Episode:     5500
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               1310.8313
+info_nce_loss:             0.5003	loss:                      9.3913	q_loss:                    8.5376	return_mean:             130.9714
+return_std:                4.6061	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        135.8633
+test_return_std:           7.0501	
+2026-02-13 03:41:40,544 - my_experiment - advP_BigMap_5M - my_run - INFO - t_env: 1100200 / 5050000
+2026-02-13 03:41:40,545 - my_experiment - advP_BigMap_5M - my_run - INFO - Estimated time left: 1 days, 7 hours, 46 minutes, 18 seconds. Time passed: 9 hours, 2 seconds
+2026-02-13 04:05:43,958 - my_experiment - advP_BigMap_5M - my_run - INFO - Recent Stats | t_env:    1150000 | Episode:     5750
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               1415.9407
+info_nce_loss:             0.6037	loss:                      9.3339	q_loss:                    8.4854	return_mean:             131.2540
+return_std:                4.8701	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        136.3452
+test_return_std:           6.7303	
+2026-02-13 04:05:49,493 - my_experiment - advP_BigMap_5M - my_run - INFO - t_env: 1150200 / 5050000
+2026-02-13 04:05:49,494 - my_experiment - advP_BigMap_5M - my_run - INFO - Estimated time left: 1 days, 7 hours, 23 minutes, 32 seconds. Time passed: 9 hours, 24 minutes, 11 seconds
+2026-02-13 04:29:52,229 - my_experiment - advP_BigMap_5M - my_run - INFO - Recent Stats | t_env:    1200000 | Episode:     6000
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               1358.0639
+info_nce_loss:             0.3886	loss:                      8.6969	q_loss:                    7.9063	return_mean:             132.2617
+return_std:                4.8034	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        136.3760
+test_return_std:           6.5251	
+2026-02-13 04:29:57,700 - my_experiment - advP_BigMap_5M - my_run - INFO - t_env: 1200200 / 5050000
+2026-02-13 04:29:57,701 - my_experiment - advP_BigMap_5M - my_run - INFO - Estimated time left: 1 days, 6 hours, 58 minutes, 26 seconds. Time passed: 9 hours, 48 minutes, 19 seconds
+2026-02-13 04:53:58,888 - my_experiment - advP_BigMap_5M - my_run - INFO - Recent Stats | t_env:    1250000 | Episode:     6250
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               2045.1184
+info_nce_loss:             0.7008	loss:                     10.3870	q_loss:                    9.4427	return_mean:             133.6311
+return_std:                4.4979	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        137.4239
+test_return_std:           6.3018	
+2026-02-13 04:54:04,363 - my_experiment - advP_BigMap_5M - my_run - INFO - t_env: 1250200 / 5050000
+2026-02-13 04:54:04,364 - my_experiment - advP_BigMap_5M - my_run - INFO - Estimated time left: 1 days, 6 hours, 32 minutes, 20 seconds. Time passed: 10 hours, 12 minutes, 26 seconds
+2026-02-13 05:18:04,698 - my_experiment - advP_BigMap_5M - my_run - INFO - Recent Stats | t_env:    1300000 | Episode:     6500
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               1677.4288
+info_nce_loss:             0.4542	loss:                      8.1831	q_loss:                    7.4392	return_mean:             133.8847
+return_std:                4.4160	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        138.4666
+test_return_std:           5.4613	
+2026-02-13 05:18:10,182 - my_experiment - advP_BigMap_5M - my_run - INFO - t_env: 1300200 / 5050000
+2026-02-13 05:18:10,183 - my_experiment - advP_BigMap_5M - my_run - INFO - Estimated time left: 1 days, 6 hours, 7 minutes, 10 seconds. Time passed: 10 hours, 36 minutes, 31 seconds
+2026-02-13 05:42:10,488 - my_experiment - advP_BigMap_5M - my_run - INFO - Recent Stats | t_env:    1350000 | Episode:     6750
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               1844.3937
+info_nce_loss:             0.5382	loss:                      8.8794	q_loss:                    8.0722	return_mean:             134.2601
+return_std:                4.3429	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        139.5116
+test_return_std:           5.0439	
+2026-02-13 05:42:15,989 - my_experiment - advP_BigMap_5M - my_run - INFO - t_env: 1350200 / 5050000
+2026-02-13 05:42:15,991 - my_experiment - advP_BigMap_5M - my_run - INFO - Estimated time left: 1 days, 5 hours, 43 minutes, 3 seconds. Time passed: 11 hours, 37 seconds
+2026-02-13 06:06:15,926 - my_experiment - advP_BigMap_5M - my_run - INFO - Recent Stats | t_env:    1400000 | Episode:     7000
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               1598.9730
+info_nce_loss:             0.5641	loss:                      8.2520	q_loss:                    7.5019	return_mean:             135.1578
+return_std:                4.2724	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        139.9898
+test_return_std:           4.7881	
+2026-02-13 06:06:21,395 - my_experiment - advP_BigMap_5M - my_run - INFO - t_env: 1400200 / 5050000
+2026-02-13 06:06:21,396 - my_experiment - advP_BigMap_5M - my_run - INFO - Estimated time left: 1 days, 5 hours, 18 minutes, 28 seconds. Time passed: 11 hours, 24 minutes, 43 seconds
+2026-02-13 06:30:20,900 - my_experiment - advP_BigMap_5M - my_run - INFO - Recent Stats | t_env:    1450000 | Episode:     7250
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               1696.8852
+info_nce_loss:             0.4575	loss:                      8.8429	q_loss:                    8.0390	return_mean:             136.2141
+return_std:                4.0960	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        141.3430
+test_return_std:           4.8751	
+2026-02-13 06:30:26,392 - my_experiment - advP_BigMap_5M - my_run - INFO - t_env: 1450200 / 5050000
+2026-02-13 06:30:26,393 - my_experiment - advP_BigMap_5M - my_run - INFO - Estimated time left: 1 days, 4 hours, 53 minutes, 53 seconds. Time passed: 11 hours, 48 minutes, 48 seconds
+2026-02-13 06:54:26,963 - my_experiment - advP_BigMap_5M - my_run - INFO - Recent Stats | t_env:    1500000 | Episode:     7500
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               1844.6093
+info_nce_loss:             0.5122	loss:                      7.6977	q_loss:                    6.9979	return_mean:             135.9447
+return_std:                3.9499	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        141.8773
+test_return_std:           5.1224	
+2026-02-13 06:54:32,432 - my_experiment - advP_BigMap_5M - my_run - INFO - t_env: 1500200 / 5050000
+2026-02-13 06:54:32,433 - my_experiment - advP_BigMap_5M - my_run - INFO - Estimated time left: 1 days, 4 hours, 31 minutes, 3 seconds. Time passed: 12 hours, 12 minutes, 54 seconds
+2026-02-13 06:55:47,681 - my_experiment - advP_BigMap_5M - my_run - INFO - Saving models to work_dirs/my_experiment/advP_BigMap_5M/my_run/20260212_184118/models/1500200
+2026-02-13 07:18:33,357 - my_experiment - advP_BigMap_5M - my_run - INFO - Recent Stats | t_env:    1550000 | Episode:     7750
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               1724.2811
+info_nce_loss:             0.4994	loss:                      8.1863	q_loss:                    7.4421	return_mean:             136.4725
+return_std:                4.2184	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        142.4082
+test_return_std:           5.8052	
+2026-02-13 07:18:38,839 - my_experiment - advP_BigMap_5M - my_run - INFO - t_env: 1550200 / 5050000
+2026-02-13 07:18:38,840 - my_experiment - advP_BigMap_5M - my_run - INFO - Estimated time left: 1 days, 4 hours, 7 minutes, 22 seconds. Time passed: 12 hours, 37 minutes, 0 seconds
+2026-02-13 07:42:38,990 - my_experiment - advP_BigMap_5M - my_run - INFO - Recent Stats | t_env:    1600000 | Episode:     8000
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               3033.8007
+info_nce_loss:             0.3687	loss:                      7.4639	q_loss:                    6.7854	return_mean:             136.2401
+return_std:                4.2708	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        143.0377
+test_return_std:           5.2850	
+2026-02-13 07:42:44,444 - my_experiment - advP_BigMap_5M - my_run - INFO - t_env: 1600200 / 5050000
+2026-02-13 07:42:44,445 - my_experiment - advP_BigMap_5M - my_run - INFO - Estimated time left: 1 days, 3 hours, 42 minutes, 20 seconds. Time passed: 13 hours, 1 minutes, 6 seconds
+2026-02-13 08:06:44,677 - my_experiment - advP_BigMap_5M - my_run - INFO - Recent Stats | t_env:    1650000 | Episode:     8250
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               2227.1257
+info_nce_loss:             0.2934	loss:                      7.2049	q_loss:                    6.5499	return_mean:             136.9048
+return_std:                4.1699	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        143.5468
+test_return_std:           5.7480	
+2026-02-13 08:06:50,134 - my_experiment - advP_BigMap_5M - my_run - INFO - t_env: 1650200 / 5050000
+2026-02-13 08:06:50,135 - my_experiment - advP_BigMap_5M - my_run - INFO - Estimated time left: 1 days, 3 hours, 18 minutes, 21 seconds. Time passed: 13 hours, 25 minutes, 11 seconds
+2026-02-13 08:30:49,615 - my_experiment - advP_BigMap_5M - my_run - INFO - Recent Stats | t_env:    1700000 | Episode:     8500
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               1973.8943
+info_nce_loss:             0.5491	loss:                      6.5239	q_loss:                    5.9308	return_mean:             136.6378
+return_std:                4.0837	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        143.9233
+test_return_std:           5.6499	
+2026-02-13 08:30:55,109 - my_experiment - advP_BigMap_5M - my_run - INFO - t_env: 1700200 / 5050000
+2026-02-13 08:30:55,110 - my_experiment - advP_BigMap_5M - my_run - INFO - Estimated time left: 1 days, 2 hours, 53 minutes, 27 seconds. Time passed: 13 hours, 49 minutes, 16 seconds
+2026-02-13 08:54:56,298 - my_experiment - advP_BigMap_5M - my_run - INFO - Recent Stats | t_env:    1750000 | Episode:     8750
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               2283.4136
+info_nce_loss:             0.4087	loss:                      7.4570	q_loss:                    6.7790	return_mean:             137.5912
+return_std:                4.0223	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        144.1583
+test_return_std:           5.4279	
+2026-02-13 08:55:01,795 - my_experiment - advP_BigMap_5M - my_run - INFO - t_env: 1750200 / 5050000
+2026-02-13 08:55:01,796 - my_experiment - advP_BigMap_5M - my_run - INFO - Estimated time left: 1 days, 2 hours, 31 minutes, 15 seconds. Time passed: 14 hours, 13 minutes, 23 seconds
+2026-02-13 09:19:02,368 - my_experiment - advP_BigMap_5M - my_run - INFO - Recent Stats | t_env:    1800000 | Episode:     9000
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               1863.8137
+info_nce_loss:             0.3058	loss:                      6.2306	q_loss:                    5.6642	return_mean:             138.0320
+return_std:                3.4237	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        145.1225
+test_return_std:           4.7371	
+2026-02-13 09:19:07,854 - my_experiment - advP_BigMap_5M - my_run - INFO - t_env: 1800200 / 5050000
+2026-02-13 09:19:07,855 - my_experiment - advP_BigMap_5M - my_run - INFO - Estimated time left: 1 days, 2 hours, 6 minutes, 28 seconds. Time passed: 14 hours, 37 minutes, 29 seconds
+2026-02-13 09:43:08,675 - my_experiment - advP_BigMap_5M - my_run - INFO - Recent Stats | t_env:    1850000 | Episode:     9250
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               2280.2889
+info_nce_loss:             0.4927	loss:                      7.4676	q_loss:                    6.7888	return_mean:             137.8096
+return_std:                4.0753	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        145.3911
+test_return_std:           4.9618	
+2026-02-13 09:43:14,191 - my_experiment - advP_BigMap_5M - my_run - INFO - t_env: 1850200 / 5050000
+2026-02-13 09:43:14,192 - my_experiment - advP_BigMap_5M - my_run - INFO - Estimated time left: 1 days, 1 hours, 42 minutes, 39 seconds. Time passed: 15 hours, 1 minutes, 35 seconds
+2026-02-13 10:07:14,608 - my_experiment - advP_BigMap_5M - my_run - INFO - Recent Stats | t_env:    1900000 | Episode:     9500
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               2429.2710
+info_nce_loss:             0.4327	loss:                      6.5042	q_loss:                    5.9129	return_mean:             138.9618
+return_std:                3.6541	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        146.0669
+test_return_std:           4.5159	
+2026-02-13 10:07:20,079 - my_experiment - advP_BigMap_5M - my_run - INFO - t_env: 1900200 / 5050000
+2026-02-13 10:07:20,080 - my_experiment - advP_BigMap_5M - my_run - INFO - Estimated time left: 1 days, 1 hours, 18 minutes, 5 seconds. Time passed: 15 hours, 25 minutes, 41 seconds
+2026-02-13 10:31:21,136 - my_experiment - advP_BigMap_5M - my_run - INFO - Recent Stats | t_env:    1950000 | Episode:     9750
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               2727.1540
+info_nce_loss:             0.4943	loss:                      7.5691	q_loss:                    6.8810	return_mean:             139.6235
+return_std:                3.3065	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        146.6615
+test_return_std:           4.1671	
+2026-02-13 10:31:26,627 - my_experiment - advP_BigMap_5M - my_run - INFO - t_env: 1950200 / 5050000
+2026-02-13 10:31:26,628 - my_experiment - advP_BigMap_5M - my_run - INFO - Estimated time left: 1 days, 54 minutes, 40 seconds. Time passed: 15 hours, 49 minutes, 48 seconds
+2026-02-13 10:55:28,752 - my_experiment - advP_BigMap_5M - my_run - INFO - Recent Stats | t_env:    2000000 | Episode:    10000
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               2613.2915
+info_nce_loss:             0.4375	loss:                      6.4149	q_loss:                    5.8317	return_mean:             139.8533
+return_std:                3.1866	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        147.4250
+test_return_std:           3.8640	
+2026-02-13 10:55:34,244 - my_experiment - advP_BigMap_5M - my_run - INFO - t_env: 2000200 / 5050000
+2026-02-13 10:55:34,245 - my_experiment - advP_BigMap_5M - my_run - INFO - Estimated time left: 1 days, 31 minutes, 38 seconds. Time passed: 16 hours, 13 minutes, 55 seconds
+2026-02-13 10:56:49,514 - my_experiment - advP_BigMap_5M - my_run - INFO - Saving models to work_dirs/my_experiment/advP_BigMap_5M/my_run/20260212_184118/models/2000200
+2026-02-13 11:19:35,931 - my_experiment - advP_BigMap_5M - my_run - INFO - Recent Stats | t_env:    2050000 | Episode:    10250
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               2640.2412
+info_nce_loss:             0.4566	loss:                      6.7639	q_loss:                    6.1490	return_mean:             140.4613
+return_std:                2.9215	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        148.0640
+test_return_std:           3.6283	
+2026-02-13 11:19:41,427 - my_experiment - advP_BigMap_5M - my_run - INFO - t_env: 2050200 / 5050000
+2026-02-13 11:19:41,428 - my_experiment - advP_BigMap_5M - my_run - INFO - Estimated time left: 1 days, 7 minutes, 5 seconds. Time passed: 16 hours, 38 minutes, 3 seconds
+2026-02-13 11:43:42,529 - my_experiment - advP_BigMap_5M - my_run - INFO - Recent Stats | t_env:    2100000 | Episode:    10500
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               2478.6925
+info_nce_loss:             0.4532	loss:                      5.9195	q_loss:                    5.3814	return_mean:             140.9497
+return_std:                2.9402	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        148.8280
+test_return_std:           3.5897	
+2026-02-13 11:43:48,008 - my_experiment - advP_BigMap_5M - my_run - INFO - t_env: 2100200 / 5050000
+2026-02-13 11:43:48,009 - my_experiment - advP_BigMap_5M - my_run - INFO - Estimated time left: 23 hours, 42 minutes, 22 seconds. Time passed: 17 hours, 2 minutes, 9 seconds
+2026-02-13 12:07:47,255 - my_experiment - advP_BigMap_5M - my_run - INFO - Recent Stats | t_env:    2150000 | Episode:    10750
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               2834.6877
+info_nce_loss:             0.3722	loss:                      6.4359	q_loss:                    5.8508	return_mean:             141.0696
+return_std:                2.6311	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        149.5911
+test_return_std:           3.2948	
+2026-02-13 12:07:52,745 - my_experiment - advP_BigMap_5M - my_run - INFO - t_env: 2150200 / 5050000
+2026-02-13 12:07:52,746 - my_experiment - advP_BigMap_5M - my_run - INFO - Estimated time left: 23 hours, 16 minutes, 28 seconds. Time passed: 17 hours, 26 minutes, 14 seconds
+2026-02-13 12:31:53,203 - my_experiment - advP_BigMap_5M - my_run - INFO - Recent Stats | t_env:    2200000 | Episode:    11000
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               2517.5498
+info_nce_loss:             0.5359	loss:                      5.6558	q_loss:                    5.1417	return_mean:             141.5259
+return_std:                2.8121	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        149.8180
+test_return_std:           3.2785	
+2026-02-13 12:31:58,688 - my_experiment - advP_BigMap_5M - my_run - INFO - t_env: 2200200 / 5050000
+2026-02-13 12:31:58,689 - my_experiment - advP_BigMap_5M - my_run - INFO - Estimated time left: 22 hours, 53 minutes, 32 seconds. Time passed: 17 hours, 50 minutes, 20 seconds
+2026-02-13 12:55:58,292 - my_experiment - advP_BigMap_5M - my_run - INFO - Recent Stats | t_env:    2250000 | Episode:    11250
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               2968.0358
+info_nce_loss:             0.3796	loss:                      6.4530	q_loss:                    5.8664	return_mean:             141.9724
+return_std:                2.4556	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        150.2391
+test_return_std:           3.3729	
+2026-02-13 12:56:03,779 - my_experiment - advP_BigMap_5M - my_run - INFO - t_env: 2250200 / 5050000
+2026-02-13 12:56:03,780 - my_experiment - advP_BigMap_5M - my_run - INFO - Estimated time left: 22 hours, 28 minutes, 39 seconds. Time passed: 18 hours, 14 minutes, 25 seconds
+2026-02-13 13:20:03,362 - my_experiment - advP_BigMap_5M - my_run - INFO - Recent Stats | t_env:    2300000 | Episode:    11500
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               2722.3346
+info_nce_loss:             0.5436	loss:                      5.4732	q_loss:                    4.9756	return_mean:             141.9436
+return_std:                2.5681	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        150.1782
+test_return_std:           3.5290	
+2026-02-13 13:20:08,855 - my_experiment - advP_BigMap_5M - my_run - INFO - t_env: 2300200 / 5050000
+2026-02-13 13:20:08,856 - my_experiment - advP_BigMap_5M - my_run - INFO - Estimated time left: 22 hours, 4 minutes, 33 seconds. Time passed: 18 hours, 38 minutes, 30 seconds
+2026-02-13 13:44:09,511 - my_experiment - advP_BigMap_5M - my_run - INFO - Recent Stats | t_env:    2350000 | Episode:    11750
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               3013.5222
+info_nce_loss:             0.4718	loss:                      6.0630	q_loss:                    5.5118	return_mean:             142.0091
+return_std:                2.4630	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        150.7929
+test_return_std:           3.0266	
+2026-02-13 13:44:15,004 - my_experiment - advP_BigMap_5M - my_run - INFO - t_env: 2350200 / 5050000
+2026-02-13 13:44:15,004 - my_experiment - advP_BigMap_5M - my_run - INFO - Estimated time left: 21 hours, 41 minutes, 26 seconds. Time passed: 19 hours, 2 minutes, 36 seconds
+2026-02-13 14:08:14,070 - my_experiment - advP_BigMap_5M - my_run - INFO - Recent Stats | t_env:    2400000 | Episode:    12000
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               2672.9538
+info_nce_loss:             0.3803	loss:                      5.1198	q_loss:                    4.6544	return_mean:             142.3638
+return_std:                2.4059	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        151.0318
+test_return_std:           2.9115	
+2026-02-13 14:08:19,437 - my_experiment - advP_BigMap_5M - my_run - INFO - t_env: 2400200 / 5050000
+2026-02-13 14:08:19,438 - my_experiment - advP_BigMap_5M - my_run - INFO - Estimated time left: 21 hours, 15 minutes, 49 seconds. Time passed: 19 hours, 26 minutes, 41 seconds
+2026-02-13 14:32:17,349 - my_experiment - advP_BigMap_5M - my_run - INFO - Recent Stats | t_env:    2450000 | Episode:    12250
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               2707.6175
+info_nce_loss:             0.5415	loss:                      5.2554	q_loss:                    4.7776	return_mean:             142.6487
+return_std:                2.5825	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        151.2430
+test_return_std:           2.8355	
+2026-02-13 14:32:22,910 - my_experiment - advP_BigMap_5M - my_run - INFO - t_env: 2450200 / 5050000
+2026-02-13 14:32:22,911 - my_experiment - advP_BigMap_5M - my_run - INFO - Estimated time left: 20 hours, 50 minutes, 54 seconds. Time passed: 19 hours, 50 minutes, 44 seconds
+2026-02-13 14:56:21,905 - my_experiment - advP_BigMap_5M - my_run - INFO - Recent Stats | t_env:    2500000 | Episode:    12500
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               2366.9152
+info_nce_loss:             0.5927	loss:                      4.5396	q_loss:                    4.1269	return_mean:             142.7379
+return_std:                2.5230	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        151.0889
+test_return_std:           3.0822	
+2026-02-13 14:56:27,385 - my_experiment - advP_BigMap_5M - my_run - INFO - t_env: 2500200 / 5050000
+2026-02-13 14:56:27,386 - my_experiment - advP_BigMap_5M - my_run - INFO - Estimated time left: 20 hours, 27 minutes, 42 seconds. Time passed: 20 hours, 14 minutes, 49 seconds
+2026-02-13 14:57:42,331 - my_experiment - advP_BigMap_5M - my_run - INFO - Saving models to work_dirs/my_experiment/advP_BigMap_5M/my_run/20260212_184118/models/2500200
+2026-02-13 15:20:24,624 - my_experiment - advP_BigMap_5M - my_run - INFO - Recent Stats | t_env:    2550000 | Episode:    12750
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               2324.4425
+info_nce_loss:             0.3985	loss:                      4.6902	q_loss:                    4.2638	return_mean:             142.8382
+return_std:                2.5607	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        151.4714
+test_return_std:           3.0398	
+2026-02-13 15:20:30,125 - my_experiment - advP_BigMap_5M - my_run - INFO - t_env: 2550200 / 5050000
+2026-02-13 15:20:30,126 - my_experiment - advP_BigMap_5M - my_run - INFO - Estimated time left: 20 hours, 2 minutes, 11 seconds. Time passed: 20 hours, 38 minutes, 51 seconds
+2026-02-13 15:44:27,480 - my_experiment - advP_BigMap_5M - my_run - INFO - Recent Stats | t_env:    2600000 | Episode:    13000
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               2371.4362
+info_nce_loss:             0.3703	loss:                      4.7813	q_loss:                    4.3466	return_mean:             142.9783
+return_std:                2.3870	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        151.6109
+test_return_std:           3.0901	
+2026-02-13 15:44:32,964 - my_experiment - advP_BigMap_5M - my_run - INFO - t_env: 2600200 / 5050000
+2026-02-13 15:44:32,965 - my_experiment - advP_BigMap_5M - my_run - INFO - Estimated time left: 19 hours, 38 minutes, 13 seconds. Time passed: 21 hours, 2 minutes, 54 seconds
+2026-02-13 16:08:30,265 - my_experiment - advP_BigMap_5M - my_run - INFO - Recent Stats | t_env:    2650000 | Episode:    13250
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               2167.9037
+info_nce_loss:             0.4499	loss:                      4.2227	q_loss:                    3.8388	return_mean:             142.9335
+return_std:                2.3150	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        151.7670
+test_return_std:           3.1401	
+2026-02-13 16:08:35,822 - my_experiment - advP_BigMap_5M - my_run - INFO - t_env: 2650200 / 5050000
+2026-02-13 16:08:35,823 - my_experiment - advP_BigMap_5M - my_run - INFO - Estimated time left: 19 hours, 14 minutes, 11 seconds. Time passed: 21 hours, 26 minutes, 57 seconds
+2026-02-13 16:32:33,248 - my_experiment - advP_BigMap_5M - my_run - INFO - Recent Stats | t_env:    2700000 | Episode:    13500
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               2276.3789
+info_nce_loss:             0.4640	loss:                      4.7800	q_loss:                    4.3455	return_mean:             143.1201
+return_std:                2.3824	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        152.0741
+test_return_std:           2.9769	
+2026-02-13 16:32:38,733 - my_experiment - advP_BigMap_5M - my_run - INFO - t_env: 2700200 / 5050000
+2026-02-13 16:32:38,734 - my_experiment - advP_BigMap_5M - my_run - INFO - Estimated time left: 18 hours, 50 minutes, 11 seconds. Time passed: 21 hours, 51 minutes, 0 seconds
+2026-02-13 16:56:36,697 - my_experiment - advP_BigMap_5M - my_run - INFO - Recent Stats | t_env:    2750000 | Episode:    13750
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               1961.7946
+info_nce_loss:             0.1744	loss:                      3.9167	q_loss:                    3.5606	return_mean:             143.3560
+return_std:                2.1877	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        152.6348
+test_return_std:           2.7206	
+2026-02-13 16:56:42,216 - my_experiment - advP_BigMap_5M - my_run - INFO - t_env: 2750200 / 5050000
+2026-02-13 16:56:42,217 - my_experiment - advP_BigMap_5M - my_run - INFO - Estimated time left: 18 hours, 26 minutes, 34 seconds. Time passed: 22 hours, 15 minutes, 3 seconds
+2026-02-13 17:20:40,303 - my_experiment - advP_BigMap_5M - my_run - INFO - Recent Stats | t_env:    2800000 | Episode:    14000
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               1843.9470
+info_nce_loss:             0.3710	loss:                      3.5834	q_loss:                    3.2577	return_mean:             143.4503
+return_std:                2.1163	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        152.7898
+test_return_std:           2.6319	
+2026-02-13 17:20:45,788 - my_experiment - advP_BigMap_5M - my_run - INFO - t_env: 2800200 / 5050000
+2026-02-13 17:20:45,789 - my_experiment - advP_BigMap_5M - my_run - INFO - Estimated time left: 18 hours, 2 minutes, 34 seconds. Time passed: 22 hours, 39 minutes, 7 seconds
+2026-02-13 17:44:43,683 - my_experiment - advP_BigMap_5M - my_run - INFO - Recent Stats | t_env:    2850000 | Episode:    14250
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               1811.2582
+info_nce_loss:             0.3470	loss:                      3.7106	q_loss:                    3.3733	return_mean:             143.3800
+return_std:                2.3427	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        152.8486
+test_return_std:           2.6598	
+2026-02-13 17:44:49,153 - my_experiment - advP_BigMap_5M - my_run - INFO - t_env: 2850200 / 5050000
+2026-02-13 17:44:49,154 - my_experiment - advP_BigMap_5M - my_run - INFO - Estimated time left: 17 hours, 38 minutes, 22 seconds. Time passed: 23 hours, 3 minutes, 10 seconds
+2026-02-13 18:08:46,820 - my_experiment - advP_BigMap_5M - my_run - INFO - Recent Stats | t_env:    2900000 | Episode:    14500
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               1535.5024
+info_nce_loss:             0.4406	loss:                      3.1978	q_loss:                    2.9071	return_mean:             143.6046
+return_std:                2.1846	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        152.8650
+test_return_std:           2.6700	
+2026-02-13 18:08:52,312 - my_experiment - advP_BigMap_5M - my_run - INFO - t_env: 2900200 / 5050000
+2026-02-13 18:08:52,313 - my_experiment - advP_BigMap_5M - my_run - INFO - Estimated time left: 17 hours, 14 minutes, 10 seconds. Time passed: 23 hours, 27 minutes, 14 seconds
+2026-02-13 18:33:01,494 - my_experiment - advP_BigMap_5M - my_run - INFO - Recent Stats | t_env:    2950000 | Episode:    14750
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               1460.2602
+info_nce_loss:             0.3829	loss:                      3.1466	q_loss:                    2.8605	return_mean:             143.6703
+return_std:                1.9046	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        153.1306
+test_return_std:           2.7450	
+2026-02-13 18:33:07,114 - my_experiment - advP_BigMap_5M - my_run - INFO - t_env: 2950200 / 5050000
+2026-02-13 18:33:07,115 - my_experiment - advP_BigMap_5M - my_run - INFO - Estimated time left: 16 hours, 58 minutes, 15 seconds. Time passed: 23 hours, 51 minutes, 28 seconds
+2026-02-13 18:57:47,602 - my_experiment - advP_BigMap_5M - my_run - INFO - Recent Stats | t_env:    3000000 | Episode:    15000
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               1658.0312
+info_nce_loss:             0.4949	loss:                      3.6722	q_loss:                    3.3384	return_mean:             143.5252
+return_std:                2.2907	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        153.3846
+test_return_std:           2.5765	
+2026-02-13 18:57:53,261 - my_experiment - advP_BigMap_5M - my_run - INFO - t_env: 3000200 / 5050000
+2026-02-13 18:57:53,262 - my_experiment - advP_BigMap_5M - my_run - INFO - Estimated time left: 16 hours, 55 minutes, 26 seconds. Time passed: 1 days, 16 minutes, 14 seconds
+2026-02-13 18:59:10,790 - my_experiment - advP_BigMap_5M - my_run - INFO - Saving models to work_dirs/my_experiment/advP_BigMap_5M/my_run/20260212_184118/models/3000200
+2026-02-13 19:22:33,858 - my_experiment - advP_BigMap_5M - my_run - INFO - Recent Stats | t_env:    3050000 | Episode:    15250
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               1470.5226
+info_nce_loss:             0.4826	loss:                      3.1951	q_loss:                    2.9047	return_mean:             143.6095
+return_std:                2.1533	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        153.4907
+test_return_std:           2.3178	
+2026-02-13 19:22:39,462 - my_experiment - advP_BigMap_5M - my_run - INFO - t_env: 3050200 / 5050000
+2026-02-13 19:22:39,463 - my_experiment - advP_BigMap_5M - my_run - INFO - Estimated time left: 16 hours, 30 minutes, 42 seconds. Time passed: 1 days, 41 minutes, 1 seconds
+2026-02-13 19:47:20,266 - my_experiment - advP_BigMap_5M - my_run - INFO - Recent Stats | t_env:    3100000 | Episode:    15500
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               1313.5166
+info_nce_loss:             0.5097	loss:                      2.9424	q_loss:                    2.6749	return_mean:             143.9336
+return_std:                2.0894	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        153.6450
+test_return_std:           2.2401	
+2026-02-13 19:47:25,898 - my_experiment - advP_BigMap_5M - my_run - INFO - t_env: 3100200 / 5050000
+2026-02-13 19:47:25,899 - my_experiment - advP_BigMap_5M - my_run - INFO - Estimated time left: 16 hours, 6 minutes, 5 seconds. Time passed: 1 days, 1 hours, 5 minutes, 47 seconds
+2026-02-13 20:12:06,381 - my_experiment - advP_BigMap_5M - my_run - INFO - Recent Stats | t_env:    3150000 | Episode:    15750
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               1435.3110
+info_nce_loss:             0.4830	loss:                      3.1750	q_loss:                    2.8864	return_mean:             143.9794
+return_std:                1.8871	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        153.6312
+test_return_std:           2.1563	
+2026-02-13 20:12:12,044 - my_experiment - advP_BigMap_5M - my_run - INFO - t_env: 3150200 / 5050000
+2026-02-13 20:12:12,045 - my_experiment - advP_BigMap_5M - my_run - INFO - Estimated time left: 15 hours, 41 minutes, 7 seconds. Time passed: 1 days, 1 hours, 30 minutes, 33 seconds
+2026-02-13 20:36:52,983 - my_experiment - advP_BigMap_5M - my_run - INFO - Recent Stats | t_env:    3200000 | Episode:    16000
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               1316.9318
+info_nce_loss:             0.3730	loss:                      2.9558	q_loss:                    2.6871	return_mean:             144.1722
+return_std:                2.0305	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        153.7008
+test_return_std:           1.9255	
+2026-02-13 20:36:58,614 - my_experiment - advP_BigMap_5M - my_run - INFO - t_env: 3200200 / 5050000
+2026-02-13 20:36:58,615 - my_experiment - advP_BigMap_5M - my_run - INFO - Estimated time left: 15 hours, 16 minutes, 37 seconds. Time passed: 1 days, 1 hours, 55 minutes, 20 seconds
+2026-02-13 21:01:39,921 - my_experiment - advP_BigMap_5M - my_run - INFO - Recent Stats | t_env:    3250000 | Episode:    16250
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               1419.3944
+info_nce_loss:             0.4955	loss:                      3.1445	q_loss:                    2.8586	return_mean:             143.9673
+return_std:                1.8988	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        153.6511
+test_return_std:           1.9609	
+2026-02-13 21:01:45,549 - my_experiment - advP_BigMap_5M - my_run - INFO - t_env: 3250200 / 5050000
+2026-02-13 21:01:45,550 - my_experiment - advP_BigMap_5M - my_run - INFO - Estimated time left: 14 hours, 52 minutes, 3 seconds. Time passed: 1 days, 2 hours, 20 minutes, 7 seconds
+2026-02-13 21:26:27,082 - my_experiment - advP_BigMap_5M - my_run - INFO - Recent Stats | t_env:    3300000 | Episode:    16500
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               1396.7239
+info_nce_loss:             0.2297	loss:                      3.0987	q_loss:                    2.8170	return_mean:             144.2332
+return_std:                1.7380	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        153.6346
+test_return_std:           2.1772	
+2026-02-13 21:26:32,737 - my_experiment - advP_BigMap_5M - my_run - INFO - t_env: 3300200 / 5050000
+2026-02-13 21:26:32,738 - my_experiment - advP_BigMap_5M - my_run - INFO - Estimated time left: 14 hours, 27 minutes, 25 seconds. Time passed: 1 days, 2 hours, 44 minutes, 54 seconds
+2026-02-13 21:51:13,975 - my_experiment - advP_BigMap_5M - my_run - INFO - Recent Stats | t_env:    3350000 | Episode:    16750
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               1171.2440
+info_nce_loss:             0.4016	loss:                      2.6313	q_loss:                    2.3921	return_mean:             144.2509
+return_std:                2.1298	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        153.6541
+test_return_std:           2.1453	
+2026-02-13 21:51:19,631 - my_experiment - advP_BigMap_5M - my_run - INFO - t_env: 3350200 / 5050000
+2026-02-13 21:51:19,632 - my_experiment - advP_BigMap_5M - my_run - INFO - Estimated time left: 14 hours, 2 minutes, 28 seconds. Time passed: 1 days, 3 hours, 9 minutes, 41 seconds
+2026-02-13 22:15:59,576 - my_experiment - advP_BigMap_5M - my_run - INFO - Recent Stats | t_env:    3400000 | Episode:    17000
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               1136.8954
+info_nce_loss:             0.6434	loss:                      2.6506	q_loss:                    2.4096	return_mean:             144.5069
+return_std:                1.7150	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        153.9893
+test_return_std:           2.1002	
+2026-02-13 22:16:05,216 - my_experiment - advP_BigMap_5M - my_run - INFO - t_env: 3400200 / 5050000
+2026-02-13 22:16:05,217 - my_experiment - advP_BigMap_5M - my_run - INFO - Estimated time left: 13 hours, 36 minutes, 58 seconds. Time passed: 1 days, 3 hours, 34 minutes, 26 seconds
+2026-02-13 22:40:45,881 - my_experiment - advP_BigMap_5M - my_run - INFO - Recent Stats | t_env:    3450000 | Episode:    17250
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               1370.9665
+info_nce_loss:             0.4673	loss:                      3.0032	q_loss:                    2.7302	return_mean:             144.5380
+return_std:                1.7253	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        154.0004
+test_return_std:           2.1740	
+2026-02-13 22:40:51,550 - my_experiment - advP_BigMap_5M - my_run - INFO - t_env: 3450200 / 5050000
+2026-02-13 22:40:51,551 - my_experiment - advP_BigMap_5M - my_run - INFO - Estimated time left: 13 hours, 12 minutes, 36 seconds. Time passed: 1 days, 3 hours, 59 minutes, 13 seconds
+2026-02-13 23:05:31,925 - my_experiment - advP_BigMap_5M - my_run - INFO - Recent Stats | t_env:    3500000 | Episode:    17500
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               1247.5511
+info_nce_loss:             0.4082	loss:                      2.6415	q_loss:                    2.4014	return_mean:             144.3376
+return_std:                1.7018	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        154.0000
+test_return_std:           2.0824	
+2026-02-13 23:05:37,591 - my_experiment - advP_BigMap_5M - my_run - INFO - t_env: 3500200 / 5050000
+2026-02-13 23:05:37,592 - my_experiment - advP_BigMap_5M - my_run - INFO - Estimated time left: 12 hours, 47 minutes, 41 seconds. Time passed: 1 days, 4 hours, 23 minutes, 59 seconds
+2026-02-13 23:06:55,041 - my_experiment - advP_BigMap_5M - my_run - INFO - Saving models to work_dirs/my_experiment/advP_BigMap_5M/my_run/20260212_184118/models/3500200
+2026-02-13 23:30:18,269 - my_experiment - advP_BigMap_5M - my_run - INFO - Recent Stats | t_env:    3550000 | Episode:    17750
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               1206.6206
+info_nce_loss:             0.4995	loss:                      2.6680	q_loss:                    2.4255	return_mean:             144.5487
+return_std:                1.7246	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        154.1000
+test_return_std:           2.0678	
+2026-02-13 23:30:23,895 - my_experiment - advP_BigMap_5M - my_run - INFO - t_env: 3550200 / 5050000
+2026-02-13 23:30:23,896 - my_experiment - advP_BigMap_5M - my_run - INFO - Estimated time left: 12 hours, 23 minutes, 3 seconds. Time passed: 1 days, 4 hours, 48 minutes, 45 seconds
+2026-02-13 23:55:05,031 - my_experiment - advP_BigMap_5M - my_run - INFO - Recent Stats | t_env:    3600000 | Episode:    18000
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               1296.4605
+info_nce_loss:             0.5396	loss:                      2.9406	q_loss:                    2.6733	return_mean:             144.5162
+return_std:                1.6423	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        154.1809
+test_return_std:           1.9736	
+2026-02-13 23:55:10,628 - my_experiment - advP_BigMap_5M - my_run - INFO - t_env: 3600200 / 5050000
+2026-02-13 23:55:10,629 - my_experiment - advP_BigMap_5M - my_run - INFO - Estimated time left: 11 hours, 58 minutes, 29 seconds. Time passed: 1 days, 5 hours, 13 minutes, 32 seconds
+2026-02-14 00:19:50,793 - my_experiment - advP_BigMap_5M - my_run - INFO - Recent Stats | t_env:    3650000 | Episode:    18250
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               1405.2299
+info_nce_loss:             0.4994	loss:                      3.0762	q_loss:                    2.7966	return_mean:             144.3079
+return_std:                1.6946	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        154.1829
+test_return_std:           1.8567	
+2026-02-14 00:19:56,477 - my_experiment - advP_BigMap_5M - my_run - INFO - t_env: 3650200 / 5050000
+2026-02-14 00:19:56,478 - my_experiment - advP_BigMap_5M - my_run - INFO - Estimated time left: 11 hours, 33 minutes, 17 seconds. Time passed: 1 days, 5 hours, 38 minutes, 18 seconds
+2026-02-14 00:44:36,790 - my_experiment - advP_BigMap_5M - my_run - INFO - Recent Stats | t_env:    3700000 | Episode:    18500
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               1283.7214
+info_nce_loss:             0.3499	loss:                      2.7988	q_loss:                    2.5444	return_mean:             144.3066
+return_std:                1.7093	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        154.2452
+test_return_std:           1.8022	
+2026-02-14 00:44:42,505 - my_experiment - advP_BigMap_5M - my_run - INFO - t_env: 3700200 / 5050000
+2026-02-14 00:44:42,506 - my_experiment - advP_BigMap_5M - my_run - INFO - Estimated time left: 11 hours, 8 minutes, 36 seconds. Time passed: 1 days, 6 hours, 3 minutes, 4 seconds
+2026-02-14 01:09:22,377 - my_experiment - advP_BigMap_5M - my_run - INFO - Recent Stats | t_env:    3750000 | Episode:    18750
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               1489.4422
+info_nce_loss:             0.5289	loss:                      3.0326	q_loss:                    2.7569	return_mean:             144.0681
+return_std:                1.8097	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        154.3408
+test_return_std:           1.8586	
+2026-02-14 01:09:28,005 - my_experiment - advP_BigMap_5M - my_run - INFO - t_env: 3750200 / 5050000
+2026-02-14 01:09:28,006 - my_experiment - advP_BigMap_5M - my_run - INFO - Estimated time left: 10 hours, 43 minutes, 37 seconds. Time passed: 1 days, 6 hours, 27 minutes, 49 seconds
+2026-02-14 01:34:08,100 - my_experiment - advP_BigMap_5M - my_run - INFO - Recent Stats | t_env:    3800000 | Episode:    19000
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               1361.9024
+info_nce_loss:             0.3759	loss:                      2.7998	q_loss:                    2.5453	return_mean:             144.2950
+return_std:                1.7026	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        154.3805
+test_return_std:           1.7255	
+2026-02-14 01:34:13,744 - my_experiment - advP_BigMap_5M - my_run - INFO - t_env: 3800200 / 5050000
+2026-02-14 01:34:13,745 - my_experiment - advP_BigMap_5M - my_run - INFO - Estimated time left: 10 hours, 18 minutes, 57 seconds. Time passed: 1 days, 6 hours, 52 minutes, 35 seconds
+2026-02-14 01:58:29,102 - my_experiment - advP_BigMap_5M - my_run - INFO - Recent Stats | t_env:    3850000 | Episode:    19250
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               1742.1728
+info_nce_loss:             0.2869	loss:                      3.4731	q_loss:                    3.1574	return_mean:             144.0861
+return_std:                1.8806	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        154.2958
+test_return_std:           1.8845	
+2026-02-14 01:58:34,617 - my_experiment - advP_BigMap_5M - my_run - INFO - t_env: 3850200 / 5050000
+2026-02-14 01:58:34,618 - my_experiment - advP_BigMap_5M - my_run - INFO - Estimated time left: 9 hours, 44 minutes, 15 seconds. Time passed: 1 days, 7 hours, 16 minutes, 56 seconds
+2026-02-14 02:22:47,598 - my_experiment - advP_BigMap_5M - my_run - INFO - Recent Stats | t_env:    3900000 | Episode:    19500
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               1370.8543
+info_nce_loss:             0.6254	loss:                      2.7745	q_loss:                    2.5223	return_mean:             144.4047
+return_std:                1.5855	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        154.1002
+test_return_std:           1.9724	
+2026-02-14 02:22:53,135 - my_experiment - advP_BigMap_5M - my_run - INFO - t_env: 3900200 / 5050000
+2026-02-14 02:22:53,136 - my_experiment - advP_BigMap_5M - my_run - INFO - Estimated time left: 9 hours, 19 minutes, 0 seconds. Time passed: 1 days, 7 hours, 41 minutes, 14 seconds
+2026-02-14 02:47:06,324 - my_experiment - advP_BigMap_5M - my_run - INFO - Recent Stats | t_env:    3950000 | Episode:    19750
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               1645.2607
+info_nce_loss:             0.4497	loss:                      3.1134	q_loss:                    2.8304	return_mean:             144.0700
+return_std:                1.6618	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        154.2137
+test_return_std:           1.8286	
+2026-02-14 02:47:11,871 - my_experiment - advP_BigMap_5M - my_run - INFO - t_env: 3950200 / 5050000
+2026-02-14 02:47:11,872 - my_experiment - advP_BigMap_5M - my_run - INFO - Estimated time left: 8 hours, 54 minutes, 46 seconds. Time passed: 1 days, 8 hours, 5 minutes, 33 seconds
+2026-02-14 03:11:24,946 - my_experiment - advP_BigMap_5M - my_run - INFO - Recent Stats | t_env:    4000000 | Episode:    20000
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               1523.0914
+info_nce_loss:             0.1713	loss:                      2.9917	q_loss:                    2.7198	return_mean:             144.0462
+return_std:                1.7139	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        154.2125
+test_return_std:           1.7749	
+2026-02-14 03:11:30,454 - my_experiment - advP_BigMap_5M - my_run - INFO - t_env: 4000200 / 5050000
+2026-02-14 03:11:30,455 - my_experiment - advP_BigMap_5M - my_run - INFO - Estimated time left: 8 hours, 30 minutes, 24 seconds. Time passed: 1 days, 8 hours, 29 minutes, 52 seconds
+2026-02-14 03:12:46,367 - my_experiment - advP_BigMap_5M - my_run - INFO - Saving models to work_dirs/my_experiment/advP_BigMap_5M/my_run/20260212_184118/models/4000200
+2026-02-14 03:35:24,374 - my_experiment - advP_BigMap_5M - my_run - INFO - Recent Stats | t_env:    4050000 | Episode:    20250
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               1598.9507
+info_nce_loss:             0.3481	loss:                      3.2735	q_loss:                    2.9759	return_mean:             144.2661
+return_std:                1.6234	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        154.1760
+test_return_std:           1.7008	
+2026-02-14 03:35:29,709 - my_experiment - advP_BigMap_5M - my_run - INFO - t_env: 4050200 / 5050000
+2026-02-14 03:35:29,710 - my_experiment - advP_BigMap_5M - my_run - INFO - Estimated time left: 7 hours, 59 minutes, 39 seconds. Time passed: 1 days, 8 hours, 53 minutes, 51 seconds
+2026-02-14 03:59:01,713 - my_experiment - advP_BigMap_5M - my_run - INFO - Recent Stats | t_env:    4100000 | Episode:    20500
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               1313.1732
+info_nce_loss:             0.3367	loss:                      2.5710	q_loss:                    2.3373	return_mean:             144.2549
+return_std:                1.6364	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        154.2694
+test_return_std:           1.5733	
+2026-02-14 03:59:07,188 - my_experiment - advP_BigMap_5M - my_run - INFO - t_env: 4100200 / 5050000
+2026-02-14 03:59:07,189 - my_experiment - advP_BigMap_5M - my_run - INFO - Estimated time left: 7 hours, 28 minutes, 46 seconds. Time passed: 1 days, 9 hours, 17 minutes, 28 seconds
+2026-02-14 04:22:40,962 - my_experiment - advP_BigMap_5M - my_run - INFO - Recent Stats | t_env:    4150000 | Episode:    20750
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               1421.5136
+info_nce_loss:             0.5515	loss:                      2.8801	q_loss:                    2.6183	return_mean:             144.2119
+return_std:                1.8372	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        154.2432
+test_return_std:           1.5512	
+2026-02-14 04:22:46,347 - my_experiment - advP_BigMap_5M - my_run - INFO - t_env: 4150200 / 5050000
+2026-02-14 04:22:46,348 - my_experiment - advP_BigMap_5M - my_run - INFO - Estimated time left: 7 hours, 5 minutes, 39 seconds. Time passed: 1 days, 9 hours, 41 minutes, 8 seconds
+2026-02-14 04:46:18,600 - my_experiment - advP_BigMap_5M - my_run - INFO - Recent Stats | t_env:    4200000 | Episode:    21000
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               1376.6687
+info_nce_loss:             0.3050	loss:                      2.7655	q_loss:                    2.5141	return_mean:             144.3619
+return_std:                1.5153	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        154.1501
+test_return_std:           1.7198	
+2026-02-14 04:46:24,005 - my_experiment - advP_BigMap_5M - my_run - INFO - t_env: 4200200 / 5050000
+2026-02-14 04:46:24,005 - my_experiment - advP_BigMap_5M - my_run - INFO - Estimated time left: 6 hours, 41 minutes, 34 seconds. Time passed: 1 days, 10 hours, 4 minutes, 45 seconds
+2026-02-14 05:09:56,202 - my_experiment - advP_BigMap_5M - my_run - INFO - Recent Stats | t_env:    4250000 | Episode:    21250
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               1703.6193
+info_nce_loss:             0.3970	loss:                      4.9656	q_loss:                    4.5142	return_mean:             137.0596
+return_std:                7.2012	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        154.3025
+test_return_std:           1.4712	
+2026-02-14 05:10:01,603 - my_experiment - advP_BigMap_5M - my_run - INFO - t_env: 4250200 / 5050000
+2026-02-14 05:10:01,604 - my_experiment - advP_BigMap_5M - my_run - INFO - Estimated time left: 6 hours, 17 minutes, 55 seconds. Time passed: 1 days, 10 hours, 28 minutes, 23 seconds
+2026-02-14 05:33:34,160 - my_experiment - advP_BigMap_5M - my_run - INFO - Recent Stats | t_env:    4300000 | Episode:    21500
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               3171.7432
+info_nce_loss:             0.3480	loss:                     12.7794	q_loss:                   11.6177	return_mean:             136.6185
+return_std:                8.3534	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        153.6859
+test_return_std:           1.9139	
+2026-02-14 05:33:39,614 - my_experiment - advP_BigMap_5M - my_run - INFO - t_env: 4300200 / 5050000
+2026-02-14 05:33:39,615 - my_experiment - advP_BigMap_5M - my_run - INFO - Estimated time left: 5 hours, 54 minutes, 24 seconds. Time passed: 1 days, 10 hours, 52 minutes, 1 seconds
+2026-02-14 05:57:13,331 - my_experiment - advP_BigMap_5M - my_run - INFO - Recent Stats | t_env:    4350000 | Episode:    21750
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               2959.4230
+info_nce_loss:             0.2802	loss:                     12.5239	q_loss:                   11.3857	return_mean:             139.5788
+return_std:                4.8451	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        152.7685
+test_return_std:           2.2975	
+2026-02-14 05:57:18,693 - my_experiment - advP_BigMap_5M - my_run - INFO - t_env: 4350200 / 5050000
+2026-02-14 05:57:18,694 - my_experiment - advP_BigMap_5M - my_run - INFO - Estimated time left: 5 hours, 31 minutes, 1 seconds. Time passed: 1 days, 11 hours, 15 minutes, 40 seconds
+2026-02-14 06:20:51,891 - my_experiment - advP_BigMap_5M - my_run - INFO - Recent Stats | t_env:    4400000 | Episode:    22000
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               1665.6207
+info_nce_loss:             0.5237	loss:                      4.3232	q_loss:                    3.9302	return_mean:             141.0815
+return_std:                3.0723	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        149.7190
+test_return_std:           3.4550	
+2026-02-14 06:20:57,284 - my_experiment - advP_BigMap_5M - my_run - INFO - t_env: 4400200 / 5050000
+2026-02-14 06:20:57,285 - my_experiment - advP_BigMap_5M - my_run - INFO - Estimated time left: 5 hours, 7 minutes, 16 seconds. Time passed: 1 days, 11 hours, 39 minutes, 18 seconds
+2026-02-14 06:44:40,811 - my_experiment - advP_BigMap_5M - my_run - INFO - Recent Stats | t_env:    4450000 | Episode:    22250
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               1243.9023
+info_nce_loss:             0.5528	loss:                      2.6103	q_loss:                    2.3730	return_mean:             142.3213
+return_std:                2.0387	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        149.1538
+test_return_std:           3.5394	
+2026-02-14 06:44:46,244 - my_experiment - advP_BigMap_5M - my_run - INFO - t_env: 4450200 / 5050000
+2026-02-14 06:44:46,245 - my_experiment - advP_BigMap_5M - my_run - INFO - Estimated time left: 4 hours, 45 minutes, 41 seconds. Time passed: 1 days, 12 hours, 3 minutes, 7 seconds
+2026-02-14 07:08:28,426 - my_experiment - advP_BigMap_5M - my_run - INFO - Recent Stats | t_env:    4500000 | Episode:    22500
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               2351.0507
+info_nce_loss:             0.6350	loss:                      7.5435	q_loss:                    6.8578	return_mean:             142.3327
+return_std:                1.9830	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        149.0442
+test_return_std:           3.5937	
+2026-02-14 07:08:33,852 - my_experiment - advP_BigMap_5M - my_run - INFO - t_env: 4500200 / 5050000
+2026-02-14 07:08:33,852 - my_experiment - advP_BigMap_5M - my_run - INFO - Estimated time left: 4 hours, 21 minutes, 37 seconds. Time passed: 1 days, 12 hours, 26 minutes, 55 seconds
+2026-02-14 07:09:48,169 - my_experiment - advP_BigMap_5M - my_run - INFO - Saving models to work_dirs/my_experiment/advP_BigMap_5M/my_run/20260212_184118/models/4500200
+2026-02-14 07:32:15,178 - my_experiment - advP_BigMap_5M - my_run - INFO - Recent Stats | t_env:    4550000 | Episode:    22750
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               1024.1131
+info_nce_loss:             0.2861	loss:                      2.2036	q_loss:                    2.0033	return_mean:             143.0745
+return_std:                1.8124	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        149.5450
+test_return_std:           3.2559	
+2026-02-14 07:32:20,601 - my_experiment - advP_BigMap_5M - my_run - INFO - t_env: 4550200 / 5050000
+2026-02-14 07:32:20,602 - my_experiment - advP_BigMap_5M - my_run - INFO - Estimated time left: 3 hours, 57 minutes, 41 seconds. Time passed: 1 days, 12 hours, 50 minutes, 42 seconds
+2026-02-14 07:56:02,820 - my_experiment - advP_BigMap_5M - my_run - INFO - Recent Stats | t_env:    4600000 | Episode:    23000
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               1114.7266
+info_nce_loss:             0.3596	loss:                      3.2279	q_loss:                    2.9345	return_mean:             143.1312
+return_std:                2.0771	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        150.3174
+test_return_std:           2.9763	
+2026-02-14 07:56:08,266 - my_experiment - advP_BigMap_5M - my_run - INFO - t_env: 4600200 / 5050000
+2026-02-14 07:56:08,266 - my_experiment - advP_BigMap_5M - my_run - INFO - Estimated time left: 3 hours, 34 minutes, 3 seconds. Time passed: 1 days, 13 hours, 14 minutes, 29 seconds
+2026-02-14 08:19:50,549 - my_experiment - advP_BigMap_5M - my_run - INFO - Recent Stats | t_env:    4650000 | Episode:    23250
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               1311.2206
+info_nce_loss:             0.6433	loss:                      3.8639	q_loss:                    3.5127	return_mean:             143.7712
+return_std:                1.5941	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        153.4354
+test_return_std:           1.8087	
+2026-02-14 08:19:55,954 - my_experiment - advP_BigMap_5M - my_run - INFO - t_env: 4650200 / 5050000
+2026-02-14 08:19:55,955 - my_experiment - advP_BigMap_5M - my_run - INFO - Estimated time left: 3 hours, 10 minutes, 15 seconds. Time passed: 1 days, 13 hours, 38 minutes, 17 seconds
+2026-02-14 08:43:36,546 - my_experiment - advP_BigMap_5M - my_run - INFO - Recent Stats | t_env:    4700000 | Episode:    23500
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               1252.4409
+info_nce_loss:             0.5194	loss:                      5.7590	q_loss:                    5.2355	return_mean:             141.6768
+return_std:                3.5838	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        154.0385
+test_return_std:           1.6816	
+2026-02-14 08:43:42,029 - my_experiment - advP_BigMap_5M - my_run - INFO - t_env: 4700200 / 5050000
+2026-02-14 08:43:42,030 - my_experiment - advP_BigMap_5M - my_run - INFO - Estimated time left: 2 hours, 46 minutes, 16 seconds. Time passed: 1 days, 14 hours, 2 minutes, 3 seconds
+2026-02-14 09:07:24,564 - my_experiment - advP_BigMap_5M - my_run - INFO - Recent Stats | t_env:    4750000 | Episode:    23750
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               1331.9184
+info_nce_loss:             0.5018	loss:                      3.7190	q_loss:                    3.3809	return_mean:             144.3310
+return_std:                1.5691	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        153.9079
+test_return_std:           1.9413	
+2026-02-14 09:07:29,989 - my_experiment - advP_BigMap_5M - my_run - INFO - t_env: 4750200 / 5050000
+2026-02-14 09:07:29,990 - my_experiment - advP_BigMap_5M - my_run - INFO - Estimated time left: 2 hours, 22 minutes, 42 seconds. Time passed: 1 days, 14 hours, 25 minutes, 51 seconds
+2026-02-14 09:31:08,559 - my_experiment - advP_BigMap_5M - my_run - INFO - Recent Stats | t_env:    4800000 | Episode:    24000
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               1163.1102
+info_nce_loss:             0.3305	loss:                      2.9671	q_loss:                    2.6973	return_mean:             144.2945
+return_std:                1.6426	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        154.2118
+test_return_std:           1.8500	
+2026-02-14 09:31:13,780 - my_experiment - advP_BigMap_5M - my_run - INFO - t_env: 4800200 / 5050000
+2026-02-14 09:31:13,781 - my_experiment - advP_BigMap_5M - my_run - INFO - Estimated time left: 1 hours, 58 minutes, 33 seconds. Time passed: 1 days, 14 hours, 49 minutes, 35 seconds
+2026-02-14 09:53:31,412 - my_experiment - advP_BigMap_5M - my_run - INFO - Recent Stats | t_env:    4850000 | Episode:    24250
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               1482.2895
+info_nce_loss:             0.3722	loss:                      5.5428	q_loss:                    5.0389	return_mean:             144.3822
+return_std:                1.6648	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        154.4577
+test_return_std:           1.6831	
+2026-02-14 09:53:36,504 - my_experiment - advP_BigMap_5M - my_run - INFO - t_env: 4850200 / 5050000
+2026-02-14 09:53:36,505 - my_experiment - advP_BigMap_5M - my_run - INFO - Estimated time left: 1 hours, 29 minutes, 25 seconds. Time passed: 1 days, 15 hours, 11 minutes, 58 seconds
+2026-02-14 10:15:53,105 - my_experiment - advP_BigMap_5M - my_run - INFO - Recent Stats | t_env:    4900000 | Episode:    24500
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               1635.8762
+info_nce_loss:             0.3246	loss:                      6.6857	q_loss:                    6.0779	return_mean:             144.5905
+return_std:                1.5408	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        154.7692
+test_return_std:           1.5384	
+2026-02-14 10:15:58,198 - my_experiment - advP_BigMap_5M - my_run - INFO - t_env: 4900200 / 5050000
+2026-02-14 10:15:58,199 - my_experiment - advP_BigMap_5M - my_run - INFO - Estimated time left: 1 hours, 6 minutes, 59 seconds. Time passed: 1 days, 15 hours, 34 minutes, 19 seconds
+2026-02-14 10:38:15,852 - my_experiment - advP_BigMap_5M - my_run - INFO - Recent Stats | t_env:    4950000 | Episode:    24750
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               1199.6636
+info_nce_loss:             0.3957	loss:                      5.2217	q_loss:                    4.7470	return_mean:             144.7398
+return_std:                1.5110	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        154.8866
+test_return_std:           1.4847	
+2026-02-14 10:38:20,948 - my_experiment - advP_BigMap_5M - my_run - INFO - t_env: 4950200 / 5050000
+2026-02-14 10:38:20,949 - my_experiment - advP_BigMap_5M - my_run - INFO - Estimated time left: 44 minutes, 40 seconds. Time passed: 1 days, 15 hours, 56 minutes, 42 seconds
+2026-02-14 11:00:36,570 - my_experiment - advP_BigMap_5M - my_run - INFO - Recent Stats | t_env:    5000000 | Episode:    25000
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               1215.8411
+info_nce_loss:             0.4737	loss:                      5.7472	q_loss:                    5.2248	return_mean:             144.8122
+return_std:                1.5586	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        154.9302
+test_return_std:           1.3109	
+2026-02-14 11:00:41,747 - my_experiment - advP_BigMap_5M - my_run - INFO - t_env: 5000200 / 5050000
+2026-02-14 11:00:41,747 - my_experiment - advP_BigMap_5M - my_run - INFO - Estimated time left: 22 minutes, 15 seconds. Time passed: 1 days, 16 hours, 19 minutes, 3 seconds
+2026-02-14 11:01:51,612 - my_experiment - advP_BigMap_5M - my_run - INFO - Saving models to work_dirs/my_experiment/advP_BigMap_5M/my_run/20260212_184118/models/5000200
+2026-02-14 11:22:57,937 - my_experiment - advP_BigMap_5M - my_run - INFO - Recent Stats | t_env:    5050000 | Episode:    25250
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               965.1154
+info_nce_loss:             0.3287	loss:                      3.3918	q_loss:                    3.0835	return_mean:             142.6692
+return_std:                3.8965	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        153.6415
+test_return_std:           1.6457	
+2026-02-14 11:23:03,061 - my_experiment - advP_BigMap_5M - my_run - INFO - t_env: 5050200 / 5050000
+2026-02-14 11:23:03,062 - my_experiment - advP_BigMap_5M - my_run - INFO - Estimated time left: -. Time passed: 1 days, 16 hours, 41 minutes, 24 seconds
+2026-02-14 11:24:12,948 - my_experiment - advP_BigMap_5M - my_run - INFO - Finished Training

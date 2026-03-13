@@ -1,0 +1,762 @@
+Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
+Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
+Users of this version of Gym should be able to simply replace 'import gym' with 'import gymnasium as gym' in the vast majority of cases.
+See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
+src/main.py:81: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+  if isinstance(v, collections.Mapping):
+wandb: [wandb.login()] Loaded credentials for https://api.wandb.ai from /home/pparsons/.netrc.
+wandb: Currently logged in as: peterparsons02 (peterparsons02-eth-z-rich) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+wandb: setting up run hwr3has1
+wandb: Tracking run with wandb version 0.24.1
+wandb: Run data is saved locally in /usr/itetnas04/data-scratch-01/pparsons/data/MyExpoComm/wandb/run-20260219_204656-hwr3has1
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run my_run-IMPuc100_HybridComm-20260219_204655
+wandb: ⭐️ View project at https://wandb.ai/peterparsons02-eth-z-rich/my_experiment
+wandb: 🚀 View run at https://wandb.ai/peterparsons02-eth-z-rich/my_experiment/runs/hwr3has1
+2026-02-19 20:46:57,470 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Current directory: /usr/itetnas04/data-scratch-01/pparsons/data/MyExpoComm.
+2026-02-19 20:46:57,471 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Experiment Parameters:
+2026-02-19 20:46:57,473 - my_experiment - IMPuc100_HybridComm - my_run - INFO - 
+
+{   'action_selector': 'epsilon_greedy',
+    'add_value_last_step': True,
+    'agent': 'ExpoComm_one_peer_cont',
+    'agent_output_type': 'q',
+    'attention_dim': 32,
+    'aux_coef': 0.1,
+    'batch_size': 64,
+    'batch_size_run': 1,
+    'buffer_cpu_only': True,
+    'buffer_size': 2000,
+    'checkpoint_path': '',
+    'common_reward': True,
+    'double_q': True,
+    'env': 'struct_marl',
+    'env_args': {   'campaign_cost': True,
+                    'custom_param': {   'k_comp': 95},
+                    'discount_reward': 0.95,
+                    'env_correlation': False,
+                    'map_name': 'struct_uc_100',
+                    'n_comp': 100,
+                    'obs_all_d_rate': False,
+                    'obs_alphas': False,
+                    'obs_d_rate': False,
+                    'obs_multiple': False,
+                    'seed': 42,
+                    'state_alphas': False,
+                    'state_d_rate': True,
+                    'state_obs': True,
+                    'struct_type': 'struct'},
+    'epsilon_anneal_time': 5000,
+    'epsilon_finish': 0.05,
+    'epsilon_start': 1.0,
+    'evaluate': False,
+    'evaluation_epsilon': 0.0,
+    'exp_name': 'my_experiment',
+    'gamma': 0.95,
+    'global_reward': False,
+    'grad_norm_clip': 10,
+    'hidden_dim': 64,
+    'hypergroup': None,
+    'label': 'default_label',
+    'learner': 'hybrid_comm_learner',
+    'learner_log_interval': 25000,
+    'load_step': 0,
+    'local_results_path': 'results',
+    'log_interval': 25000,
+    'lr': 0.0005,
+    'mac': 'ExpoComm_mac',
+    'mixer': None,
+    'name': 'IMPuc100_HybridComm',
+    'neg_num': 20,
+    'obs_agent_id': True,
+    'obs_individual_obs': False,
+    'obs_last_action': True,
+    'one_peer': True,
+    'optim_alpha': 0.99,
+    'optim_eps': 1e-05,
+    'render': False,
+    'repeat_id': 1,
+    'run_name': 'my_run',
+    'runner': 'episode',
+    'runner_log_interval': 25000,
+    'save_model': True,
+    'save_model_interval': 200000,
+    'save_replay': False,
+    'seed': 42,
+    'standardise_returns': False,
+    'standardise_rewards': True,
+    't_max': 2050000,
+    'target_update_interval_or_tau': 200,
+    'temperature': 0.07,
+    'test_greedy': True,
+    'test_interval': 25000,
+    'test_nepisode': 50,
+    'topk_neighbors': 7,
+    'use_cuda': True,
+    'use_rnn': True,
+    'use_tensorboard': True,
+    'work_dir': 'work_dirs/my_experiment/IMPuc100_HybridComm/my_run/20260219_204655'}
+
+2026-02-19 20:46:59,013 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Beginning training for 2050000 timesteps
+2026-02-19 20:46:59,839 - my_experiment - IMPuc100_HybridComm - my_run - INFO - t_env: 30 / 2050000
+2026-02-19 20:46:59,839 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Estimated time left: 1 minutes, 7 seconds. Time passed: 0 seconds
+2026-02-19 20:47:12,934 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Saving models to work_dirs/my_experiment/IMPuc100_HybridComm/my_run/20260219_204655/models/30
+2026-02-19 20:53:22,066 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Recent Stats | t_env:      25020 | Episode:      834
+action_0_mean:             0.3450	action_1_mean:             0.3307	action_2_mean:             0.3243	ep_length_mean:           30.0000
+epsilon:                   1.0000	grad_norm:                 0.1753	info_nce_loss:             2.9516	loss:                      1.0988
+q_loss:                    0.9989	return_mean:             -10338.1938	return_std:                0.0000	test_action_0_mean:        0.0000
+test_action_1_mean:        0.0000	test_action_2_mean:        1.0000	test_ep_length_mean:      30.0000	test_return_mean:        -31492.9856
+test_return_std:           0.0000	
+2026-02-19 20:53:22,513 - my_experiment - IMPuc100_HybridComm - my_run - INFO - t_env: 25050 / 2050000
+2026-02-19 20:53:22,513 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Estimated time left: 8 hours, 36 minutes, 11 seconds. Time passed: 6 minutes, 23 seconds
+2026-02-19 20:59:47,785 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Recent Stats | t_env:      50040 | Episode:     1668
+action_0_mean:             0.5967	action_1_mean:             0.2047	action_2_mean:             0.1986	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 0.7456	info_nce_loss:             1.4759	loss:                      0.6535
+q_loss:                    0.5940	return_mean:             -6639.6402	return_std:              1856.4262	test_action_0_mean:        0.5000
+test_action_1_mean:        0.0000	test_action_2_mean:        0.5000	test_ep_length_mean:      30.0000	test_return_mean:        -16631.5650
+test_return_std:           0.0000	
+2026-02-19 20:59:48,254 - my_experiment - IMPuc100_HybridComm - my_run - INFO - t_env: 50070 / 2050000
+2026-02-19 20:59:48,255 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Estimated time left: 8 hours, 33 minutes, 53 seconds. Time passed: 12 minutes, 49 seconds
+2026-02-19 21:06:18,914 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Recent Stats | t_env:      75060 | Episode:     2502
+action_0_mean:             0.7166	action_1_mean:             0.1442	action_2_mean:             0.1391	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 0.8256	info_nce_loss:             0.9839	loss:                      0.4982
+q_loss:                    0.4529	return_mean:             -4911.2172	return_std:              1334.8985	test_action_0_mean:        0.6667
+test_action_1_mean:        0.0000	test_action_2_mean:        0.3333	test_ep_length_mean:      30.0000	test_return_mean:        -11677.7582
+test_return_std:           0.0000	
+2026-02-19 21:06:19,373 - my_experiment - IMPuc100_HybridComm - my_run - INFO - t_env: 75090 / 2050000
+2026-02-19 21:06:19,374 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Estimated time left: 8 hours, 34 minutes, 32 seconds. Time passed: 19 minutes, 20 seconds
+2026-02-19 21:13:01,530 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Recent Stats | t_env:     100080 | Episode:     3336
+action_0_mean:             0.7756	action_1_mean:             0.1154	action_2_mean:             0.1090	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 0.7497	info_nce_loss:             0.7381	loss:                      0.4223
+q_loss:                    0.3839	return_mean:             -4056.0670	return_std:              1084.6197	test_action_0_mean:        0.7427
+test_action_1_mean:        0.0000	test_action_2_mean:        0.2573	test_ep_length_mean:      30.0000	test_return_mean:        -9450.9024
+test_return_std:           0.0000	
+2026-02-19 21:13:02,011 - my_experiment - IMPuc100_HybridComm - my_run - INFO - t_env: 100110 / 2050000
+2026-02-19 21:13:02,012 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Estimated time left: 8 hours, 42 minutes, 58 seconds. Time passed: 26 minutes, 2 seconds
+2026-02-19 21:20:13,974 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Recent Stats | t_env:     125100 | Episode:     4170
+action_0_mean:             0.7981	action_1_mean:             0.1107	action_2_mean:             0.0912	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 0.7768	info_nce_loss:             0.5905	loss:                      0.3565
+q_loss:                    0.3241	return_mean:             -3525.9885	return_std:              956.7330	test_action_0_mean:        0.7735
+test_action_1_mean:        0.0196	test_action_2_mean:        0.2069	test_ep_length_mean:      30.0000	test_return_mean:        -7706.3896
+test_return_std:          71.1471	
+2026-02-19 21:20:14,522 - my_experiment - IMPuc100_HybridComm - my_run - INFO - t_env: 125130 / 2050000
+2026-02-19 21:20:14,523 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Estimated time left: 9 hours, 14 minutes, 34 seconds. Time passed: 33 minutes, 15 seconds
+2026-02-19 21:27:52,206 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Recent Stats | t_env:     150120 | Episode:     5004
+action_0_mean:             0.8640	action_1_mean:             0.1055	action_2_mean:             0.0305	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 0.9090	info_nce_loss:             0.0002	loss:                      0.1589
+q_loss:                    0.1444	return_mean:             -1675.8745	return_std:              1038.7361	test_action_0_mean:        0.8624
+test_action_1_mean:        0.1296	test_action_2_mean:        0.0080	test_ep_length_mean:      30.0000	test_return_mean:        -1534.5146
+test_return_std:         125.6134	
+2026-02-19 21:27:52,769 - my_experiment - IMPuc100_HybridComm - my_run - INFO - t_env: 150150 / 2050000
+2026-02-19 21:27:52,770 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Estimated time left: 9 hours, 39 minutes, 56 seconds. Time passed: 40 minutes, 53 seconds
+2026-02-19 21:35:42,471 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Recent Stats | t_env:     175140 | Episode:     5838
+action_0_mean:             0.7980	action_1_mean:             0.1810	action_2_mean:             0.0209	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 0.9893	info_nce_loss:             0.0003	loss:                      0.1801
+q_loss:                    0.1637	return_mean:             -1295.8109	return_std:              384.3661	test_action_0_mean:        0.7306
+test_action_1_mean:        0.2605	test_action_2_mean:        0.0089	test_ep_length_mean:      30.0000	test_return_mean:        -1271.9381
+test_return_std:         159.1253	
+2026-02-19 21:35:43,048 - my_experiment - IMPuc100_HybridComm - my_run - INFO - t_env: 175170 / 2050000
+2026-02-19 21:35:43,049 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Estimated time left: 9 hours, 47 minutes, 19 seconds. Time passed: 48 minutes, 44 seconds
+2026-02-19 21:43:22,687 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Saving models to work_dirs/my_experiment/IMPuc100_HybridComm/my_run/20260219_204655/models/200040
+2026-02-19 21:43:24,777 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Recent Stats | t_env:     200160 | Episode:     6672
+action_0_mean:             0.6959	action_1_mean:             0.2827	action_2_mean:             0.0215	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 0.9301	info_nce_loss:             0.0003	loss:                      0.1689
+q_loss:                    0.1536	return_mean:             -1200.1907	return_std:              388.5679	test_action_0_mean:        0.5724
+test_action_1_mean:        0.4181	test_action_2_mean:        0.0095	test_ep_length_mean:      30.0000	test_return_mean:        -1029.9376
+test_return_std:         225.0869	
+2026-02-19 21:43:25,308 - my_experiment - IMPuc100_HybridComm - my_run - INFO - t_env: 200190 / 2050000
+2026-02-19 21:43:25,309 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Estimated time left: 9 hours, 29 minutes, 36 seconds. Time passed: 56 minutes, 26 seconds
+2026-02-19 21:51:01,746 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Recent Stats | t_env:     225180 | Episode:     7506
+action_0_mean:             0.6046	action_1_mean:             0.3732	action_2_mean:             0.0222	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 0.9379	info_nce_loss:             0.0002	loss:                      0.1746
+q_loss:                    0.1587	return_mean:             -1091.1059	return_std:              412.7608	test_action_0_mean:        0.4943
+test_action_1_mean:        0.5015	test_action_2_mean:        0.0042	test_ep_length_mean:      30.0000	test_return_mean:        -561.1925
+test_return_std:         260.4871	
+2026-02-19 21:51:02,283 - my_experiment - IMPuc100_HybridComm - my_run - INFO - t_env: 225210 / 2050000
+2026-02-19 21:51:02,284 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Estimated time left: 9 hours, 15 minutes, 28 seconds. Time passed: 1 hours, 4 minutes, 3 seconds
+2026-02-19 21:58:35,883 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Recent Stats | t_env:     250200 | Episode:     8340
+action_0_mean:             0.5273	action_1_mean:             0.4500	action_2_mean:             0.0228	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 0.8951	info_nce_loss:             0.0003	loss:                      0.1755
+q_loss:                    0.1596	return_mean:             -990.9148	return_std:              366.6148	test_action_0_mean:        0.4223
+test_action_1_mean:        0.5732	test_action_2_mean:        0.0045	test_ep_length_mean:      30.0000	test_return_mean:        -495.0825
+test_return_std:         207.4306	
+2026-02-19 21:58:36,396 - my_experiment - IMPuc100_HybridComm - my_run - INFO - t_env: 250230 / 2050000
+2026-02-19 21:58:36,397 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Estimated time left: 9 hours, 4 minutes, 25 seconds. Time passed: 1 hours, 11 minutes, 37 seconds
+2026-02-19 22:06:03,374 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Recent Stats | t_env:     275220 | Episode:     9174
+action_0_mean:             0.4977	action_1_mean:             0.4790	action_2_mean:             0.0233	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 1.0546	info_nce_loss:             0.0003	loss:                      0.2928
+q_loss:                    0.2662	return_mean:             -976.6737	return_std:              410.2248	test_action_0_mean:        0.4438
+test_action_1_mean:        0.5528	test_action_2_mean:        0.0034	test_ep_length_mean:      30.0000	test_return_mean:        -736.6965
+test_return_std:         347.8367	
+2026-02-19 22:06:03,870 - my_experiment - IMPuc100_HybridComm - my_run - INFO - t_env: 275250 / 2050000
+2026-02-19 22:06:03,871 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Estimated time left: 8 hours, 49 minutes, 0 seconds. Time passed: 1 hours, 19 minutes, 4 seconds
+2026-02-19 22:13:03,157 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Recent Stats | t_env:     300240 | Episode:    10008
+action_0_mean:             0.5085	action_1_mean:             0.4685	action_2_mean:             0.0229	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 0.7811	info_nce_loss:             0.0002	loss:                      0.2843
+q_loss:                    0.2585	return_mean:             -960.3395	return_std:              409.6590	test_action_0_mean:        0.5117
+test_action_1_mean:        0.4850	test_action_2_mean:        0.0033	test_ep_length_mean:      30.0000	test_return_mean:        -719.8604
+test_return_std:         329.3484	
+2026-02-19 22:13:03,630 - my_experiment - IMPuc100_HybridComm - my_run - INFO - t_env: 300270 / 2050000
+2026-02-19 22:13:03,631 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Estimated time left: 8 hours, 9 minutes, 15 seconds. Time passed: 1 hours, 26 minutes, 4 seconds
+2026-02-19 22:19:45,620 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Recent Stats | t_env:     325260 | Episode:    10842
+action_0_mean:             0.5747	action_1_mean:             0.4024	action_2_mean:             0.0229	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 0.7137	info_nce_loss:             0.0002	loss:                      0.2862
+q_loss:                    0.2601	return_mean:             -929.8861	return_std:              380.2683	test_action_0_mean:        0.6508
+test_action_1_mean:        0.3455	test_action_2_mean:        0.0036	test_ep_length_mean:      30.0000	test_return_mean:        -689.2274
+test_return_std:         279.5904	
+2026-02-19 22:19:46,102 - my_experiment - IMPuc100_HybridComm - my_run - INFO - t_env: 325290 / 2050000
+2026-02-19 22:19:46,102 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Estimated time left: 7 hours, 42 minutes, 23 seconds. Time passed: 1 hours, 32 minutes, 47 seconds
+2026-02-19 22:26:43,166 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Recent Stats | t_env:     350280 | Episode:    11676
+action_0_mean:             0.6414	action_1_mean:             0.3357	action_2_mean:             0.0229	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 0.7923	info_nce_loss:             0.0002	loss:                      0.2615
+q_loss:                    0.2377	return_mean:             -907.5203	return_std:              340.7876	test_action_0_mean:        0.7088
+test_action_1_mean:        0.2872	test_action_2_mean:        0.0040	test_ep_length_mean:      30.0000	test_return_mean:        -681.8575
+test_return_std:         289.2577	
+2026-02-19 22:26:43,669 - my_experiment - IMPuc100_HybridComm - my_run - INFO - t_env: 350310 / 2050000
+2026-02-19 22:26:43,670 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Estimated time left: 7 hours, 52 minutes, 46 seconds. Time passed: 1 hours, 39 minutes, 44 seconds
+2026-02-19 22:33:58,586 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Recent Stats | t_env:     375300 | Episode:    12510
+action_0_mean:             0.6851	action_1_mean:             0.2922	action_2_mean:             0.0227	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 0.9238	info_nce_loss:             0.0001	loss:                      0.2841
+q_loss:                    0.2583	return_mean:             -901.2203	return_std:              363.8752	test_action_0_mean:        0.7423
+test_action_1_mean:        0.2530	test_action_2_mean:        0.0048	test_ep_length_mean:      30.0000	test_return_mean:        -710.2861
+test_return_std:         290.9948	
+2026-02-19 22:33:59,091 - my_experiment - IMPuc100_HybridComm - my_run - INFO - t_env: 375330 / 2050000
+2026-02-19 22:33:59,092 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Estimated time left: 8 hours, 5 minutes, 44 seconds. Time passed: 1 hours, 47 minutes, 0 seconds
+2026-02-19 22:41:05,601 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Saving models to work_dirs/my_experiment/IMPuc100_HybridComm/my_run/20260219_204655/models/400050
+2026-02-19 22:41:09,743 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Recent Stats | t_env:     400320 | Episode:    13344
+action_0_mean:             0.6975	action_1_mean:             0.2798	action_2_mean:             0.0227	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 0.7622	info_nce_loss:             0.0001	loss:                      0.1814
+q_loss:                    0.1649	return_mean:             -884.5023	return_std:              328.1746	test_action_0_mean:        0.7458
+test_action_1_mean:        0.2426	test_action_2_mean:        0.0116	test_ep_length_mean:      30.0000	test_return_mean:        -708.5839
+test_return_std:         104.1347	
+2026-02-19 22:41:10,229 - my_experiment - IMPuc100_HybridComm - my_run - INFO - t_env: 400350 / 2050000
+2026-02-19 22:41:10,230 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Estimated time left: 7 hours, 53 minutes, 46 seconds. Time passed: 1 hours, 54 minutes, 11 seconds
+2026-02-19 22:48:30,851 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Recent Stats | t_env:     425340 | Episode:    14178
+action_0_mean:             0.7052	action_1_mean:             0.2722	action_2_mean:             0.0226	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 0.8752	info_nce_loss:             0.0001	loss:                      0.2232
+q_loss:                    0.2029	return_mean:             -869.0696	return_std:              301.0856	test_action_0_mean:        0.7609
+test_action_1_mean:        0.2275	test_action_2_mean:        0.0116	test_ep_length_mean:      30.0000	test_return_mean:        -696.4786
+test_return_std:         114.3073	
+2026-02-19 22:48:31,339 - my_experiment - IMPuc100_HybridComm - my_run - INFO - t_env: 425370 / 2050000
+2026-02-19 22:48:31,340 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Estimated time left: 7 hours, 57 minutes, 22 seconds. Time passed: 2 hours, 1 minutes, 32 seconds
+2026-02-19 22:55:45,933 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Recent Stats | t_env:     450360 | Episode:    15012
+action_0_mean:             0.6629	action_1_mean:             0.3145	action_2_mean:             0.0226	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 0.8865	info_nce_loss:             0.0001	loss:                      0.2189
+q_loss:                    0.1990	return_mean:             -881.1424	return_std:              320.6739	test_action_0_mean:        0.7187
+test_action_1_mean:        0.2698	test_action_2_mean:        0.0115	test_ep_length_mean:      30.0000	test_return_mean:        -688.9374
+test_return_std:         129.5970	
+2026-02-19 22:55:46,441 - my_experiment - IMPuc100_HybridComm - my_run - INFO - t_env: 450390 / 2050000
+2026-02-19 22:55:46,441 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Estimated time left: 7 hours, 43 minutes, 37 seconds. Time passed: 2 hours, 8 minutes, 47 seconds
+2026-02-19 23:02:57,047 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Recent Stats | t_env:     475380 | Episode:    15846
+action_0_mean:             0.6184	action_1_mean:             0.3590	action_2_mean:             0.0226	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 0.9424	info_nce_loss:             0.0001	loss:                      0.2734
+q_loss:                    0.2553	return_mean:             -902.7675	return_std:              367.9185	test_action_0_mean:        0.6629
+test_action_1_mean:        0.3260	test_action_2_mean:        0.0111	test_ep_length_mean:      30.0000	test_return_mean:        -679.7443
+test_return_std:         112.9791	
+2026-02-19 23:02:57,531 - my_experiment - IMPuc100_HybridComm - my_run - INFO - t_env: 475410 / 2050000
+2026-02-19 23:02:57,532 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Estimated time left: 7 hours, 32 minutes, 9 seconds. Time passed: 2 hours, 15 minutes, 58 seconds
+2026-02-19 23:09:57,436 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Recent Stats | t_env:     500400 | Episode:    16680
+action_0_mean:             0.5938	action_1_mean:             0.3826	action_2_mean:             0.0235	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 0.7844	info_nce_loss:             0.0001	loss:                      0.2736
+q_loss:                    0.2554	return_mean:             -925.0526	return_std:              363.9901	test_action_0_mean:        0.6685
+test_action_1_mean:        0.3216	test_action_2_mean:        0.0099	test_ep_length_mean:      30.0000	test_return_mean:        -631.1871
+test_return_std:         103.8806	
+2026-02-19 23:09:57,925 - my_experiment - IMPuc100_HybridComm - my_run - INFO - t_env: 500430 / 2050000
+2026-02-19 23:09:57,925 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Estimated time left: 7 hours, 13 minutes, 56 seconds. Time passed: 2 hours, 22 minutes, 58 seconds
+2026-02-19 23:17:04,113 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Recent Stats | t_env:     525420 | Episode:    17514
+action_0_mean:             0.6167	action_1_mean:             0.3593	action_2_mean:             0.0240	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 0.6953	info_nce_loss:             0.0001	loss:                      0.2691
+q_loss:                    0.2514	return_mean:             -926.7372	return_std:              337.9755	test_action_0_mean:        0.7105
+test_action_1_mean:        0.2856	test_action_2_mean:        0.0039	test_ep_length_mean:      30.0000	test_return_mean:        -307.2003
+test_return_std:         105.6339	
+2026-02-19 23:17:04,624 - my_experiment - IMPuc100_HybridComm - my_run - INFO - t_env: 525450 / 2050000
+2026-02-19 23:17:04,625 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Estimated time left: 7 hours, 13 minutes, 20 seconds. Time passed: 2 hours, 30 minutes, 5 seconds
+2026-02-19 23:24:14,707 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Recent Stats | t_env:     550440 | Episode:    18348
+action_0_mean:             0.6288	action_1_mean:             0.3470	action_2_mean:             0.0242	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 0.5952	info_nce_loss:             0.0001	loss:                      0.2113
+q_loss:                    0.1989	return_mean:             -933.0438	return_std:              344.7473	test_action_0_mean:        0.6815
+test_action_1_mean:        0.3150	test_action_2_mean:        0.0035	test_ep_length_mean:      30.0000	test_return_mean:        -297.0649
+test_return_std:         117.1064	
+2026-02-19 23:24:15,189 - my_experiment - IMPuc100_HybridComm - my_run - INFO - t_env: 550470 / 2050000
+2026-02-19 23:24:15,190 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Estimated time left: 7 hours, 10 minutes, 5 seconds. Time passed: 2 hours, 37 minutes, 16 seconds
+2026-02-19 23:31:17,351 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Recent Stats | t_env:     575460 | Episode:    19182
+action_0_mean:             0.6425	action_1_mean:             0.3332	action_2_mean:             0.0243	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 2.2265	info_nce_loss:             0.0001	loss:                      0.2341
+q_loss:                    0.2239	return_mean:             -936.1709	return_std:              339.2821	test_action_0_mean:        0.6978
+test_action_1_mean:        0.2990	test_action_2_mean:        0.0032	test_ep_length_mean:      30.0000	test_return_mean:        -279.1245
+test_return_std:         120.2392	
+2026-02-19 23:31:17,843 - my_experiment - IMPuc100_HybridComm - my_run - INFO - t_env: 575490 / 2050000
+2026-02-19 23:31:17,844 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Estimated time left: 6 hours, 55 minutes, 8 seconds. Time passed: 2 hours, 44 minutes, 18 seconds
+2026-02-19 23:38:12,945 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Saving models to work_dirs/my_experiment/IMPuc100_HybridComm/my_run/20260219_204655/models/600060
+2026-02-19 23:38:19,878 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Recent Stats | t_env:     600480 | Episode:    20016
+action_0_mean:             0.6591	action_1_mean:             0.3164	action_2_mean:             0.0245	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 2.0718	info_nce_loss:             0.0001	loss:                      0.2221
+q_loss:                    0.2062	return_mean:             -934.7125	return_std:              328.8212	test_action_0_mean:        0.7327
+test_action_1_mean:        0.2642	test_action_2_mean:        0.0032	test_ep_length_mean:      30.0000	test_return_mean:        -324.4154
+test_return_std:         180.2232	
+2026-02-19 23:38:20,375 - my_experiment - IMPuc100_HybridComm - my_run - INFO - t_env: 600510 / 2050000
+2026-02-19 23:38:20,376 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Estimated time left: 6 hours, 47 minutes, 58 seconds. Time passed: 2 hours, 51 minutes, 21 seconds
+2026-02-19 23:45:20,627 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Recent Stats | t_env:     625500 | Episode:    20850
+action_0_mean:             0.6772	action_1_mean:             0.2989	action_2_mean:             0.0240	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 2.0265	info_nce_loss:             0.0001	loss:                      0.2271
+q_loss:                    0.2107	return_mean:             -916.2875	return_std:              319.0490	test_action_0_mean:        0.7109
+test_action_1_mean:        0.2864	test_action_2_mean:        0.0027	test_ep_length_mean:      30.0000	test_return_mean:        -321.2407
+test_return_std:         211.9594	
+2026-02-19 23:45:21,135 - my_experiment - IMPuc100_HybridComm - my_run - INFO - t_env: 625530 / 2050000
+2026-02-19 23:45:21,136 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Estimated time left: 6 hours, 39 minutes, 15 seconds. Time passed: 2 hours, 58 minutes, 22 seconds
+2026-02-19 23:52:16,921 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Recent Stats | t_env:     650520 | Episode:    21684
+action_0_mean:             0.6762	action_1_mean:             0.3001	action_2_mean:             0.0236	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 2.0210	info_nce_loss:             0.0001	loss:                      0.2764
+q_loss:                    0.2555	return_mean:             -907.6426	return_std:              318.4894	test_action_0_mean:        0.6966
+test_action_1_mean:        0.3012	test_action_2_mean:        0.0022	test_ep_length_mean:      30.0000	test_return_mean:        -352.4537
+test_return_std:         251.1055	
+2026-02-19 23:52:17,411 - my_experiment - IMPuc100_HybridComm - my_run - INFO - t_env: 650550 / 2050000
+2026-02-19 23:52:17,412 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Estimated time left: 6 hours, 28 minutes, 3 seconds. Time passed: 3 hours, 5 minutes, 18 seconds
+2026-02-19 23:59:10,273 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Recent Stats | t_env:     675540 | Episode:    22518
+action_0_mean:             0.6876	action_1_mean:             0.2883	action_2_mean:             0.0241	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 2.0001	info_nce_loss:             0.0001	loss:                      0.2988
+q_loss:                    0.2759	return_mean:             -923.1566	return_std:              332.8973	test_action_0_mean:        0.7209
+test_action_1_mean:        0.2768	test_action_2_mean:        0.0023	test_ep_length_mean:      30.0000	test_return_mean:        -465.9735
+test_return_std:         371.0534	
+2026-02-19 23:59:10,767 - my_experiment - IMPuc100_HybridComm - my_run - INFO - t_env: 675570 / 2050000
+2026-02-19 23:59:10,768 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Estimated time left: 6 hours, 18 minutes, 26 seconds. Time passed: 3 hours, 12 minutes, 11 seconds
+2026-02-20 00:05:54,780 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Recent Stats | t_env:     700560 | Episode:    23352
+action_0_mean:             0.7103	action_1_mean:             0.2656	action_2_mean:             0.0241	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 0.3567	info_nce_loss:             0.0001	loss:                      0.3007
+q_loss:                    0.2733	return_mean:             -923.6429	return_std:              337.3505	test_action_0_mean:        0.7174
+test_action_1_mean:        0.2792	test_action_2_mean:        0.0034	test_ep_length_mean:      30.0000	test_return_mean:        -518.3321
+test_return_std:         393.1496	
+2026-02-20 00:05:55,265 - my_experiment - IMPuc100_HybridComm - my_run - INFO - t_env: 700590 / 2050000
+2026-02-20 00:05:55,266 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Estimated time left: 6 hours, 3 minutes, 35 seconds. Time passed: 3 hours, 18 minutes, 56 seconds
+2026-02-20 00:12:54,255 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Recent Stats | t_env:     725580 | Episode:    24186
+action_0_mean:             0.7307	action_1_mean:             0.2447	action_2_mean:             0.0246	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 0.3739	info_nce_loss:             0.0001	loss:                      0.3275
+q_loss:                    0.2977	return_mean:             -938.4423	return_std:              355.3165	test_action_0_mean:        0.7129
+test_action_1_mean:        0.2838	test_action_2_mean:        0.0034	test_ep_length_mean:      30.0000	test_return_mean:        -491.0781
+test_return_std:         364.2634	
+2026-02-20 00:12:54,747 - my_experiment - IMPuc100_HybridComm - my_run - INFO - t_env: 725610 / 2050000
+2026-02-20 00:12:54,748 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Estimated time left: 6 hours, 10 minutes, 4 seconds. Time passed: 3 hours, 25 minutes, 55 seconds
+2026-02-20 00:20:00,739 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Recent Stats | t_env:     750600 | Episode:    25020
+action_0_mean:             0.7307	action_1_mean:             0.2443	action_2_mean:             0.0250	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 0.3877	info_nce_loss:             0.0001	loss:                      0.3435
+q_loss:                    0.3123	return_mean:             -957.3051	return_std:              374.7451	test_action_0_mean:        0.7302
+test_action_1_mean:        0.2663	test_action_2_mean:        0.0034	test_ep_length_mean:      30.0000	test_return_mean:        -509.5155
+test_return_std:         369.3256	
+2026-02-20 00:20:01,230 - my_experiment - IMPuc100_HybridComm - my_run - INFO - t_env: 750630 / 2050000
+2026-02-20 00:20:01,231 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Estimated time left: 6 hours, 9 minutes, 8 seconds. Time passed: 3 hours, 33 minutes, 2 seconds
+2026-02-20 00:26:56,771 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Recent Stats | t_env:     775620 | Episode:    25854
+action_0_mean:             0.7253	action_1_mean:             0.2498	action_2_mean:             0.0249	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 0.4289	info_nce_loss:             0.0001	loss:                      0.3342
+q_loss:                    0.3103	return_mean:             -960.4644	return_std:              368.3766	test_action_0_mean:        0.7252
+test_action_1_mean:        0.2713	test_action_2_mean:        0.0035	test_ep_length_mean:      30.0000	test_return_mean:        -499.1376
+test_return_std:         363.2741	
+2026-02-20 00:26:57,242 - my_experiment - IMPuc100_HybridComm - my_run - INFO - t_env: 775650 / 2050000
+2026-02-20 00:26:57,243 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Estimated time left: 5 hours, 53 minutes, 8 seconds. Time passed: 3 hours, 39 minutes, 58 seconds
+2026-02-20 00:33:38,106 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Saving models to work_dirs/my_experiment/IMPuc100_HybridComm/my_run/20260219_204655/models/800070
+2026-02-20 00:33:46,908 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Recent Stats | t_env:     800640 | Episode:    26688
+action_0_mean:             0.7264	action_1_mean:             0.2488	action_2_mean:             0.0248	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 0.4145	info_nce_loss:             0.0001	loss:                      0.3281
+q_loss:                    0.3049	return_mean:             -946.1560	return_std:              348.0100	test_action_0_mean:        0.7441
+test_action_1_mean:        0.2525	test_action_2_mean:        0.0034	test_ep_length_mean:      30.0000	test_return_mean:        -398.6355
+test_return_std:         241.9857	
+2026-02-20 00:33:47,367 - my_experiment - IMPuc100_HybridComm - my_run - INFO - t_env: 800670 / 2050000
+2026-02-20 00:33:47,368 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Estimated time left: 5 hours, 41 minutes, 18 seconds. Time passed: 3 hours, 46 minutes, 48 seconds
+2026-02-20 00:40:36,370 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Recent Stats | t_env:     825660 | Episode:    27522
+action_0_mean:             0.7333	action_1_mean:             0.2418	action_2_mean:             0.0249	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 0.3998	info_nce_loss:             0.0001	loss:                      0.3249
+q_loss:                    0.3019	return_mean:             -944.2748	return_std:              342.0685	test_action_0_mean:        0.7468
+test_action_1_mean:        0.2399	test_action_2_mean:        0.0133	test_ep_length_mean:      30.0000	test_return_mean:        -633.9386
+test_return_std:         188.5118	
+2026-02-20 00:40:36,849 - my_experiment - IMPuc100_HybridComm - my_run - INFO - t_env: 825690 / 2050000
+2026-02-20 00:40:36,849 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Estimated time left: 5 hours, 33 minutes, 57 seconds. Time passed: 3 hours, 53 minutes, 37 seconds
+2026-02-20 00:47:31,477 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Recent Stats | t_env:     850680 | Episode:    28356
+action_0_mean:             0.7298	action_1_mean:             0.2460	action_2_mean:             0.0242	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 0.3668	info_nce_loss:             0.0001	loss:                      0.3132
+q_loss:                    0.2913	return_mean:             -915.9678	return_std:              275.8859	test_action_0_mean:        0.7652
+test_action_1_mean:        0.2183	test_action_2_mean:        0.0164	test_ep_length_mean:      30.0000	test_return_mean:        -650.6196
+test_return_std:         140.0065	
+2026-02-20 00:47:31,952 - my_experiment - IMPuc100_HybridComm - my_run - INFO - t_env: 850710 / 2050000
+2026-02-20 00:47:31,952 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Estimated time left: 5 hours, 31 minutes, 37 seconds. Time passed: 4 hours, 32 seconds
+2026-02-20 00:54:19,140 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Recent Stats | t_env:     875700 | Episode:    29190
+action_0_mean:             0.7419	action_1_mean:             0.2336	action_2_mean:             0.0245	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 0.3743	info_nce_loss:             0.0001	loss:                      0.3623
+q_loss:                    0.3359	return_mean:             -919.2563	return_std:              292.2601	test_action_0_mean:        0.7969
+test_action_1_mean:        0.1861	test_action_2_mean:        0.0171	test_ep_length_mean:      30.0000	test_return_mean:        -654.6093
+test_return_std:         127.7613	
+2026-02-20 00:54:19,626 - my_experiment - IMPuc100_HybridComm - my_run - INFO - t_env: 875730 / 2050000
+2026-02-20 00:54:19,627 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Estimated time left: 5 hours, 18 minutes, 53 seconds. Time passed: 4 hours, 7 minutes, 20 seconds
+2026-02-20 01:01:05,696 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Recent Stats | t_env:     900720 | Episode:    30024
+action_0_mean:             0.7624	action_1_mean:             0.2131	action_2_mean:             0.0246	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 0.3384	info_nce_loss:             0.0001	loss:                      0.3684
+q_loss:                    0.3349	return_mean:             -929.1312	return_std:              308.3605	test_action_0_mean:        0.8138
+test_action_1_mean:        0.1689	test_action_2_mean:        0.0172	test_ep_length_mean:      30.0000	test_return_mean:        -655.8739
+test_return_std:         139.7116	
+2026-02-20 01:01:06,168 - my_experiment - IMPuc100_HybridComm - my_run - INFO - t_env: 900750 / 2050000
+2026-02-20 01:01:06,169 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Estimated time left: 5 hours, 11 minutes, 13 seconds. Time passed: 4 hours, 14 minutes, 7 seconds
+2026-02-20 01:07:59,412 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Recent Stats | t_env:     925740 | Episode:    30858
+action_0_mean:             0.7695	action_1_mean:             0.2062	action_2_mean:             0.0243	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 0.3513	info_nce_loss:             0.0001	loss:                      0.3870
+q_loss:                    0.3518	return_mean:             -929.8171	return_std:              315.2917	test_action_0_mean:        0.8034
+test_action_1_mean:        0.1762	test_action_2_mean:        0.0204	test_ep_length_mean:      30.0000	test_return_mean:        -690.3769
+test_return_std:         130.5987	
+2026-02-20 01:07:59,892 - my_experiment - IMPuc100_HybridComm - my_run - INFO - t_env: 925770 / 2050000
+2026-02-20 01:07:59,893 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Estimated time left: 5 hours, 9 minutes, 49 seconds. Time passed: 4 hours, 21 minutes, 0 seconds
+2026-02-20 01:14:52,576 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Recent Stats | t_env:     950760 | Episode:    31692
+action_0_mean:             0.7604	action_1_mean:             0.2146	action_2_mean:             0.0250	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 0.3744	info_nce_loss:             0.0001	loss:                      0.4129
+q_loss:                    0.3753	return_mean:             -943.3711	return_std:              325.1472	test_action_0_mean:        0.7932
+test_action_1_mean:        0.1839	test_action_2_mean:        0.0229	test_ep_length_mean:      30.0000	test_return_mean:        -812.1207
+test_return_std:         130.4477	
+2026-02-20 01:14:53,066 - my_experiment - IMPuc100_HybridComm - my_run - INFO - t_env: 950790 / 2050000
+2026-02-20 01:14:53,067 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Estimated time left: 5 hours, 2 minutes, 32 seconds. Time passed: 4 hours, 27 minutes, 54 seconds
+2026-02-20 01:21:38,252 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Recent Stats | t_env:     975780 | Episode:    32526
+action_0_mean:             0.7540	action_1_mean:             0.2199	action_2_mean:             0.0261	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 0.3742	info_nce_loss:             0.0001	loss:                      0.4419
+q_loss:                    0.4017	return_mean:             -975.7653	return_std:              370.0477	test_action_0_mean:        0.7854
+test_action_1_mean:        0.1943	test_action_2_mean:        0.0203	test_ep_length_mean:      30.0000	test_return_mean:        -766.6887
+test_return_std:         147.9126	
+2026-02-20 01:21:38,721 - my_experiment - IMPuc100_HybridComm - my_run - INFO - t_env: 975810 / 2050000
+2026-02-20 01:21:38,721 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Estimated time left: 4 hours, 50 minutes, 16 seconds. Time passed: 4 hours, 34 minutes, 39 seconds
+2026-02-20 01:28:17,070 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Saving models to work_dirs/my_experiment/IMPuc100_HybridComm/my_run/20260219_204655/models/1000080
+2026-02-20 01:28:28,439 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Recent Stats | t_env:    1000800 | Episode:    33360
+action_0_mean:             0.7613	action_1_mean:             0.2128	action_2_mean:             0.0259	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 0.3747	info_nce_loss:             0.0001	loss:                      0.3961
+q_loss:                    0.3601	return_mean:             -952.4839	return_std:              320.1360	test_action_0_mean:        0.7757
+test_action_1_mean:        0.2045	test_action_2_mean:        0.0199	test_ep_length_mean:      30.0000	test_return_mean:        -725.8175
+test_return_std:         124.5989	
+2026-02-20 01:28:28,920 - my_experiment - IMPuc100_HybridComm - my_run - INFO - t_env: 1000830 / 2050000
+2026-02-20 01:28:28,920 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Estimated time left: 4 hours, 46 minutes, 40 seconds. Time passed: 4 hours, 41 minutes, 29 seconds
+2026-02-20 01:35:26,179 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Recent Stats | t_env:    1025820 | Episode:    34194
+action_0_mean:             0.7598	action_1_mean:             0.2133	action_2_mean:             0.0268	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 0.3704	info_nce_loss:             0.0001	loss:                      0.4255
+q_loss:                    0.3869	return_mean:             -963.2937	return_std:              352.7601	test_action_0_mean:        0.7688
+test_action_1_mean:        0.2085	test_action_2_mean:        0.0227	test_ep_length_mean:      30.0000	test_return_mean:        -746.3414
+test_return_std:          82.3175	
+2026-02-20 01:35:26,674 - my_experiment - IMPuc100_HybridComm - my_run - INFO - t_env: 1025850 / 2050000
+2026-02-20 01:35:26,674 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Estimated time left: 4 hours, 45 minutes, 0 seconds. Time passed: 4 hours, 48 minutes, 27 seconds
+2026-02-20 01:42:19,338 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Recent Stats | t_env:    1050840 | Episode:    35028
+action_0_mean:             0.7483	action_1_mean:             0.2244	action_2_mean:             0.0273	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 0.3760	info_nce_loss:             0.0001	loss:                      0.4216
+q_loss:                    0.3833	return_mean:             -963.0903	return_std:              344.4691	test_action_0_mean:        0.7767
+test_action_1_mean:        0.2036	test_action_2_mean:        0.0197	test_ep_length_mean:      30.0000	test_return_mean:        -704.2382
+test_return_std:          90.2186	
+2026-02-20 01:42:19,811 - my_experiment - IMPuc100_HybridComm - my_run - INFO - t_env: 1050870 / 2050000
+2026-02-20 01:42:19,811 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Estimated time left: 4 hours, 34 minutes, 57 seconds. Time passed: 4 hours, 55 minutes, 20 seconds
+2026-02-20 01:48:53,036 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Recent Stats | t_env:    1075860 | Episode:    35862
+action_0_mean:             0.7447	action_1_mean:             0.2285	action_2_mean:             0.0268	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 0.3936	info_nce_loss:             0.0001	loss:                      0.4300
+q_loss:                    0.3982	return_mean:             -950.7407	return_std:              345.2958	test_action_0_mean:        0.7860
+test_action_1_mean:        0.2079	test_action_2_mean:        0.0061	test_ep_length_mean:      30.0000	test_return_mean:        -373.2839
+test_return_std:         207.1736	
+2026-02-20 01:48:53,500 - my_experiment - IMPuc100_HybridComm - my_run - INFO - t_env: 1075890 / 2050000
+2026-02-20 01:48:53,500 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Estimated time left: 4 hours, 15 minutes, 27 seconds. Time passed: 5 hours, 1 minutes, 54 seconds
+2026-02-20 01:55:23,519 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Recent Stats | t_env:    1100880 | Episode:    36696
+action_0_mean:             0.7440	action_1_mean:             0.2297	action_2_mean:             0.0263	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 0.3832	info_nce_loss:             0.0001	loss:                      0.4018
+q_loss:                    0.3725	return_mean:             -931.8092	return_std:              309.5629	test_action_0_mean:        0.7887
+test_action_1_mean:        0.2058	test_action_2_mean:        0.0056	test_ep_length_mean:      30.0000	test_return_mean:        -392.1192
+test_return_std:         233.2058	
+2026-02-20 01:55:23,968 - my_experiment - IMPuc100_HybridComm - my_run - INFO - t_env: 1100910 / 2050000
+2026-02-20 01:55:23,969 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Estimated time left: 4 hours, 6 minutes, 51 seconds. Time passed: 5 hours, 8 minutes, 24 seconds
+2026-02-20 02:01:57,154 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Recent Stats | t_env:    1125900 | Episode:    37530
+action_0_mean:             0.7330	action_1_mean:             0.2407	action_2_mean:             0.0263	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 0.3494	info_nce_loss:             0.0001	loss:                      0.3854
+q_loss:                    0.3576	return_mean:             -942.6165	return_std:              318.4053	test_action_0_mean:        0.7785
+test_action_1_mean:        0.2159	test_action_2_mean:        0.0056	test_ep_length_mean:      30.0000	test_return_mean:        -419.1022
+test_return_std:         260.1096	
+2026-02-20 02:01:57,633 - my_experiment - IMPuc100_HybridComm - my_run - INFO - t_env: 1125930 / 2050000
+2026-02-20 02:01:57,634 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Estimated time left: 4 hours, 2 minutes, 19 seconds. Time passed: 5 hours, 14 minutes, 58 seconds
+2026-02-20 02:08:49,710 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Recent Stats | t_env:    1150920 | Episode:    38364
+action_0_mean:             0.7294	action_1_mean:             0.2449	action_2_mean:             0.0257	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 0.3551	info_nce_loss:             0.0001	loss:                      0.3523
+q_loss:                    0.3275	return_mean:             -930.1638	return_std:              289.9798	test_action_0_mean:        0.7909
+test_action_1_mean:        0.2065	test_action_2_mean:        0.0026	test_ep_length_mean:      30.0000	test_return_mean:        -396.3572
+test_return_std:         295.8861	
+2026-02-20 02:08:50,194 - my_experiment - IMPuc100_HybridComm - my_run - INFO - t_env: 1150950 / 2050000
+2026-02-20 02:08:50,195 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Estimated time left: 4 hours, 7 minutes, 4 seconds. Time passed: 5 hours, 21 minutes, 51 seconds
+2026-02-20 02:15:49,216 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Recent Stats | t_env:    1175940 | Episode:    39198
+action_0_mean:             0.7359	action_1_mean:             0.2385	action_2_mean:             0.0256	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 0.4647	info_nce_loss:             0.0001	loss:                      0.3766
+q_loss:                    0.3582	return_mean:             -940.8116	return_std:              312.1086	test_action_0_mean:        0.7734
+test_action_1_mean:        0.2240	test_action_2_mean:        0.0026	test_ep_length_mean:      30.0000	test_return_mean:        -410.3543
+test_return_std:         329.9207	
+2026-02-20 02:15:49,706 - my_experiment - IMPuc100_HybridComm - my_run - INFO - t_env: 1175970 / 2050000
+2026-02-20 02:15:49,707 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Estimated time left: 4 hours, 4 minutes, 14 seconds. Time passed: 5 hours, 28 minutes, 50 seconds
+2026-02-20 02:22:36,889 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Saving models to work_dirs/my_experiment/IMPuc100_HybridComm/my_run/20260219_204655/models/1200090
+2026-02-20 02:22:51,609 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Recent Stats | t_env:    1200960 | Episode:    40032
+action_0_mean:             0.7343	action_1_mean:             0.2404	action_2_mean:             0.0253	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 0.4707	info_nce_loss:             0.0002	loss:                      0.4258
+q_loss:                    0.3956	return_mean:             -939.2530	return_std:              296.7346	test_action_0_mean:        0.7667
+test_action_1_mean:        0.2307	test_action_2_mean:        0.0026	test_ep_length_mean:      30.0000	test_return_mean:        -328.8454
+test_return_std:         239.1926	
+2026-02-20 02:22:52,103 - my_experiment - IMPuc100_HybridComm - my_run - INFO - t_env: 1200990 / 2050000
+2026-02-20 02:22:52,104 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Estimated time left: 3 hours, 58 minutes, 53 seconds. Time passed: 5 hours, 35 minutes, 53 seconds
+2026-02-20 02:29:54,356 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Recent Stats | t_env:    1225980 | Episode:    40866
+action_0_mean:             0.7220	action_1_mean:             0.2529	action_2_mean:             0.0251	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 0.4499	info_nce_loss:             0.0002	loss:                      0.3895
+q_loss:                    0.3626	return_mean:             -942.1135	return_std:              312.5458	test_action_0_mean:        0.7281
+test_action_1_mean:        0.2687	test_action_2_mean:        0.0032	test_ep_length_mean:      30.0000	test_return_mean:        -299.2506
+test_return_std:         191.9348	
+2026-02-20 02:29:54,837 - my_experiment - IMPuc100_HybridComm - my_run - INFO - t_env: 1226010 / 2050000
+2026-02-20 02:29:54,837 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Estimated time left: 3 hours, 52 minutes, 1 seconds. Time passed: 5 hours, 42 minutes, 55 seconds
+2026-02-20 02:36:44,329 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Recent Stats | t_env:    1251000 | Episode:    41700
+action_0_mean:             0.7092	action_1_mean:             0.2659	action_2_mean:             0.0249	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 0.4525	info_nce_loss:             0.0001	loss:                      0.4043
+q_loss:                    0.3760	return_mean:             -932.6718	return_std:              323.0388	test_action_0_mean:        0.7139
+test_action_1_mean:        0.2830	test_action_2_mean:        0.0031	test_ep_length_mean:      30.0000	test_return_mean:        -276.0538
+test_return_std:         166.2100	
+2026-02-20 02:36:44,805 - my_experiment - IMPuc100_HybridComm - my_run - INFO - t_env: 1251030 / 2050000
+2026-02-20 02:36:44,806 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Estimated time left: 3 hours, 38 minutes, 11 seconds. Time passed: 5 hours, 49 minutes, 45 seconds
+2026-02-20 02:43:35,547 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Recent Stats | t_env:    1276020 | Episode:    42534
+action_0_mean:             0.7097	action_1_mean:             0.2659	action_2_mean:             0.0244	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 0.4317	info_nce_loss:             0.0001	loss:                      0.3598
+q_loss:                    0.3383	return_mean:             -920.0203	return_std:              305.4490	test_action_0_mean:        0.7274
+test_action_1_mean:        0.2695	test_action_2_mean:        0.0031	test_ep_length_mean:      30.0000	test_return_mean:        -308.8175
+test_return_std:         184.5952	
+2026-02-20 02:43:36,033 - my_experiment - IMPuc100_HybridComm - my_run - INFO - t_env: 1276050 / 2050000
+2026-02-20 02:43:36,033 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Estimated time left: 3 hours, 32 minutes, 0 seconds. Time passed: 5 hours, 56 minutes, 37 seconds
+2026-02-20 02:50:24,655 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Recent Stats | t_env:    1301040 | Episode:    43368
+action_0_mean:             0.7087	action_1_mean:             0.2671	action_2_mean:             0.0242	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 0.3671	info_nce_loss:             0.0001	loss:                      0.4017
+q_loss:                    0.3679	return_mean:             -913.9828	return_std:              292.5012	test_action_0_mean:        0.7411
+test_action_1_mean:        0.2525	test_action_2_mean:        0.0064	test_ep_length_mean:      30.0000	test_return_mean:        -361.0065
+test_return_std:         125.5033	
+2026-02-20 02:50:25,135 - my_experiment - IMPuc100_HybridComm - my_run - INFO - t_env: 1301070 / 2050000
+2026-02-20 02:50:25,136 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Estimated time left: 3 hours, 24 minutes, 5 seconds. Time passed: 6 hours, 3 minutes, 26 seconds
+2026-02-20 02:57:14,620 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Recent Stats | t_env:    1326060 | Episode:    44202
+action_0_mean:             0.7197	action_1_mean:             0.2556	action_2_mean:             0.0247	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 0.3482	info_nce_loss:             0.0001	loss:                      0.3794
+q_loss:                    0.3476	return_mean:             -921.2735	return_std:              312.0171	test_action_0_mean:        0.7553
+test_action_1_mean:        0.2384	test_action_2_mean:        0.0064	test_ep_length_mean:      30.0000	test_return_mean:        -355.1264
+test_return_std:         122.2674	
+2026-02-20 02:57:15,085 - my_experiment - IMPuc100_HybridComm - my_run - INFO - t_env: 1326090 / 2050000
+2026-02-20 02:57:15,086 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Estimated time left: 3 hours, 17 minutes, 41 seconds. Time passed: 6 hours, 10 minutes, 16 seconds
+2026-02-20 03:03:59,672 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Recent Stats | t_env:    1351080 | Episode:    45036
+action_0_mean:             0.7351	action_1_mean:             0.2402	action_2_mean:             0.0247	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 0.4728	info_nce_loss:             0.0001	loss:                      0.3935
+q_loss:                    0.3605	return_mean:             -910.5357	return_std:              318.5668	test_action_0_mean:        0.7927
+test_action_1_mean:        0.2010	test_action_2_mean:        0.0063	test_ep_length_mean:      30.0000	test_return_mean:        -358.9530
+test_return_std:         131.4303	
+2026-02-20 03:04:00,136 - my_experiment - IMPuc100_HybridComm - my_run - INFO - t_env: 1351110 / 2050000
+2026-02-20 03:04:00,137 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Estimated time left: 3 hours, 8 minutes, 34 seconds. Time passed: 6 hours, 17 minutes, 1 seconds
+2026-02-20 03:10:43,978 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Recent Stats | t_env:    1376100 | Episode:    45870
+action_0_mean:             0.7600	action_1_mean:             0.2149	action_2_mean:             0.0251	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 0.5980	info_nce_loss:             0.0001	loss:                      0.5453
+q_loss:                    0.4984	return_mean:             -927.7599	return_std:              356.5408	test_action_0_mean:        0.8192
+test_action_1_mean:        0.1746	test_action_2_mean:        0.0062	test_ep_length_mean:      30.0000	test_return_mean:        -368.1304
+test_return_std:         144.7318	
+2026-02-20 03:10:44,450 - my_experiment - IMPuc100_HybridComm - my_run - INFO - t_env: 1376130 / 2050000
+2026-02-20 03:10:44,451 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Estimated time left: 3 hours, 1 minutes, 29 seconds. Time passed: 6 hours, 23 minutes, 45 seconds
+2026-02-20 03:17:14,171 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Saving models to work_dirs/my_experiment/IMPuc100_HybridComm/my_run/20260219_204655/models/1400100
+2026-02-20 03:17:30,509 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Recent Stats | t_env:    1401120 | Episode:    46704
+action_0_mean:             0.7705	action_1_mean:             0.2044	action_2_mean:             0.0251	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 0.6604	info_nce_loss:             0.0001	loss:                      0.5615
+q_loss:                    0.5147	return_mean:             -926.1198	return_std:              351.8005	test_action_0_mean:        0.8146
+test_action_1_mean:        0.1788	test_action_2_mean:        0.0066	test_ep_length_mean:      30.0000	test_return_mean:        -360.1004
+test_return_std:         140.4973	
+2026-02-20 03:17:30,997 - my_experiment - IMPuc100_HybridComm - my_run - INFO - t_env: 1401150 / 2050000
+2026-02-20 03:17:30,998 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Estimated time left: 2 hours, 55 minutes, 43 seconds. Time passed: 6 hours, 30 minutes, 31 seconds
+2026-02-20 03:24:29,644 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Recent Stats | t_env:    1426140 | Episode:    47538
+action_0_mean:             0.7757	action_1_mean:             0.1998	action_2_mean:             0.0245	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 0.6103	info_nce_loss:             0.0001	loss:                      0.4604
+q_loss:                    0.4227	return_mean:             -904.3741	return_std:              317.5319	test_action_0_mean:        0.7987
+test_action_1_mean:        0.1980	test_action_2_mean:        0.0033	test_ep_length_mean:      30.0000	test_return_mean:        -295.1504
+test_return_std:         169.0169	
+2026-02-20 03:24:30,118 - my_experiment - IMPuc100_HybridComm - my_run - INFO - t_env: 1426170 / 2050000
+2026-02-20 03:24:30,119 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Estimated time left: 2 hours, 54 minutes, 10 seconds. Time passed: 6 hours, 37 minutes, 31 seconds
+2026-02-20 03:31:27,741 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Recent Stats | t_env:    1451160 | Episode:    48372
+action_0_mean:             0.7633	action_1_mean:             0.2128	action_2_mean:             0.0239	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 0.6182	info_nce_loss:             0.0001	loss:                      0.4166
+q_loss:                    0.3830	return_mean:             -890.7097	return_std:              290.0125	test_action_0_mean:        0.7895
+test_action_1_mean:        0.2072	test_action_2_mean:        0.0033	test_ep_length_mean:      30.0000	test_return_mean:        -304.3337
+test_return_std:         188.3458	
+2026-02-20 03:31:28,250 - my_experiment - IMPuc100_HybridComm - my_run - INFO - t_env: 1451190 / 2050000
+2026-02-20 03:31:28,251 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Estimated time left: 2 hours, 46 minutes, 47 seconds. Time passed: 6 hours, 44 minutes, 29 seconds
+2026-02-20 03:38:21,803 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Recent Stats | t_env:    1476180 | Episode:    49206
+action_0_mean:             0.7461	action_1_mean:             0.2303	action_2_mean:             0.0236	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 0.5049	info_nce_loss:             0.0001	loss:                      0.3944
+q_loss:                    0.3628	return_mean:             -881.8844	return_std:              250.0043	test_action_0_mean:        0.7673
+test_action_1_mean:        0.2294	test_action_2_mean:        0.0033	test_ep_length_mean:      30.0000	test_return_mean:        -308.0970
+test_return_std:         209.5917	
+2026-02-20 03:38:22,274 - my_experiment - IMPuc100_HybridComm - my_run - INFO - t_env: 1476210 / 2050000
+2026-02-20 03:38:22,275 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Estimated time left: 2 hours, 38 minutes, 14 seconds. Time passed: 6 hours, 51 minutes, 23 seconds
+2026-02-20 03:44:58,980 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Recent Stats | t_env:    1501200 | Episode:    50040
+action_0_mean:             0.7339	action_1_mean:             0.2429	action_2_mean:             0.0231	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 0.3738	info_nce_loss:             0.0001	loss:                      0.2102
+q_loss:                    0.1953	return_mean:             -861.8924	return_std:              196.9137	test_action_0_mean:        0.7746
+test_action_1_mean:        0.2222	test_action_2_mean:        0.0032	test_ep_length_mean:      30.0000	test_return_mean:        -376.1062
+test_return_std:         266.3018	
+2026-02-20 03:44:59,450 - my_experiment - IMPuc100_HybridComm - my_run - INFO - t_env: 1501230 / 2050000
+2026-02-20 03:44:59,451 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Estimated time left: 2 hours, 25 minutes, 11 seconds. Time passed: 6 hours, 58 minutes, 0 seconds
+2026-02-20 03:51:44,546 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Recent Stats | t_env:    1526220 | Episode:    50874
+action_0_mean:             0.7373	action_1_mean:             0.2388	action_2_mean:             0.0239	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 0.3937	info_nce_loss:             0.0001	loss:                      0.3780
+q_loss:                    0.3436	return_mean:             -894.4509	return_std:              273.7092	test_action_0_mean:        0.7795
+test_action_1_mean:        0.2176	test_action_2_mean:        0.0029	test_ep_length_mean:      30.0000	test_return_mean:        -340.0118
+test_return_std:         227.0748	
+2026-02-20 03:51:45,031 - my_experiment - IMPuc100_HybridComm - my_run - INFO - t_env: 1526250 / 2050000
+2026-02-20 03:51:45,032 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Estimated time left: 2 hours, 21 minutes, 30 seconds. Time passed: 7 hours, 4 minutes, 46 seconds
+2026-02-20 03:58:33,990 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Recent Stats | t_env:    1551240 | Episode:    51708
+action_0_mean:             0.7419	action_1_mean:             0.2339	action_2_mean:             0.0243	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 0.5746	info_nce_loss:             0.0002	loss:                      0.6533
+q_loss:                    0.5939	return_mean:             -901.7904	return_std:              290.6138	test_action_0_mean:        0.7829
+test_action_1_mean:        0.2137	test_action_2_mean:        0.0034	test_ep_length_mean:      30.0000	test_return_mean:        -352.6480
+test_return_std:         246.3935	
+2026-02-20 03:58:34,449 - my_experiment - IMPuc100_HybridComm - my_run - INFO - t_env: 1551270 / 2050000
+2026-02-20 03:58:34,450 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Estimated time left: 2 hours, 16 minutes, 1 seconds. Time passed: 7 hours, 11 minutes, 35 seconds
+2026-02-20 04:05:23,077 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Recent Stats | t_env:    1576260 | Episode:    52542
+action_0_mean:             0.7505	action_1_mean:             0.2251	action_2_mean:             0.0245	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 0.5855	info_nce_loss:             0.0001	loss:                      0.6484
+q_loss:                    0.5947	return_mean:             -898.9389	return_std:              289.3941	test_action_0_mean:        0.7968
+test_action_1_mean:        0.1994	test_action_2_mean:        0.0038	test_ep_length_mean:      30.0000	test_return_mean:        -338.4577
+test_return_std:         209.7039	
+2026-02-20 04:05:23,540 - my_experiment - IMPuc100_HybridComm - my_run - INFO - t_env: 1576290 / 2050000
+2026-02-20 04:05:23,541 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Estimated time left: 2 hours, 9 minutes, 5 seconds. Time passed: 7 hours, 18 minutes, 24 seconds
+2026-02-20 04:11:45,455 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Saving models to work_dirs/my_experiment/IMPuc100_HybridComm/my_run/20260219_204655/models/1600110
+2026-02-20 04:12:03,749 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Recent Stats | t_env:    1601280 | Episode:    53376
+action_0_mean:             0.7701	action_1_mean:             0.2034	action_2_mean:             0.0265	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 0.6323	info_nce_loss:             0.0001	loss:                      0.7554
+q_loss:                    0.6920	return_mean:             -971.3807	return_std:              422.2548	test_action_0_mean:        0.8336
+test_action_1_mean:        0.1629	test_action_2_mean:        0.0034	test_ep_length_mean:      30.0000	test_return_mean:        -558.2156
+test_return_std:         426.9961	
+2026-02-20 04:12:04,210 - my_experiment - IMPuc100_HybridComm - my_run - INFO - t_env: 1601310 / 2050000
+2026-02-20 04:12:04,211 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Estimated time left: 1 hours, 59 minutes, 45 seconds. Time passed: 7 hours, 25 minutes, 5 seconds
+2026-02-20 04:18:47,360 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Recent Stats | t_env:    1626300 | Episode:    54210
+action_0_mean:             0.7849	action_1_mean:             0.1884	action_2_mean:             0.0267	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 0.6598	info_nce_loss:             0.0001	loss:                      0.8016
+q_loss:                    0.7340	return_mean:             -984.9057	return_std:              442.3294	test_action_0_mean:        0.8252
+test_action_1_mean:        0.1709	test_action_2_mean:        0.0039	test_ep_length_mean:      30.0000	test_return_mean:        -496.9998
+test_return_std:         374.7579	
+2026-02-20 04:18:47,831 - my_experiment - IMPuc100_HybridComm - my_run - INFO - t_env: 1626330 / 2050000
+2026-02-20 04:18:47,832 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Estimated time left: 1 hours, 53 minutes, 54 seconds. Time passed: 7 hours, 31 minutes, 48 seconds
+2026-02-20 04:25:26,428 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Recent Stats | t_env:    1651320 | Episode:    55044
+action_0_mean:             0.7793	action_1_mean:             0.1941	action_2_mean:             0.0266	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 0.6082	info_nce_loss:             0.0001	loss:                      0.6706
+q_loss:                    0.6149	return_mean:             -967.8897	return_std:              377.2222	test_action_0_mean:        0.8156
+test_action_1_mean:        0.1801	test_action_2_mean:        0.0042	test_ep_length_mean:      30.0000	test_return_mean:        -494.0451
+test_return_std:         366.3026	
+2026-02-20 04:25:26,886 - my_experiment - IMPuc100_HybridComm - my_run - INFO - t_env: 1651350 / 2050000
+2026-02-20 04:25:26,887 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Estimated time left: 1 hours, 45 minutes, 58 seconds. Time passed: 7 hours, 38 minutes, 27 seconds
+2026-02-20 04:32:07,751 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Recent Stats | t_env:    1676340 | Episode:    55878
+action_0_mean:             0.7822	action_1_mean:             0.1909	action_2_mean:             0.0269	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 0.4836	info_nce_loss:             0.0001	loss:                      0.3979
+q_loss:                    0.3670	return_mean:             -968.3789	return_std:              365.5016	test_action_0_mean:        0.8429
+test_action_1_mean:        0.1532	test_action_2_mean:        0.0039	test_ep_length_mean:      30.0000	test_return_mean:        -470.0196
+test_return_std:         326.1465	
+2026-02-20 04:32:08,235 - my_experiment - IMPuc100_HybridComm - my_run - INFO - t_env: 1676370 / 2050000
+2026-02-20 04:32:08,236 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Estimated time left: 1 hours, 39 minutes, 53 seconds. Time passed: 7 hours, 45 minutes, 9 seconds
+2026-02-20 04:38:48,160 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Recent Stats | t_env:    1701360 | Episode:    56712
+action_0_mean:             0.7970	action_1_mean:             0.1760	action_2_mean:             0.0270	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 0.4367	info_nce_loss:             0.0001	loss:                      0.3718
+q_loss:                    0.3380	return_mean:             -968.1669	return_std:              361.5777	test_action_0_mean:        0.8283
+test_action_1_mean:        0.1640	test_action_2_mean:        0.0077	test_ep_length_mean:      30.0000	test_return_mean:        -612.5018
+test_return_std:         327.1709	
+2026-02-20 04:38:48,625 - my_experiment - IMPuc100_HybridComm - my_run - INFO - t_env: 1701390 / 2050000
+2026-02-20 04:38:48,626 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Estimated time left: 1 hours, 32 minutes, 58 seconds. Time passed: 7 hours, 51 minutes, 49 seconds
+2026-02-20 04:45:29,697 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Recent Stats | t_env:    1726380 | Episode:    57546
+action_0_mean:             0.8041	action_1_mean:             0.1705	action_2_mean:             0.0254	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 0.3610	info_nce_loss:             0.0001	loss:                      0.2660
+q_loss:                    0.2419	return_mean:             -901.1816	return_std:              231.3538	test_action_0_mean:        0.8186
+test_action_1_mean:        0.1731	test_action_2_mean:        0.0083	test_ep_length_mean:      30.0000	test_return_mean:        -389.0851
+test_return_std:          97.8474	
+2026-02-20 04:45:30,153 - my_experiment - IMPuc100_HybridComm - my_run - INFO - t_env: 1726410 / 2050000
+2026-02-20 04:45:30,154 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Estimated time left: 1 hours, 26 minutes, 33 seconds. Time passed: 7 hours, 58 minutes, 31 seconds
+2026-02-20 04:52:07,175 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Recent Stats | t_env:    1751400 | Episode:    58380
+action_0_mean:             0.8025	action_1_mean:             0.1707	action_2_mean:             0.0267	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 0.4042	info_nce_loss:             0.0001	loss:                      0.2887
+q_loss:                    0.2625	return_mean:             -953.9355	return_std:              363.8265	test_action_0_mean:        0.8318
+test_action_1_mean:        0.1598	test_action_2_mean:        0.0085	test_ep_length_mean:      30.0000	test_return_mean:        -612.6196
+test_return_std:         252.2987	
+2026-02-20 04:52:07,648 - my_experiment - IMPuc100_HybridComm - my_run - INFO - t_env: 1751430 / 2050000
+2026-02-20 04:52:07,649 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Estimated time left: 1 hours, 19 minutes, 3 seconds. Time passed: 8 hours, 5 minutes, 8 seconds
+2026-02-20 04:58:42,226 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Recent Stats | t_env:    1776420 | Episode:    59214
+action_0_mean:             0.8118	action_1_mean:             0.1620	action_2_mean:             0.0263	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 0.4707	info_nce_loss:             0.0001	loss:                      0.4212
+q_loss:                    0.3829	return_mean:             -944.2561	return_std:              341.9279	test_action_0_mean:        0.8345
+test_action_1_mean:        0.1513	test_action_2_mean:        0.0143	test_ep_length_mean:      30.0000	test_return_mean:        -759.3849
+test_return_std:         249.3742	
+2026-02-20 04:58:42,688 - my_experiment - IMPuc100_HybridComm - my_run - INFO - t_env: 1776450 / 2050000
+2026-02-20 04:58:42,689 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Estimated time left: 1 hours, 11 minutes, 59 seconds. Time passed: 8 hours, 11 minutes, 43 seconds
+2026-02-20 05:05:01,194 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Saving models to work_dirs/my_experiment/IMPuc100_HybridComm/my_run/20260219_204655/models/1800120
+2026-02-20 05:05:21,705 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Recent Stats | t_env:    1801440 | Episode:    60048
+action_0_mean:             0.8178	action_1_mean:             0.1556	action_2_mean:             0.0266	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 0.4552	info_nce_loss:             0.0001	loss:                      0.4466
+q_loss:                    0.4060	return_mean:             -967.1906	return_std:              359.0024	test_action_0_mean:        0.8309
+test_action_1_mean:        0.1521	test_action_2_mean:        0.0171	test_ep_length_mean:      30.0000	test_return_mean:        -873.3517
+test_return_std:         255.0888	
+2026-02-20 05:05:22,176 - my_experiment - IMPuc100_HybridComm - my_run - INFO - t_env: 1801470 / 2050000
+2026-02-20 05:05:22,177 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Estimated time left: 1 hours, 6 minutes, 8 seconds. Time passed: 8 hours, 18 minutes, 23 seconds
+2026-02-20 05:12:05,446 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Recent Stats | t_env:    1826460 | Episode:    60882
+action_0_mean:             0.8175	action_1_mean:             0.1554	action_2_mean:             0.0271	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 0.4417	info_nce_loss:             0.0001	loss:                      0.4625
+q_loss:                    0.4205	return_mean:             -995.5779	return_std:              371.4474	test_action_0_mean:        0.8363
+test_action_1_mean:        0.1507	test_action_2_mean:        0.0130	test_ep_length_mean:      30.0000	test_return_mean:        -730.3819
+test_return_std:         256.5826	
+2026-02-20 05:12:05,922 - my_experiment - IMPuc100_HybridComm - my_run - INFO - t_env: 1826490 / 2050000
+2026-02-20 05:12:05,922 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Estimated time left: 1 hours, 6 seconds. Time passed: 8 hours, 25 minutes, 6 seconds
+2026-02-20 05:18:55,087 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Recent Stats | t_env:    1851480 | Episode:    61716
+action_0_mean:             0.8075	action_1_mean:             0.1657	action_2_mean:             0.0268	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 0.4424	info_nce_loss:             0.0002	loss:                      0.4645
+q_loss:                    0.4223	return_mean:             -998.1980	return_std:              371.8572	test_action_0_mean:        0.8190
+test_action_1_mean:        0.1684	test_action_2_mean:        0.0126	test_ep_length_mean:      30.0000	test_return_mean:        -759.9777
+test_return_std:         271.6183	
+2026-02-20 05:18:55,567 - my_experiment - IMPuc100_HybridComm - my_run - INFO - t_env: 1851510 / 2050000
+2026-02-20 05:18:55,567 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Estimated time left: 54 minutes, 9 seconds. Time passed: 8 hours, 31 minutes, 56 seconds
+2026-02-20 05:25:43,301 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Recent Stats | t_env:    1876500 | Episode:    62550
+action_0_mean:             0.7935	action_1_mean:             0.1813	action_2_mean:             0.0253	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 0.3855	info_nce_loss:             0.0001	loss:                      0.4005
+q_loss:                    0.3675	return_mean:             -942.6669	return_std:              211.9229	test_action_0_mean:        0.8003
+test_action_1_mean:        0.1876	test_action_2_mean:        0.0122	test_ep_length_mean:      30.0000	test_return_mean:        -553.5658
+test_return_std:         127.6385	
+2026-02-20 05:25:43,767 - my_experiment - IMPuc100_HybridComm - my_run - INFO - t_env: 1876530 / 2050000
+2026-02-20 05:25:43,768 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Estimated time left: 47 minutes, 10 seconds. Time passed: 8 hours, 38 minutes, 44 seconds
+2026-02-20 05:32:32,279 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Recent Stats | t_env:    1901520 | Episode:    63384
+action_0_mean:             0.7769	action_1_mean:             0.1985	action_2_mean:             0.0246	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 0.2569	info_nce_loss:             0.0001	loss:                      0.2178
+q_loss:                    0.2014	return_mean:             -927.0751	return_std:              199.9361	test_action_0_mean:        0.7932
+test_action_1_mean:        0.2005	test_action_2_mean:        0.0064	test_ep_length_mean:      30.0000	test_return_mean:        -415.2676
+test_return_std:         142.4876	
+2026-02-20 05:32:32,758 - my_experiment - IMPuc100_HybridComm - my_run - INFO - t_env: 1901550 / 2050000
+2026-02-20 05:32:32,759 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Estimated time left: 40 minutes, 26 seconds. Time passed: 8 hours, 45 minutes, 33 seconds
+2026-02-20 05:39:23,043 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Recent Stats | t_env:    1926540 | Episode:    64218
+action_0_mean:             0.7618	action_1_mean:             0.2147	action_2_mean:             0.0235	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 0.1821	info_nce_loss:             0.0001	loss:                      0.1912
+q_loss:                    0.1772	return_mean:             -892.3868	return_std:              177.5862	test_action_0_mean:        0.7821
+test_action_1_mean:        0.2145	test_action_2_mean:        0.0033	test_ep_length_mean:      30.0000	test_return_mean:        -318.4777
+test_return_std:         179.1058	
+2026-02-20 05:39:23,533 - my_experiment - IMPuc100_HybridComm - my_run - INFO - t_env: 1926570 / 2050000
+2026-02-20 05:39:23,534 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Estimated time left: 33 minutes, 46 seconds. Time passed: 8 hours, 52 minutes, 24 seconds
+2026-02-20 05:46:07,200 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Recent Stats | t_env:    1951560 | Episode:    65052
+action_0_mean:             0.7450	action_1_mean:             0.2324	action_2_mean:             0.0226	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 0.1983	info_nce_loss:             0.0001	loss:                      0.1810
+q_loss:                    0.1680	return_mean:             -867.4120	return_std:              198.5207	test_action_0_mean:        0.7784
+test_action_1_mean:        0.2180	test_action_2_mean:        0.0036	test_ep_length_mean:      30.0000	test_return_mean:        -352.7763
+test_return_std:         217.7489	
+2026-02-20 05:46:07,679 - my_experiment - IMPuc100_HybridComm - my_run - INFO - t_env: 1951590 / 2050000
+2026-02-20 05:46:07,679 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Estimated time left: 26 minutes, 29 seconds. Time passed: 8 hours, 59 minutes, 8 seconds
+2026-02-20 05:53:00,908 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Recent Stats | t_env:    1976580 | Episode:    65886
+action_0_mean:             0.7522	action_1_mean:             0.2252	action_2_mean:             0.0225	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 0.2480	info_nce_loss:             0.0001	loss:                      0.2580
+q_loss:                    0.2380	return_mean:             -877.4900	return_std:              225.6072	test_action_0_mean:        0.7967
+test_action_1_mean:        0.2002	test_action_2_mean:        0.0031	test_ep_length_mean:      30.0000	test_return_mean:        -474.8128
+test_return_std:         294.3154	
+2026-02-20 05:53:01,392 - my_experiment - IMPuc100_HybridComm - my_run - INFO - t_env: 1976610 / 2050000
+2026-02-20 05:53:01,393 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Estimated time left: 20 minutes, 13 seconds. Time passed: 9 hours, 6 minutes, 2 seconds
+2026-02-20 05:59:35,570 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Saving models to work_dirs/my_experiment/IMPuc100_HybridComm/my_run/20260219_204655/models/2000130
+2026-02-20 06:00:00,078 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Recent Stats | t_env:    2001600 | Episode:    66720
+action_0_mean:             0.7539	action_1_mean:             0.2237	action_2_mean:             0.0224	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 0.2247	info_nce_loss:             0.0001	loss:                      0.2729
+q_loss:                    0.2481	return_mean:             -867.2143	return_std:              233.5093	test_action_0_mean:        0.7856
+test_action_1_mean:        0.2056	test_action_2_mean:        0.0088	test_ep_length_mean:      30.0000	test_return_mean:        -611.3603
+test_return_std:         255.8514	
+2026-02-20 06:00:00,574 - my_experiment - IMPuc100_HybridComm - my_run - INFO - t_env: 2001630 / 2050000
+2026-02-20 06:00:00,574 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Estimated time left: 13 minutes, 30 seconds. Time passed: 9 hours, 13 minutes, 1 seconds
+2026-02-20 06:07:02,464 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Recent Stats | t_env:    2026620 | Episode:    67554
+action_0_mean:             0.7407	action_1_mean:             0.2367	action_2_mean:             0.0226	ep_length_mean:           30.0000
+epsilon:                   0.0500	grad_norm:                 0.2469	info_nce_loss:             0.0001	loss:                      0.2722
+q_loss:                    0.2504	return_mean:             -865.6834	return_std:              230.6716	test_action_0_mean:        0.7661
+test_action_1_mean:        0.2249	test_action_2_mean:        0.0090	test_ep_length_mean:      30.0000	test_return_mean:        -601.4494
+test_return_std:         243.1675	
+2026-02-20 06:07:02,959 - my_experiment - IMPuc100_HybridComm - my_run - INFO - t_env: 2026650 / 2050000
+2026-02-20 06:07:02,960 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Estimated time left: 6 minutes, 34 seconds. Time passed: 9 hours, 20 minutes, 3 seconds
+2026-02-20 06:13:39,900 - my_experiment - IMPuc100_HybridComm - my_run - INFO - Finished Training

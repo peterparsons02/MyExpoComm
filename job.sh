@@ -2,11 +2,11 @@
 #SBATCH --mail-type=NONE
 #SBATCH --output=/usr/itetnas04/data-scratch-01/pparsons/data/MyExpoComm/logs/%x_%j.out
 #SBATCH --error=/usr/itetnas04/data-scratch-01/pparsons/data/MyExpoComm/logs/%x_%j.err
-#SBATCH --mem=40G
+#SBATCH --mem=60G
 #SBATCH --nodes=1
 #SBATCH --cpus-per-task=4
 #SBATCH --gres=gpu:1
-#SBATCH --time=24:00:00
+#SBATCH --time=2-00:00:00
 #SBATCH --exclude=tikgpu10,tikgpu[06-09],tikgpu03
 
 ALG_CONFIG=$1
