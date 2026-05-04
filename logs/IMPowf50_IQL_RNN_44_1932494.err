@@ -1,0 +1,795 @@
+Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
+Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
+Users of this version of Gym should be able to simply replace 'import gym' with 'import gymnasium as gym' in the vast majority of cases.
+See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
+src/main.py:81: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+  if isinstance(v, collections.Mapping):
+wandb: [wandb.login()] Loaded credentials for https://api.wandb.ai from /home/pparsons/.netrc.
+wandb: Currently logged in as: peterparsons02 (peterparsons02-eth-z-rich) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+wandb: setting up run ktbpr54x
+wandb: Tracking run with wandb version 0.24.1
+wandb: Run data is saved locally in /usr/itetnas04/data-scratch-01/pparsons/data/MyExpoComm/wandb/run-20260430_111515-ktbpr54x
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run my_run-IMPowf50_IQL_RNN_44-20260430_111514
+wandb: ⭐️ View project at https://wandb.ai/peterparsons02-eth-z-rich/my_experiment
+wandb: 🚀 View run at https://wandb.ai/peterparsons02-eth-z-rich/my_experiment/runs/ktbpr54x
+2026-04-30 11:15:16,854 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Current directory: /usr/itetnas04/data-scratch-01/pparsons/data/MyExpoComm.
+2026-04-30 11:15:16,855 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Experiment Parameters:
+2026-04-30 11:15:16,856 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - 
+
+{   'action_selector': 'epsilon_greedy',
+    'add_value_last_step': True,
+    'agent': 'rnn',
+    'agent_output_type': 'q',
+    'batch_size': 64,
+    'batch_size_run': 1,
+    'buffer_cpu_only': True,
+    'buffer_size': 2000,
+    'checkpoint_path': '',
+    'common_reward': True,
+    'double_q': True,
+    'env': 'struct_marl',
+    'env_args': {   'campaign_cost': True,
+                    'custom_param': {   'lev': 3},
+                    'discount_reward': 0.95,
+                    'env_correlation': False,
+                    'map_name': 'owf_50',
+                    'n_comp': 50,
+                    'obs_all_d_rate': False,
+                    'obs_alphas': False,
+                    'obs_d_rate': False,
+                    'obs_multiple': False,
+                    'seed': 44,
+                    'state_alphas': False,
+                    'state_d_rate': False,
+                    'state_obs': True,
+                    'struct_type': 'owf'},
+    'epsilon_anneal_time': 5000,
+    'epsilon_finish': 0.05,
+    'epsilon_start': 1.0,
+    'evaluate': False,
+    'evaluation_epsilon': 0.0,
+    'exp_name': 'my_experiment',
+    'gamma': 0.95,
+    'global_reward': False,
+    'grad_norm_clip': 10,
+    'hidden_dim': 64,
+    'hypergroup': None,
+    'label': 'default_label',
+    'learner': 'q_learner',
+    'learner_log_interval': 25000,
+    'load_step': 0,
+    'local_results_path': 'results',
+    'log_interval': 25000,
+    'lr': 0.0005,
+    'mac': 'basic_mac',
+    'mixer': None,
+    'name': 'IMPowf50_IQL_RNN_44',
+    'obs_agent_id': True,
+    'obs_individual_obs': False,
+    'obs_last_action': True,
+    'optim_alpha': 0.99,
+    'optim_eps': 1e-05,
+    'render': False,
+    'repeat_id': 1,
+    'run_name': 'my_run',
+    'runner': 'episode',
+    'runner_log_interval': 25000,
+    'save_model': True,
+    'save_model_interval': 50000,
+    'save_replay': False,
+    'seed': 44,
+    'standardise_returns': False,
+    'standardise_rewards': True,
+    't_max': 2050000,
+    'target_update_interval_or_tau': 200,
+    'test_greedy': True,
+    'test_interval': 25000,
+    'test_nepisode': 50,
+    'use_cuda': True,
+    'use_rnn': True,
+    'use_tensorboard': True,
+    'work_dir': 'work_dirs/my_experiment/IMPowf50_IQL_RNN_44/my_run/20260430_111514'}
+
+2026-04-30 11:15:17,730 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Beginning training for 2050000 timesteps
+2026-04-30 11:15:18,543 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - t_env: 20 / 2050000
+2026-04-30 11:15:18,543 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Estimated time left: 1 minutes, 6 seconds. Time passed: 0 seconds
+2026-04-30 11:15:27,407 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Saving models to work_dirs/my_experiment/IMPowf50_IQL_RNN_44/my_run/20260430_111514/models/20
+2026-04-30 11:18:53,623 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Recent Stats | t_env:      25000 | Episode:     1250
+action_0_mean:             0.3285	action_1_mean:             0.3370	action_2_mean:             0.3345	ep_length_mean:           20.0000
+epsilon:                   1.0000	grad_norm:                 0.2316	loss:                      1.0084	q_taken_mean:             -0.0003
+return_mean:             -10053.7426	return_std:                0.0000	target_mean:               0.0001	td_error_abs:              0.8049
+test_action_0_mean:        0.0000	test_action_1_mean:        0.8442	test_action_2_mean:        0.1558	test_ep_length_mean:      20.0000
+test_return_mean:        -11521.0646	test_return_std:         1422.7208	
+2026-04-30 11:18:53,790 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - t_env: 25020 / 2050000
+2026-04-30 11:18:53,790 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Estimated time left: 4 hours, 50 minutes, 34 seconds. Time passed: 3 minutes, 36 seconds
+2026-04-30 11:23:06,191 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Recent Stats | t_env:      50000 | Episode:     2500
+action_0_mean:             0.5832	action_1_mean:             0.2196	action_2_mean:             0.1972	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 0.7183	loss:                      0.6947	q_taken_mean:              0.0029
+return_mean:             -8422.7226	return_std:              596.2303	target_mean:               0.0034	td_error_abs:              0.6018
+test_action_0_mean:        0.5000	test_action_1_mean:        0.4221	test_action_2_mean:        0.0779	test_ep_length_mean:      20.0000
+test_return_mean:        -8653.0634	test_return_std:         711.3604	
+2026-04-30 11:23:06,400 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - t_env: 50020 / 2050000
+2026-04-30 11:23:06,400 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Estimated time left: 5 hours, 36 minutes, 48 seconds. Time passed: 7 minutes, 48 seconds
+2026-04-30 11:23:14,461 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Saving models to work_dirs/my_experiment/IMPowf50_IQL_RNN_44/my_run/20260430_111514/models/50020
+2026-04-30 11:27:22,166 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Recent Stats | t_env:      75000 | Episode:     3750
+action_0_mean:             0.5245	action_1_mean:             0.3166	action_2_mean:             0.1589	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 0.5918	loss:                      0.5836	q_taken_mean:              0.0094
+return_mean:             -7076.0538	return_std:              581.7848	target_mean:               0.0098	td_error_abs:              0.5148
+test_action_0_mean:        0.4333	test_action_1_mean:        0.4976	test_action_2_mean:        0.0690	test_ep_length_mean:      20.0000
+test_return_mean:        -7053.7579	test_return_std:         650.5005	
+2026-04-30 11:27:22,365 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - t_env: 75020 / 2050000
+2026-04-30 11:27:22,366 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Estimated time left: 5 hours, 37 minutes, 1 seconds. Time passed: 12 minutes, 4 seconds
+2026-04-30 11:31:16,735 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Recent Stats | t_env:     100000 | Episode:     5000
+action_0_mean:             0.4937	action_1_mean:             0.3677	action_2_mean:             0.1386	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 0.5631	loss:                      0.5263	q_taken_mean:              0.0155
+return_mean:             -6370.1349	return_std:              544.9946	target_mean:               0.0158	td_error_abs:              0.4687
+test_action_0_mean:        0.4467	test_action_1_mean:        0.4767	test_action_2_mean:        0.0766	test_ep_length_mean:      20.0000
+test_return_mean:        -6259.3595	test_return_std:         523.7502	
+2026-04-30 11:31:16,932 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - t_env: 100020 / 2050000
+2026-04-30 11:31:16,933 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Estimated time left: 5 hours, 4 minutes, 56 seconds. Time passed: 15 minutes, 59 seconds
+2026-04-30 11:31:23,987 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Saving models to work_dirs/my_experiment/IMPowf50_IQL_RNN_44/my_run/20260430_111514/models/100020
+2026-04-30 11:35:15,082 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Recent Stats | t_env:     125000 | Episode:     6250
+action_0_mean:             0.5137	action_1_mean:             0.3566	action_2_mean:             0.1297	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 0.8553	loss:                      0.4797	q_taken_mean:              0.0172
+return_mean:             -5997.9050	return_std:              523.3453	target_mean:               0.0171	td_error_abs:              0.4491
+test_action_0_mean:        0.4699	test_action_1_mean:        0.4587	test_action_2_mean:        0.0714	test_ep_length_mean:      20.0000
+test_return_mean:        -5742.9546	test_return_std:         473.1946	
+2026-04-30 11:35:15,273 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - t_env: 125020 / 2050000
+2026-04-30 11:35:15,274 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Estimated time left: 5 hours, 5 minutes, 52 seconds. Time passed: 19 minutes, 57 seconds
+2026-04-30 11:39:33,267 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Recent Stats | t_env:     150000 | Episode:     7500
+action_0_mean:             0.5583	action_1_mean:             0.3602	action_2_mean:             0.0815	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 0.9565	loss:                      0.3315	q_taken_mean:              0.0201
+return_mean:             -4878.7835	return_std:              624.2542	target_mean:               0.0199	td_error_abs:              0.3454
+test_action_0_mean:        0.5951	test_action_1_mean:        0.3545	test_action_2_mean:        0.0504	test_ep_length_mean:      20.0000
+test_return_mean:        -4218.4375	test_return_std:         260.0956	
+2026-04-30 11:39:33,471 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - t_env: 150020 / 2050000
+2026-04-30 11:39:33,472 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Estimated time left: 5 hours, 27 minutes, 2 seconds. Time passed: 24 minutes, 15 seconds
+2026-04-30 11:39:41,298 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Saving models to work_dirs/my_experiment/IMPowf50_IQL_RNN_44/my_run/20260430_111514/models/150020
+2026-04-30 11:43:37,134 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Recent Stats | t_env:     175000 | Episode:     8750
+action_0_mean:             0.4592	action_1_mean:             0.4540	action_2_mean:             0.0868	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 0.9223	loss:                      0.3154	q_taken_mean:              0.0214
+return_mean:             -4450.3913	return_std:              555.8624	target_mean:               0.0211	td_error_abs:              0.3333
+test_action_0_mean:        0.4530	test_action_1_mean:        0.4691	test_action_2_mean:        0.0780	test_ep_length_mean:      20.0000
+test_return_mean:        -3946.1868	test_return_std:         290.4860	
+2026-04-30 11:43:37,336 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - t_env: 175020 / 2050000
+2026-04-30 11:43:37,336 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Estimated time left: 5 hours, 4 minutes, 49 seconds. Time passed: 28 minutes, 19 seconds
+2026-04-30 11:47:43,524 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Recent Stats | t_env:     200000 | Episode:    10000
+action_0_mean:             0.4758	action_1_mean:             0.4326	action_2_mean:             0.0916	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 0.9733	loss:                      0.3213	q_taken_mean:              0.0187
+return_mean:             -4506.8241	return_std:              583.9146	target_mean:               0.0185	td_error_abs:              0.3412
+test_action_0_mean:        0.4731	test_action_1_mean:        0.4439	test_action_2_mean:        0.0830	test_ep_length_mean:      20.0000
+test_return_mean:        -3850.9138	test_return_std:         218.9957	
+2026-04-30 11:47:43,723 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - t_env: 200020 / 2050000
+2026-04-30 11:47:43,723 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Estimated time left: 5 hours, 3 minutes, 52 seconds. Time passed: 32 minutes, 25 seconds
+2026-04-30 11:47:51,180 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Saving models to work_dirs/my_experiment/IMPowf50_IQL_RNN_44/my_run/20260430_111514/models/200020
+2026-04-30 11:51:49,899 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Recent Stats | t_env:     225000 | Episode:    11250
+action_0_mean:             0.4882	action_1_mean:             0.4151	action_2_mean:             0.0967	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 1.0223	loss:                      0.3106	q_taken_mean:              0.0139
+return_mean:             -4531.2005	return_std:              604.5213	target_mean:               0.0136	td_error_abs:              0.3430
+test_action_0_mean:        0.4672	test_action_1_mean:        0.4582	test_action_2_mean:        0.0746	test_ep_length_mean:      20.0000
+test_return_mean:        -3786.7812	test_return_std:         227.6725	
+2026-04-30 11:51:50,100 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - t_env: 225020 / 2050000
+2026-04-30 11:51:50,100 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Estimated time left: 4 hours, 59 minutes, 45 seconds. Time passed: 36 minutes, 32 seconds
+2026-04-30 11:56:01,846 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Recent Stats | t_env:     250000 | Episode:    12500
+action_0_mean:             0.4606	action_1_mean:             0.4412	action_2_mean:             0.0983	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 0.7038	loss:                      0.2949	q_taken_mean:              0.0113
+return_mean:             -4496.6644	return_std:              599.4467	target_mean:               0.0114	td_error_abs:              0.3245
+test_action_0_mean:        0.4248	test_action_1_mean:        0.4921	test_action_2_mean:        0.0831	test_ep_length_mean:      20.0000
+test_return_mean:        -3805.3079	test_return_std:         222.4956	
+2026-04-30 11:56:02,050 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - t_env: 250020 / 2050000
+2026-04-30 11:56:02,051 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Estimated time left: 5 hours, 2 minutes, 20 seconds. Time passed: 40 minutes, 44 seconds
+2026-04-30 11:56:09,769 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Saving models to work_dirs/my_experiment/IMPowf50_IQL_RNN_44/my_run/20260430_111514/models/250020
+2026-04-30 12:00:18,562 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Recent Stats | t_env:     275000 | Episode:    13750
+action_0_mean:             0.4300	action_1_mean:             0.4696	action_2_mean:             0.1004	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 0.6095	loss:                      0.3017	q_taken_mean:              0.0103
+return_mean:             -4494.5168	return_std:              605.5945	target_mean:               0.0104	td_error_abs:              0.3285
+test_action_0_mean:        0.3705	test_action_1_mean:        0.5396	test_action_2_mean:        0.0900	test_ep_length_mean:      20.0000
+test_return_mean:        -3739.7636	test_return_std:         197.6538	
+2026-04-30 12:00:18,768 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - t_env: 275020 / 2050000
+2026-04-30 12:00:18,768 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Estimated time left: 5 hours, 3 minutes, 46 seconds. Time passed: 45 minutes, 1 seconds
+2026-04-30 12:04:41,011 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Recent Stats | t_env:     300000 | Episode:    15000
+action_0_mean:             0.4317	action_1_mean:             0.4650	action_2_mean:             0.1034	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 0.5055	loss:                      0.3029	q_taken_mean:              0.0096
+return_mean:             -4451.9371	return_std:              534.3746	target_mean:               0.0096	td_error_abs:              0.3281
+test_action_0_mean:        0.3788	test_action_1_mean:        0.5450	test_action_2_mean:        0.0762	test_ep_length_mean:      20.0000
+test_return_mean:        -3580.2720	test_return_std:         230.0125	
+2026-04-30 12:04:41,212 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - t_env: 300020 / 2050000
+2026-04-30 12:04:41,213 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Estimated time left: 5 hours, 6 minutes, 10 seconds. Time passed: 49 minutes, 23 seconds
+2026-04-30 12:04:48,683 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Saving models to work_dirs/my_experiment/IMPowf50_IQL_RNN_44/my_run/20260430_111514/models/300020
+2026-04-30 12:09:07,140 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Recent Stats | t_env:     325000 | Episode:    16250
+action_0_mean:             0.3914	action_1_mean:             0.5074	action_2_mean:             0.1012	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 0.5540	loss:                      0.2883	q_taken_mean:              0.0096
+return_mean:             -4377.8902	return_std:              472.6052	target_mean:               0.0096	td_error_abs:              0.3210
+test_action_0_mean:        0.3847	test_action_1_mean:        0.5379	test_action_2_mean:        0.0774	test_ep_length_mean:      20.0000
+test_return_mean:        -3650.2033	test_return_std:         235.6493	
+2026-04-30 12:09:07,352 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - t_env: 325020 / 2050000
+2026-04-30 12:09:07,352 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Estimated time left: 5 hours, 6 minutes, 3 seconds. Time passed: 53 minutes, 49 seconds
+2026-04-30 12:13:34,719 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Recent Stats | t_env:     350000 | Episode:    17500
+action_0_mean:             0.3507	action_1_mean:             0.5525	action_2_mean:             0.0968	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 0.4837	loss:                      0.2738	q_taken_mean:              0.0097
+return_mean:             -4349.2700	return_std:              486.2817	target_mean:               0.0098	td_error_abs:              0.3129
+test_action_0_mean:        0.3586	test_action_1_mean:        0.5721	test_action_2_mean:        0.0693	test_ep_length_mean:      20.0000
+test_return_mean:        -3751.3767	test_return_std:         312.1475	
+2026-04-30 12:13:34,933 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - t_env: 350020 / 2050000
+2026-04-30 12:13:34,934 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Estimated time left: 5 hours, 3 minutes, 15 seconds. Time passed: 58 minutes, 17 seconds
+2026-04-30 12:13:43,241 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Saving models to work_dirs/my_experiment/IMPowf50_IQL_RNN_44/my_run/20260430_111514/models/350020
+2026-04-30 12:17:59,095 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Recent Stats | t_env:     375000 | Episode:    18750
+action_0_mean:             0.3100	action_1_mean:             0.5972	action_2_mean:             0.0928	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 0.4831	loss:                      0.2837	q_taken_mean:              0.0099
+return_mean:             -4276.4485	return_std:              517.5385	target_mean:               0.0099	td_error_abs:              0.3237
+test_action_0_mean:        0.3374	test_action_1_mean:        0.6037	test_action_2_mean:        0.0589	test_ep_length_mean:      20.0000
+test_return_mean:        -3656.5303	test_return_std:         351.6244	
+2026-04-30 12:17:59,310 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - t_env: 375020 / 2050000
+2026-04-30 12:17:59,310 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Estimated time left: 4 hours, 55 minutes, 12 seconds. Time passed: 1 hours, 2 minutes, 41 seconds
+2026-04-30 12:22:25,802 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Recent Stats | t_env:     400000 | Episode:    20000
+action_0_mean:             0.2890	action_1_mean:             0.6220	action_2_mean:             0.0890	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 0.4862	loss:                      0.2735	q_taken_mean:              0.0106
+return_mean:             -4158.5641	return_std:              511.6207	target_mean:               0.0106	td_error_abs:              0.3261
+test_action_0_mean:        0.3215	test_action_1_mean:        0.6297	test_action_2_mean:        0.0488	test_ep_length_mean:      20.0000
+test_return_mean:        -3534.4949	test_return_std:         369.9673	
+2026-04-30 12:22:26,025 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - t_env: 400020 / 2050000
+2026-04-30 12:22:26,026 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Estimated time left: 4 hours, 53 minutes, 23 seconds. Time passed: 1 hours, 7 minutes, 8 seconds
+2026-04-30 12:22:34,754 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Saving models to work_dirs/my_experiment/IMPowf50_IQL_RNN_44/my_run/20260430_111514/models/400020
+2026-04-30 12:26:57,946 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Recent Stats | t_env:     425000 | Episode:    21250
+action_0_mean:             0.2723	action_1_mean:             0.6431	action_2_mean:             0.0846	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 0.5729	loss:                      0.2622	q_taken_mean:              0.0119
+return_mean:             -4022.1197	return_std:              546.3620	target_mean:               0.0121	td_error_abs:              0.3273
+test_action_0_mean:        0.2796	test_action_1_mean:        0.6767	test_action_2_mean:        0.0437	test_ep_length_mean:      20.0000
+test_return_mean:        -3344.7233	test_return_std:         369.1474	
+2026-04-30 12:26:58,170 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - t_env: 425020 / 2050000
+2026-04-30 12:26:58,170 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Estimated time left: 4 hours, 54 minutes, 49 seconds. Time passed: 1 hours, 11 minutes, 40 seconds
+2026-04-30 12:31:33,271 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Recent Stats | t_env:     450000 | Episode:    22500
+action_0_mean:             0.2546	action_1_mean:             0.6646	action_2_mean:             0.0809	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 0.4792	loss:                      0.2295	q_taken_mean:              0.0138
+return_mean:             -3836.6325	return_std:              542.1851	target_mean:               0.0140	td_error_abs:              0.3091
+test_action_0_mean:        0.2142	test_action_1_mean:        0.7450	test_action_2_mean:        0.0408	test_ep_length_mean:      20.0000
+test_return_mean:        -3207.4183	test_return_std:         399.0589	
+2026-04-30 12:31:33,490 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - t_env: 450020 / 2050000
+2026-04-30 12:31:33,490 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Estimated time left: 4 hours, 53 minutes, 40 seconds. Time passed: 1 hours, 16 minutes, 15 seconds
+2026-04-30 12:31:41,986 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Saving models to work_dirs/my_experiment/IMPowf50_IQL_RNN_44/my_run/20260430_111514/models/450020
+2026-04-30 12:36:01,335 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Recent Stats | t_env:     475000 | Episode:    23750
+action_0_mean:             0.2382	action_1_mean:             0.6825	action_2_mean:             0.0793	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 0.4356	loss:                      0.2058	q_taken_mean:              0.0162
+return_mean:             -3633.8041	return_std:              496.8862	target_mean:               0.0163	td_error_abs:              0.2930
+test_action_0_mean:        0.1859	test_action_1_mean:        0.7683	test_action_2_mean:        0.0458	test_ep_length_mean:      20.0000
+test_return_mean:        -2890.1533	test_return_std:         334.1183	
+2026-04-30 12:36:01,545 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - t_env: 475020 / 2050000
+2026-04-30 12:36:01,546 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Estimated time left: 4 hours, 41 minutes, 27 seconds. Time passed: 1 hours, 20 minutes, 43 seconds
+2026-04-30 12:40:36,379 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Recent Stats | t_env:     500000 | Episode:    25000
+action_0_mean:             0.2375	action_1_mean:             0.6874	action_2_mean:             0.0751	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 0.4197	loss:                      0.1743	q_taken_mean:              0.0185
+return_mean:             -3492.7588	return_std:              456.7735	target_mean:               0.0186	td_error_abs:              0.2698
+test_action_0_mean:        0.1925	test_action_1_mean:        0.7589	test_action_2_mean:        0.0486	test_ep_length_mean:      20.0000
+test_return_mean:        -2887.9933	test_return_std:         290.6429	
+2026-04-30 12:40:36,599 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - t_env: 500020 / 2050000
+2026-04-30 12:40:36,599 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Estimated time left: 4 hours, 44 minutes, 13 seconds. Time passed: 1 hours, 25 minutes, 18 seconds
+2026-04-30 12:40:45,236 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Saving models to work_dirs/my_experiment/IMPowf50_IQL_RNN_44/my_run/20260430_111514/models/500020
+2026-04-30 12:45:12,476 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Recent Stats | t_env:     525000 | Episode:    26250
+action_0_mean:             0.2162	action_1_mean:             0.7135	action_2_mean:             0.0703	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 0.4126	loss:                      0.1487	q_taken_mean:              0.0204
+return_mean:             -3356.0372	return_std:              451.0410	target_mean:               0.0206	td_error_abs:              0.2544
+test_action_0_mean:        0.1636	test_action_1_mean:        0.7864	test_action_2_mean:        0.0500	test_ep_length_mean:      20.0000
+test_return_mean:        -2750.9480	test_return_std:         266.0233	
+2026-04-30 12:45:12,696 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - t_env: 525020 / 2050000
+2026-04-30 12:45:12,696 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Estimated time left: 4 hours, 40 minutes, 41 seconds. Time passed: 1 hours, 29 minutes, 54 seconds
+2026-04-30 12:49:44,979 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Recent Stats | t_env:     550000 | Episode:    27500
+action_0_mean:             0.1999	action_1_mean:             0.7340	action_2_mean:             0.0661	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 0.3039	loss:                      0.1233	q_taken_mean:              0.0224
+return_mean:             -3180.5282	return_std:              373.1991	target_mean:               0.0225	td_error_abs:              0.2263
+test_action_0_mean:        0.1728	test_action_1_mean:        0.7776	test_action_2_mean:        0.0496	test_ep_length_mean:      20.0000
+test_return_mean:        -2653.0237	test_return_std:         235.5421	
+2026-04-30 12:49:45,192 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - t_env: 550020 / 2050000
+2026-04-30 12:49:45,193 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Estimated time left: 4 hours, 32 minutes, 29 seconds. Time passed: 1 hours, 34 minutes, 27 seconds
+2026-04-30 12:49:53,318 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Saving models to work_dirs/my_experiment/IMPowf50_IQL_RNN_44/my_run/20260430_111514/models/550020
+2026-04-30 12:54:13,588 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Recent Stats | t_env:     575000 | Episode:    28750
+action_0_mean:             0.2025	action_1_mean:             0.7338	action_2_mean:             0.0637	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 0.2680	loss:                      0.1213	q_taken_mean:              0.0238
+return_mean:             -3128.4946	return_std:              394.1659	target_mean:               0.0239	td_error_abs:              0.2214
+test_action_0_mean:        0.2083	test_action_1_mean:        0.7479	test_action_2_mean:        0.0438	test_ep_length_mean:      20.0000
+test_return_mean:        -2518.0297	test_return_std:         214.5456	
+2026-04-30 12:54:13,805 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - t_env: 575020 / 2050000
+2026-04-30 12:54:13,805 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Estimated time left: 4 hours, 24 minutes, 7 seconds. Time passed: 1 hours, 38 minutes, 56 seconds
+2026-04-30 12:58:49,874 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Recent Stats | t_env:     600000 | Episode:    30000
+action_0_mean:             0.2182	action_1_mean:             0.7211	action_2_mean:             0.0607	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 0.2701	loss:                      0.1346	q_taken_mean:              0.0245
+return_mean:             -3053.5725	return_std:              386.0922	target_mean:               0.0246	td_error_abs:              0.2258
+test_action_0_mean:        0.2081	test_action_1_mean:        0.7512	test_action_2_mean:        0.0406	test_ep_length_mean:      20.0000
+test_return_mean:        -2437.2940	test_return_std:         209.8062	
+2026-04-30 12:58:50,089 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - t_env: 600020 / 2050000
+2026-04-30 12:58:50,090 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Estimated time left: 4 hours, 27 minutes, 4 seconds. Time passed: 1 hours, 43 minutes, 32 seconds
+2026-04-30 12:58:58,675 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Saving models to work_dirs/my_experiment/IMPowf50_IQL_RNN_44/my_run/20260430_111514/models/600020
+2026-04-30 13:03:23,475 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Recent Stats | t_env:     625000 | Episode:    31250
+action_0_mean:             0.2067	action_1_mean:             0.7340	action_2_mean:             0.0593	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 0.2693	loss:                      0.1295	q_taken_mean:              0.0253
+return_mean:             -2950.5328	return_std:              371.7494	target_mean:               0.0254	td_error_abs:              0.2228
+test_action_0_mean:        0.1869	test_action_1_mean:        0.7785	test_action_2_mean:        0.0345	test_ep_length_mean:      20.0000
+test_return_mean:        -2233.4019	test_return_std:         218.0629	
+2026-04-30 13:03:23,689 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - t_env: 625020 / 2050000
+2026-04-30 13:03:23,690 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Estimated time left: 4 hours, 19 minutes, 54 seconds. Time passed: 1 hours, 48 minutes, 5 seconds
+2026-04-30 13:07:58,948 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Recent Stats | t_env:     650000 | Episode:    32500
+action_0_mean:             0.2120	action_1_mean:             0.7297	action_2_mean:             0.0583	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 0.2612	loss:                      0.1384	q_taken_mean:              0.0261
+return_mean:             -2872.2791	return_std:              349.3266	target_mean:               0.0262	td_error_abs:              0.2214
+test_action_0_mean:        0.2048	test_action_1_mean:        0.7639	test_action_2_mean:        0.0313	test_ep_length_mean:      20.0000
+test_return_mean:        -2196.6871	test_return_std:         211.0295	
+2026-04-30 13:07:59,169 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - t_env: 650020 / 2050000
+2026-04-30 13:07:59,170 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Estimated time left: 4 hours, 17 minutes, 6 seconds. Time passed: 1 hours, 52 minutes, 41 seconds
+2026-04-30 13:08:07,951 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Saving models to work_dirs/my_experiment/IMPowf50_IQL_RNN_44/my_run/20260430_111514/models/650020
+2026-04-30 13:12:34,357 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Recent Stats | t_env:     675000 | Episode:    33750
+action_0_mean:             0.2128	action_1_mean:             0.7313	action_2_mean:             0.0559	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 0.2093	loss:                      0.1311	q_taken_mean:              0.0263
+return_mean:             -2851.1394	return_std:              364.7655	target_mean:               0.0263	td_error_abs:              0.2212
+test_action_0_mean:        0.1941	test_action_1_mean:        0.7768	test_action_2_mean:        0.0291	test_ep_length_mean:      20.0000
+test_return_mean:        -2172.1624	test_return_std:         225.5250	
+2026-04-30 13:12:34,572 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - t_env: 675020 / 2050000
+2026-04-30 13:12:34,573 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Estimated time left: 4 hours, 12 minutes, 26 seconds. Time passed: 1 hours, 57 minutes, 16 seconds
+2026-04-30 13:17:08,956 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Recent Stats | t_env:     700000 | Episode:    35000
+action_0_mean:             0.2083	action_1_mean:             0.7376	action_2_mean:             0.0541	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 0.2052	loss:                      0.1250	q_taken_mean:              0.0265
+return_mean:             -2775.0376	return_std:              353.9028	target_mean:               0.0265	td_error_abs:              0.2184
+test_action_0_mean:        0.1859	test_action_1_mean:        0.7875	test_action_2_mean:        0.0266	test_ep_length_mean:      20.0000
+test_return_mean:        -2158.0425	test_return_std:         233.8978	
+2026-04-30 13:17:09,171 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - t_env: 700020 / 2050000
+2026-04-30 13:17:09,172 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Estimated time left: 4 hours, 7 minutes, 8 seconds. Time passed: 2 hours, 1 minutes, 51 seconds
+2026-04-30 13:17:17,430 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Saving models to work_dirs/my_experiment/IMPowf50_IQL_RNN_44/my_run/20260430_111514/models/700020
+2026-04-30 13:21:43,202 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Recent Stats | t_env:     725000 | Episode:    36250
+action_0_mean:             0.1974	action_1_mean:             0.7493	action_2_mean:             0.0533	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 0.2436	loss:                      0.1267	q_taken_mean:              0.0268
+return_mean:             -2737.2142	return_std:              344.0969	target_mean:               0.0268	td_error_abs:              0.2220
+test_action_0_mean:        0.1991	test_action_1_mean:        0.7718	test_action_2_mean:        0.0292	test_ep_length_mean:      20.0000
+test_return_mean:        -2185.9337	test_return_std:         231.3355	
+2026-04-30 13:21:43,423 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - t_env: 725020 / 2050000
+2026-04-30 13:21:43,424 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Estimated time left: 4 hours, 2 minutes, 15 seconds. Time passed: 2 hours, 6 minutes, 25 seconds
+2026-04-30 13:26:23,339 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Recent Stats | t_env:     750000 | Episode:    37500
+action_0_mean:             0.1987	action_1_mean:             0.7478	action_2_mean:             0.0534	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 0.2686	loss:                      0.1315	q_taken_mean:              0.0266
+return_mean:             -2741.2045	return_std:              353.3759	target_mean:               0.0265	td_error_abs:              0.2244
+test_action_0_mean:        0.1968	test_action_1_mean:        0.7743	test_action_2_mean:        0.0290	test_ep_length_mean:      20.0000
+test_return_mean:        -2118.4509	test_return_std:         215.4990	
+2026-04-30 13:26:23,558 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - t_env: 750020 / 2050000
+2026-04-30 13:26:23,558 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Estimated time left: 4 hours, 2 minutes, 46 seconds. Time passed: 2 hours, 11 minutes, 5 seconds
+2026-04-30 13:26:32,217 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Saving models to work_dirs/my_experiment/IMPowf50_IQL_RNN_44/my_run/20260430_111514/models/750020
+2026-04-30 13:31:00,331 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Recent Stats | t_env:     775000 | Episode:    38750
+action_0_mean:             0.1860	action_1_mean:             0.7617	action_2_mean:             0.0524	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 0.2621	loss:                      0.1228	q_taken_mean:              0.0264
+return_mean:             -2716.9434	return_std:              343.8573	target_mean:               0.0263	td_error_abs:              0.2197
+test_action_0_mean:        0.1828	test_action_1_mean:        0.7876	test_action_2_mean:        0.0296	test_ep_length_mean:      20.0000
+test_return_mean:        -2134.3438	test_return_std:         222.1570	
+2026-04-30 13:31:00,556 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - t_env: 775020 / 2050000
+2026-04-30 13:31:00,557 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Estimated time left: 3 hours, 55 minutes, 26 seconds. Time passed: 2 hours, 15 minutes, 42 seconds
+2026-04-30 13:35:39,087 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Recent Stats | t_env:     800000 | Episode:    40000
+action_0_mean:             0.1845	action_1_mean:             0.7632	action_2_mean:             0.0523	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 0.2788	loss:                      0.1244	q_taken_mean:              0.0262
+return_mean:             -2695.9284	return_std:              332.4098	target_mean:               0.0261	td_error_abs:              0.2204
+test_action_0_mean:        0.1818	test_action_1_mean:        0.7900	test_action_2_mean:        0.0282	test_ep_length_mean:      20.0000
+test_return_mean:        -2101.9654	test_return_std:         203.9159	
+2026-04-30 13:35:39,307 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - t_env: 800020 / 2050000
+2026-04-30 13:35:39,307 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Estimated time left: 3 hours, 52 minutes, 17 seconds. Time passed: 2 hours, 20 minutes, 21 seconds
+2026-04-30 13:35:47,965 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Saving models to work_dirs/my_experiment/IMPowf50_IQL_RNN_44/my_run/20260430_111514/models/800020
+2026-04-30 13:40:19,884 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Recent Stats | t_env:     825000 | Episode:    41250
+action_0_mean:             0.1782	action_1_mean:             0.7713	action_2_mean:             0.0505	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 0.3142	loss:                      0.1191	q_taken_mean:              0.0263
+return_mean:             -2664.3636	return_std:              304.9217	target_mean:               0.0262	td_error_abs:              0.2186
+test_action_0_mean:        0.1694	test_action_1_mean:        0.8029	test_action_2_mean:        0.0276	test_ep_length_mean:      20.0000
+test_return_mean:        -2043.2891	test_return_std:         185.2977	
+2026-04-30 13:40:20,109 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - t_env: 825020 / 2050000
+2026-04-30 13:40:20,109 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Estimated time left: 3 hours, 49 minutes, 19 seconds. Time passed: 2 hours, 25 minutes, 2 seconds
+2026-04-30 13:44:58,174 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Recent Stats | t_env:     850000 | Episode:    42500
+action_0_mean:             0.1681	action_1_mean:             0.7830	action_2_mean:             0.0489	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 0.2755	loss:                      0.0966	q_taken_mean:              0.0264
+return_mean:             -2650.6125	return_std:              295.6242	target_mean:               0.0264	td_error_abs:              0.2052
+test_action_0_mean:        0.1452	test_action_1_mean:        0.8306	test_action_2_mean:        0.0242	test_ep_length_mean:      20.0000
+test_return_mean:        -1999.8768	test_return_std:         181.2582	
+2026-04-30 13:44:58,390 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - t_env: 850020 / 2050000
+2026-04-30 13:44:58,390 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Estimated time left: 3 hours, 42 minutes, 37 seconds. Time passed: 2 hours, 29 minutes, 40 seconds
+2026-04-30 13:45:06,799 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Saving models to work_dirs/my_experiment/IMPowf50_IQL_RNN_44/my_run/20260430_111514/models/850020
+2026-04-30 13:49:49,241 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Recent Stats | t_env:     875000 | Episode:    43750
+action_0_mean:             0.1638	action_1_mean:             0.7890	action_2_mean:             0.0472	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 0.2186	loss:                      0.0872	q_taken_mean:              0.0265
+return_mean:             -2596.6076	return_std:              273.7709	target_mean:               0.0266	td_error_abs:              0.1983
+test_action_0_mean:        0.1577	test_action_1_mean:        0.8164	test_action_2_mean:        0.0259	test_ep_length_mean:      20.0000
+test_return_mean:        -2015.4477	test_return_std:         180.2529	
+2026-04-30 13:49:49,493 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - t_env: 875020 / 2050000
+2026-04-30 13:49:49,494 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Estimated time left: 3 hours, 48 minutes, 1 seconds. Time passed: 2 hours, 34 minutes, 31 seconds
+2026-04-30 13:55:05,420 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Recent Stats | t_env:     900000 | Episode:    45000
+action_0_mean:             0.1695	action_1_mean:             0.7847	action_2_mean:             0.0458	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 0.2007	loss:                      0.0746	q_taken_mean:              0.0268
+return_mean:             -2569.3187	return_std:              263.4148	target_mean:               0.0269	td_error_abs:              0.1913
+test_action_0_mean:        0.1534	test_action_1_mean:        0.8228	test_action_2_mean:        0.0238	test_ep_length_mean:      20.0000
+test_return_mean:        -1949.7493	test_return_std:         177.5783	
+2026-04-30 13:55:05,673 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - t_env: 900020 / 2050000
+2026-04-30 13:55:05,674 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Estimated time left: 4 hours, 2 minutes, 24 seconds. Time passed: 2 hours, 39 minutes, 47 seconds
+2026-04-30 13:55:14,236 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Saving models to work_dirs/my_experiment/IMPowf50_IQL_RNN_44/my_run/20260430_111514/models/900020
+2026-04-30 14:00:18,997 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Recent Stats | t_env:     925000 | Episode:    46250
+action_0_mean:             0.1647	action_1_mean:             0.7892	action_2_mean:             0.0462	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 0.2017	loss:                      0.0695	q_taken_mean:              0.0271
+return_mean:             -2524.3256	return_std:              247.2662	target_mean:               0.0272	td_error_abs:              0.1877
+test_action_0_mean:        0.1642	test_action_1_mean:        0.8065	test_action_2_mean:        0.0294	test_ep_length_mean:      20.0000
+test_return_mean:        -1970.1094	test_return_std:         176.8101	
+2026-04-30 14:00:19,211 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - t_env: 925020 / 2050000
+2026-04-30 14:00:19,211 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Estimated time left: 3 hours, 55 minutes, 8 seconds. Time passed: 2 hours, 45 minutes, 1 seconds
+2026-04-30 14:05:31,346 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Recent Stats | t_env:     950000 | Episode:    47500
+action_0_mean:             0.1692	action_1_mean:             0.7840	action_2_mean:             0.0468	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 0.1688	loss:                      0.0779	q_taken_mean:              0.0272
+return_mean:             -2506.8995	return_std:              250.9785	target_mean:               0.0272	td_error_abs:              0.1884
+test_action_0_mean:        0.1830	test_action_1_mean:        0.7883	test_action_2_mean:        0.0287	test_ep_length_mean:      20.0000
+test_return_mean:        -2009.8319	test_return_std:         186.5043	
+2026-04-30 14:05:31,603 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - t_env: 950020 / 2050000
+2026-04-30 14:05:31,604 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Estimated time left: 3 hours, 49 minutes, 5 seconds. Time passed: 2 hours, 50 minutes, 13 seconds
+2026-04-30 14:05:40,227 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Saving models to work_dirs/my_experiment/IMPowf50_IQL_RNN_44/my_run/20260430_111514/models/950020
+2026-04-30 14:10:45,818 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Recent Stats | t_env:     975000 | Episode:    48750
+action_0_mean:             0.1775	action_1_mean:             0.7752	action_2_mean:             0.0473	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 0.1694	loss:                      0.0895	q_taken_mean:              0.0270
+return_mean:             -2514.3576	return_std:              272.7696	target_mean:               0.0270	td_error_abs:              0.1961
+test_action_0_mean:        0.1875	test_action_1_mean:        0.7793	test_action_2_mean:        0.0332	test_ep_length_mean:      20.0000
+test_return_mean:        -2062.0695	test_return_std:         176.6218	
+2026-04-30 14:10:46,069 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - t_env: 975020 / 2050000
+2026-04-30 14:10:46,070 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Estimated time left: 3 hours, 45 minutes, 21 seconds. Time passed: 2 hours, 55 minutes, 28 seconds
+2026-04-30 14:15:55,260 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Recent Stats | t_env:    1000000 | Episode:    50000
+action_0_mean:             0.1768	action_1_mean:             0.7761	action_2_mean:             0.0471	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 0.2117	loss:                      0.1163	q_taken_mean:              0.0267
+return_mean:             -2512.7445	return_std:              277.9338	target_mean:               0.0266	td_error_abs:              0.2065
+test_action_0_mean:        0.1721	test_action_1_mean:        0.7958	test_action_2_mean:        0.0320	test_ep_length_mean:      20.0000
+test_return_mean:        -2025.7235	test_return_std:         170.4245	
+2026-04-30 14:15:55,515 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - t_env: 1000020 / 2050000
+2026-04-30 14:15:55,516 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Estimated time left: 3 hours, 36 minutes, 36 seconds. Time passed: 3 hours, 37 seconds
+2026-04-30 14:16:03,947 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Saving models to work_dirs/my_experiment/IMPowf50_IQL_RNN_44/my_run/20260430_111514/models/1000020
+2026-04-30 14:21:04,309 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Recent Stats | t_env:    1025000 | Episode:    51250
+action_0_mean:             0.1845	action_1_mean:             0.7674	action_2_mean:             0.0481	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 0.2506	loss:                      0.1520	q_taken_mean:              0.0264
+return_mean:             -2533.7781	return_std:              303.4688	target_mean:               0.0262	td_error_abs:              0.2235
+test_action_0_mean:        0.1917	test_action_1_mean:        0.7754	test_action_2_mean:        0.0329	test_ep_length_mean:      20.0000
+test_return_mean:        -2114.3383	test_return_std:         172.1103	
+2026-04-30 14:21:04,555 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - t_env: 1025020 / 2050000
+2026-04-30 14:21:04,555 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Estimated time left: 3 hours, 31 minutes, 10 seconds. Time passed: 3 hours, 5 minutes, 46 seconds
+2026-04-30 14:25:41,871 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Recent Stats | t_env:    1050000 | Episode:    52500
+action_0_mean:             0.1985	action_1_mean:             0.7538	action_2_mean:             0.0477	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 0.2611	loss:                      0.1615	q_taken_mean:              0.0258
+return_mean:             -2550.7674	return_std:              313.4156	target_mean:               0.0256	td_error_abs:              0.2290
+test_action_0_mean:        0.2052	test_action_1_mean:        0.7664	test_action_2_mean:        0.0284	test_ep_length_mean:      20.0000
+test_return_mean:        -2145.0943	test_return_std:         185.8746	
+2026-04-30 14:25:42,092 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - t_env: 1050020 / 2050000
+2026-04-30 14:25:42,093 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Estimated time left: 3 hours, 5 minutes, 1 seconds. Time passed: 3 hours, 10 minutes, 24 seconds
+2026-04-30 14:25:50,556 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Saving models to work_dirs/my_experiment/IMPowf50_IQL_RNN_44/my_run/20260430_111514/models/1050020
+2026-04-30 14:30:15,769 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Recent Stats | t_env:    1075000 | Episode:    53750
+action_0_mean:             0.2034	action_1_mean:             0.7502	action_2_mean:             0.0464	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 0.2563	loss:                      0.1522	q_taken_mean:              0.0252
+return_mean:             -2549.0119	return_std:              306.1881	target_mean:               0.0249	td_error_abs:              0.2264
+test_action_0_mean:        0.1923	test_action_1_mean:        0.7789	test_action_2_mean:        0.0288	test_ep_length_mean:      20.0000
+test_return_mean:        -2052.6895	test_return_std:         165.7986	
+2026-04-30 14:30:15,989 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - t_env: 1075020 / 2050000
+2026-04-30 14:30:15,989 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Estimated time left: 2 hours, 58 minutes, 1 seconds. Time passed: 3 hours, 14 minutes, 58 seconds
+2026-04-30 14:34:49,451 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Recent Stats | t_env:    1100000 | Episode:    55000
+action_0_mean:             0.2070	action_1_mean:             0.7472	action_2_mean:             0.0459	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 0.2384	loss:                      0.1431	q_taken_mean:              0.0248
+return_mean:             -2527.8969	return_std:              283.6968	target_mean:               0.0246	td_error_abs:              0.2199
+test_action_0_mean:        0.1953	test_action_1_mean:        0.7751	test_action_2_mean:        0.0296	test_ep_length_mean:      20.0000
+test_return_mean:        -2049.9361	test_return_std:         171.6264	
+2026-04-30 14:34:49,667 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - t_env: 1100020 / 2050000
+2026-04-30 14:34:49,667 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Estimated time left: 2 hours, 53 minutes, 19 seconds. Time passed: 3 hours, 19 minutes, 31 seconds
+2026-04-30 14:34:58,049 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Saving models to work_dirs/my_experiment/IMPowf50_IQL_RNN_44/my_run/20260430_111514/models/1100020
+2026-04-30 14:39:22,237 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Recent Stats | t_env:    1125000 | Episode:    56250
+action_0_mean:             0.2152	action_1_mean:             0.7383	action_2_mean:             0.0465	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 0.1882	loss:                      0.1195	q_taken_mean:              0.0246
+return_mean:             -2499.9712	return_std:              272.1065	target_mean:               0.0245	td_error_abs:              0.2108
+test_action_0_mean:        0.2100	test_action_1_mean:        0.7606	test_action_2_mean:        0.0294	test_ep_length_mean:      20.0000
+test_return_mean:        -2021.6316	test_return_std:         164.2352	
+2026-04-30 14:39:22,454 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - t_env: 1125020 / 2050000
+2026-04-30 14:39:22,455 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Estimated time left: 2 hours, 48 minutes, 12 seconds. Time passed: 3 hours, 24 minutes, 4 seconds
+2026-04-30 14:43:53,188 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Recent Stats | t_env:    1150000 | Episode:    57500
+action_0_mean:             0.2168	action_1_mean:             0.7376	action_2_mean:             0.0456	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 0.1609	loss:                      0.0826	q_taken_mean:              0.0250
+return_mean:             -2434.7894	return_std:              230.3933	target_mean:               0.0249	td_error_abs:              0.1924
+test_action_0_mean:        0.2062	test_action_1_mean:        0.7638	test_action_2_mean:        0.0300	test_ep_length_mean:      20.0000
+test_return_mean:        -1909.9961	test_return_std:         150.0531	
+2026-04-30 14:43:53,401 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - t_env: 1150020 / 2050000
+2026-04-30 14:43:53,402 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Estimated time left: 2 hours, 42 minutes, 33 seconds. Time passed: 3 hours, 28 minutes, 35 seconds
+2026-04-30 14:44:01,706 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Saving models to work_dirs/my_experiment/IMPowf50_IQL_RNN_44/my_run/20260430_111514/models/1150020
+2026-04-30 14:48:23,796 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Recent Stats | t_env:    1175000 | Episode:    58750
+action_0_mean:             0.2209	action_1_mean:             0.7341	action_2_mean:             0.0450	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 0.1209	loss:                      0.0735	q_taken_mean:              0.0254
+return_mean:             -2401.7247	return_std:              222.3823	target_mean:               0.0253	td_error_abs:              0.1876
+test_action_0_mean:        0.2085	test_action_1_mean:        0.7629	test_action_2_mean:        0.0286	test_ep_length_mean:      20.0000
+test_return_mean:        -1848.4495	test_return_std:         146.0551	
+2026-04-30 14:48:24,011 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - t_env: 1175020 / 2050000
+2026-04-30 14:48:24,011 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Estimated time left: 2 hours, 37 minutes, 51 seconds. Time passed: 3 hours, 33 minutes, 6 seconds
+2026-04-30 14:52:55,457 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Recent Stats | t_env:    1200000 | Episode:    60000
+action_0_mean:             0.2287	action_1_mean:             0.7269	action_2_mean:             0.0444	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 0.1410	loss:                      0.0741	q_taken_mean:              0.0256
+return_mean:             -2386.5927	return_std:              221.9794	target_mean:               0.0256	td_error_abs:              0.1892
+test_action_0_mean:        0.2170	test_action_1_mean:        0.7555	test_action_2_mean:        0.0275	test_ep_length_mean:      20.0000
+test_return_mean:        -1846.5130	test_return_std:         151.9903	
+2026-04-30 14:52:55,674 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - t_env: 1200020 / 2050000
+2026-04-30 14:52:55,674 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Estimated time left: 2 hours, 33 minutes, 56 seconds. Time passed: 3 hours, 37 minutes, 37 seconds
+2026-04-30 14:53:04,117 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Saving models to work_dirs/my_experiment/IMPowf50_IQL_RNN_44/my_run/20260430_111514/models/1200020
+2026-04-30 14:57:27,354 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Recent Stats | t_env:    1225000 | Episode:    61250
+action_0_mean:             0.2333	action_1_mean:             0.7230	action_2_mean:             0.0437	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 0.1438	loss:                      0.0751	q_taken_mean:              0.0257
+return_mean:             -2362.6213	return_std:              224.8714	target_mean:               0.0257	td_error_abs:              0.1900
+test_action_0_mean:        0.2268	test_action_1_mean:        0.7514	test_action_2_mean:        0.0218	test_ep_length_mean:      20.0000
+test_return_mean:        -1743.0752	test_return_std:         143.3468	
+2026-04-30 14:57:27,565 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - t_env: 1225020 / 2050000
+2026-04-30 14:57:27,565 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Estimated time left: 2 hours, 29 minutes, 32 seconds. Time passed: 3 hours, 42 minutes, 9 seconds
+2026-04-30 15:01:59,488 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Recent Stats | t_env:    1250000 | Episode:    62500
+action_0_mean:             0.2374	action_1_mean:             0.7203	action_2_mean:             0.0423	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 0.1327	loss:                      0.0727	q_taken_mean:              0.0256
+return_mean:             -2363.8894	return_std:              225.6623	target_mean:               0.0256	td_error_abs:              0.1903
+test_action_0_mean:        0.2270	test_action_1_mean:        0.7510	test_action_2_mean:        0.0219	test_ep_length_mean:      20.0000
+test_return_mean:        -1757.7848	test_return_std:         150.0873	
+2026-04-30 15:01:59,706 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - t_env: 1250020 / 2050000
+2026-04-30 15:01:59,706 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Estimated time left: 2 hours, 25 minutes, 8 seconds. Time passed: 3 hours, 46 minutes, 41 seconds
+2026-04-30 15:02:08,162 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Saving models to work_dirs/my_experiment/IMPowf50_IQL_RNN_44/my_run/20260430_111514/models/1250020
+2026-04-30 15:06:31,711 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Recent Stats | t_env:    1275000 | Episode:    63750
+action_0_mean:             0.2392	action_1_mean:             0.7187	action_2_mean:             0.0420	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 0.1262	loss:                      0.0780	q_taken_mean:              0.0251
+return_mean:             -2375.4847	return_std:              230.1343	target_mean:               0.0251	td_error_abs:              0.1959
+test_action_0_mean:        0.2275	test_action_1_mean:        0.7516	test_action_2_mean:        0.0209	test_ep_length_mean:      20.0000
+test_return_mean:        -1758.9520	test_return_std:         158.5787	
+2026-04-30 15:06:31,930 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - t_env: 1275020 / 2050000
+2026-04-30 15:06:31,930 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Estimated time left: 2 hours, 20 minutes, 38 seconds. Time passed: 3 hours, 51 minutes, 14 seconds
+2026-04-30 15:11:05,404 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Recent Stats | t_env:    1300000 | Episode:    65000
+action_0_mean:             0.2368	action_1_mean:             0.7215	action_2_mean:             0.0416	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 0.1384	loss:                      0.0774	q_taken_mean:              0.0244
+return_mean:             -2371.0935	return_std:              227.2630	target_mean:               0.0244	td_error_abs:              0.1965
+test_action_0_mean:        0.2244	test_action_1_mean:        0.7548	test_action_2_mean:        0.0208	test_ep_length_mean:      20.0000
+test_return_mean:        -1731.4385	test_return_std:         150.9080	
+2026-04-30 15:11:05,616 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - t_env: 1300020 / 2050000
+2026-04-30 15:11:05,616 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Estimated time left: 2 hours, 16 minutes, 50 seconds. Time passed: 3 hours, 55 minutes, 47 seconds
+2026-04-30 15:11:14,037 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Saving models to work_dirs/my_experiment/IMPowf50_IQL_RNN_44/my_run/20260430_111514/models/1300020
+2026-04-30 15:15:36,493 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Recent Stats | t_env:    1325000 | Episode:    66250
+action_0_mean:             0.2322	action_1_mean:             0.7260	action_2_mean:             0.0419	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 0.1170	loss:                      0.0715	q_taken_mean:              0.0243
+return_mean:             -2348.3097	return_std:              213.6035	target_mean:               0.0243	td_error_abs:              0.1909
+test_action_0_mean:        0.2207	test_action_1_mean:        0.7579	test_action_2_mean:        0.0214	test_ep_length_mean:      20.0000
+test_return_mean:        -1720.5686	test_return_std:         142.8139	
+2026-04-30 15:15:36,708 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - t_env: 1325020 / 2050000
+2026-04-30 15:15:36,709 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Estimated time left: 2 hours, 11 minutes, 1 seconds. Time passed: 4 hours, 18 seconds
+2026-04-30 15:20:10,271 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Recent Stats | t_env:    1350000 | Episode:    67500
+action_0_mean:             0.2347	action_1_mean:             0.7236	action_2_mean:             0.0418	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 0.1143	loss:                      0.0670	q_taken_mean:              0.0242
+return_mean:             -2331.8624	return_std:              205.3200	target_mean:               0.0242	td_error_abs:              0.1894
+test_action_0_mean:        0.2307	test_action_1_mean:        0.7468	test_action_2_mean:        0.0224	test_ep_length_mean:      20.0000
+test_return_mean:        -1737.2272	test_return_std:         140.3421	
+2026-04-30 15:20:10,490 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - t_env: 1350020 / 2050000
+2026-04-30 15:20:10,491 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Estimated time left: 2 hours, 7 minutes, 45 seconds. Time passed: 4 hours, 4 minutes, 52 seconds
+2026-04-30 15:20:18,978 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Saving models to work_dirs/my_experiment/IMPowf50_IQL_RNN_44/my_run/20260430_111514/models/1350020
+2026-04-30 15:24:42,423 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Recent Stats | t_env:    1375000 | Episode:    68750
+action_0_mean:             0.2325	action_1_mean:             0.7258	action_2_mean:             0.0417	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 0.1187	loss:                      0.0679	q_taken_mean:              0.0242
+return_mean:             -2317.7917	return_std:              206.7595	target_mean:               0.0242	td_error_abs:              0.1897
+test_action_0_mean:        0.2260	test_action_1_mean:        0.7503	test_action_2_mean:        0.0237	test_ep_length_mean:      20.0000
+test_return_mean:        -1814.2051	test_return_std:         152.1939	
+2026-04-30 15:24:42,637 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - t_env: 1375020 / 2050000
+2026-04-30 15:24:42,638 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Estimated time left: 2 hours, 2 minutes, 27 seconds. Time passed: 4 hours, 9 minutes, 24 seconds
+2026-04-30 15:29:14,155 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Recent Stats | t_env:    1400000 | Episode:    70000
+action_0_mean:             0.2327	action_1_mean:             0.7259	action_2_mean:             0.0415	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 0.1326	loss:                      0.0723	q_taken_mean:              0.0241
+return_mean:             -2319.7683	return_std:              225.1064	target_mean:               0.0241	td_error_abs:              0.1934
+test_action_0_mean:        0.2365	test_action_1_mean:        0.7395	test_action_2_mean:        0.0240	test_ep_length_mean:      20.0000
+test_return_mean:        -1820.2323	test_return_std:         149.9665	
+2026-04-30 15:29:14,368 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - t_env: 1400020 / 2050000
+2026-04-30 15:29:14,369 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Estimated time left: 1 hours, 57 minutes, 44 seconds. Time passed: 4 hours, 13 minutes, 56 seconds
+2026-04-30 15:29:22,771 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Saving models to work_dirs/my_experiment/IMPowf50_IQL_RNN_44/my_run/20260430_111514/models/1400020
+2026-04-30 15:33:46,115 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Recent Stats | t_env:    1425000 | Episode:    71250
+action_0_mean:             0.2329	action_1_mean:             0.7255	action_2_mean:             0.0416	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 0.1275	loss:                      0.0735	q_taken_mean:              0.0241
+return_mean:             -2318.5844	return_std:              223.8385	target_mean:               0.0241	td_error_abs:              0.1942
+test_action_0_mean:        0.2361	test_action_1_mean:        0.7396	test_action_2_mean:        0.0243	test_ep_length_mean:      20.0000
+test_return_mean:        -1818.9174	test_return_std:         146.6089	
+2026-04-30 15:33:46,329 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - t_env: 1425020 / 2050000
+2026-04-30 15:33:46,329 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Estimated time left: 1 hours, 53 minutes, 18 seconds. Time passed: 4 hours, 18 minutes, 28 seconds
+2026-04-30 15:38:17,187 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Recent Stats | t_env:    1450000 | Episode:    72500
+action_0_mean:             0.2368	action_1_mean:             0.7212	action_2_mean:             0.0420	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 0.1363	loss:                      0.0862	q_taken_mean:              0.0237
+return_mean:             -2336.1075	return_std:              237.7378	target_mean:               0.0237	td_error_abs:              0.2037
+test_action_0_mean:        0.2366	test_action_1_mean:        0.7368	test_action_2_mean:        0.0265	test_ep_length_mean:      20.0000
+test_return_mean:        -1838.3785	test_return_std:         149.0129	
+2026-04-30 15:38:17,401 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - t_env: 1450020 / 2050000
+2026-04-30 15:38:17,401 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Estimated time left: 1 hours, 48 minutes, 25 seconds. Time passed: 4 hours, 22 minutes, 59 seconds
+2026-04-30 15:38:25,804 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Saving models to work_dirs/my_experiment/IMPowf50_IQL_RNN_44/my_run/20260430_111514/models/1450020
+2026-04-30 15:42:49,440 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Recent Stats | t_env:    1475000 | Episode:    73750
+action_0_mean:             0.2337	action_1_mean:             0.7245	action_2_mean:             0.0418	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 0.1889	loss:                      0.0957	q_taken_mean:              0.0233
+return_mean:             -2338.5348	return_std:              235.8222	target_mean:               0.0232	td_error_abs:              0.2085
+test_action_0_mean:        0.2267	test_action_1_mean:        0.7473	test_action_2_mean:        0.0260	test_ep_length_mean:      20.0000
+test_return_mean:        -1827.0422	test_return_std:         152.8907	
+2026-04-30 15:42:49,657 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - t_env: 1475020 / 2050000
+2026-04-30 15:42:49,658 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Estimated time left: 1 hours, 44 minutes, 21 seconds. Time passed: 4 hours, 27 minutes, 31 seconds
+2026-04-30 15:47:21,349 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Recent Stats | t_env:    1500000 | Episode:    75000
+action_0_mean:             0.2354	action_1_mean:             0.7229	action_2_mean:             0.0417	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 0.1865	loss:                      0.0986	q_taken_mean:              0.0228
+return_mean:             -2344.2145	return_std:              234.5258	target_mean:               0.0227	td_error_abs:              0.2125
+test_action_0_mean:        0.2328	test_action_1_mean:        0.7425	test_action_2_mean:        0.0247	test_ep_length_mean:      20.0000
+test_return_mean:        -1753.4789	test_return_std:         139.0207	
+2026-04-30 15:47:21,561 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - t_env: 1500020 / 2050000
+2026-04-30 15:47:21,562 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Estimated time left: 1 hours, 39 minutes, 41 seconds. Time passed: 4 hours, 32 minutes, 3 seconds
+2026-04-30 15:47:29,956 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Saving models to work_dirs/my_experiment/IMPowf50_IQL_RNN_44/my_run/20260430_111514/models/1500020
+2026-04-30 15:51:51,823 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Recent Stats | t_env:    1525000 | Episode:    76250
+action_0_mean:             0.2350	action_1_mean:             0.7238	action_2_mean:             0.0413	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 0.1855	loss:                      0.0932	q_taken_mean:              0.0226
+return_mean:             -2317.8099	return_std:              213.4660	target_mean:               0.0226	td_error_abs:              0.2099
+test_action_0_mean:        0.2247	test_action_1_mean:        0.7510	test_action_2_mean:        0.0243	test_ep_length_mean:      20.0000
+test_return_mean:        -1740.1645	test_return_std:         140.8652	
+2026-04-30 15:51:52,037 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - t_env: 1525020 / 2050000
+2026-04-30 15:51:52,038 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Estimated time left: 1 hours, 34 minutes, 39 seconds. Time passed: 4 hours, 36 minutes, 34 seconds
+2026-04-30 15:56:22,618 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Recent Stats | t_env:    1550000 | Episode:    77500
+action_0_mean:             0.2339	action_1_mean:             0.7254	action_2_mean:             0.0406	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 0.1884	loss:                      0.0932	q_taken_mean:              0.0226
+return_mean:             -2302.1828	return_std:              211.4106	target_mean:               0.0225	td_error_abs:              0.2108
+test_action_0_mean:        0.2248	test_action_1_mean:        0.7511	test_action_2_mean:        0.0241	test_ep_length_mean:      20.0000
+test_return_mean:        -1723.7136	test_return_std:         143.6238	
+2026-04-30 15:56:22,832 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - t_env: 1550020 / 2050000
+2026-04-30 15:56:22,833 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Estimated time left: 1 hours, 30 minutes, 15 seconds. Time passed: 4 hours, 41 minutes, 5 seconds
+2026-04-30 15:56:31,183 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Saving models to work_dirs/my_experiment/IMPowf50_IQL_RNN_44/my_run/20260430_111514/models/1550020
+2026-04-30 16:00:54,088 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Recent Stats | t_env:    1575000 | Episode:    78750
+action_0_mean:             0.2357	action_1_mean:             0.7245	action_2_mean:             0.0399	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 0.1850	loss:                      0.0871	q_taken_mean:              0.0227
+return_mean:             -2276.9321	return_std:              205.8433	target_mean:               0.0226	td_error_abs:              0.2086
+test_action_0_mean:        0.2174	test_action_1_mean:        0.7536	test_action_2_mean:        0.0290	test_ep_length_mean:      20.0000
+test_return_mean:        -1783.2328	test_return_std:         141.5036	
+2026-04-30 16:00:54,304 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - t_env: 1575020 / 2050000
+2026-04-30 16:00:54,304 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Estimated time left: 1 hours, 25 minutes, 57 seconds. Time passed: 4 hours, 45 minutes, 36 seconds
+2026-04-30 16:05:26,036 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Recent Stats | t_env:    1600000 | Episode:    80000
+action_0_mean:             0.2370	action_1_mean:             0.7234	action_2_mean:             0.0396	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 0.1407	loss:                      0.0816	q_taken_mean:              0.0229
+return_mean:             -2263.9028	return_std:              209.3114	target_mean:               0.0229	td_error_abs:              0.2060
+test_action_0_mean:        0.2210	test_action_1_mean:        0.7498	test_action_2_mean:        0.0292	test_ep_length_mean:      20.0000
+test_return_mean:        -1783.8434	test_return_std:         146.1802	
+2026-04-30 16:05:26,250 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - t_env: 1600020 / 2050000
+2026-04-30 16:05:26,251 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Estimated time left: 1 hours, 21 minutes, 34 seconds. Time passed: 4 hours, 50 minutes, 8 seconds
+2026-04-30 16:05:34,577 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Saving models to work_dirs/my_experiment/IMPowf50_IQL_RNN_44/my_run/20260430_111514/models/1600020
+2026-04-30 16:09:56,420 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Recent Stats | t_env:    1625000 | Episode:    81250
+action_0_mean:             0.2373	action_1_mean:             0.7234	action_2_mean:             0.0393	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 0.1649	loss:                      0.0881	q_taken_mean:              0.0231
+return_mean:             -2257.0742	return_std:              209.9429	target_mean:               0.0230	td_error_abs:              0.2084
+test_action_0_mean:        0.2244	test_action_1_mean:        0.7459	test_action_2_mean:        0.0297	test_ep_length_mean:      20.0000
+test_return_mean:        -1777.0671	test_return_std:         144.5427	
+2026-04-30 16:09:56,639 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - t_env: 1625020 / 2050000
+2026-04-30 16:09:56,640 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Estimated time left: 1 hours, 16 minutes, 36 seconds. Time passed: 4 hours, 54 minutes, 38 seconds
+2026-04-30 16:14:27,835 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Recent Stats | t_env:    1650000 | Episode:    82500
+action_0_mean:             0.2394	action_1_mean:             0.7213	action_2_mean:             0.0393	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 0.1613	loss:                      0.0893	q_taken_mean:              0.0230
+return_mean:             -2262.4970	return_std:              215.5809	target_mean:               0.0229	td_error_abs:              0.2088
+test_action_0_mean:        0.2280	test_action_1_mean:        0.7419	test_action_2_mean:        0.0301	test_ep_length_mean:      20.0000
+test_return_mean:        -1762.0123	test_return_std:         139.1973	
+2026-04-30 16:14:28,052 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - t_env: 1650020 / 2050000
+2026-04-30 16:14:28,052 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Estimated time left: 1 hours, 12 minutes, 22 seconds. Time passed: 4 hours, 59 minutes, 10 seconds
+2026-04-30 16:14:36,338 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Saving models to work_dirs/my_experiment/IMPowf50_IQL_RNN_44/my_run/20260430_111514/models/1650020
+2026-04-30 16:18:59,126 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Recent Stats | t_env:    1675000 | Episode:    83750
+action_0_mean:             0.2408	action_1_mean:             0.7197	action_2_mean:             0.0395	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 0.1533	loss:                      0.0898	q_taken_mean:              0.0229
+return_mean:             -2257.0431	return_std:              218.3672	target_mean:               0.0228	td_error_abs:              0.2081
+test_action_0_mean:        0.2326	test_action_1_mean:        0.7377	test_action_2_mean:        0.0297	test_ep_length_mean:      20.0000
+test_return_mean:        -1761.7816	test_return_std:         143.4958	
+2026-04-30 16:18:59,338 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - t_env: 1675020 / 2050000
+2026-04-30 16:18:59,338 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Estimated time left: 1 hours, 7 minutes, 49 seconds. Time passed: 5 hours, 3 minutes, 41 seconds
+2026-04-30 16:23:26,330 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Recent Stats | t_env:    1700000 | Episode:    85000
+action_0_mean:             0.2373	action_1_mean:             0.7233	action_2_mean:             0.0394	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 0.1390	loss:                      0.0854	q_taken_mean:              0.0229
+return_mean:             -2248.7302	return_std:              210.5830	target_mean:               0.0228	td_error_abs:              0.2041
+test_action_0_mean:        0.2463	test_action_1_mean:        0.7302	test_action_2_mean:        0.0235	test_ep_length_mean:      20.0000
+test_return_mean:        -1695.1777	test_return_std:         144.8730	
+2026-04-30 16:23:26,547 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - t_env: 1700020 / 2050000
+2026-04-30 16:23:26,547 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Estimated time left: 1 hours, 2 minutes, 20 seconds. Time passed: 5 hours, 8 minutes, 8 seconds
+2026-04-30 16:23:34,816 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Saving models to work_dirs/my_experiment/IMPowf50_IQL_RNN_44/my_run/20260430_111514/models/1700020
+2026-04-30 16:27:56,239 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Recent Stats | t_env:    1725000 | Episode:    86250
+action_0_mean:             0.2391	action_1_mean:             0.7207	action_2_mean:             0.0401	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 0.1391	loss:                      0.0827	q_taken_mean:              0.0230
+return_mean:             -2242.3539	return_std:              202.7901	target_mean:               0.0229	td_error_abs:              0.2032
+test_action_0_mean:        0.2507	test_action_1_mean:        0.7256	test_action_2_mean:        0.0237	test_ep_length_mean:      20.0000
+test_return_mean:        -1686.1526	test_return_std:         151.0558	
+2026-04-30 16:27:56,454 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - t_env: 1725020 / 2050000
+2026-04-30 16:27:56,455 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Estimated time left: 58 minutes, 28 seconds. Time passed: 5 hours, 12 minutes, 38 seconds
+2026-04-30 16:32:28,760 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Recent Stats | t_env:    1750000 | Episode:    87500
+action_0_mean:             0.2435	action_1_mean:             0.7162	action_2_mean:             0.0403	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 0.1404	loss:                      0.0738	q_taken_mean:              0.0231
+return_mean:             -2233.4976	return_std:              200.4770	target_mean:               0.0231	td_error_abs:              0.1994
+test_action_0_mean:        0.2519	test_action_1_mean:        0.7253	test_action_2_mean:        0.0228	test_ep_length_mean:      20.0000
+test_return_mean:        -1670.2412	test_return_std:         160.1981	
+2026-04-30 16:32:28,973 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - t_env: 1750020 / 2050000
+2026-04-30 16:32:28,973 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Estimated time left: 54 minutes, 30 seconds. Time passed: 5 hours, 17 minutes, 11 seconds
+2026-04-30 16:32:37,357 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Saving models to work_dirs/my_experiment/IMPowf50_IQL_RNN_44/my_run/20260430_111514/models/1750020
+2026-04-30 16:37:00,281 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Recent Stats | t_env:    1775000 | Episode:    88750
+action_0_mean:             0.2441	action_1_mean:             0.7153	action_2_mean:             0.0406	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 0.1651	loss:                      0.0782	q_taken_mean:              0.0232
+return_mean:             -2233.9400	return_std:              199.7263	target_mean:               0.0232	td_error_abs:              0.2030
+test_action_0_mean:        0.2463	test_action_1_mean:        0.7293	test_action_2_mean:        0.0244	test_ep_length_mean:      20.0000
+test_return_mean:        -1716.5405	test_return_std:         158.9371	
+2026-04-30 16:37:00,497 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - t_env: 1775020 / 2050000
+2026-04-30 16:37:00,498 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Estimated time left: 49 minutes, 46 seconds. Time passed: 5 hours, 21 minutes, 42 seconds
+2026-04-30 16:41:29,385 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Recent Stats | t_env:    1800000 | Episode:    90000
+action_0_mean:             0.2447	action_1_mean:             0.7146	action_2_mean:             0.0407	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 0.1669	loss:                      0.0798	q_taken_mean:              0.0232
+return_mean:             -2236.3622	return_std:              200.4752	target_mean:               0.0232	td_error_abs:              0.2052
+test_action_0_mean:        0.2462	test_action_1_mean:        0.7291	test_action_2_mean:        0.0248	test_ep_length_mean:      20.0000
+test_return_mean:        -1718.8406	test_return_std:         158.7781	
+2026-04-30 16:41:29,601 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - t_env: 1800020 / 2050000
+2026-04-30 16:41:29,602 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Estimated time left: 44 minutes, 50 seconds. Time passed: 5 hours, 26 minutes, 11 seconds
+2026-04-30 16:41:37,947 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Saving models to work_dirs/my_experiment/IMPowf50_IQL_RNN_44/my_run/20260430_111514/models/1800020
+2026-04-30 16:46:00,187 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Recent Stats | t_env:    1825000 | Episode:    91250
+action_0_mean:             0.2481	action_1_mean:             0.7109	action_2_mean:             0.0410	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 0.1647	loss:                      0.0832	q_taken_mean:              0.0229
+return_mean:             -2243.1676	return_std:              207.2250	target_mean:               0.0228	td_error_abs:              0.2092
+test_action_0_mean:        0.2402	test_action_1_mean:        0.7357	test_action_2_mean:        0.0242	test_ep_length_mean:      20.0000
+test_return_mean:        -1691.8348	test_return_std:         157.9499	
+2026-04-30 16:46:00,401 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - t_env: 1825020 / 2050000
+2026-04-30 16:46:00,401 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Estimated time left: 40 minutes, 36 seconds. Time passed: 5 hours, 30 minutes, 42 seconds
+2026-04-30 16:50:28,045 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Recent Stats | t_env:    1850000 | Episode:    92500
+action_0_mean:             0.2481	action_1_mean:             0.7114	action_2_mean:             0.0405	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 0.1602	loss:                      0.0817	q_taken_mean:              0.0225
+return_mean:             -2237.1510	return_std:              207.4774	target_mean:               0.0225	td_error_abs:              0.2080
+test_action_0_mean:        0.2333	test_action_1_mean:        0.7418	test_action_2_mean:        0.0249	test_ep_length_mean:      20.0000
+test_return_mean:        -1688.8407	test_return_std:         147.7183	
+2026-04-30 16:50:28,510 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - t_env: 1850020 / 2050000
+2026-04-30 16:50:28,510 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Estimated time left: 35 minutes, 44 seconds. Time passed: 5 hours, 35 minutes, 10 seconds
+2026-04-30 16:50:36,704 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Saving models to work_dirs/my_experiment/IMPowf50_IQL_RNN_44/my_run/20260430_111514/models/1850020
+2026-04-30 16:54:55,825 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Recent Stats | t_env:    1875000 | Episode:    93750
+action_0_mean:             0.2492	action_1_mean:             0.7103	action_2_mean:             0.0405	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 0.1365	loss:                      0.0857	q_taken_mean:              0.0222
+return_mean:             -2250.8885	return_std:              219.6610	target_mean:               0.0221	td_error_abs:              0.2117
+test_action_0_mean:        0.2386	test_action_1_mean:        0.7376	test_action_2_mean:        0.0238	test_ep_length_mean:      20.0000
+test_return_mean:        -1683.6806	test_return_std:         142.7742	
+2026-04-30 16:54:56,033 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - t_env: 1875020 / 2050000
+2026-04-30 16:54:56,033 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Estimated time left: 31 minutes, 12 seconds. Time passed: 5 hours, 39 minutes, 38 seconds
+2026-04-30 16:59:26,224 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Recent Stats | t_env:    1900000 | Episode:    95000
+action_0_mean:             0.2519	action_1_mean:             0.7078	action_2_mean:             0.0404	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 0.1169	loss:                      0.0832	q_taken_mean:              0.0217
+return_mean:             -2251.8238	return_std:              215.1357	target_mean:               0.0218	td_error_abs:              0.2096
+test_action_0_mean:        0.2462	test_action_1_mean:        0.7322	test_action_2_mean:        0.0215	test_ep_length_mean:      20.0000
+test_return_mean:        -1637.6785	test_return_std:         149.8215	
+2026-04-30 16:59:26,441 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - t_env: 1900020 / 2050000
+2026-04-30 16:59:26,441 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Estimated time left: 27 minutes, 2 seconds. Time passed: 5 hours, 44 minutes, 8 seconds
+2026-04-30 16:59:34,741 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Saving models to work_dirs/my_experiment/IMPowf50_IQL_RNN_44/my_run/20260430_111514/models/1900020
+2026-04-30 17:03:56,196 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Recent Stats | t_env:    1925000 | Episode:    96250
+action_0_mean:             0.2532	action_1_mean:             0.7059	action_2_mean:             0.0409	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 0.1527	loss:                      0.0823	q_taken_mean:              0.0213
+return_mean:             -2251.7838	return_std:              212.6188	target_mean:               0.0213	td_error_abs:              0.2104
+test_action_0_mean:        0.2458	test_action_1_mean:        0.7329	test_action_2_mean:        0.0213	test_ep_length_mean:      20.0000
+test_return_mean:        -1638.2154	test_return_std:         155.8498	
+2026-04-30 17:03:56,405 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - t_env: 1925020 / 2050000
+2026-04-30 17:03:56,405 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Estimated time left: 22 minutes, 29 seconds. Time passed: 5 hours, 48 minutes, 38 seconds
+2026-04-30 17:08:24,236 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Recent Stats | t_env:    1950000 | Episode:    97500
+action_0_mean:             0.2540	action_1_mean:             0.7045	action_2_mean:             0.0415	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 0.1495	loss:                      0.0841	q_taken_mean:              0.0210
+return_mean:             -2260.5462	return_std:              209.0525	target_mean:               0.0211	td_error_abs:              0.2121
+test_action_0_mean:        0.2414	test_action_1_mean:        0.7360	test_action_2_mean:        0.0226	test_ep_length_mean:      20.0000
+test_return_mean:        -1657.0049	test_return_std:         154.1699	
+2026-04-30 17:08:24,454 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - t_env: 1950020 / 2050000
+2026-04-30 17:08:24,455 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Estimated time left: 17 minutes, 51 seconds. Time passed: 5 hours, 53 minutes, 6 seconds
+2026-04-30 17:08:32,841 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Saving models to work_dirs/my_experiment/IMPowf50_IQL_RNN_44/my_run/20260430_111514/models/1950020
+2026-04-30 17:12:56,853 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Recent Stats | t_env:    1975000 | Episode:    98750
+action_0_mean:             0.2602	action_1_mean:             0.6972	action_2_mean:             0.0425	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 0.1769	loss:                      0.0908	q_taken_mean:              0.0207
+return_mean:             -2281.6722	return_std:              217.2753	target_mean:               0.0208	td_error_abs:              0.2175
+test_action_0_mean:        0.2435	test_action_1_mean:        0.7356	test_action_2_mean:        0.0209	test_ep_length_mean:      20.0000
+test_return_mean:        -1651.2557	test_return_std:         155.1001	
+2026-04-30 17:12:57,069 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - t_env: 1975020 / 2050000
+2026-04-30 17:12:57,070 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Estimated time left: 13 minutes, 37 seconds. Time passed: 5 hours, 57 minutes, 39 seconds
+2026-04-30 17:17:25,609 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Recent Stats | t_env:    2000000 | Episode:   100000
+action_0_mean:             0.2545	action_1_mean:             0.7028	action_2_mean:             0.0427	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 0.1757	loss:                      0.0917	q_taken_mean:              0.0204
+return_mean:             -2267.8563	return_std:              203.0158	target_mean:               0.0205	td_error_abs:              0.2178
+test_action_0_mean:        0.2336	test_action_1_mean:        0.7445	test_action_2_mean:        0.0219	test_ep_length_mean:      20.0000
+test_return_mean:        -1641.4944	test_return_std:         151.7346	
+2026-04-30 17:17:25,815 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - t_env: 2000020 / 2050000
+2026-04-30 17:17:25,816 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Estimated time left: 8 minutes, 57 seconds. Time passed: 6 hours, 2 minutes, 8 seconds
+2026-04-30 17:17:34,109 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Saving models to work_dirs/my_experiment/IMPowf50_IQL_RNN_44/my_run/20260430_111514/models/2000020
+2026-04-30 17:21:54,532 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Recent Stats | t_env:    2025000 | Episode:   101250
+action_0_mean:             0.2518	action_1_mean:             0.7048	action_2_mean:             0.0434	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 0.1643	loss:                      0.0925	q_taken_mean:              0.0204
+return_mean:             -2260.2299	return_std:              203.7212	target_mean:               0.0204	td_error_abs:              0.2182
+test_action_0_mean:        0.2336	test_action_1_mean:        0.7428	test_action_2_mean:        0.0237	test_ep_length_mean:      20.0000
+test_return_mean:        -1642.6127	test_return_std:         144.3567	
+2026-04-30 17:21:54,749 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - t_env: 2025020 / 2050000
+2026-04-30 17:21:54,750 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Estimated time left: 4 minutes, 28 seconds. Time passed: 6 hours, 6 minutes, 37 seconds
+2026-04-30 17:26:22,424 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Recent Stats | t_env:    2050000 | Episode:   102500
+action_0_mean:             0.2517	action_1_mean:             0.7044	action_2_mean:             0.0439	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 0.1212	loss:                      0.0931	q_taken_mean:              0.0204
+return_mean:             -2261.8519	return_std:              200.1820	target_mean:               0.0204	td_error_abs:              0.2174
+test_action_0_mean:        0.2336	test_action_1_mean:        0.7407	test_action_2_mean:        0.0257	test_ep_length_mean:      20.0000
+test_return_mean:        -1658.5050	test_return_std:         135.3514	
+2026-04-30 17:26:22,637 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - t_env: 2050020 / 2050000
+2026-04-30 17:26:22,638 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Estimated time left: -. Time passed: 6 hours, 11 minutes, 4 seconds
+2026-04-30 17:26:30,865 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Saving models to work_dirs/my_experiment/IMPowf50_IQL_RNN_44/my_run/20260430_111514/models/2050020
+2026-04-30 17:26:30,874 - my_experiment - IMPowf50_IQL_RNN_44 - my_run - INFO - Finished Training

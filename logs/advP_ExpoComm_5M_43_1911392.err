@@ -1,0 +1,945 @@
+Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
+Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
+Users of this version of Gym should be able to simply replace 'import gym' with 'import gymnasium as gym' in the vast majority of cases.
+See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
+src/main.py:81: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+  if isinstance(v, collections.Mapping):
+wandb: [wandb.login()] Loaded credentials for https://api.wandb.ai from /home/pparsons/.netrc.
+wandb: Currently logged in as: peterparsons02 (peterparsons02-eth-z-rich) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+wandb: setting up run pugg7t4q
+wandb: Tracking run with wandb version 0.24.1
+wandb: Run data is saved locally in /usr/itetnas04/data-scratch-01/pparsons/data/MyExpoComm/wandb/run-20260425_110245-pugg7t4q
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run my_run-advP_ExpoComm_5M_43-20260425_110244
+wandb: ⭐️ View project at https://wandb.ai/peterparsons02-eth-z-rich/my_experiment
+wandb: 🚀 View run at https://wandb.ai/peterparsons02-eth-z-rich/my_experiment/runs/pugg7t4q
+2026-04-25 11:02:49,035 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Current directory: /usr/itetnas04/data-scratch-01/pparsons/data/MyExpoComm.
+2026-04-25 11:02:49,035 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Experiment Parameters:
+2026-04-25 11:02:49,037 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - 
+
+{   'action_selector': 'epsilon_greedy',
+    'add_value_last_step': True,
+    'agent': 'ExpoComm_one_peer_cont',
+    'agent_output_type': 'q',
+    'aux_coef': 0.1,
+    'batch_size': 32,
+    'batch_size_run': 1,
+    'buffer_cpu_only': True,
+    'buffer_size': 2000,
+    'checkpoint_path': '',
+    'double_q': True,
+    'env': 'MAgent_AdvPursuit',
+    'env_args': {   'global_reward': False,
+                    'map_name': 'adversarial_pursuit_view8',
+                    'map_size': 45,
+                    'max_cycles': 200,
+                    'minimap_mode': True,
+                    'pretrained_ckpt': 'prey_params.pt',
+                    'seed': 43},
+    'epsilon_anneal_time': 1000000,
+    'epsilon_finish': 0.05,
+    'epsilon_start': 1.0,
+    'evaluate': False,
+    'evaluation_epsilon': 0.0,
+    'exp_name': 'my_experiment',
+    'gamma': 0.99,
+    'global_reward': True,
+    'grad_norm_clip': 10,
+    'hidden_dim': 64,
+    'hypergroup': None,
+    'hypernet_embed': 64,
+    'hypernet_layers': 2,
+    'label': 'default_label',
+    'learner': 'cont_q_learner',
+    'learner_log_interval': 10000,
+    'load_step': 0,
+    'local_results_path': 'results',
+    'log_interval': 50000,
+    'lr': 0.0005,
+    'mac': 'ExpoComm_mac',
+    'mixer': 'qmix',
+    'mixing_embed_dim': 64,
+    'name': 'advP_ExpoComm_5M_43',
+    'neg_num': 20,
+    'obs_agent_id': True,
+    'obs_individual_obs': False,
+    'obs_last_action': True,
+    'one_peer': True,
+    'optim_alpha': 0.99,
+    'optim_eps': 1e-05,
+    'pos_flag': False,
+    'render': False,
+    'repeat_id': 1,
+    'run_name': 'my_run',
+    'runner': 'episode',
+    'runner_log_interval': 10000,
+    'save_model': True,
+    'save_model_interval': 200000,
+    'save_replay': False,
+    'seed': 43,
+    'standardise_returns': False,
+    'standardise_rewards': True,
+    't_max': 5050000,
+    'target_update_interval_or_tau': 200,
+    'temperature': 0.07,
+    'test_greedy': True,
+    'test_interval': 50000,
+    'test_nepisode': 100,
+    'topk_neighbors': 7,
+    'use_cuda': True,
+    'use_rnn': True,
+    'use_tensorboard': True,
+    'work_dir': 'work_dirs/my_experiment/advP_ExpoComm_5M_43/my_run/20260425_110244'}
+
+/usr/itetnas04/data-scratch-01/pparsons/data/conda_envs/ExpoComm/lib/python3.8/site-packages/pettingzoo/utils/conversions.py:41: UserWarning: The `from_parallel` function is deprecated. Use the `parallel_to_aec` function instead.
+  warnings.warn("The `from_parallel` function is deprecated. Use the `parallel_to_aec` function instead.")
+/usr/itetnas04/data-scratch-01/pparsons/data/conda_envs/ExpoComm/lib/python3.8/site-packages/pettingzoo/utils/wrappers/base.py:44: UserWarning: The `observation_spaces` dictionary is deprecated. Use the `observation_space` function instead.
+  warnings.warn("The `observation_spaces` dictionary is deprecated. Use the `observation_space` function instead.")
+/usr/itetnas04/data-scratch-01/pparsons/data/conda_envs/ExpoComm/lib/python3.8/site-packages/pettingzoo/utils/conversions.py:36: UserWarning: The `to_parallel` function is deprecated. Use the `aec_to_parallel` function instead.
+  warnings.warn("The `to_parallel` function is deprecated. Use the `aec_to_parallel` function instead.")
+/usr/itetnas04/data-scratch-01/pparsons/data/conda_envs/ExpoComm/lib/python3.8/site-packages/pettingzoo/utils/conversions.py:80: UserWarning: The `action_spaces` dictionary is deprecated. Use the `action_space` function instead.
+  warnings.warn("The `action_spaces` dictionary is deprecated. Use the `action_space` function instead.")
+/usr/itetnas04/data-scratch-01/pparsons/data/conda_envs/ExpoComm/lib/python3.8/site-packages/pettingzoo/utils/wrappers/base.py:52: UserWarning: The `action_spaces` dictionary is deprecated. Use the `action_space` function instead.
+  warnings.warn("The `action_spaces` dictionary is deprecated. Use the `action_space` function instead.")
+/usr/itetnas04/data-scratch-01/pparsons/data/conda_envs/ExpoComm/lib/python3.8/site-packages/pettingzoo/utils/conversions.py:72: UserWarning: The `observation_spaces` dictionary is deprecated. Use the `observation_space` function instead.
+  warnings.warn("The `observation_spaces` dictionary is deprecated. Use the `observation_space` function instead.")
+2026-04-25 11:03:09,845 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Beginning training for 5050000 timesteps
+/usr/itetnas04/data-scratch-01/pparsons/data/MyExpoComm/src/envs/adv_pursuit_wrappers.py:240: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  actions = th.tensor(actions, dtype=th.long)
+2026-04-25 11:03:24,453 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - t_env: 200 / 5050000
+2026-04-25 11:03:24,454 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Estimated time left: 24 minutes, 29 seconds. Time passed: 14 seconds
+2026-04-25 11:06:35,082 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Saving models to work_dirs/my_experiment/advP_ExpoComm_5M_43/my_run/20260425_110244/models/200
+2026-04-25 11:16:56,086 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Recent Stats | t_env:      50000 | Episode:      250
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.9620	grad_norm:               800.2580
+info_nce_loss:             2.8771	loss:                    196.8336	q_loss:                  178.9396	q_taken_mean:              0.0133
+return_mean:             -19.7519	return_std:                1.2355	target_mean:               0.2432	td_error_abs:              8.2143
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        -29.6095	test_return_std:           5.4864
+
+2026-04-25 11:16:58,647 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - t_env: 50200 / 5050000
+2026-04-25 11:16:58,648 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Estimated time left: 22 hours, 36 minutes, 56 seconds. Time passed: 13 minutes, 48 seconds
+2026-04-25 11:30:50,619 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Recent Stats | t_env:     100000 | Episode:      500
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.9145	grad_norm:               1971.8296
+info_nce_loss:             2.7785	loss:                    271.5679	q_loss:                  246.8799	q_taken_mean:              1.3164
+return_mean:             -18.2855	return_std:                1.8512	target_mean:               1.5603	td_error_abs:              8.9918
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:          9.6660	test_return_std:          10.3237
+
+2026-04-25 11:30:53,250 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - t_env: 100200 / 5050000
+2026-04-25 11:30:53,251 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Estimated time left: 22 hours, 57 minutes, 2 seconds. Time passed: 27 minutes, 43 seconds
+2026-04-25 11:45:00,808 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Recent Stats | t_env:     150000 | Episode:      750
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.8670	grad_norm:               4484.5924
+info_nce_loss:             2.3209	loss:                    433.0346	q_loss:                  393.6678	q_taken_mean:              2.8861
+return_mean:             -14.1125	return_std:                2.2259	target_mean:               3.2514	td_error_abs:             11.5604
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:         35.7096	test_return_std:          11.6721
+
+2026-04-25 11:45:03,456 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - t_env: 150200 / 5050000
+2026-04-25 11:45:03,457 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Estimated time left: 23 hours, 8 minutes, 36 seconds. Time passed: 41 minutes, 53 seconds
+2026-04-25 11:59:16,385 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Recent Stats | t_env:     200000 | Episode:     1000
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.8195	grad_norm:               7840.6198
+info_nce_loss:             0.9167	loss:                    528.5711	q_loss:                  480.5192	q_taken_mean:              4.4899
+return_mean:             -10.1588	return_std:                2.6650	target_mean:               4.8119	td_error_abs:             13.6898
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:         52.4358	test_return_std:          12.0909
+
+2026-04-25 11:59:19,029 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - t_env: 200200 / 5050000
+2026-04-25 11:59:19,030 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Estimated time left: 23 hours, 3 minutes, 7 seconds. Time passed: 56 minutes, 9 seconds
+2026-04-25 12:02:37,778 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Saving models to work_dirs/my_experiment/advP_ExpoComm_5M_43/my_run/20260425_110244/models/200200
+2026-04-25 12:13:31,455 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Recent Stats | t_env:     250000 | Episode:     1250
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.7720	grad_norm:               22989.8923
+info_nce_loss:             1.4285	loss:                    1437.2040	q_loss:                  1306.5491	q_taken_mean:              7.0863
+return_mean:              -5.7130	return_std:                2.9463	target_mean:               7.9077	td_error_abs:             25.2844
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:         63.3263	test_return_std:          12.3108
+
+2026-04-25 12:13:34,130 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - t_env: 250200 / 5050000
+2026-04-25 12:13:34,131 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Estimated time left: 22 hours, 48 minutes, 6 seconds. Time passed: 1 hours, 10 minutes, 24 seconds
+2026-04-25 12:27:47,762 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Recent Stats | t_env:     300000 | Episode:     1500
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.7245	grad_norm:               23484.0841
+info_nce_loss:             0.6513	loss:                    1025.9313	q_loss:                  932.6648	q_taken_mean:              9.9237
+return_mean:              -2.2743	return_std:                3.5129	target_mean:              10.3844	td_error_abs:             18.7777
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:         89.2544	test_return_std:          14.2756
+
+2026-04-25 12:27:50,400 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - t_env: 300200 / 5050000
+2026-04-25 12:27:50,401 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Estimated time left: 22 hours, 35 minutes, 42 seconds. Time passed: 1 hours, 24 minutes, 40 seconds
+2026-04-25 12:42:04,058 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Recent Stats | t_env:     350000 | Episode:     1750
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.6770	grad_norm:               30400.0025
+info_nce_loss:             1.1176	loss:                    1248.4428	q_loss:                  1134.9480	q_taken_mean:             12.0641
+return_mean:               2.3648	return_std:                4.0569	target_mean:              12.6229	td_error_abs:             20.9071
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:         99.7943	test_return_std:          13.7828
+
+2026-04-25 12:42:06,755 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - t_env: 350200 / 5050000
+2026-04-25 12:42:06,756 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Estimated time left: 22 hours, 21 minutes, 33 seconds. Time passed: 1 hours, 38 minutes, 56 seconds
+2026-04-25 12:56:19,842 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Recent Stats | t_env:     400000 | Episode:     2000
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.6295	grad_norm:               41060.2105
+info_nce_loss:             0.6150	loss:                    1608.9212	q_loss:                  1462.6556	q_taken_mean:             15.8179
+return_mean:               8.6923	return_std:                4.3872	target_mean:              16.0031	td_error_abs:             21.7106
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        102.4621	test_return_std:          13.8184
+
+2026-04-25 12:56:22,470 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - t_env: 400200 / 5050000
+2026-04-25 12:56:22,471 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Estimated time left: 22 hours, 6 minutes, 18 seconds. Time passed: 1 hours, 53 minutes, 12 seconds
+2026-04-25 12:59:41,530 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Saving models to work_dirs/my_experiment/advP_ExpoComm_5M_43/my_run/20260425_110244/models/400200
+2026-04-25 13:10:35,209 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Recent Stats | t_env:     450000 | Episode:     2250
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.5820	grad_norm:               84682.4906
+info_nce_loss:             0.4004	loss:                    2276.6238	q_loss:                  2069.6580	q_taken_mean:             18.5264
+return_mean:              12.6050	return_std:                5.1636	target_mean:              19.4292	td_error_abs:             31.3698
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        103.0308	test_return_std:          14.1682
+
+2026-04-25 13:10:37,831 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - t_env: 450200 / 5050000
+2026-04-25 13:10:37,832 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Estimated time left: 21 hours, 51 minutes, 29 seconds. Time passed: 2 hours, 7 minutes, 27 seconds
+2026-04-25 13:24:48,180 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Recent Stats | t_env:     500000 | Episode:     2500
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.5345	grad_norm:               100610.5141
+info_nce_loss:             0.5664	loss:                    2117.7099	q_loss:                  1925.1908	q_taken_mean:             22.3817
+return_mean:              17.1420	return_std:                5.8412	target_mean:              22.9405	td_error_abs:             28.0680
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        102.0129	test_return_std:          14.4682
+
+2026-04-25 13:24:50,814 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - t_env: 500200 / 5050000
+2026-04-25 13:24:50,815 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Estimated time left: 21 hours, 33 minutes, 38 seconds. Time passed: 2 hours, 21 minutes, 40 seconds
+2026-04-25 13:39:00,923 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Recent Stats | t_env:     550000 | Episode:     2750
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.4870	grad_norm:               152129.5609
+info_nce_loss:             0.5247	loss:                    2134.7146	q_loss:                  1940.6497	q_taken_mean:             25.4030
+return_mean:              19.5812	return_std:                6.3479	target_mean:              26.0331	td_error_abs:             27.8861
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        100.5184	test_return_std:          14.4129
+
+2026-04-25 13:39:03,592 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - t_env: 550200 / 5050000
+2026-04-25 13:39:03,593 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Estimated time left: 21 hours, 19 minutes, 6 seconds. Time passed: 2 hours, 35 minutes, 53 seconds
+2026-04-25 13:53:12,984 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Recent Stats | t_env:     600000 | Episode:     3000
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.4395	grad_norm:               217432.3781
+info_nce_loss:             0.4922	loss:                    1663.8906	q_loss:                  1512.6278	q_taken_mean:             28.5904
+return_mean:              25.2416	return_std:                6.9481	target_mean:              28.8372	td_error_abs:             22.8732
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:         97.7160	test_return_std:          14.9533
+
+2026-04-25 13:53:15,587 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - t_env: 600200 / 5050000
+2026-04-25 13:53:15,587 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Estimated time left: 21 hours, 3 minutes, 44 seconds. Time passed: 2 hours, 50 minutes, 5 seconds
+2026-04-25 13:56:33,691 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Saving models to work_dirs/my_experiment/advP_ExpoComm_5M_43/my_run/20260425_110244/models/600200
+2026-04-25 14:07:26,654 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Recent Stats | t_env:     650000 | Episode:     3250
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.3920	grad_norm:               255178.1719
+info_nce_loss:             0.5943	loss:                    1708.8423	q_loss:                  1553.4930	q_taken_mean:             31.9987
+return_mean:              30.8149	return_std:                7.2189	target_mean:              32.6393	td_error_abs:             28.5977
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:         95.9262	test_return_std:          15.0985
+
+2026-04-25 14:07:29,273 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - t_env: 650200 / 5050000
+2026-04-25 14:07:29,274 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Estimated time left: 20 hours, 52 minutes, 0 seconds. Time passed: 3 hours, 4 minutes, 19 seconds
+2026-04-25 14:21:40,452 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Recent Stats | t_env:     700000 | Episode:     3500
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.3445	grad_norm:               406508.8094
+info_nce_loss:             0.4078	loss:                    2260.1711	q_loss:                  2054.7010	q_taken_mean:             34.4459
+return_mean:              33.9488	return_std:                7.8119	target_mean:              34.3826	td_error_abs:             26.9238
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:         92.2154	test_return_std:          14.9589
+
+2026-04-25 14:21:43,110 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - t_env: 700200 / 5050000
+2026-04-25 14:21:43,111 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Estimated time left: 20 hours, 38 minutes, 0 seconds. Time passed: 3 hours, 18 minutes, 33 seconds
+2026-04-25 14:35:52,692 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Recent Stats | t_env:     750000 | Episode:     3750
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.2970	grad_norm:               463276.0875
+info_nce_loss:             0.2608	loss:                    3575.0606	q_loss:                  3250.0551	q_taken_mean:             36.9995
+return_mean:              37.7626	return_std:                9.0532	target_mean:              37.0383	td_error_abs:             34.5282
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:         88.1265	test_return_std:          14.8292
+
+2026-04-25 14:35:55,324 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - t_env: 750200 / 5050000
+2026-04-25 14:35:55,325 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Estimated time left: 20 hours, 21 minutes, 26 seconds. Time passed: 3 hours, 32 minutes, 45 seconds
+2026-04-25 14:50:05,134 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Recent Stats | t_env:     800000 | Episode:     4000
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.2495	grad_norm:               260483.4781
+info_nce_loss:             0.3566	loss:                    2670.9450	q_loss:                  2428.1318	q_taken_mean:             39.7838
+return_mean:              44.2474	return_std:                9.0716	target_mean:              39.7801	td_error_abs:             26.7397
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:         86.9799	test_return_std:          14.8992
+
+2026-04-25 14:50:07,742 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - t_env: 800200 / 5050000
+2026-04-25 14:50:07,743 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Estimated time left: 20 hours, 7 minutes, 32 seconds. Time passed: 3 hours, 46 minutes, 57 seconds
+2026-04-25 14:53:25,811 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Saving models to work_dirs/my_experiment/advP_ExpoComm_5M_43/my_run/20260425_110244/models/800200
+2026-04-25 15:04:16,925 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Recent Stats | t_env:     850000 | Episode:     4250
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.2020	grad_norm:               306785.2281
+info_nce_loss:             0.4905	loss:                    2324.8055	q_loss:                  2113.4596	q_taken_mean:             41.8008
+return_mean:              49.4405	return_std:               10.0787	target_mean:              42.1352	td_error_abs:             26.3789
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:         86.4409	test_return_std:          14.4871
+
+2026-04-25 15:04:19,549 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - t_env: 850200 / 5050000
+2026-04-25 15:04:19,550 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Estimated time left: 19 hours, 52 minutes, 28 seconds. Time passed: 4 hours, 1 minutes, 9 seconds
+2026-04-25 15:18:29,245 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Recent Stats | t_env:     900000 | Episode:     4500
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.1545	grad_norm:               405945.2844
+info_nce_loss:             0.3616	loss:                    3420.7861	q_loss:                  3109.8056	q_taken_mean:             43.3939
+return_mean:              54.9820	return_std:               10.7680	target_mean:              42.8487	td_error_abs:             33.4946
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:         84.5472	test_return_std:          14.3513
+
+2026-04-25 15:18:31,895 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - t_env: 900200 / 5050000
+2026-04-25 15:18:31,896 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Estimated time left: 19 hours, 39 minutes, 1 seconds. Time passed: 4 hours, 15 minutes, 22 seconds
+2026-04-25 15:32:41,018 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Recent Stats | t_env:     950000 | Episode:     4750
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.1070	grad_norm:               244557.2422
+info_nce_loss:             0.3653	loss:                    1525.9571	q_loss:                  1387.2338	q_taken_mean:             43.3811
+return_mean:              60.2421	return_std:               11.8331	target_mean:              43.7656	td_error_abs:             26.3097
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:         84.3660	test_return_std:          14.6882
+
+2026-04-25 15:32:43,645 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - t_env: 950200 / 5050000
+2026-04-25 15:32:43,647 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Estimated time left: 19 hours, 24 minutes, 0 seconds. Time passed: 4 hours, 29 minutes, 33 seconds
+2026-04-25 15:46:53,275 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Recent Stats | t_env:    1000000 | Episode:     5000
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0595	grad_norm:               266591.2781
+info_nce_loss:             0.3465	loss:                    2005.4381	q_loss:                  1823.1255	q_taken_mean:             45.7303
+return_mean:              67.8451	return_std:               11.0493	target_mean:              45.4919	td_error_abs:             29.9735
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:         87.1145	test_return_std:          14.7879
+
+2026-04-25 15:46:55,909 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - t_env: 1000200 / 5050000
+2026-04-25 15:46:55,910 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Estimated time left: 19 hours, 10 minutes, 29 seconds. Time passed: 4 hours, 43 minutes, 46 seconds
+2026-04-25 15:50:13,523 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Saving models to work_dirs/my_experiment/advP_ExpoComm_5M_43/my_run/20260425_110244/models/1000200
+2026-04-25 16:01:05,080 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Recent Stats | t_env:    1050000 | Episode:     5250
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               389156.2797
+info_nce_loss:             0.3855	loss:                    2643.4825	q_loss:                  2403.1659	q_taken_mean:             45.8005
+return_mean:              72.9276	return_std:               13.5014	target_mean:              46.2396	td_error_abs:             30.7795
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:         87.1614	test_return_std:          14.5364
+
+2026-04-25 16:01:07,714 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - t_env: 1050200 / 5050000
+2026-04-25 16:01:07,715 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Estimated time left: 18 hours, 55 minutes, 40 seconds. Time passed: 4 hours, 57 minutes, 57 seconds
+2026-04-25 16:15:15,813 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Recent Stats | t_env:    1100000 | Episode:     5500
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               272693.2773
+info_nce_loss:             0.3700	loss:                    1838.2158	q_loss:                  1671.1053	q_taken_mean:             47.1360
+return_mean:              72.6280	return_std:               12.7154	target_mean:              46.8958	td_error_abs:             25.8131
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:         85.2904	test_return_std:          14.1759
+
+2026-04-25 16:15:18,331 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - t_env: 1100200 / 5050000
+2026-04-25 16:15:18,332 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Estimated time left: 18 hours, 39 minutes, 55 seconds. Time passed: 5 hours, 12 minutes, 8 seconds
+2026-04-25 16:28:54,750 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Recent Stats | t_env:    1150000 | Episode:     5750
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               209302.9578
+info_nce_loss:             0.2525	loss:                    1084.6026	q_loss:                  986.0023	q_taken_mean:             46.6482
+return_mean:              77.7817	return_std:               12.2659	target_mean:              46.6841	td_error_abs:             22.6646
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:         85.5304	test_return_std:          13.7313
+
+2026-04-25 16:28:57,279 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - t_env: 1150200 / 5050000
+2026-04-25 16:28:57,280 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Estimated time left: 17 hours, 44 minutes, 34 seconds. Time passed: 5 hours, 25 minutes, 47 seconds
+2026-04-25 16:42:36,475 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Recent Stats | t_env:    1200000 | Episode:     6000
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               144434.7656
+info_nce_loss:             0.3108	loss:                    662.1815	q_loss:                  601.9832	q_taken_mean:             47.1284
+return_mean:              83.2545	return_std:               12.8994	target_mean:              47.4253	td_error_abs:             18.1444
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:         87.0742	test_return_std:          13.5875
+
+2026-04-25 16:42:39,040 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - t_env: 1200200 / 5050000
+2026-04-25 16:42:39,041 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Estimated time left: 17 hours, 34 minutes, 32 seconds. Time passed: 5 hours, 39 minutes, 29 seconds
+2026-04-25 16:45:48,911 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Saving models to work_dirs/my_experiment/advP_ExpoComm_5M_43/my_run/20260425_110244/models/1200200
+2026-04-25 16:56:16,286 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Recent Stats | t_env:    1250000 | Episode:     6250
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               196582.7234
+info_nce_loss:             0.1947	loss:                    1079.3287	q_loss:                  981.2079	q_taken_mean:             48.7230
+return_mean:              83.3830	return_std:               12.6340	target_mean:              48.8714	td_error_abs:             22.2737
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:         87.2543	test_return_std:          13.2790
+
+2026-04-25 16:56:18,809 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - t_env: 1250200 / 5050000
+2026-04-25 16:56:18,810 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Estimated time left: 17 hours, 18 minutes, 19 seconds. Time passed: 5 hours, 53 minutes, 8 seconds
+2026-04-25 17:09:56,569 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Recent Stats | t_env:    1300000 | Episode:     6500
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               272476.8453
+info_nce_loss:             0.1370	loss:                    1781.6271	q_loss:                  1619.6610	q_taken_mean:             49.8679
+return_mean:              79.0740	return_std:               13.4232	target_mean:              50.1745	td_error_abs:             28.6480
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:         87.6778	test_return_std:          13.0150
+
+2026-04-25 17:09:59,082 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - t_env: 1300200 / 5050000
+2026-04-25 17:09:59,083 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Estimated time left: 17 hours, 5 minutes, 17 seconds. Time passed: 6 hours, 6 minutes, 49 seconds
+2026-04-25 17:23:37,004 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Recent Stats | t_env:    1350000 | Episode:     6750
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               163477.2672
+info_nce_loss:             0.2432	loss:                    1028.2554	q_loss:                  934.7777	q_taken_mean:             50.2220
+return_mean:              81.2109	return_std:               13.7660	target_mean:              50.2893	td_error_abs:             22.9378
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:         90.7078	test_return_std:          13.1198
+
+2026-04-25 17:23:39,542 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - t_env: 1350200 / 5050000
+2026-04-25 17:23:39,543 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Estimated time left: 16 hours, 51 minutes, 50 seconds. Time passed: 6 hours, 20 minutes, 29 seconds
+2026-04-25 17:37:16,675 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Recent Stats | t_env:    1400000 | Episode:     7000
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               231566.0305
+info_nce_loss:             0.3403	loss:                    1247.7671	q_loss:                  1134.3337	q_taken_mean:             50.9488
+return_mean:              86.6610	return_std:               12.9327	target_mean:              51.2283	td_error_abs:             23.5021
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:         94.2802	test_return_std:          13.2985
+
+2026-04-25 17:37:19,220 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - t_env: 1400200 / 5050000
+2026-04-25 17:37:19,221 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Estimated time left: 16 hours, 37 minutes, 13 seconds. Time passed: 6 hours, 34 minutes, 9 seconds
+2026-04-25 17:40:29,375 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Saving models to work_dirs/my_experiment/advP_ExpoComm_5M_43/my_run/20260425_110244/models/1400200
+2026-04-25 17:50:56,400 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Recent Stats | t_env:    1450000 | Episode:     7250
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               202609.6227
+info_nce_loss:             0.2707	loss:                    1082.8684	q_loss:                  984.4258	q_taken_mean:             51.4262
+return_mean:              84.0282	return_std:               13.7879	target_mean:              51.4567	td_error_abs:             22.0062
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:         95.2319	test_return_std:          13.5212
+
+2026-04-25 17:50:58,925 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - t_env: 1450200 / 5050000
+2026-04-25 17:50:58,926 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Estimated time left: 16 hours, 23 minutes, 35 seconds. Time passed: 6 hours, 47 minutes, 49 seconds
+2026-04-25 18:04:36,185 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Recent Stats | t_env:    1500000 | Episode:     7500
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               137833.9477
+info_nce_loss:             0.4399	loss:                    956.4035	q_loss:                  869.4578	q_taken_mean:             52.4901
+return_mean:              84.1205	return_std:               13.8243	target_mean:              52.4191	td_error_abs:             22.4748
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:         95.3141	test_return_std:          14.2315
+
+2026-04-25 18:04:38,738 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - t_env: 1500200 / 5050000
+2026-04-25 18:04:38,738 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Estimated time left: 16 hours, 10 minutes, 3 seconds. Time passed: 7 hours, 1 minutes, 28 seconds
+2026-04-25 18:18:17,024 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Recent Stats | t_env:    1550000 | Episode:     7750
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               288305.4617
+info_nce_loss:             0.3341	loss:                    2033.7630	q_loss:                  1848.8754	q_taken_mean:             51.6769
+return_mean:              88.6279	return_std:               13.0040	target_mean:              52.6238	td_error_abs:             31.0928
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:         97.2824	test_return_std:          14.7015
+
+2026-04-25 18:18:19,544 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - t_env: 1550200 / 5050000
+2026-04-25 18:18:19,545 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Estimated time left: 15 hours, 57 minutes, 33 seconds. Time passed: 7 hours, 15 minutes, 9 seconds
+2026-04-25 18:31:56,816 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Recent Stats | t_env:    1600000 | Episode:     8000
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               261541.1273
+info_nce_loss:             0.3849	loss:                    1865.2176	q_loss:                  1695.6523	q_taken_mean:             54.2867
+return_mean:              86.5191	return_std:               13.1847	target_mean:              54.0407	td_error_abs:             26.7012
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:         98.9549	test_return_std:          15.1725
+
+2026-04-25 18:31:59,384 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - t_env: 1600200 / 5050000
+2026-04-25 18:31:59,385 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Estimated time left: 15 hours, 42 minutes, 45 seconds. Time passed: 7 hours, 28 minutes, 49 seconds
+2026-04-25 18:35:10,346 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Saving models to work_dirs/my_experiment/advP_ExpoComm_5M_43/my_run/20260425_110244/models/1600200
+2026-04-25 18:46:00,772 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Recent Stats | t_env:    1650000 | Episode:     8250
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               102309.3320
+info_nce_loss:             0.2924	loss:                    774.8136	q_loss:                  704.3760	q_taken_mean:             54.5679
+return_mean:              88.5381	return_std:               12.0809	target_mean:              54.9452	td_error_abs:             18.2450
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:         98.3376	test_return_std:          15.8256
+
+2026-04-25 18:46:03,398 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - t_env: 1650200 / 5050000
+2026-04-25 18:46:03,399 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Estimated time left: 15 hours, 56 minutes, 29 seconds. Time passed: 7 hours, 42 minutes, 53 seconds
+2026-04-25 19:00:10,772 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Recent Stats | t_env:    1700000 | Episode:     8500
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               213606.5375
+info_nce_loss:             0.2973	loss:                    1045.3860	q_loss:                  950.3509	q_taken_mean:             54.7788
+return_mean:              87.9976	return_std:               14.7036	target_mean:              54.8205	td_error_abs:             21.3617
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:         99.1629	test_return_std:          15.8854
+
+2026-04-25 19:00:13,444 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - t_env: 1700200 / 5050000
+2026-04-25 19:00:13,445 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Estimated time left: 15 hours, 49 minutes, 9 seconds. Time passed: 7 hours, 57 minutes, 3 seconds
+2026-04-25 19:14:29,856 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Recent Stats | t_env:    1750000 | Episode:     8750
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               149740.1617
+info_nce_loss:             0.1043	loss:                    752.0179	q_loss:                  683.6526	q_taken_mean:             54.2037
+return_mean:              91.1960	return_std:               12.7924	target_mean:              54.1965	td_error_abs:             19.4709
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        101.3333	test_return_std:          15.3546
+
+2026-04-25 19:14:32,543 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - t_env: 1750200 / 5050000
+2026-04-25 19:14:32,545 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Estimated time left: 15 hours, 44 minutes, 57 seconds. Time passed: 8 hours, 11 minutes, 22 seconds
+2026-04-25 19:28:48,329 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Recent Stats | t_env:    1800000 | Episode:     9000
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               198416.5016
+info_nce_loss:             0.3833	loss:                    1292.8969	q_loss:                  1175.3608	q_taken_mean:             55.1870
+return_mean:              91.7340	return_std:               11.9256	target_mean:              54.7981	td_error_abs:             26.1692
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        102.6504	test_return_std:          15.0505
+
+2026-04-25 19:28:50,976 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - t_env: 1800200 / 5050000
+2026-04-25 19:28:50,977 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Estimated time left: 15 hours, 29 minutes, 54 seconds. Time passed: 8 hours, 25 minutes, 41 seconds
+2026-04-25 19:32:11,944 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Saving models to work_dirs/my_experiment/advP_ExpoComm_5M_43/my_run/20260425_110244/models/1800200
+2026-04-25 19:43:11,635 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Recent Stats | t_env:    1850000 | Episode:     9250
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               156061.9055
+info_nce_loss:             0.1847	loss:                    885.1996	q_loss:                  804.7269	q_taken_mean:             54.0377
+return_mean:              92.9599	return_std:               12.6497	target_mean:              54.2397	td_error_abs:             20.9579
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        104.0779	test_return_std:          14.8724
+
+2026-04-25 19:43:14,251 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - t_env: 1850200 / 5050000
+2026-04-25 19:43:14,252 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Estimated time left: 15 hours, 20 minutes, 46 seconds. Time passed: 8 hours, 40 minutes, 4 seconds
+2026-04-25 19:57:26,171 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Recent Stats | t_env:    1900000 | Episode:     9500
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               111635.4945
+info_nce_loss:             0.2608	loss:                    683.7591	q_loss:                  621.5992	q_taken_mean:             54.0258
+return_mean:              96.1301	return_std:               12.5556	target_mean:              54.4329	td_error_abs:             19.3310
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        106.9834	test_return_std:          14.1162
+
+2026-04-25 19:57:28,783 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - t_env: 1900200 / 5050000
+2026-04-25 19:57:28,784 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Estimated time left: 14 hours, 57 minutes, 12 seconds. Time passed: 8 hours, 54 minutes, 18 seconds
+2026-04-25 20:11:40,847 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Recent Stats | t_env:    1950000 | Episode:     9750
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               112518.0523
+info_nce_loss:             0.1816	loss:                    642.0896	q_loss:                  583.7179	q_taken_mean:             55.0996
+return_mean:              97.8530	return_std:               12.0697	target_mean:              55.1692	td_error_abs:             18.1115
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        109.7406	test_return_std:          13.1647
+
+2026-04-25 20:11:43,481 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - t_env: 1950200 / 5050000
+2026-04-25 20:11:43,482 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Estimated time left: 14 hours, 43 minutes, 7 seconds. Time passed: 9 hours, 8 minutes, 33 seconds
+2026-04-25 20:25:56,824 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Recent Stats | t_env:    2000000 | Episode:    10000
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               119044.3844
+info_nce_loss:             0.4129	loss:                    1019.1017	q_loss:                  926.4561	q_taken_mean:             54.9341
+return_mean:             101.2427	return_std:               11.4742	target_mean:              54.5392	td_error_abs:             23.1101
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        111.8595	test_return_std:          13.0354
+
+2026-04-25 20:25:59,435 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - t_env: 2000200 / 5050000
+2026-04-25 20:25:59,436 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Estimated time left: 14 hours, 30 minutes, 9 seconds. Time passed: 9 hours, 22 minutes, 49 seconds
+2026-04-25 20:29:17,543 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Saving models to work_dirs/my_experiment/advP_ExpoComm_5M_43/my_run/20260425_110244/models/2000200
+2026-04-25 20:40:12,241 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Recent Stats | t_env:    2050000 | Episode:    10250
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               92712.2406
+info_nce_loss:             0.3780	loss:                    540.4888	q_loss:                  491.3534	q_taken_mean:             56.6192
+return_mean:              99.3201	return_std:               12.8457	target_mean:              56.5362	td_error_abs:             16.4267
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        114.1567	test_return_std:          13.1678
+
+2026-04-25 20:40:14,943 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - t_env: 2050200 / 5050000
+2026-04-25 20:40:14,944 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Estimated time left: 14 hours, 15 minutes, 27 seconds. Time passed: 9 hours, 37 minutes, 5 seconds
+2026-04-25 20:54:12,149 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Recent Stats | t_env:    2100000 | Episode:    10500
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               98100.9844
+info_nce_loss:             0.3352	loss:                    763.5533	q_loss:                  694.1394	q_taken_mean:             56.3356
+return_mean:             102.1320	return_std:               12.6769	target_mean:              56.4880	td_error_abs:             19.9912
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        116.6306	test_return_std:          13.0419
+
+2026-04-25 20:54:14,680 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - t_env: 2100200 / 5050000
+2026-04-25 20:54:14,681 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Estimated time left: 13 hours, 45 minutes, 41 seconds. Time passed: 9 hours, 51 minutes, 4 seconds
+2026-04-25 21:07:53,748 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Recent Stats | t_env:    2150000 | Episode:    10750
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               150800.1664
+info_nce_loss:             0.2439	loss:                    1200.0294	q_loss:                  1090.9358	q_taken_mean:             56.2665
+return_mean:             104.3372	return_std:               11.1805	target_mean:              55.8176	td_error_abs:             24.1473
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        117.6649	test_return_std:          13.1307
+
+2026-04-25 21:07:56,343 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - t_env: 2150200 / 5050000
+2026-04-25 21:07:56,344 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Estimated time left: 13 hours, 14 minutes, 13 seconds. Time passed: 10 hours, 4 minutes, 46 seconds
+2026-04-25 21:21:35,968 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Recent Stats | t_env:    2200000 | Episode:    11000
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               115709.0266
+info_nce_loss:             0.2015	loss:                    1126.3631	q_loss:                  1023.9664	q_taken_mean:             56.2438
+return_mean:             102.1032	return_std:               11.3672	target_mean:              56.5427	td_error_abs:             23.8899
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        118.5920	test_return_std:          12.9131
+
+2026-04-25 21:21:38,495 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - t_env: 2200200 / 5050000
+2026-04-25 21:21:38,496 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Estimated time left: 13 hours, 59 seconds. Time passed: 10 hours, 18 minutes, 28 seconds
+2026-04-25 21:24:48,959 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Saving models to work_dirs/my_experiment/advP_ExpoComm_5M_43/my_run/20260425_110244/models/2200200
+2026-04-25 21:35:15,990 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Recent Stats | t_env:    2250000 | Episode:    11250
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               126521.6117
+info_nce_loss:             0.2503	loss:                    1068.9553	q_loss:                  971.7776	q_taken_mean:             59.2442
+return_mean:             101.6660	return_std:               11.9104	target_mean:              59.2631	td_error_abs:             21.7789
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        118.4868	test_return_std:          13.0777
+
+2026-04-25 21:35:18,527 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - t_env: 2250200 / 5050000
+2026-04-25 21:35:18,528 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Estimated time left: 12 hours, 45 minutes, 18 seconds. Time passed: 10 hours, 32 minutes, 8 seconds
+2026-04-25 21:48:54,752 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Recent Stats | t_env:    2300000 | Episode:    11500
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               125952.7578
+info_nce_loss:             0.4035	loss:                    860.0551	q_loss:                  781.8683	q_taken_mean:             58.8496
+return_mean:             106.2180	return_std:               10.9632	target_mean:              59.0715	td_error_abs:             21.1853
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        119.2562	test_return_std:          12.7454
+
+2026-04-25 21:48:57,287 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - t_env: 2300200 / 5050000
+2026-04-25 21:48:57,288 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Estimated time left: 12 hours, 30 minutes, 28 seconds. Time passed: 10 hours, 45 minutes, 47 seconds
+2026-04-25 22:02:34,878 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Recent Stats | t_env:    2350000 | Episode:    11750
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               102815.7531
+info_nce_loss:             0.2606	loss:                    774.6808	q_loss:                  704.2553	q_taken_mean:             58.8285
+return_mean:             104.2620	return_std:               12.2640	target_mean:              59.0889	td_error_abs:             19.8596
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        119.7466	test_return_std:          12.4571
+
+2026-04-25 22:02:37,415 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - t_env: 2350200 / 5050000
+2026-04-25 22:02:37,415 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Estimated time left: 12 hours, 18 minutes, 3 seconds. Time passed: 10 hours, 59 minutes, 27 seconds
+2026-04-25 22:16:20,445 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Recent Stats | t_env:    2400000 | Episode:    12000
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               100297.2594
+info_nce_loss:             0.1868	loss:                    566.9826	q_loss:                  515.4388	q_taken_mean:             59.2328
+return_mean:             109.4576	return_std:               10.1982	target_mean:              59.4783	td_error_abs:             17.1341
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        120.7471	test_return_std:          12.0491
+
+2026-04-25 22:16:23,066 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - t_env: 2400200 / 5050000
+2026-04-25 22:16:23,067 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Estimated time left: 12 hours, 9 minutes, 16 seconds. Time passed: 11 hours, 13 minutes, 13 seconds
+2026-04-25 22:19:40,756 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Saving models to work_dirs/my_experiment/advP_ExpoComm_5M_43/my_run/20260425_110244/models/2400200
+2026-04-25 22:30:19,190 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Recent Stats | t_env:    2450000 | Episode:    12250
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               110418.0391
+info_nce_loss:             0.2278	loss:                    748.6281	q_loss:                  680.5710	q_taken_mean:             60.7060
+return_mean:             110.1577	return_std:               11.5122	target_mean:              60.6726	td_error_abs:             19.1545
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        122.1222	test_return_std:          11.7145
+
+2026-04-25 22:30:21,713 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - t_env: 2450200 / 5050000
+2026-04-25 22:30:21,714 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Estimated time left: 12 hours, 6 minutes, 46 seconds. Time passed: 11 hours, 27 minutes, 11 seconds
+2026-04-25 22:43:58,540 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Recent Stats | t_env:    2500000 | Episode:    12500
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               72364.7031
+info_nce_loss:             0.2441	loss:                    592.8947	q_loss:                  538.9952	q_taken_mean:             61.7024
+return_mean:             109.2013	return_std:               10.9829	target_mean:              61.6487	td_error_abs:             17.0848
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        124.6643	test_return_std:          11.2490
+
+2026-04-25 22:44:01,059 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - t_env: 2500200 / 5050000
+2026-04-25 22:44:01,059 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Estimated time left: 11 hours, 36 minutes, 23 seconds. Time passed: 11 hours, 40 minutes, 51 seconds
+2026-04-25 22:57:40,538 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Recent Stats | t_env:    2550000 | Episode:    12750
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               88639.2875
+info_nce_loss:             0.2980	loss:                    549.5040	q_loss:                  499.5491	q_taken_mean:             61.9515
+return_mean:             111.7510	return_std:               10.1299	target_mean:              61.9423	td_error_abs:             16.8172
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        126.0806	test_return_std:          10.6490
+
+2026-04-25 22:57:43,072 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - t_env: 2550200 / 5050000
+2026-04-25 22:57:43,074 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Estimated time left: 11 hours, 24 minutes, 57 seconds. Time passed: 11 hours, 54 minutes, 33 seconds
+2026-04-25 23:11:23,316 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Recent Stats | t_env:    2600000 | Episode:    13000
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               106928.7383
+info_nce_loss:             0.2188	loss:                    656.3330	q_loss:                  596.6663	q_taken_mean:             62.4071
+return_mean:             111.8440	return_std:                9.3520	target_mean:              62.4526	td_error_abs:             18.7799
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        127.4946	test_return_std:          10.7293
+
+2026-04-25 23:11:25,857 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - t_env: 2600200 / 5050000
+2026-04-25 23:11:25,858 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Estimated time left: 11 hours, 11 minutes, 53 seconds. Time passed: 12 hours, 8 minutes, 16 seconds
+2026-04-25 23:14:35,993 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Saving models to work_dirs/my_experiment/advP_ExpoComm_5M_43/my_run/20260425_110244/models/2600200
+2026-04-25 23:25:04,662 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Recent Stats | t_env:    2650000 | Episode:    13250
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               59712.5531
+info_nce_loss:             0.2881	loss:                    457.5605	q_loss:                  415.9641	q_taken_mean:             62.5472
+return_mean:             113.5013	return_std:                9.3720	target_mean:              62.4167	td_error_abs:             14.8817
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        128.8279	test_return_std:          10.7608
+
+2026-04-25 23:25:07,207 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - t_env: 2650200 / 5050000
+2026-04-25 23:25:07,208 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Estimated time left: 10 hours, 57 minutes, 1 seconds. Time passed: 12 hours, 21 minutes, 57 seconds
+2026-04-25 23:38:46,996 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Recent Stats | t_env:    2700000 | Episode:    13500
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               84109.8680
+info_nce_loss:             0.3325	loss:                    526.2161	q_loss:                  478.3782	q_taken_mean:             62.6172
+return_mean:             115.5951	return_std:               10.2202	target_mean:              62.8225	td_error_abs:             16.4137
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        129.5177	test_return_std:          10.7764
+
+2026-04-25 23:38:49,531 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - t_env: 2700200 / 5050000
+2026-04-25 23:38:49,532 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Estimated time left: 10 hours, 44 minutes, 5 seconds. Time passed: 12 hours, 35 minutes, 39 seconds
+2026-04-25 23:52:28,652 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Recent Stats | t_env:    2750000 | Episode:    13750
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               78004.0219
+info_nce_loss:             0.2427	loss:                    585.1400	q_loss:                  531.9455	q_taken_mean:             64.1195
+return_mean:             116.2324	return_std:               10.1942	target_mean:              64.2119	td_error_abs:             16.8515
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        130.5411	test_return_std:          10.2469
+
+2026-04-25 23:52:31,175 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - t_env: 2750200 / 5050000
+2026-04-25 23:52:31,176 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Estimated time left: 10 hours, 29 minutes, 52 seconds. Time passed: 12 hours, 49 minutes, 21 seconds
+2026-04-26 00:06:10,426 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Recent Stats | t_env:    2800000 | Episode:    14000
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               156347.6633
+info_nce_loss:             0.3527	loss:                    1132.3524	q_loss:                  1029.4113	q_taken_mean:             64.4649
+return_mean:             114.9125	return_std:               10.1566	target_mean:              64.4518	td_error_abs:             25.3409
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        131.9280	test_return_std:          10.1114
+
+2026-04-26 00:06:12,969 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - t_env: 2800200 / 5050000
+2026-04-26 00:06:12,969 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Estimated time left: 10 hours, 16 minutes, 17 seconds. Time passed: 13 hours, 3 minutes, 3 seconds
+2026-04-26 00:09:23,504 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Saving models to work_dirs/my_experiment/advP_ExpoComm_5M_43/my_run/20260425_110244/models/2800200
+2026-04-26 00:19:52,574 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Recent Stats | t_env:    2850000 | Episode:    14250
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               129257.5836
+info_nce_loss:             0.2039	loss:                    875.5869	q_loss:                  795.9881	q_taken_mean:             64.6200
+return_mean:             115.6518	return_std:               10.3051	target_mean:              64.6020	td_error_abs:             20.7283
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        132.7026	test_return_std:           9.8733
+
+2026-04-26 00:19:55,199 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - t_env: 2850200 / 5050000
+2026-04-26 00:19:55,200 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Estimated time left: 10 hours, 2 minutes, 54 seconds. Time passed: 13 hours, 16 minutes, 45 seconds
+2026-04-26 00:33:34,491 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Recent Stats | t_env:    2900000 | Episode:    14500
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               78370.2133
+info_nce_loss:             0.2321	loss:                    509.4842	q_loss:                  463.1675	q_taken_mean:             63.8267
+return_mean:             118.1759	return_std:                9.6843	target_mean:              64.0137	td_error_abs:             16.0494
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        133.6670	test_return_std:           9.8056
+
+2026-04-26 00:33:37,008 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - t_env: 2900200 / 5050000
+2026-04-26 00:33:37,009 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Estimated time left: 9 hours, 48 minutes, 54 seconds. Time passed: 13 hours, 30 minutes, 27 seconds
+2026-04-26 00:47:17,342 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Recent Stats | t_env:    2950000 | Episode:    14750
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               113945.0297
+info_nce_loss:             0.3085	loss:                    776.5449	q_loss:                  705.9499	q_taken_mean:             64.6523
+return_mean:             117.6657	return_std:                9.7516	target_mean:              64.8262	td_error_abs:             19.7372
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        134.4252	test_return_std:          10.1331
+
+2026-04-26 00:47:19,914 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - t_env: 2950200 / 5050000
+2026-04-26 00:47:19,915 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Estimated time left: 9 hours, 35 minutes, 58 seconds. Time passed: 13 hours, 44 minutes, 10 seconds
+2026-04-26 01:00:59,324 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Recent Stats | t_env:    3000000 | Episode:    15000
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               159336.6414
+info_nce_loss:             0.1442	loss:                    1289.4847	q_loss:                  1172.2588	q_taken_mean:             66.0722
+return_mean:             119.7551	return_std:                8.9151	target_mean:              66.0342	td_error_abs:             25.6797
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        134.1376	test_return_std:          10.5270
+
+2026-04-26 01:01:01,889 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - t_env: 3000200 / 5050000
+2026-04-26 01:01:01,890 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Estimated time left: 9 hours, 21 minutes, 37 seconds. Time passed: 13 hours, 57 minutes, 52 seconds
+2026-04-26 01:04:12,190 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Saving models to work_dirs/my_experiment/advP_ExpoComm_5M_43/my_run/20260425_110244/models/3000200
+2026-04-26 01:14:40,846 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Recent Stats | t_env:    3050000 | Episode:    15250
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               70842.4594
+info_nce_loss:             0.2212	loss:                    637.0273	q_loss:                  579.1157	q_taken_mean:             67.0317
+return_mean:             116.9428	return_std:                9.5351	target_mean:              66.9413	td_error_abs:             16.9593
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        131.9347	test_return_std:          11.0292
+
+2026-04-26 01:14:43,370 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - t_env: 3050200 / 5050000
+2026-04-26 01:14:43,371 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Estimated time left: 9 hours, 7 minutes, 35 seconds. Time passed: 14 hours, 11 minutes, 33 seconds
+2026-04-26 01:28:22,454 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Recent Stats | t_env:    3100000 | Episode:    15500
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               116797.3391
+info_nce_loss:             0.2772	loss:                    877.4255	q_loss:                  797.6596	q_taken_mean:             66.4883
+return_mean:             118.2496	return_std:                9.7354	target_mean:              66.4426	td_error_abs:             21.0953
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        132.4200	test_return_std:          10.5085
+
+2026-04-26 01:28:25,015 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - t_env: 3100200 / 5050000
+2026-04-26 01:28:25,016 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Estimated time left: 8 hours, 54 minutes, 0 seconds. Time passed: 14 hours, 25 minutes, 15 seconds
+2026-04-26 01:42:03,864 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Recent Stats | t_env:    3150000 | Episode:    15750
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               139276.2188
+info_nce_loss:             0.1716	loss:                    792.2375	q_loss:                  720.2159	q_taken_mean:             67.1255
+return_mean:             119.9291	return_std:                8.9640	target_mean:              67.0342	td_error_abs:             21.1995
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        132.7603	test_return_std:          10.3610
+
+2026-04-26 01:42:06,390 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - t_env: 3150200 / 5050000
+2026-04-26 01:42:06,391 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Estimated time left: 8 hours, 40 minutes, 8 seconds. Time passed: 14 hours, 38 minutes, 56 seconds
+2026-04-26 01:55:46,226 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Recent Stats | t_env:    3200000 | Episode:    16000
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               148288.9484
+info_nce_loss:             0.0977	loss:                    927.7700	q_loss:                  843.4273	q_taken_mean:             67.3343
+return_mean:             120.1139	return_std:                8.6417	target_mean:              67.5006	td_error_abs:             22.8061
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        133.3029	test_return_std:           9.9127
+
+2026-04-26 01:55:48,761 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - t_env: 3200200 / 5050000
+2026-04-26 01:55:48,762 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Estimated time left: 8 hours, 27 minutes, 4 seconds. Time passed: 14 hours, 52 minutes, 38 seconds
+2026-04-26 01:58:58,953 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Saving models to work_dirs/my_experiment/advP_ExpoComm_5M_43/my_run/20260425_110244/models/3200200
+2026-04-26 02:09:28,204 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Recent Stats | t_env:    3250000 | Episode:    16250
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               118554.1945
+info_nce_loss:             0.2739	loss:                    813.6865	q_loss:                  739.7150	q_taken_mean:             66.3049
+return_mean:             119.7410	return_std:                8.8692	target_mean:              66.3042	td_error_abs:             20.5915
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        133.7356	test_return_std:           9.5761
+
+2026-04-26 02:09:30,778 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - t_env: 3250200 / 5050000
+2026-04-26 02:09:30,779 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Estimated time left: 8 hours, 13 minutes, 9 seconds. Time passed: 15 hours, 6 minutes, 20 seconds
+2026-04-26 02:23:10,524 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Recent Stats | t_env:    3300000 | Episode:    16500
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               144158.2773
+info_nce_loss:             0.1876	loss:                    976.5512	q_loss:                  887.7738	q_taken_mean:             66.7035
+return_mean:             120.6260	return_std:                9.5178	target_mean:              66.9172	td_error_abs:             23.3661
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        135.8952	test_return_std:           9.3059
+
+2026-04-26 02:23:13,042 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - t_env: 3300200 / 5050000
+2026-04-26 02:23:13,043 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Estimated time left: 7 hours, 59 minutes, 35 seconds. Time passed: 15 hours, 20 minutes, 3 seconds
+2026-04-26 02:36:51,424 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Recent Stats | t_env:    3350000 | Episode:    16750
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               154861.6562
+info_nce_loss:             0.1979	loss:                    1040.4586	q_loss:                  945.8715	q_taken_mean:             65.4268
+return_mean:             121.4456	return_std:                8.5829	target_mean:              65.1404	td_error_abs:             24.7584
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        136.5738	test_return_std:           9.3034
+
+2026-04-26 02:36:53,941 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - t_env: 3350200 / 5050000
+2026-04-26 02:36:53,942 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Estimated time left: 7 hours, 45 minutes, 7 seconds. Time passed: 15 hours, 33 minutes, 44 seconds
+2026-04-26 02:50:31,793 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Recent Stats | t_env:    3400000 | Episode:    17000
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               69537.0328
+info_nce_loss:             0.2570	loss:                    621.3529	q_loss:                  564.8663	q_taken_mean:             65.5495
+return_mean:             120.6266	return_std:                8.2201	target_mean:              65.4273	td_error_abs:             17.4078
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        136.2367	test_return_std:           9.1617
+
+2026-04-26 02:50:34,327 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - t_env: 3400200 / 5050000
+2026-04-26 02:50:34,327 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Estimated time left: 7 hours, 31 minutes, 9 seconds. Time passed: 15 hours, 47 minutes, 24 seconds
+2026-04-26 02:53:45,066 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Saving models to work_dirs/my_experiment/advP_ExpoComm_5M_43/my_run/20260425_110244/models/3400200
+2026-04-26 03:04:13,912 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Recent Stats | t_env:    3450000 | Episode:    17250
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               58082.9035
+info_nce_loss:             0.1462	loss:                    555.5946	q_loss:                  505.0860	q_taken_mean:             65.0794
+return_mean:             120.8048	return_std:                8.3843	target_mean:              64.8758	td_error_abs:             16.1392
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        136.3284	test_return_std:           9.1427
+
+2026-04-26 03:04:16,432 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - t_env: 3450200 / 5050000
+2026-04-26 03:04:16,433 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Estimated time left: 7 hours, 18 minutes, 24 seconds. Time passed: 16 hours, 1 minutes, 6 seconds
+2026-04-26 03:17:54,317 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Recent Stats | t_env:    3500000 | Episode:    17500
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               75268.8281
+info_nce_loss:             0.1350	loss:                    547.7718	q_loss:                  497.9744	q_taken_mean:             64.8077
+return_mean:             122.7478	return_std:                8.7919	target_mean:              64.8822	td_error_abs:             16.5837
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        136.7543	test_return_std:           9.1944
+
+2026-04-26 03:17:56,851 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - t_env: 3500200 / 5050000
+2026-04-26 03:17:56,852 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Estimated time left: 7 hours, 3 minutes, 49 seconds. Time passed: 16 hours, 14 minutes, 47 seconds
+2026-04-26 03:31:34,428 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Recent Stats | t_env:    3550000 | Episode:    17750
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               137037.6930
+info_nce_loss:             0.2261	loss:                    938.6433	q_loss:                  853.3121	q_taken_mean:             65.2618
+return_mean:             124.0549	return_std:                7.7572	target_mean:              65.2557	td_error_abs:             23.1278
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        137.2689	test_return_std:           9.0141
+
+2026-04-26 03:31:36,947 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - t_env: 3550200 / 5050000
+2026-04-26 03:31:36,948 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Estimated time left: 6 hours, 49 minutes, 59 seconds. Time passed: 16 hours, 28 minutes, 27 seconds
+2026-04-26 03:45:16,146 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Recent Stats | t_env:    3600000 | Episode:    18000
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               121028.0383
+info_nce_loss:             0.3488	loss:                    853.0735	q_loss:                  775.5214	q_taken_mean:             64.7069
+return_mean:             124.1857	return_std:                7.6761	target_mean:              64.5681	td_error_abs:             22.0848
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        137.3613	test_return_std:           8.9516
+
+2026-04-26 03:45:18,690 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - t_env: 3600200 / 5050000
+2026-04-26 03:45:18,691 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Estimated time left: 6 hours, 37 minutes, 7 seconds. Time passed: 16 hours, 42 minutes, 8 seconds
+2026-04-26 03:48:29,281 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Saving models to work_dirs/my_experiment/advP_ExpoComm_5M_43/my_run/20260425_110244/models/3600200
+2026-04-26 03:58:56,905 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Recent Stats | t_env:    3650000 | Episode:    18250
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               56035.3699
+info_nce_loss:             0.1337	loss:                    486.5711	q_loss:                  442.3374	q_taken_mean:             63.1806
+return_mean:             125.1508	return_std:                7.5519	target_mean:              63.0068	td_error_abs:             15.1216
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        138.5885	test_return_std:           8.4557
+
+2026-04-26 03:58:59,418 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - t_env: 3650200 / 5050000
+2026-04-26 03:58:59,419 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Estimated time left: 6 hours, 22 minutes, 57 seconds. Time passed: 16 hours, 55 minutes, 49 seconds
+2026-04-26 04:12:37,124 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Recent Stats | t_env:    3700000 | Episode:    18500
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               106754.2418
+info_nce_loss:             0.1909	loss:                    735.4608	q_loss:                  668.6007	q_taken_mean:             62.6106
+return_mean:             124.8013	return_std:                7.3774	target_mean:              62.5587	td_error_abs:             20.3473
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        138.8066	test_return_std:           8.3831
+
+2026-04-26 04:12:39,660 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - t_env: 3700200 / 5050000
+2026-04-26 04:12:39,661 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Estimated time left: 6 hours, 9 minutes, 3 seconds. Time passed: 17 hours, 9 minutes, 29 seconds
+2026-04-26 04:26:18,962 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Recent Stats | t_env:    3750000 | Episode:    18750
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               76206.4980
+info_nce_loss:             0.3011	loss:                    564.2955	q_loss:                  512.9959	q_taken_mean:             62.1127
+return_mean:             123.3748	return_std:                8.1989	target_mean:              62.2558	td_error_abs:             17.3649
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        138.9791	test_return_std:           8.0591
+
+2026-04-26 04:26:21,540 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - t_env: 3750200 / 5050000
+2026-04-26 04:26:21,540 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Estimated time left: 5 hours, 56 minutes, 5 seconds. Time passed: 17 hours, 23 minutes, 11 seconds
+2026-04-26 04:40:00,678 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Recent Stats | t_env:    3800000 | Episode:    19000
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               107398.9809
+info_nce_loss:             0.1412	loss:                    727.7665	q_loss:                  661.6059	q_taken_mean:             61.7990
+return_mean:             124.0604	return_std:                7.7908	target_mean:              61.8236	td_error_abs:             20.6343
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        138.8300	test_return_std:           7.8236
+
+2026-04-26 04:40:03,291 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - t_env: 3800200 / 5050000
+2026-04-26 04:40:03,292 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Estimated time left: 5 hours, 42 minutes, 20 seconds. Time passed: 17 hours, 36 minutes, 53 seconds
+2026-04-26 04:43:13,441 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Saving models to work_dirs/my_experiment/advP_ExpoComm_5M_43/my_run/20260425_110244/models/3800200
+2026-04-26 04:53:41,850 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Recent Stats | t_env:    3850000 | Episode:    19250
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               90687.8480
+info_nce_loss:             0.1526	loss:                    669.1757	q_loss:                  608.3415	q_taken_mean:             62.1434
+return_mean:             125.8450	return_std:                7.0598	target_mean:              62.0834	td_error_abs:             18.8561
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        139.0042	test_return_std:           7.8202
+
+2026-04-26 04:53:44,379 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - t_env: 3850200 / 5050000
+2026-04-26 04:53:44,380 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Estimated time left: 5 hours, 28 minutes, 22 seconds. Time passed: 17 hours, 50 minutes, 34 seconds
+2026-04-26 05:07:22,339 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Recent Stats | t_env:    3900000 | Episode:    19500
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               83075.3562
+info_nce_loss:             0.1593	loss:                    676.2273	q_loss:                  614.7521	q_taken_mean:             60.7067
+return_mean:             124.5776	return_std:                7.8538	target_mean:              60.7151	td_error_abs:             18.8630
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        138.1191	test_return_std:           8.1205
+
+2026-04-26 05:07:24,880 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - t_env: 3900200 / 5050000
+2026-04-26 05:07:24,881 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Estimated time left: 5 hours, 14 minutes, 28 seconds. Time passed: 18 hours, 4 minutes, 15 seconds
+2026-04-26 05:21:03,289 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Recent Stats | t_env:    3950000 | Episode:    19750
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               70415.7262
+info_nce_loss:             0.3014	loss:                    583.8014	q_loss:                  530.7286	q_taken_mean:             60.6235
+return_mean:             123.5666	return_std:                8.0483	target_mean:              60.4106	td_error_abs:             17.2481
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        137.8774	test_return_std:           8.0324
+
+2026-04-26 05:21:05,834 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - t_env: 3950200 / 5050000
+2026-04-26 05:21:05,835 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Estimated time left: 5 hours, 57 seconds. Time passed: 18 hours, 17 minutes, 55 seconds
+2026-04-26 05:34:43,978 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Recent Stats | t_env:    4000000 | Episode:    20000
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               60213.8492
+info_nce_loss:             0.1749	loss:                    579.7202	q_loss:                  527.0184	q_taken_mean:             60.2209
+return_mean:             122.9260	return_std:                7.8786	target_mean:              60.4125	td_error_abs:             17.1008
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        137.8257	test_return_std:           7.8905
+
+2026-04-26 05:34:46,510 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - t_env: 4000200 / 5050000
+2026-04-26 05:34:46,511 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Estimated time left: 4 hours, 47 minutes, 10 seconds. Time passed: 18 hours, 31 minutes, 36 seconds
+2026-04-26 05:37:57,175 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Saving models to work_dirs/my_experiment/advP_ExpoComm_5M_43/my_run/20260425_110244/models/4000200
+2026-04-26 05:48:25,485 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Recent Stats | t_env:    4050000 | Episode:    20250
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               84776.1992
+info_nce_loss:             0.1046	loss:                    620.2213	q_loss:                  563.8376	q_taken_mean:             58.5555
+return_mean:             124.3388	return_std:                7.1568	target_mean:              58.5221	td_error_abs:             18.3603
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        138.2215	test_return_std:           8.1303
+
+2026-04-26 05:48:28,004 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - t_env: 4050200 / 5050000
+2026-04-26 05:48:28,005 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Estimated time left: 4 hours, 33 minutes, 46 seconds. Time passed: 18 hours, 45 minutes, 18 seconds
+2026-04-26 06:02:06,220 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Recent Stats | t_env:    4100000 | Episode:    20500
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               61064.2934
+info_nce_loss:             0.1128	loss:                    510.3932	q_loss:                  463.9938	q_taken_mean:             57.1718
+return_mean:             125.9140	return_std:                6.8078	target_mean:              57.1749	td_error_abs:             15.6284
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        138.3863	test_return_std:           8.1742
+
+2026-04-26 06:02:08,755 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - t_env: 4100200 / 5050000
+2026-04-26 06:02:08,756 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Estimated time left: 4 hours, 19 minutes, 50 seconds. Time passed: 18 hours, 58 minutes, 58 seconds
+2026-04-26 06:15:46,908 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Recent Stats | t_env:    4150000 | Episode:    20750
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               86211.2020
+info_nce_loss:             0.2711	loss:                    807.4618	q_loss:                  734.0562	q_taken_mean:             56.3606
+return_mean:             125.0849	return_std:                7.8679	target_mean:              56.7274	td_error_abs:             19.8297
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        139.2351	test_return_std:           7.9898
+
+2026-04-26 06:15:49,466 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - t_env: 4150200 / 5050000
+2026-04-26 06:15:49,467 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Estimated time left: 4 hours, 6 minutes, 9 seconds. Time passed: 19 hours, 12 minutes, 39 seconds
+2026-04-26 06:29:27,331 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Recent Stats | t_env:    4200000 | Episode:    21000
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               163609.5328
+info_nce_loss:             0.3085	loss:                    1485.5437	q_loss:                  1350.4942	q_taken_mean:             56.8962
+return_mean:             125.0284	return_std:                7.3266	target_mean:              56.6990	td_error_abs:             30.6792
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        139.7343	test_return_std:           7.7928
+
+2026-04-26 06:29:29,865 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - t_env: 4200200 / 5050000
+2026-04-26 06:29:29,866 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Estimated time left: 3 hours, 52 minutes, 23 seconds. Time passed: 19 hours, 26 minutes, 20 seconds
+2026-04-26 06:32:40,272 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Saving models to work_dirs/my_experiment/advP_ExpoComm_5M_43/my_run/20260425_110244/models/4200200
+2026-04-26 06:43:09,836 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Recent Stats | t_env:    4250000 | Episode:    21250
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               73793.7629
+info_nce_loss:             0.1676	loss:                    647.2455	q_loss:                  588.4049	q_taken_mean:             57.2161
+return_mean:             125.8294	return_std:                7.5427	target_mean:              57.2107	td_error_abs:             18.0384
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        140.1687	test_return_std:           7.8716
+
+2026-04-26 06:43:12,411 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - t_env: 4250200 / 5050000
+2026-04-26 06:43:12,412 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Estimated time left: 3 hours, 39 minutes, 17 seconds. Time passed: 19 hours, 40 minutes, 2 seconds
+2026-04-26 06:56:51,914 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Recent Stats | t_env:    4300000 | Episode:    21500
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               61532.8566
+info_nce_loss:             0.1270	loss:                    528.2644	q_loss:                  480.2403	q_taken_mean:             57.2756
+return_mean:             127.0620	return_std:                7.6858	target_mean:              57.2247	td_error_abs:             15.9826
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        140.9316	test_return_std:           7.5869
+
+2026-04-26 06:56:54,455 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - t_env: 4300200 / 5050000
+2026-04-26 06:56:54,456 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Estimated time left: 3 hours, 25 minutes, 27 seconds. Time passed: 19 hours, 53 minutes, 44 seconds
+2026-04-26 07:10:32,691 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Recent Stats | t_env:    4350000 | Episode:    21750
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               47055.8012
+info_nce_loss:             0.1846	loss:                    437.7149	q_loss:                  397.9228	q_taken_mean:             56.4143
+return_mean:             127.8297	return_std:                6.9685	target_mean:              56.6334	td_error_abs:             13.9767
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        141.3283	test_return_std:           7.3637
+
+2026-04-26 07:10:35,207 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - t_env: 4350200 / 5050000
+2026-04-26 07:10:35,208 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Estimated time left: 3 hours, 11 minutes, 27 seconds. Time passed: 20 hours, 7 minutes, 25 seconds
+2026-04-26 07:24:14,275 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Recent Stats | t_env:    4400000 | Episode:    22000
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               54324.1344
+info_nce_loss:             0.3185	loss:                    420.3441	q_loss:                  382.1310	q_taken_mean:             57.4177
+return_mean:             127.3666	return_std:                7.0325	target_mean:              57.3751	td_error_abs:             14.2983
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        141.0967	test_return_std:           7.1747
+
+2026-04-26 07:24:16,842 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - t_env: 4400200 / 5050000
+2026-04-26 07:24:16,843 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Estimated time left: 2 hours, 57 minutes, 57 seconds. Time passed: 20 hours, 21 minutes, 6 seconds
+2026-04-26 07:27:26,861 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Saving models to work_dirs/my_experiment/advP_ExpoComm_5M_43/my_run/20260425_110244/models/4400200
+2026-04-26 07:37:55,578 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Recent Stats | t_env:    4450000 | Episode:    22250
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               63303.3020
+info_nce_loss:             0.2660	loss:                    464.0071	q_loss:                  421.8246	q_taken_mean:             56.6426
+return_mean:             128.5884	return_std:                6.1628	target_mean:              56.4650	td_error_abs:             15.2851
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        141.5307	test_return_std:           7.0691
+
+2026-04-26 07:37:58,099 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - t_env: 4450200 / 5050000
+2026-04-26 07:37:58,100 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Estimated time left: 2 hours, 44 minutes, 11 seconds. Time passed: 20 hours, 34 minutes, 48 seconds
+2026-04-26 07:51:37,431 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Recent Stats | t_env:    4500000 | Episode:    22500
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               53221.1324
+info_nce_loss:             0.2116	loss:                    451.5398	q_loss:                  410.4907	q_taken_mean:             56.8054
+return_mean:             129.3594	return_std:                6.3141	target_mean:              56.7881	td_error_abs:             14.5938
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        141.9676	test_return_std:           6.7999
+
+2026-04-26 07:51:39,947 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - t_env: 4500200 / 5050000
+2026-04-26 07:51:39,948 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Estimated time left: 2 hours, 30 minutes, 37 seconds. Time passed: 20 hours, 48 minutes, 30 seconds
+2026-04-26 08:05:18,354 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Recent Stats | t_env:    4550000 | Episode:    22750
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               91749.4766
+info_nce_loss:             0.3106	loss:                    730.5351	q_loss:                  664.1228	q_taken_mean:             56.9548
+return_mean:             129.0096	return_std:                6.9345	target_mean:              56.6095	td_error_abs:             19.7568
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        142.0241	test_return_std:           6.4852
+
+2026-04-26 08:05:20,879 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - t_env: 4550200 / 5050000
+2026-04-26 08:05:20,880 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Estimated time left: 2 hours, 16 minutes, 46 seconds. Time passed: 21 hours, 2 minutes, 11 seconds
+2026-04-26 08:19:00,052 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Recent Stats | t_env:    4600000 | Episode:    23000
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               58850.4855
+info_nce_loss:             0.2099	loss:                    508.4825	q_loss:                  462.2568	q_taken_mean:             57.3154
+return_mean:             129.5700	return_std:                5.8103	target_mean:              57.3135	td_error_abs:             15.4372
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        142.4342	test_return_std:           6.4238
+
+2026-04-26 08:19:02,585 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - t_env: 4600200 / 5050000
+2026-04-26 08:19:02,586 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Estimated time left: 2 hours, 3 minutes, 12 seconds. Time passed: 21 hours, 15 minutes, 52 seconds
+2026-04-26 08:22:13,267 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Saving models to work_dirs/my_experiment/advP_ExpoComm_5M_43/my_run/20260425_110244/models/4600200
+2026-04-26 08:32:42,009 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Recent Stats | t_env:    4650000 | Episode:    23250
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               28499.1819
+info_nce_loss:             0.1748	loss:                    406.2297	q_loss:                  369.2997	q_taken_mean:             56.8982
+return_mean:             128.4990	return_std:                6.3395	target_mean:              56.9080	td_error_abs:             12.7671
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        143.3123	test_return_std:           6.3452
+
+2026-04-26 08:32:44,566 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - t_env: 4650200 / 5050000
+2026-04-26 08:32:44,567 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Estimated time left: 1 hours, 49 minutes, 32 seconds. Time passed: 21 hours, 29 minutes, 34 seconds
+2026-04-26 08:46:23,469 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Recent Stats | t_env:    4700000 | Episode:    23500
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               53428.3014
+info_nce_loss:             0.2742	loss:                    411.4083	q_loss:                  374.0076	q_taken_mean:             56.8506
+return_mean:             128.9383	return_std:                6.7289	target_mean:              57.1213	td_error_abs:             14.0936
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        143.3867	test_return_std:           6.3431
+
+2026-04-26 08:46:25,986 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - t_env: 4700200 / 5050000
+2026-04-26 08:46:25,987 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Estimated time left: 1 hours, 35 minutes, 46 seconds. Time passed: 21 hours, 43 minutes, 16 seconds
+2026-04-26 09:00:03,489 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Recent Stats | t_env:    4750000 | Episode:    23750
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               56857.5590
+info_nce_loss:             0.3558	loss:                    397.6588	q_loss:                  361.5080	q_taken_mean:             58.1091
+return_mean:             130.5771	return_std:                6.1610	target_mean:              57.7693	td_error_abs:             14.1816
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        144.0132	test_return_std:           5.9864
+
+2026-04-26 09:00:06,053 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - t_env: 4750200 / 5050000
+2026-04-26 09:00:06,054 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Estimated time left: 1 hours, 21 minutes, 57 seconds. Time passed: 21 hours, 56 minutes, 56 seconds
+2026-04-26 09:13:45,480 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Recent Stats | t_env:    4800000 | Episode:    24000
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               90412.8902
+info_nce_loss:             0.0924	loss:                    616.2768	q_loss:                  560.2516	q_taken_mean:             57.6414
+return_mean:             131.7308	return_std:                6.3057	target_mean:              57.8492	td_error_abs:             18.8356
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        144.4251	test_return_std:           6.0810
+
+2026-04-26 09:13:48,002 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - t_env: 4800200 / 5050000
+2026-04-26 09:13:48,003 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Estimated time left: 1 hours, 8 minutes, 26 seconds. Time passed: 22 hours, 10 minutes, 38 seconds
+2026-04-26 09:16:58,935 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Saving models to work_dirs/my_experiment/advP_ExpoComm_5M_43/my_run/20260425_110244/models/4800200
+2026-04-26 09:27:27,870 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Recent Stats | t_env:    4850000 | Episode:    24250
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               66960.8465
+info_nce_loss:             0.0857	loss:                    513.9596	q_loss:                  467.2360	q_taken_mean:             58.1027
+return_mean:             130.9534	return_std:                6.0228	target_mean:              58.1090	td_error_abs:             15.4534
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        144.5976	test_return_std:           6.0935
+
+2026-04-26 09:27:30,407 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - t_env: 4850200 / 5050000
+2026-04-26 09:27:30,408 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Estimated time left: 54 minutes, 46 seconds. Time passed: 22 hours, 24 minutes, 20 seconds
+2026-04-26 09:41:09,732 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Recent Stats | t_env:    4900000 | Episode:    24500
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               46859.0895
+info_nce_loss:             0.1985	loss:                    361.0684	q_loss:                  328.2440	q_taken_mean:             57.6308
+return_mean:             131.3190	return_std:                5.8065	target_mean:              57.7440	td_error_abs:             13.2424
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        144.8537	test_return_std:           6.0202
+
+2026-04-26 09:41:12,276 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - t_env: 4900200 / 5050000
+2026-04-26 09:41:12,277 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Estimated time left: 41 minutes, 2 seconds. Time passed: 22 hours, 38 minutes, 2 seconds
+2026-04-26 09:54:50,917 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Recent Stats | t_env:    4950000 | Episode:    24750
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               46535.6715
+info_nce_loss:             0.1672	loss:                    374.4980	q_loss:                  340.4527	q_taken_mean:             57.4636
+return_mean:             130.5803	return_std:                5.8759	target_mean:              57.5033	td_error_abs:             13.4917
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        144.2060	test_return_std:           6.0978
+
+2026-04-26 09:54:53,435 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - t_env: 4950200 / 5050000
+2026-04-26 09:54:53,436 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Estimated time left: 27 minutes, 19 seconds. Time passed: 22 hours, 51 minutes, 43 seconds
+2026-04-26 10:08:32,651 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Recent Stats | t_env:    5000000 | Episode:    25000
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               53990.6094
+info_nce_loss:             0.1380	loss:                    323.2969	q_loss:                  293.9063	q_taken_mean:             57.4980
+return_mean:             131.3476	return_std:                6.0276	target_mean:              57.5974	td_error_abs:             13.0098
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        143.6394	test_return_std:           6.4032
+
+2026-04-26 10:08:35,177 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - t_env: 5000200 / 5050000
+2026-04-26 10:08:35,178 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Estimated time left: 13 minutes, 38 seconds. Time passed: 23 hours, 5 minutes, 25 seconds
+2026-04-26 10:11:45,879 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Saving models to work_dirs/my_experiment/advP_ExpoComm_5M_43/my_run/20260425_110244/models/5000200
+2026-04-26 10:22:14,848 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Recent Stats | t_env:    5050000 | Episode:    25250
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               68699.1125
+info_nce_loss:             0.1659	loss:                    411.7120	q_loss:                  374.2838	q_taken_mean:             57.2019
+return_mean:             131.4554	return_std:                5.9478	target_mean:              57.0888	td_error_abs:             14.6492
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:        143.4853	test_return_std:           6.2943
+
+2026-04-26 10:22:17,375 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - t_env: 5050200 / 5050000
+2026-04-26 10:22:17,376 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Estimated time left: -. Time passed: 23 hours, 19 minutes, 7 seconds
+2026-04-26 10:25:27,470 - my_experiment - advP_ExpoComm_5M_43 - my_run - INFO - Finished Training

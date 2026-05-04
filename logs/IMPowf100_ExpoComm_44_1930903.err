@@ -1,0 +1,886 @@
+Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
+Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
+Users of this version of Gym should be able to simply replace 'import gym' with 'import gymnasium as gym' in the vast majority of cases.
+See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
+src/main.py:81: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+  if isinstance(v, collections.Mapping):
+wandb: [wandb.login()] Loaded credentials for https://api.wandb.ai from /home/pparsons/.netrc.
+wandb: Currently logged in as: peterparsons02 (peterparsons02-eth-z-rich) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+wandb: setting up run 14nqqhyh
+wandb: Tracking run with wandb version 0.24.1
+wandb: Run data is saved locally in /usr/itetnas04/data-scratch-01/pparsons/data/MyExpoComm/wandb/run-20260429_221054-14nqqhyh
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run my_run-IMPowf100_ExpoComm_44-20260429_221053
+wandb: ⭐️ View project at https://wandb.ai/peterparsons02-eth-z-rich/my_experiment
+wandb: 🚀 View run at https://wandb.ai/peterparsons02-eth-z-rich/my_experiment/runs/14nqqhyh
+2026-04-29 22:10:56,701 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Current directory: /usr/itetnas04/data-scratch-01/pparsons/data/MyExpoComm.
+2026-04-29 22:10:56,702 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Experiment Parameters:
+2026-04-29 22:10:56,703 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - 
+
+{   'action_selector': 'epsilon_greedy',
+    'add_value_last_step': True,
+    'agent': 'ExpoComm_one_peer_cont',
+    'agent_output_type': 'q',
+    'aux_coef': 0.1,
+    'batch_size': 64,
+    'batch_size_run': 1,
+    'buffer_cpu_only': True,
+    'buffer_size': 2000,
+    'checkpoint_path': '',
+    'common_reward': True,
+    'double_q': True,
+    'env': 'struct_marl',
+    'env_args': {   'campaign_cost': True,
+                    'custom_param': {   'lev': 3},
+                    'discount_reward': 0.95,
+                    'env_correlation': False,
+                    'map_name': 'owf_100',
+                    'n_comp': 100,
+                    'obs_all_d_rate': False,
+                    'obs_alphas': False,
+                    'obs_d_rate': False,
+                    'obs_multiple': False,
+                    'seed': 44,
+                    'state_alphas': False,
+                    'state_d_rate': False,
+                    'state_obs': True,
+                    'struct_type': 'owf'},
+    'epsilon_anneal_time': 5000,
+    'epsilon_finish': 0.05,
+    'epsilon_start': 1.0,
+    'evaluate': False,
+    'evaluation_epsilon': 0.0,
+    'exp_name': 'my_experiment',
+    'gamma': 0.95,
+    'global_reward': False,
+    'grad_norm_clip': 10,
+    'hidden_dim': 64,
+    'hypergroup': None,
+    'hypernet_embed': 64,
+    'hypernet_layers': 2,
+    'label': 'default_label',
+    'learner': 'cont_q_learner',
+    'learner_log_interval': 25000,
+    'load_step': 0,
+    'local_results_path': 'results',
+    'log_interval': 25000,
+    'lr': 0.0005,
+    'mac': 'ExpoComm_mac',
+    'mixer': 'qmix',
+    'mixing_embed_dim': 64,
+    'name': 'IMPowf100_ExpoComm_44',
+    'neg_num': 20,
+    'obs_agent_id': True,
+    'obs_individual_obs': False,
+    'obs_last_action': True,
+    'one_peer': True,
+    'optim_alpha': 0.99,
+    'optim_eps': 1e-05,
+    'pos_flag': False,
+    'render': False,
+    'repeat_id': 1,
+    'run_name': 'my_run',
+    'runner': 'episode',
+    'runner_log_interval': 25000,
+    'save_model': True,
+    'save_model_interval': 50000,
+    'save_replay': False,
+    'seed': 44,
+    'standardise_returns': False,
+    'standardise_rewards': True,
+    't_max': 2050000,
+    'target_update_interval_or_tau': 200,
+    'temperature': 0.07,
+    'test_greedy': True,
+    'test_interval': 25000,
+    'test_nepisode': 50,
+    'topk_neighbors': 7,
+    'use_cuda': True,
+    'use_rnn': True,
+    'use_tensorboard': True,
+    'work_dir': 'work_dirs/my_experiment/IMPowf100_ExpoComm_44/my_run/20260429_221053'}
+
+2026-04-29 22:10:58,525 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Beginning training for 2050000 timesteps
+2026-04-29 22:10:59,487 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - t_env: 20 / 2050000
+2026-04-29 22:10:59,487 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Estimated time left: 1 minutes, 18 seconds. Time passed: 0 seconds
+2026-04-29 22:11:09,936 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Saving models to work_dirs/my_experiment/IMPowf100_ExpoComm_44/my_run/20260429_221053/models/20
+2026-04-29 22:19:03,175 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Recent Stats | t_env:      25000 | Episode:     1250
+action_0_mean:             0.3327	action_1_mean:             0.3282	action_2_mean:             0.3390	ep_length_mean:           20.0000
+epsilon:                   1.0000	grad_norm:               261.7224	info_nce_loss:             2.2251	loss:                     12.2205
+q_loss:                   11.1096	q_taken_mean:              0.0084	return_mean:             -20552.5875	return_std:                0.0000
+target_mean:               0.0234	td_error_abs:              3.0685	test_action_0_mean:        1.0000	test_action_1_mean:        0.0000
+test_action_2_mean:        0.0000	test_ep_length_mean:      20.0000	test_return_mean:        -11570.1245	test_return_std:           0.0000
+
+2026-04-29 22:19:03,598 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - t_env: 25020 / 2050000
+2026-04-29 22:19:03,599 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Estimated time left: 10 hours, 53 minutes, 32 seconds. Time passed: 8 minutes, 5 seconds
+2026-04-29 22:28:28,059 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Recent Stats | t_env:      50000 | Episode:     2500
+action_0_mean:             0.5460	action_1_mean:             0.2518	action_2_mean:             0.2022	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:               133.9075	info_nce_loss:             1.1125	loss:                      6.3118
+q_loss:                    5.7380	q_taken_mean:              0.0094	return_mean:             -16922.7681	return_std:              1251.5737
+target_mean:               0.0170	td_error_abs:              1.7423	test_action_0_mean:        0.8261	test_action_1_mean:        0.1427
+test_action_2_mean:        0.0312	test_ep_length_mean:      20.0000	test_return_mean:        -9710.3751	test_return_std:         191.2009
+
+2026-04-29 22:28:28,548 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - t_env: 50020 / 2050000
+2026-04-29 22:28:28,549 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Estimated time left: 12 hours, 33 minutes, 15 seconds. Time passed: 17 minutes, 30 seconds
+2026-04-29 22:28:44,535 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Saving models to work_dirs/my_experiment/IMPowf100_ExpoComm_44/my_run/20260429_221053/models/50020
+2026-04-29 22:38:25,445 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Recent Stats | t_env:      75000 | Episode:     3750
+action_0_mean:             0.4999	action_1_mean:             0.3325	action_2_mean:             0.1676	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                90.0057	info_nce_loss:             0.7417	loss:                      4.2344
+q_loss:                    3.8519	q_taken_mean:              0.0159	return_mean:             -13694.9538	return_std:              1308.4574
+target_mean:               0.0209	td_error_abs:              1.2282	test_action_0_mean:        0.6209	test_action_1_mean:        0.3408
+test_action_2_mean:        0.0383	test_ep_length_mean:      20.0000	test_return_mean:        -8027.7885	test_return_std:         215.4415
+
+2026-04-29 22:38:25,911 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - t_env: 75020 / 2050000
+2026-04-29 22:38:25,912 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Estimated time left: 13 hours, 6 minutes, 31 seconds. Time passed: 27 minutes, 27 seconds
+2026-04-29 22:48:10,593 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Recent Stats | t_env:     100000 | Episode:     5000
+action_0_mean:             0.4462	action_1_mean:             0.4127	action_2_mean:             0.1411	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                67.7041	info_nce_loss:             0.5563	loss:                      3.1812
+q_loss:                    2.8943	q_taken_mean:              0.0216	return_mean:             -11508.0038	return_std:              1064.4951
+target_mean:               0.0254	td_error_abs:              0.9494	test_action_0_mean:        0.5204	test_action_1_mean:        0.4397
+test_action_2_mean:        0.0399	test_ep_length_mean:      20.0000	test_return_mean:        -6981.5196	test_return_std:         208.1748
+
+2026-04-29 22:48:11,044 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - t_env: 100020 / 2050000
+2026-04-29 22:48:11,044 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Estimated time left: 12 hours, 40 minutes, 39 seconds. Time passed: 37 minutes, 12 seconds
+2026-04-29 22:48:26,866 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Saving models to work_dirs/my_experiment/IMPowf100_ExpoComm_44/my_run/20260429_221053/models/100020
+2026-04-29 22:57:51,791 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Recent Stats | t_env:     125000 | Episode:     6250
+action_0_mean:             0.4045	action_1_mean:             0.4718	action_2_mean:             0.1237	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                55.7731	info_nce_loss:             0.4450	loss:                      2.5537
+q_loss:                    2.3234	q_taken_mean:              0.0241	return_mean:             -10090.5757	return_std:              895.4898
+target_mean:               0.0270	td_error_abs:              0.7908	test_action_0_mean:        0.4688	test_action_1_mean:        0.4922
+test_action_2_mean:        0.0390	test_ep_length_mean:      20.0000	test_return_mean:        -6272.4667	test_return_std:         205.5245
+
+2026-04-29 22:57:52,247 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - t_env: 125020 / 2050000
+2026-04-29 22:57:52,248 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Estimated time left: 12 hours, 25 minutes, 52 seconds. Time passed: 46 minutes, 53 seconds
+2026-04-29 23:07:48,002 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Recent Stats | t_env:     150000 | Episode:     7500
+action_0_mean:             0.3915	action_1_mean:             0.5434	action_2_mean:             0.0651	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 3.5782	info_nce_loss:             0.0001	loss:                      0.1116
+q_loss:                    0.1033	q_taken_mean:              0.0284	return_mean:             -6820.4841	return_std:              938.2225
+target_mean:               0.0282	td_error_abs:              0.1918	test_action_0_mean:        0.3248	test_action_1_mean:        0.6297
+test_action_2_mean:        0.0454	test_ep_length_mean:      20.0000	test_return_mean:        -4608.9933	test_return_std:         241.4121
+
+2026-04-29 23:07:48,487 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - t_env: 150020 / 2050000
+2026-04-29 23:07:48,488 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Estimated time left: 12 hours, 35 minutes, 13 seconds. Time passed: 56 minutes, 49 seconds
+2026-04-29 23:08:04,351 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Saving models to work_dirs/my_experiment/IMPowf100_ExpoComm_44/my_run/20260429_221053/models/150020
+2026-04-29 23:18:00,116 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Recent Stats | t_env:     175000 | Episode:     8750
+action_0_mean:             0.2906	action_1_mean:             0.6482	action_2_mean:             0.0613	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 2.4707	info_nce_loss:             0.0001	loss:                      0.0329
+q_loss:                    0.0319	q_taken_mean:              0.0316	return_mean:             -4989.3661	return_std:              479.2608
+target_mean:               0.0315	td_error_abs:              0.1234	test_action_0_mean:        0.2446	test_action_1_mean:        0.7162
+test_action_2_mean:        0.0392	test_ep_length_mean:      20.0000	test_return_mean:        -3687.7547	test_return_std:         199.3160
+
+2026-04-29 23:18:00,601 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - t_env: 175020 / 2050000
+2026-04-29 23:18:00,602 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Estimated time left: 12 hours, 45 minutes, 8 seconds. Time passed: 1 hours, 7 minutes, 2 seconds
+2026-04-29 23:28:11,250 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Recent Stats | t_env:     200000 | Episode:    10000
+action_0_mean:             0.2622	action_1_mean:             0.6872	action_2_mean:             0.0506	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 2.1323	info_nce_loss:             0.0001	loss:                      0.0189
+q_loss:                    0.0180	q_taken_mean:              0.0306	return_mean:             -4369.9347	return_std:              237.9220
+target_mean:               0.0305	td_error_abs:              0.0989	test_action_0_mean:        0.2575	test_action_1_mean:        0.7079
+test_action_2_mean:        0.0346	test_ep_length_mean:      20.0000	test_return_mean:        -3383.0836	test_return_std:         189.1110
+
+2026-04-29 23:28:11,751 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - t_env: 200020 / 2050000
+2026-04-29 23:28:11,751 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Estimated time left: 12 hours, 33 minutes, 44 seconds. Time passed: 1 hours, 17 minutes, 13 seconds
+2026-04-29 23:28:27,554 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Saving models to work_dirs/my_experiment/IMPowf100_ExpoComm_44/my_run/20260429_221053/models/200020
+2026-04-29 23:38:17,887 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Recent Stats | t_env:     225000 | Episode:    11250
+action_0_mean:             0.2576	action_1_mean:             0.6952	action_2_mean:             0.0472	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 2.1455	info_nce_loss:             0.0001	loss:                      0.0173
+q_loss:                    0.0164	q_taken_mean:              0.0275	return_mean:             -4197.8575	return_std:              212.7280
+target_mean:               0.0274	td_error_abs:              0.0942	test_action_0_mean:        0.2666	test_action_1_mean:        0.7019
+test_action_2_mean:        0.0316	test_ep_length_mean:      20.0000	test_return_mean:        -3219.7882	test_return_std:         182.6916
+
+2026-04-29 23:38:18,347 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - t_env: 225020 / 2050000
+2026-04-29 23:38:18,347 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Estimated time left: 12 hours, 18 minutes, 1 seconds. Time passed: 1 hours, 27 minutes, 19 seconds
+2026-04-29 23:48:17,896 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Recent Stats | t_env:     250000 | Episode:    12500
+action_0_mean:             0.2673	action_1_mean:             0.6881	action_2_mean:             0.0447	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 0.7693	info_nce_loss:             0.0001	loss:                      0.0106
+q_loss:                    0.0104	q_taken_mean:              0.0251	return_mean:             -4097.2067	return_std:              222.4218
+target_mean:               0.0251	td_error_abs:              0.0783	test_action_0_mean:        0.2763	test_action_1_mean:        0.6938
+test_action_2_mean:        0.0298	test_ep_length_mean:      20.0000	test_return_mean:        -2995.9618	test_return_std:         163.6192
+
+2026-04-29 23:48:18,370 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - t_env: 250020 / 2050000
+2026-04-29 23:48:18,371 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Estimated time left: 12 hours, 1 seconds. Time passed: 1 hours, 37 minutes, 19 seconds
+2026-04-29 23:48:33,498 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Saving models to work_dirs/my_experiment/IMPowf100_ExpoComm_44/my_run/20260429_221053/models/250020
+2026-04-29 23:58:07,346 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Recent Stats | t_env:     275000 | Episode:    13750
+action_0_mean:             0.2770	action_1_mean:             0.6793	action_2_mean:             0.0437	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 0.7513	info_nce_loss:             0.0000	loss:                      0.0103
+q_loss:                    0.0103	q_taken_mean:              0.0241	return_mean:             -3981.4567	return_std:              245.1665
+target_mean:               0.0242	td_error_abs:              0.0778	test_action_0_mean:        0.2929	test_action_1_mean:        0.6787
+test_action_2_mean:        0.0284	test_ep_length_mean:      20.0000	test_return_mean:        -2766.1167	test_return_std:         148.8308
+
+2026-04-29 23:58:07,809 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - t_env: 275020 / 2050000
+2026-04-29 23:58:07,809 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Estimated time left: 11 hours, 37 minutes, 29 seconds. Time passed: 1 hours, 47 minutes, 9 seconds
+2026-04-30 00:07:53,210 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Recent Stats | t_env:     300000 | Episode:    15000
+action_0_mean:             0.3005	action_1_mean:             0.6570	action_2_mean:             0.0425	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 1.0558	info_nce_loss:             0.0000	loss:                      0.0101
+q_loss:                    0.0099	q_taken_mean:              0.0242	return_mean:             -3839.0063	return_std:              245.4916
+target_mean:               0.0242	td_error_abs:              0.0767	test_action_0_mean:        0.3186	test_action_1_mean:        0.6545
+test_action_2_mean:        0.0269	test_ep_length_mean:      20.0000	test_return_mean:        -2525.4718	test_return_std:         137.6270
+
+2026-04-30 00:07:53,672 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - t_env: 300020 / 2050000
+2026-04-30 00:07:53,673 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Estimated time left: 11 hours, 23 minutes, 29 seconds. Time passed: 1 hours, 56 minutes, 55 seconds
+2026-04-30 00:08:08,471 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Saving models to work_dirs/my_experiment/IMPowf100_ExpoComm_44/my_run/20260429_221053/models/300020
+2026-04-30 00:17:32,665 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Recent Stats | t_env:     325000 | Episode:    16250
+action_0_mean:             0.3253	action_1_mean:             0.6331	action_2_mean:             0.0416	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 1.1025	info_nce_loss:             0.0000	loss:                      0.0095
+q_loss:                    0.0093	q_taken_mean:              0.0248	return_mean:             -3679.3518	return_std:              243.8976
+target_mean:               0.0248	td_error_abs:              0.0741	test_action_0_mean:        0.3460	test_action_1_mean:        0.6278
+test_action_2_mean:        0.0262	test_ep_length_mean:      20.0000	test_return_mean:        -2281.6342	test_return_std:         116.4834
+
+2026-04-30 00:17:33,128 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - t_env: 325020 / 2050000
+2026-04-30 00:17:33,129 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Estimated time left: 11 hours, 6 minutes, 21 seconds. Time passed: 2 hours, 6 minutes, 34 seconds
+2026-04-30 00:27:21,710 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Recent Stats | t_env:     350000 | Episode:    17500
+action_0_mean:             0.3573	action_1_mean:             0.6009	action_2_mean:             0.0418	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 1.6012	info_nce_loss:             0.0000	loss:                      0.0374
+q_loss:                    0.0345	q_taken_mean:              0.0241	return_mean:             -3687.5124	return_std:              572.3494
+target_mean:               0.0240	td_error_abs:              0.1003	test_action_0_mean:        0.3649	test_action_1_mean:        0.6122
+test_action_2_mean:        0.0229	test_ep_length_mean:      20.0000	test_return_mean:        -2327.9083	test_return_std:         145.5093
+
+2026-04-30 00:27:22,173 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - t_env: 350020 / 2050000
+2026-04-30 00:27:22,174 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Estimated time left: 11 hours, 7 minutes, 34 seconds. Time passed: 2 hours, 16 minutes, 23 seconds
+2026-04-30 00:27:37,395 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Saving models to work_dirs/my_experiment/IMPowf100_ExpoComm_44/my_run/20260429_221053/models/350020
+2026-04-30 00:36:58,052 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Recent Stats | t_env:     375000 | Episode:    18750
+action_0_mean:             0.3744	action_1_mean:             0.5836	action_2_mean:             0.0420	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 1.5962	info_nce_loss:             0.0000	loss:                      0.0378
+q_loss:                    0.0349	q_taken_mean:              0.0241	return_mean:             -3604.3608	return_std:              580.7334
+target_mean:               0.0240	td_error_abs:              0.1015	test_action_0_mean:        0.3744	test_action_1_mean:        0.6029
+test_action_2_mean:        0.0227	test_ep_length_mean:      20.0000	test_return_mean:        -2277.3588	test_return_std:         141.9653
+
+2026-04-30 00:36:58,496 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - t_env: 375020 / 2050000
+2026-04-30 00:36:58,497 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Estimated time left: 10 hours, 43 minutes, 33 seconds. Time passed: 2 hours, 25 minutes, 59 seconds
+2026-04-30 00:46:02,278 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Recent Stats | t_env:     400000 | Episode:    20000
+action_0_mean:             0.3966	action_1_mean:             0.5609	action_2_mean:             0.0425	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 1.6054	info_nce_loss:             0.0000	loss:                      0.0376
+q_loss:                    0.0347	q_taken_mean:              0.0241	return_mean:             -3545.3561	return_std:              557.1009
+target_mean:               0.0240	td_error_abs:              0.1011	test_action_0_mean:        0.3786	test_action_1_mean:        0.5984
+test_action_2_mean:        0.0230	test_ep_length_mean:      20.0000	test_return_mean:        -2258.4857	test_return_std:         141.9051
+
+2026-04-30 00:46:02,699 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - t_env: 400020 / 2050000
+2026-04-30 00:46:02,700 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Estimated time left: 9 hours, 58 minutes, 36 seconds. Time passed: 2 hours, 35 minutes, 4 seconds
+2026-04-30 00:46:16,925 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Saving models to work_dirs/my_experiment/IMPowf100_ExpoComm_44/my_run/20260429_221053/models/400020
+2026-04-30 00:55:05,751 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Recent Stats | t_env:     425000 | Episode:    21250
+action_0_mean:             0.4135	action_1_mean:             0.5433	action_2_mean:             0.0431	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 1.2444	info_nce_loss:             0.0000	loss:                      0.0384
+q_loss:                    0.0354	q_taken_mean:              0.0241	return_mean:             -3511.7973	return_std:              559.5710
+target_mean:               0.0241	td_error_abs:              0.1039	test_action_0_mean:        0.4000	test_action_1_mean:        0.5764
+test_action_2_mean:        0.0237	test_ep_length_mean:      20.0000	test_return_mean:        -2218.0308	test_return_std:         136.5189
+
+2026-04-30 00:55:06,177 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - t_env: 425020 / 2050000
+2026-04-30 00:55:06,178 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Estimated time left: 9 hours, 48 minutes, 45 seconds. Time passed: 2 hours, 44 minutes, 7 seconds
+2026-04-30 01:04:09,457 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Recent Stats | t_env:     450000 | Episode:    22500
+action_0_mean:             0.4286	action_1_mean:             0.5279	action_2_mean:             0.0434	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 1.1984	info_nce_loss:             0.0000	loss:                      0.0385
+q_loss:                    0.0353	q_taken_mean:              0.0241	return_mean:             -3484.1876	return_std:              559.2948
+target_mean:               0.0240	td_error_abs:              0.1038	test_action_0_mean:        0.4133	test_action_1_mean:        0.5627
+test_action_2_mean:        0.0240	test_ep_length_mean:      20.0000	test_return_mean:        -2200.1882	test_return_std:         132.1576
+
+2026-04-30 01:04:09,893 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - t_env: 450020 / 2050000
+2026-04-30 01:04:09,894 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Estimated time left: 9 hours, 39 minutes, 57 seconds. Time passed: 2 hours, 53 minutes, 11 seconds
+2026-04-30 01:04:24,296 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Saving models to work_dirs/my_experiment/IMPowf100_ExpoComm_44/my_run/20260429_221053/models/450020
+2026-04-30 01:13:13,488 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Recent Stats | t_env:     475000 | Episode:    23750
+action_0_mean:             0.4363	action_1_mean:             0.5206	action_2_mean:             0.0430	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 0.8023	info_nce_loss:             0.0000	loss:                      0.0095
+q_loss:                    0.0091	q_taken_mean:              0.0255	return_mean:             -3297.8770	return_std:              229.3422
+target_mean:               0.0256	td_error_abs:              0.0737	test_action_0_mean:        0.4338	test_action_1_mean:        0.5393
+test_action_2_mean:        0.0268	test_ep_length_mean:      20.0000	test_return_mean:        -1911.1778	test_return_std:          90.8808
+
+2026-04-30 01:13:13,914 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - t_env: 475020 / 2050000
+2026-04-30 01:13:13,915 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Estimated time left: 9 hours, 31 minutes, 12 seconds. Time passed: 3 hours, 2 minutes, 15 seconds
+2026-04-30 01:22:18,502 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Recent Stats | t_env:     500000 | Episode:    25000
+action_0_mean:             0.4545	action_1_mean:             0.5023	action_2_mean:             0.0432	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 0.9511	info_nce_loss:             0.0000	loss:                      0.0087
+q_loss:                    0.0083	q_taken_mean:              0.0264	return_mean:             -3234.4341	return_std:              208.1216
+target_mean:               0.0264	td_error_abs:              0.0714	test_action_0_mean:        0.4586	test_action_1_mean:        0.5140
+test_action_2_mean:        0.0274	test_ep_length_mean:      20.0000	test_return_mean:        -1860.7074	test_return_std:          94.1744
+
+2026-04-30 01:22:18,929 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - t_env: 500020 / 2050000
+2026-04-30 01:22:18,929 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Estimated time left: 9 hours, 23 minutes, 10 seconds. Time passed: 3 hours, 11 minutes, 20 seconds
+2026-04-30 01:22:33,207 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Saving models to work_dirs/my_experiment/IMPowf100_ExpoComm_44/my_run/20260429_221053/models/500020
+2026-04-30 01:31:19,447 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Recent Stats | t_env:     525000 | Episode:    26250
+action_0_mean:             0.4604	action_1_mean:             0.4963	action_2_mean:             0.0433	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 0.9885	info_nce_loss:             0.0000	loss:                      0.0088
+q_loss:                    0.0084	q_taken_mean:              0.0270	return_mean:             -3205.7402	return_std:              206.8028
+target_mean:               0.0269	td_error_abs:              0.0718	test_action_0_mean:        0.4769	test_action_1_mean:        0.4950
+test_action_2_mean:        0.0280	test_ep_length_mean:      20.0000	test_return_mean:        -1822.9337	test_return_std:          93.8973
+
+2026-04-30 01:31:19,876 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - t_env: 525020 / 2050000
+2026-04-30 01:31:19,877 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Estimated time left: 9 hours, 9 minutes, 57 seconds. Time passed: 3 hours, 20 minutes, 21 seconds
+2026-04-30 01:40:22,493 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Recent Stats | t_env:     550000 | Episode:    27500
+action_0_mean:             0.4647	action_1_mean:             0.4918	action_2_mean:             0.0435	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 1.0917	info_nce_loss:             0.0000	loss:                      0.0080
+q_loss:                    0.0079	q_taken_mean:              0.0268	return_mean:             -3194.3909	return_std:              203.3880
+target_mean:               0.0268	td_error_abs:              0.0693	test_action_0_mean:        0.4740	test_action_1_mean:        0.4977
+test_action_2_mean:        0.0283	test_ep_length_mean:      20.0000	test_return_mean:        -1818.7045	test_return_std:          96.0080
+
+2026-04-30 01:40:22,916 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - t_env: 550020 / 2050000
+2026-04-30 01:40:22,917 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Estimated time left: 9 hours, 3 minutes, 1 seconds. Time passed: 3 hours, 29 minutes, 24 seconds
+2026-04-30 01:40:37,089 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Saving models to work_dirs/my_experiment/IMPowf100_ExpoComm_44/my_run/20260429_221053/models/550020
+2026-04-30 01:49:23,937 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Recent Stats | t_env:     575000 | Episode:    28750
+action_0_mean:             0.4647	action_1_mean:             0.4915	action_2_mean:             0.0438	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 1.1978	info_nce_loss:             0.0000	loss:                      0.0083
+q_loss:                    0.0083	q_taken_mean:              0.0266	return_mean:             -3182.8397	return_std:              201.0726
+target_mean:               0.0266	td_error_abs:              0.0714	test_action_0_mean:        0.4770	test_action_1_mean:        0.4943
+test_action_2_mean:        0.0286	test_ep_length_mean:      20.0000	test_return_mean:        -1810.7518	test_return_std:          97.4877
+
+2026-04-30 01:49:24,373 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - t_env: 575020 / 2050000
+2026-04-30 01:49:24,373 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Estimated time left: 8 hours, 52 minutes, 25 seconds. Time passed: 3 hours, 38 minutes, 25 seconds
+2026-04-30 01:58:25,959 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Recent Stats | t_env:     600000 | Episode:    30000
+action_0_mean:             0.4674	action_1_mean:             0.4885	action_2_mean:             0.0441	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 1.0850	info_nce_loss:             0.0000	loss:                      0.0083
+q_loss:                    0.0083	q_taken_mean:              0.0266	return_mean:             -3173.0368	return_std:              199.8039
+target_mean:               0.0265	td_error_abs:              0.0716	test_action_0_mean:        0.4776	test_action_1_mean:        0.4935
+test_action_2_mean:        0.0289	test_ep_length_mean:      20.0000	test_return_mean:        -1798.5137	test_return_std:          96.8244
+
+2026-04-30 01:58:26,387 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - t_env: 600020 / 2050000
+2026-04-30 01:58:26,388 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Estimated time left: 8 hours, 43 minutes, 56 seconds. Time passed: 3 hours, 47 minutes, 27 seconds
+2026-04-30 01:58:40,723 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Saving models to work_dirs/my_experiment/IMPowf100_ExpoComm_44/my_run/20260429_221053/models/600020
+2026-04-30 02:07:31,974 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Recent Stats | t_env:     625000 | Episode:    31250
+action_0_mean:             0.4693	action_1_mean:             0.4865	action_2_mean:             0.0442	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 0.8018	info_nce_loss:             0.0000	loss:                      0.0091
+q_loss:                    0.0089	q_taken_mean:              0.0263	return_mean:             -3162.8952	return_std:              199.8647
+target_mean:               0.0263	td_error_abs:              0.0736	test_action_0_mean:        0.4753	test_action_1_mean:        0.4958
+test_action_2_mean:        0.0289	test_ep_length_mean:      20.0000	test_return_mean:        -1781.7267	test_return_std:          97.1808
+
+2026-04-30 02:07:32,408 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - t_env: 625020 / 2050000
+2026-04-30 02:07:32,409 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Estimated time left: 8 hours, 38 minutes, 42 seconds. Time passed: 3 hours, 56 minutes, 33 seconds
+2026-04-30 02:16:36,970 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Recent Stats | t_env:     650000 | Episode:    32500
+action_0_mean:             0.4679	action_1_mean:             0.4879	action_2_mean:             0.0442	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 0.7663	info_nce_loss:             0.0000	loss:                      0.0093
+q_loss:                    0.0091	q_taken_mean:              0.0261	return_mean:             -3148.6344	return_std:              198.6064
+target_mean:               0.0261	td_error_abs:              0.0745	test_action_0_mean:        0.4747	test_action_1_mean:        0.4966
+test_action_2_mean:        0.0287	test_ep_length_mean:      20.0000	test_return_mean:        -1762.3113	test_return_std:          95.6175
+
+2026-04-30 02:16:37,417 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - t_env: 650020 / 2050000
+2026-04-30 02:16:37,418 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Estimated time left: 8 hours, 28 minutes, 40 seconds. Time passed: 4 hours, 5 minutes, 38 seconds
+2026-04-30 02:16:51,792 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Saving models to work_dirs/my_experiment/IMPowf100_ExpoComm_44/my_run/20260429_221053/models/650020
+2026-04-30 02:25:38,302 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Recent Stats | t_env:     675000 | Episode:    33750
+action_0_mean:             0.4634	action_1_mean:             0.4923	action_2_mean:             0.0442	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 0.8020	info_nce_loss:             0.0000	loss:                      0.0097
+q_loss:                    0.0095	q_taken_mean:              0.0261	return_mean:             -3130.2865	return_std:              195.3867
+target_mean:               0.0261	td_error_abs:              0.0760	test_action_0_mean:        0.4725	test_action_1_mean:        0.4989
+test_action_2_mean:        0.0286	test_ep_length_mean:      20.0000	test_return_mean:        -1739.6564	test_return_std:          94.2980
+
+2026-04-30 02:25:38,727 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - t_env: 675020 / 2050000
+2026-04-30 02:25:38,728 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Estimated time left: 8 hours, 16 minutes, 11 seconds. Time passed: 4 hours, 14 minutes, 40 seconds
+2026-04-30 02:34:36,264 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Recent Stats | t_env:     700000 | Episode:    35000
+action_0_mean:             0.4658	action_1_mean:             0.4899	action_2_mean:             0.0443	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 0.6332	info_nce_loss:             0.0000	loss:                      0.0099
+q_loss:                    0.0097	q_taken_mean:              0.0262	return_mean:             -3118.4260	return_std:              196.6067
+target_mean:               0.0262	td_error_abs:              0.0765	test_action_0_mean:        0.4790	test_action_1_mean:        0.4921
+test_action_2_mean:        0.0289	test_ep_length_mean:      20.0000	test_return_mean:        -1720.2941	test_return_std:          95.4374
+
+2026-04-30 02:34:36,687 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - t_env: 700020 / 2050000
+2026-04-30 02:34:36,687 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Estimated time left: 8 hours, 4 minutes, 9 seconds. Time passed: 4 hours, 23 minutes, 38 seconds
+2026-04-30 02:34:50,791 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Saving models to work_dirs/my_experiment/IMPowf100_ExpoComm_44/my_run/20260429_221053/models/700020
+2026-04-30 02:43:34,933 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Recent Stats | t_env:     725000 | Episode:    36250
+action_0_mean:             0.4694	action_1_mean:             0.4861	action_2_mean:             0.0444	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 0.6845	info_nce_loss:             0.0000	loss:                      0.0105
+q_loss:                    0.0102	q_taken_mean:              0.0262	return_mean:             -3088.1609	return_std:              194.8529
+target_mean:               0.0263	td_error_abs:              0.0790	test_action_0_mean:        0.4864	test_action_1_mean:        0.4845
+test_action_2_mean:        0.0290	test_ep_length_mean:      20.0000	test_return_mean:        -1686.2130	test_return_std:          95.8073
+
+2026-04-30 02:43:35,355 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - t_env: 725020 / 2050000
+2026-04-30 02:43:35,356 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Estimated time left: 7 hours, 55 minutes, 48 seconds. Time passed: 4 hours, 32 minutes, 36 seconds
+2026-04-30 02:52:33,214 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Recent Stats | t_env:     750000 | Episode:    37500
+action_0_mean:             0.4732	action_1_mean:             0.4822	action_2_mean:             0.0445	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 0.7083	info_nce_loss:             0.0000	loss:                      0.0101
+q_loss:                    0.0101	q_taken_mean:              0.0264	return_mean:             -3057.5382	return_std:              189.3229
+target_mean:               0.0264	td_error_abs:              0.0786	test_action_0_mean:        0.4933	test_action_1_mean:        0.4778
+test_action_2_mean:        0.0290	test_ep_length_mean:      20.0000	test_return_mean:        -1660.3281	test_return_std:          95.9767
+
+2026-04-30 02:52:33,637 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - t_env: 750020 / 2050000
+2026-04-30 02:52:33,638 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Estimated time left: 7 hours, 46 minutes, 30 seconds. Time passed: 4 hours, 41 minutes, 35 seconds
+2026-04-30 02:52:47,788 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Saving models to work_dirs/my_experiment/IMPowf100_ExpoComm_44/my_run/20260429_221053/models/750020
+2026-04-30 03:01:31,497 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Recent Stats | t_env:     775000 | Episode:    38750
+action_0_mean:             0.4817	action_1_mean:             0.4737	action_2_mean:             0.0446	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 0.7194	info_nce_loss:             0.0000	loss:                      0.0107
+q_loss:                    0.0107	q_taken_mean:              0.0265	return_mean:             -3029.7988	return_std:              186.3115
+target_mean:               0.0266	td_error_abs:              0.0810	test_action_0_mean:        0.4990	test_action_1_mean:        0.4720
+test_action_2_mean:        0.0290	test_ep_length_mean:      20.0000	test_return_mean:        -1635.6274	test_return_std:          99.6982
+
+2026-04-30 03:01:31,916 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - t_env: 775020 / 2050000
+2026-04-30 03:01:31,917 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Estimated time left: 7 hours, 37 minutes, 31 seconds. Time passed: 4 hours, 50 minutes, 33 seconds
+2026-04-30 03:10:29,149 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Recent Stats | t_env:     800000 | Episode:    40000
+action_0_mean:             0.4887	action_1_mean:             0.4666	action_2_mean:             0.0446	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 0.6572	info_nce_loss:             0.0000	loss:                      0.0109
+q_loss:                    0.0109	q_taken_mean:              0.0267	return_mean:             -3005.6348	return_std:              189.1653
+target_mean:               0.0267	td_error_abs:              0.0820	test_action_0_mean:        0.5077	test_action_1_mean:        0.4632
+test_action_2_mean:        0.0290	test_ep_length_mean:      20.0000	test_return_mean:        -1609.7935	test_return_std:         102.9259
+
+2026-04-30 03:10:29,562 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - t_env: 800020 / 2050000
+2026-04-30 03:10:29,563 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Estimated time left: 7 hours, 28 minutes, 1 seconds. Time passed: 4 hours, 59 minutes, 31 seconds
+2026-04-30 03:10:43,636 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Saving models to work_dirs/my_experiment/IMPowf100_ExpoComm_44/my_run/20260429_221053/models/800020
+2026-04-30 03:19:27,401 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Recent Stats | t_env:     825000 | Episode:    41250
+action_0_mean:             0.4919	action_1_mean:             0.4634	action_2_mean:             0.0446	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 0.6702	info_nce_loss:             0.0000	loss:                      0.0114
+q_loss:                    0.0114	q_taken_mean:              0.0268	return_mean:             -2983.6270	return_std:              185.2262
+target_mean:               0.0268	td_error_abs:              0.0837	test_action_0_mean:        0.5029	test_action_1_mean:        0.4683
+test_action_2_mean:        0.0288	test_ep_length_mean:      20.0000	test_return_mean:        -1587.4438	test_return_std:         100.7691
+
+2026-04-30 03:19:27,825 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - t_env: 825020 / 2050000
+2026-04-30 03:19:27,826 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Estimated time left: 7 hours, 19 minutes, 34 seconds. Time passed: 5 hours, 8 minutes, 29 seconds
+2026-04-30 03:28:25,608 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Recent Stats | t_env:     850000 | Episode:    42500
+action_0_mean:             0.4919	action_1_mean:             0.4636	action_2_mean:             0.0445	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 0.5351	info_nce_loss:             0.0000	loss:                      0.0120
+q_loss:                    0.0120	q_taken_mean:              0.0268	return_mean:             -2978.5447	return_std:              185.1635
+target_mean:               0.0268	td_error_abs:              0.0860	test_action_0_mean:        0.5031	test_action_1_mean:        0.4683
+test_action_2_mean:        0.0286	test_ep_length_mean:      20.0000	test_return_mean:        -1584.7822	test_return_std:         104.1326
+
+2026-04-30 03:28:26,032 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - t_env: 850020 / 2050000
+2026-04-30 03:28:26,033 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Estimated time left: 7 hours, 10 minutes, 33 seconds. Time passed: 5 hours, 17 minutes, 27 seconds
+2026-04-30 03:28:40,210 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Saving models to work_dirs/my_experiment/IMPowf100_ExpoComm_44/my_run/20260429_221053/models/850020
+2026-04-30 03:37:24,481 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Recent Stats | t_env:     875000 | Episode:    43750
+action_0_mean:             0.4918	action_1_mean:             0.4638	action_2_mean:             0.0445	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 0.7406	info_nce_loss:             0.0000	loss:                      0.0126
+q_loss:                    0.0126	q_taken_mean:              0.0268	return_mean:             -2979.8551	return_std:              187.5625
+target_mean:               0.0268	td_error_abs:              0.0882	test_action_0_mean:        0.5023	test_action_1_mean:        0.4691
+test_action_2_mean:        0.0286	test_ep_length_mean:      20.0000	test_return_mean:        -1579.2122	test_return_std:         104.9816
+
+2026-04-30 03:37:24,901 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - t_env: 875020 / 2050000
+2026-04-30 03:37:24,902 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Estimated time left: 7 hours, 2 minutes, 6 seconds. Time passed: 5 hours, 26 minutes, 26 seconds
+2026-04-30 03:46:23,961 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Recent Stats | t_env:     900000 | Episode:    45000
+action_0_mean:             0.4915	action_1_mean:             0.4640	action_2_mean:             0.0445	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 0.8185	info_nce_loss:             0.0000	loss:                      0.0125
+q_loss:                    0.0125	q_taken_mean:              0.0269	return_mean:             -2981.5000	return_std:              188.2206
+target_mean:               0.0269	td_error_abs:              0.0879	test_action_0_mean:        0.5023	test_action_1_mean:        0.4692
+test_action_2_mean:        0.0285	test_ep_length_mean:      20.0000	test_return_mean:        -1573.8744	test_return_std:         102.7798
+
+2026-04-30 03:46:24,375 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - t_env: 900020 / 2050000
+2026-04-30 03:46:24,376 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Estimated time left: 6 hours, 53 minutes, 35 seconds. Time passed: 5 hours, 35 minutes, 25 seconds
+2026-04-30 03:46:38,489 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Saving models to work_dirs/my_experiment/IMPowf100_ExpoComm_44/my_run/20260429_221053/models/900020
+2026-04-30 03:55:22,440 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Recent Stats | t_env:     925000 | Episode:    46250
+action_0_mean:             0.4911	action_1_mean:             0.4643	action_2_mean:             0.0445	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 0.7974	info_nce_loss:             0.0000	loss:                      0.0128
+q_loss:                    0.0128	q_taken_mean:              0.0269	return_mean:             -2978.9245	return_std:              183.7152
+target_mean:               0.0269	td_error_abs:              0.0891	test_action_0_mean:        0.5019	test_action_1_mean:        0.4694
+test_action_2_mean:        0.0287	test_ep_length_mean:      20.0000	test_return_mean:        -1577.1871	test_return_std:         100.3350
+
+2026-04-30 03:55:22,862 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - t_env: 925020 / 2050000
+2026-04-30 03:55:22,863 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Estimated time left: 6 hours, 43 minutes, 51 seconds. Time passed: 5 hours, 44 minutes, 24 seconds
+2026-04-30 04:04:19,963 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Recent Stats | t_env:     950000 | Episode:    47500
+action_0_mean:             0.4907	action_1_mean:             0.4647	action_2_mean:             0.0446	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 0.8291	info_nce_loss:             0.0011	loss:                      0.0129
+q_loss:                    0.0127	q_taken_mean:              0.0269	return_mean:             -2978.5996	return_std:              185.2130
+target_mean:               0.0269	td_error_abs:              0.0891	test_action_0_mean:        0.5017	test_action_1_mean:        0.4695
+test_action_2_mean:        0.0287	test_ep_length_mean:      20.0000	test_return_mean:        -1577.2710	test_return_std:         100.5256
+
+2026-04-30 04:04:20,388 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - t_env: 950020 / 2050000
+2026-04-30 04:04:20,389 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Estimated time left: 6 hours, 34 minutes, 10 seconds. Time passed: 5 hours, 53 minutes, 21 seconds
+2026-04-30 04:04:34,469 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Saving models to work_dirs/my_experiment/IMPowf100_ExpoComm_44/my_run/20260429_221053/models/950020
+2026-04-30 04:13:17,188 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Recent Stats | t_env:     975000 | Episode:    48750
+action_0_mean:             0.4903	action_1_mean:             0.4650	action_2_mean:             0.0446	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 1.0284	info_nce_loss:             0.0011	loss:                      0.0125
+q_loss:                    0.0122	q_taken_mean:              0.0268	return_mean:             -2981.5468	return_std:              184.0854
+target_mean:               0.0269	td_error_abs:              0.0873	test_action_0_mean:        0.5017	test_action_1_mean:        0.4696
+test_action_2_mean:        0.0287	test_ep_length_mean:      20.0000	test_return_mean:        -1579.2662	test_return_std:          97.9925
+
+2026-04-30 04:13:17,613 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - t_env: 975020 / 2050000
+2026-04-30 04:13:17,614 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Estimated time left: 6 hours, 25 minutes, 0 seconds. Time passed: 6 hours, 2 minutes, 19 seconds
+2026-04-30 04:22:14,299 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Recent Stats | t_env:    1000000 | Episode:    50000
+action_0_mean:             0.4905	action_1_mean:             0.4649	action_2_mean:             0.0446	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 0.8641	info_nce_loss:             0.0011	loss:                      0.0125
+q_loss:                    0.0122	q_taken_mean:              0.0269	return_mean:             -2979.7328	return_std:              182.8852
+target_mean:               0.0269	td_error_abs:              0.0873	test_action_0_mean:        0.5025	test_action_1_mean:        0.4689
+test_action_2_mean:        0.0286	test_ep_length_mean:      20.0000	test_return_mean:        -1578.9515	test_return_std:          93.7844
+
+2026-04-30 04:22:14,737 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - t_env: 1000020 / 2050000
+2026-04-30 04:22:14,737 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Estimated time left: 6 hours, 15 minutes, 58 seconds. Time passed: 6 hours, 11 minutes, 16 seconds
+2026-04-30 04:22:28,803 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Saving models to work_dirs/my_experiment/IMPowf100_ExpoComm_44/my_run/20260429_221053/models/1000020
+2026-04-30 04:31:11,419 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Recent Stats | t_env:    1025000 | Episode:    51250
+action_0_mean:             0.4911	action_1_mean:             0.4643	action_2_mean:             0.0446	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 0.7406	info_nce_loss:             0.0011	loss:                      0.0128
+q_loss:                    0.0126	q_taken_mean:              0.0268	return_mean:             -2982.8779	return_std:              181.9871
+target_mean:               0.0268	td_error_abs:              0.0884	test_action_0_mean:        0.5031	test_action_1_mean:        0.4682
+test_action_2_mean:        0.0287	test_ep_length_mean:      20.0000	test_return_mean:        -1583.5743	test_return_std:          89.2455
+
+2026-04-30 04:31:11,847 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - t_env: 1025020 / 2050000
+2026-04-30 04:31:11,847 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Estimated time left: 6 hours, 7 minutes, 1 seconds. Time passed: 6 hours, 20 minutes, 13 seconds
+2026-04-30 04:40:07,852 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Recent Stats | t_env:    1050000 | Episode:    52500
+action_0_mean:             0.4915	action_1_mean:             0.4639	action_2_mean:             0.0447	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 0.7863	info_nce_loss:             0.0011	loss:                      0.0132
+q_loss:                    0.0130	q_taken_mean:              0.0268	return_mean:             -2984.2481	return_std:              183.4004
+target_mean:               0.0268	td_error_abs:              0.0899	test_action_0_mean:        0.5035	test_action_1_mean:        0.4679
+test_action_2_mean:        0.0286	test_ep_length_mean:      20.0000	test_return_mean:        -1579.7901	test_return_std:          85.9963
+
+2026-04-30 04:40:08,274 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - t_env: 1050020 / 2050000
+2026-04-30 04:40:08,275 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Estimated time left: 5 hours, 57 minutes, 36 seconds. Time passed: 6 hours, 29 minutes, 9 seconds
+2026-04-30 04:40:22,364 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Saving models to work_dirs/my_experiment/IMPowf100_ExpoComm_44/my_run/20260429_221053/models/1050020
+2026-04-30 04:49:05,038 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Recent Stats | t_env:    1075000 | Episode:    53750
+action_0_mean:             0.4922	action_1_mean:             0.4632	action_2_mean:             0.0446	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 0.9604	info_nce_loss:             0.0000	loss:                      0.0134
+q_loss:                    0.0134	q_taken_mean:              0.0267	return_mean:             -2984.5194	return_std:              183.0951
+target_mean:               0.0267	td_error_abs:              0.0913	test_action_0_mean:        0.5047	test_action_1_mean:        0.4668
+test_action_2_mean:        0.0285	test_ep_length_mean:      20.0000	test_return_mean:        -1584.7991	test_return_std:          85.8406
+
+2026-04-30 04:49:05,473 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - t_env: 1075020 / 2050000
+2026-04-30 04:49:05,474 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Estimated time left: 5 hours, 49 minutes, 10 seconds. Time passed: 6 hours, 38 minutes, 6 seconds
+2026-04-30 04:58:01,338 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Recent Stats | t_env:    1100000 | Episode:    55000
+action_0_mean:             0.4934	action_1_mean:             0.4620	action_2_mean:             0.0446	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 0.8018	info_nce_loss:             0.0000	loss:                      0.0141
+q_loss:                    0.0141	q_taken_mean:              0.0267	return_mean:             -2983.6040	return_std:              183.6970
+target_mean:               0.0267	td_error_abs:              0.0933	test_action_0_mean:        0.5061	test_action_1_mean:        0.4653
+test_action_2_mean:        0.0286	test_ep_length_mean:      20.0000	test_return_mean:        -1589.2192	test_return_std:          85.2459
+
+2026-04-30 04:58:01,763 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - t_env: 1100020 / 2050000
+2026-04-30 04:58:01,764 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Estimated time left: 5 hours, 39 minutes, 38 seconds. Time passed: 6 hours, 47 minutes, 3 seconds
+2026-04-30 04:58:15,839 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Saving models to work_dirs/my_experiment/IMPowf100_ExpoComm_44/my_run/20260429_221053/models/1100020
+2026-04-30 05:06:58,161 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Recent Stats | t_env:    1125000 | Episode:    56250
+action_0_mean:             0.4944	action_1_mean:             0.4610	action_2_mean:             0.0446	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 0.7371	info_nce_loss:             0.0000	loss:                      0.0145
+q_loss:                    0.0145	q_taken_mean:              0.0267	return_mean:             -2985.4197	return_std:              183.4371
+target_mean:               0.0267	td_error_abs:              0.0946	test_action_0_mean:        0.5059	test_action_1_mean:        0.4654
+test_action_2_mean:        0.0287	test_ep_length_mean:      20.0000	test_return_mean:        -1591.7227	test_return_std:          88.1464
+
+2026-04-30 05:06:58,584 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - t_env: 1125020 / 2050000
+2026-04-30 05:06:58,584 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Estimated time left: 5 hours, 31 minutes, 1 seconds. Time passed: 6 hours, 56 minutes, 0 seconds
+2026-04-30 05:15:54,997 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Recent Stats | t_env:    1150000 | Episode:    57500
+action_0_mean:             0.4944	action_1_mean:             0.4610	action_2_mean:             0.0446	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 0.7524	info_nce_loss:             0.0000	loss:                      0.0144
+q_loss:                    0.0144	q_taken_mean:              0.0267	return_mean:             -2984.3044	return_std:              183.6269
+target_mean:               0.0267	td_error_abs:              0.0942	test_action_0_mean:        0.5061	test_action_1_mean:        0.4654
+test_action_2_mean:        0.0285	test_ep_length_mean:      20.0000	test_return_mean:        -1588.8932	test_return_std:          90.6810
+
+2026-04-30 05:15:55,424 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - t_env: 1150020 / 2050000
+2026-04-30 05:15:55,425 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Estimated time left: 5 hours, 22 minutes, 5 seconds. Time passed: 7 hours, 4 minutes, 56 seconds
+2026-04-30 05:16:09,576 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Saving models to work_dirs/my_experiment/IMPowf100_ExpoComm_44/my_run/20260429_221053/models/1150020
+2026-04-30 05:24:52,140 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Recent Stats | t_env:    1175000 | Episode:    58750
+action_0_mean:             0.4946	action_1_mean:             0.4609	action_2_mean:             0.0445	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 0.8298	info_nce_loss:             0.0000	loss:                      0.0142
+q_loss:                    0.0142	q_taken_mean:              0.0266	return_mean:             -2982.6923	return_std:              182.1572
+target_mean:               0.0266	td_error_abs:              0.0931	test_action_0_mean:        0.5055	test_action_1_mean:        0.4659
+test_action_2_mean:        0.0286	test_ep_length_mean:      20.0000	test_return_mean:        -1595.4927	test_return_std:          93.9746
+
+2026-04-30 05:24:52,566 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - t_env: 1175020 / 2050000
+2026-04-30 05:24:52,566 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Estimated time left: 5 hours, 13 minutes, 19 seconds. Time passed: 7 hours, 13 minutes, 54 seconds
+2026-04-30 05:33:48,809 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Recent Stats | t_env:    1200000 | Episode:    60000
+action_0_mean:             0.4943	action_1_mean:             0.4613	action_2_mean:             0.0444	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 0.8031	info_nce_loss:             0.0000	loss:                      0.0143
+q_loss:                    0.0143	q_taken_mean:              0.0266	return_mean:             -2981.7179	return_std:              181.7427
+target_mean:               0.0266	td_error_abs:              0.0931	test_action_0_mean:        0.5046	test_action_1_mean:        0.4668
+test_action_2_mean:        0.0286	test_ep_length_mean:      20.0000	test_return_mean:        -1589.4871	test_return_std:          96.9439
+
+2026-04-30 05:33:49,229 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - t_env: 1200020 / 2050000
+2026-04-30 05:33:49,230 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Estimated time left: 5 hours, 4 minutes, 6 seconds. Time passed: 7 hours, 22 minutes, 50 seconds
+2026-04-30 05:34:03,277 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Saving models to work_dirs/my_experiment/IMPowf100_ExpoComm_44/my_run/20260429_221053/models/1200020
+2026-04-30 05:42:45,078 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Recent Stats | t_env:    1225000 | Episode:    61250
+action_0_mean:             0.4937	action_1_mean:             0.4619	action_2_mean:             0.0444	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 0.7913	info_nce_loss:             0.0000	loss:                      0.0145
+q_loss:                    0.0145	q_taken_mean:              0.0266	return_mean:             -2979.4191	return_std:              181.6121
+target_mean:               0.0266	td_error_abs:              0.0940	test_action_0_mean:        0.5035	test_action_1_mean:        0.4680
+test_action_2_mean:        0.0284	test_ep_length_mean:      20.0000	test_return_mean:        -1585.6145	test_return_std:          96.4452
+
+2026-04-30 05:42:45,505 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - t_env: 1225020 / 2050000
+2026-04-30 05:42:45,506 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Estimated time left: 4 hours, 54 minutes, 56 seconds. Time passed: 7 hours, 31 minutes, 46 seconds
+2026-04-30 05:52:17,425 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Recent Stats | t_env:    1250000 | Episode:    62500
+action_0_mean:             0.4933	action_1_mean:             0.4623	action_2_mean:             0.0444	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 0.8296	info_nce_loss:             0.0000	loss:                      0.0147
+q_loss:                    0.0147	q_taken_mean:              0.0266	return_mean:             -2977.7597	return_std:              180.9286
+target_mean:               0.0266	td_error_abs:              0.0944	test_action_0_mean:        0.5041	test_action_1_mean:        0.4674
+test_action_2_mean:        0.0285	test_ep_length_mean:      20.0000	test_return_mean:        -1587.8738	test_return_std:          92.9799
+
+2026-04-30 05:52:17,926 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - t_env: 1250020 / 2050000
+2026-04-30 05:52:17,927 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Estimated time left: 5 hours, 5 minutes, 17 seconds. Time passed: 7 hours, 41 minutes, 19 seconds
+2026-04-30 05:52:32,075 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Saving models to work_dirs/my_experiment/IMPowf100_ExpoComm_44/my_run/20260429_221053/models/1250020
+2026-04-30 06:02:56,141 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Recent Stats | t_env:    1275000 | Episode:    63750
+action_0_mean:             0.4932	action_1_mean:             0.4624	action_2_mean:             0.0444	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 0.8899	info_nce_loss:             0.0000	loss:                      0.0153
+q_loss:                    0.0153	q_taken_mean:              0.0266	return_mean:             -2977.7675	return_std:              182.0720
+target_mean:               0.0267	td_error_abs:              0.0961	test_action_0_mean:        0.5042	test_action_1_mean:        0.4672
+test_action_2_mean:        0.0286	test_ep_length_mean:      20.0000	test_return_mean:        -1589.1348	test_return_std:          93.8571
+
+2026-04-30 06:02:56,669 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - t_env: 1275020 / 2050000
+2026-04-30 06:02:56,669 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Estimated time left: 5 hours, 30 minutes, 0 seconds. Time passed: 7 hours, 51 minutes, 58 seconds
+2026-04-30 06:13:42,851 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Recent Stats | t_env:    1300000 | Episode:    65000
+action_0_mean:             0.4933	action_1_mean:             0.4623	action_2_mean:             0.0444	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 0.7680	info_nce_loss:             0.0000	loss:                      0.0158
+q_loss:                    0.0158	q_taken_mean:              0.0267	return_mean:             -2979.2292	return_std:              182.5885
+target_mean:               0.0268	td_error_abs:              0.0976	test_action_0_mean:        0.5044	test_action_1_mean:        0.4672
+test_action_2_mean:        0.0283	test_ep_length_mean:      20.0000	test_return_mean:        -1578.8647	test_return_std:          95.2924
+
+2026-04-30 06:13:43,385 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - t_env: 1300020 / 2050000
+2026-04-30 06:13:43,386 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Estimated time left: 5 hours, 23 minutes, 20 seconds. Time passed: 8 hours, 2 minutes, 44 seconds
+2026-04-30 06:13:57,570 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Saving models to work_dirs/my_experiment/IMPowf100_ExpoComm_44/my_run/20260429_221053/models/1300020
+2026-04-30 06:24:04,770 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Recent Stats | t_env:    1325000 | Episode:    66250
+action_0_mean:             0.4935	action_1_mean:             0.4620	action_2_mean:             0.0444	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 0.7027	info_nce_loss:             0.0000	loss:                      0.0162
+q_loss:                    0.0162	q_taken_mean:              0.0268	return_mean:             -2980.4626	return_std:              181.2359
+target_mean:               0.0268	td_error_abs:              0.0990	test_action_0_mean:        0.5043	test_action_1_mean:        0.4674
+test_action_2_mean:        0.0283	test_ep_length_mean:      20.0000	test_return_mean:        -1578.7247	test_return_std:          91.5204
+
+2026-04-30 06:24:05,225 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - t_env: 1325020 / 2050000
+2026-04-30 06:24:05,226 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Estimated time left: 5 hours, 32 seconds. Time passed: 8 hours, 13 minutes, 6 seconds
+2026-04-30 06:33:33,601 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Recent Stats | t_env:    1350000 | Episode:    67500
+action_0_mean:             0.4935	action_1_mean:             0.4620	action_2_mean:             0.0445	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 1.0119	info_nce_loss:             0.0000	loss:                      0.0161
+q_loss:                    0.0161	q_taken_mean:              0.0269	return_mean:             -2981.2722	return_std:              182.6311
+target_mean:               0.0268	td_error_abs:              0.0987	test_action_0_mean:        0.5047	test_action_1_mean:        0.4671
+test_action_2_mean:        0.0282	test_ep_length_mean:      20.0000	test_return_mean:        -1572.7578	test_return_std:          93.3432
+
+2026-04-30 06:33:34,061 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - t_env: 1350020 / 2050000
+2026-04-30 06:33:34,062 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Estimated time left: 4 hours, 25 minutes, 26 seconds. Time passed: 8 hours, 22 minutes, 35 seconds
+2026-04-30 06:33:48,113 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Saving models to work_dirs/my_experiment/IMPowf100_ExpoComm_44/my_run/20260429_221053/models/1350020
+2026-04-30 06:42:59,325 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Recent Stats | t_env:    1375000 | Episode:    68750
+action_0_mean:             0.4936	action_1_mean:             0.4620	action_2_mean:             0.0444	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 1.0121	info_nce_loss:             0.0000	loss:                      0.0163
+q_loss:                    0.0163	q_taken_mean:              0.0268	return_mean:             -2983.4432	return_std:              183.2470
+target_mean:               0.0268	td_error_abs:              0.0992	test_action_0_mean:        0.5047	test_action_1_mean:        0.4672
+test_action_2_mean:        0.0281	test_ep_length_mean:      20.0000	test_return_mean:        -1572.4362	test_return_std:         101.5876
+
+2026-04-30 06:42:59,767 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - t_env: 1375020 / 2050000
+2026-04-30 06:42:59,768 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Estimated time left: 4 hours, 14 minutes, 33 seconds. Time passed: 8 hours, 32 minutes, 1 seconds
+2026-04-30 06:52:25,210 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Recent Stats | t_env:    1400000 | Episode:    70000
+action_0_mean:             0.4939	action_1_mean:             0.4617	action_2_mean:             0.0444	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 1.0011	info_nce_loss:             0.0000	loss:                      0.0169
+q_loss:                    0.0169	q_taken_mean:              0.0268	return_mean:             -2980.7890	return_std:              182.1129
+target_mean:               0.0268	td_error_abs:              0.1010	test_action_0_mean:        0.5047	test_action_1_mean:        0.4670
+test_action_2_mean:        0.0283	test_ep_length_mean:      20.0000	test_return_mean:        -1577.2469	test_return_std:         102.3285
+
+2026-04-30 06:52:25,671 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - t_env: 1400020 / 2050000
+2026-04-30 06:52:25,671 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Estimated time left: 4 hours, 5 minutes, 13 seconds. Time passed: 8 hours, 41 minutes, 27 seconds
+2026-04-30 06:52:39,716 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Saving models to work_dirs/my_experiment/IMPowf100_ExpoComm_44/my_run/20260429_221053/models/1400020
+2026-04-30 07:01:51,830 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Recent Stats | t_env:    1425000 | Episode:    71250
+action_0_mean:             0.4943	action_1_mean:             0.4612	action_2_mean:             0.0445	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 1.0614	info_nce_loss:             0.0000	loss:                      0.0185
+q_loss:                    0.0185	q_taken_mean:              0.0268	return_mean:             -2981.7337	return_std:              181.8443
+target_mean:               0.0268	td_error_abs:              0.1050	test_action_0_mean:        0.5043	test_action_1_mean:        0.4673
+test_action_2_mean:        0.0285	test_ep_length_mean:      20.0000	test_return_mean:        -1581.3745	test_return_std:         100.1108
+
+2026-04-30 07:01:52,277 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - t_env: 1425020 / 2050000
+2026-04-30 07:01:52,278 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Estimated time left: 3 hours, 56 minutes, 4 seconds. Time passed: 8 hours, 50 minutes, 53 seconds
+2026-04-30 07:11:18,350 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Recent Stats | t_env:    1450000 | Episode:    72500
+action_0_mean:             0.4938	action_1_mean:             0.4617	action_2_mean:             0.0445	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 1.4152	info_nce_loss:             0.0000	loss:                      0.0190
+q_loss:                    0.0190	q_taken_mean:              0.0270	return_mean:             -2980.4029	return_std:              182.4667
+target_mean:               0.0269	td_error_abs:              0.1068	test_action_0_mean:        0.5048	test_action_1_mean:        0.4667
+test_action_2_mean:        0.0284	test_ep_length_mean:      20.0000	test_return_mean:        -1579.1838	test_return_std:         101.2025
+
+2026-04-30 07:11:18,802 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - t_env: 1450020 / 2050000
+2026-04-30 07:11:18,803 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Estimated time left: 3 hours, 46 minutes, 36 seconds. Time passed: 9 hours, 20 seconds
+2026-04-30 07:11:32,853 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Saving models to work_dirs/my_experiment/IMPowf100_ExpoComm_44/my_run/20260429_221053/models/1450020
+2026-04-30 07:20:44,383 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Recent Stats | t_env:    1475000 | Episode:    73750
+action_0_mean:             0.4936	action_1_mean:             0.4619	action_2_mean:             0.0445	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 1.1335	info_nce_loss:             0.0000	loss:                      0.0193
+q_loss:                    0.0193	q_taken_mean:              0.0270	return_mean:             -2982.7146	return_std:              182.3768
+target_mean:               0.0270	td_error_abs:              0.1078	test_action_0_mean:        0.5042	test_action_1_mean:        0.4674
+test_action_2_mean:        0.0285	test_ep_length_mean:      20.0000	test_return_mean:        -1583.9735	test_return_std:         102.7849
+
+2026-04-30 07:20:44,827 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - t_env: 1475020 / 2050000
+2026-04-30 07:20:44,827 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Estimated time left: 3 hours, 36 minutes, 58 seconds. Time passed: 9 hours, 9 minutes, 46 seconds
+2026-04-30 07:30:10,549 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Recent Stats | t_env:    1500000 | Episode:    75000
+action_0_mean:             0.4934	action_1_mean:             0.4621	action_2_mean:             0.0445	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 1.0862	info_nce_loss:             0.0000	loss:                      0.0195
+q_loss:                    0.0195	q_taken_mean:              0.0272	return_mean:             -2981.7645	return_std:              182.3186
+target_mean:               0.0272	td_error_abs:              0.1081	test_action_0_mean:        0.5043	test_action_1_mean:        0.4672
+test_action_2_mean:        0.0286	test_ep_length_mean:      20.0000	test_return_mean:        -1584.5591	test_return_std:          95.6687
+
+2026-04-30 07:30:11,010 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - t_env: 1500020 / 2050000
+2026-04-30 07:30:11,010 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Estimated time left: 3 hours, 27 minutes, 35 seconds. Time passed: 9 hours, 19 minutes, 12 seconds
+2026-04-30 07:30:25,018 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Saving models to work_dirs/my_experiment/IMPowf100_ExpoComm_44/my_run/20260429_221053/models/1500020
+2026-04-30 07:39:37,439 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Recent Stats | t_env:    1525000 | Episode:    76250
+action_0_mean:             0.4930	action_1_mean:             0.4626	action_2_mean:             0.0445	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 1.1958	info_nce_loss:             0.0000	loss:                      0.0199
+q_loss:                    0.0199	q_taken_mean:              0.0273	return_mean:             -2981.6709	return_std:              183.4727
+target_mean:               0.0273	td_error_abs:              0.1094	test_action_0_mean:        0.5038	test_action_1_mean:        0.4679
+test_action_2_mean:        0.0283	test_ep_length_mean:      20.0000	test_return_mean:        -1578.4480	test_return_std:          95.1900
+
+2026-04-30 07:39:37,887 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - t_env: 1525020 / 2050000
+2026-04-30 07:39:37,887 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Estimated time left: 3 hours, 18 minutes, 23 seconds. Time passed: 9 hours, 28 minutes, 39 seconds
+2026-04-30 07:49:03,843 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Recent Stats | t_env:    1550000 | Episode:    77500
+action_0_mean:             0.4925	action_1_mean:             0.4631	action_2_mean:             0.0444	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 1.2867	info_nce_loss:             0.0000	loss:                      0.0196
+q_loss:                    0.0196	q_taken_mean:              0.0274	return_mean:             -2981.9104	return_std:              185.0993
+target_mean:               0.0274	td_error_abs:              0.1088	test_action_0_mean:        0.5050	test_action_1_mean:        0.4668
+test_action_2_mean:        0.0282	test_ep_length_mean:      20.0000	test_return_mean:        -1584.2055	test_return_std:          97.5717
+
+2026-04-30 07:49:04,292 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - t_env: 1550020 / 2050000
+2026-04-30 07:49:04,293 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Estimated time left: 3 hours, 8 minutes, 47 seconds. Time passed: 9 hours, 38 minutes, 5 seconds
+2026-04-30 07:49:18,375 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Saving models to work_dirs/my_experiment/IMPowf100_ExpoComm_44/my_run/20260429_221053/models/1550020
+2026-04-30 07:58:31,176 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Recent Stats | t_env:    1575000 | Episode:    78750
+action_0_mean:             0.4927	action_1_mean:             0.4629	action_2_mean:             0.0444	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 0.9013	info_nce_loss:             0.0000	loss:                      0.0196
+q_loss:                    0.0196	q_taken_mean:              0.0274	return_mean:             -2984.0485	return_std:              186.5182
+target_mean:               0.0274	td_error_abs:              0.1086	test_action_0_mean:        0.5044	test_action_1_mean:        0.4673
+test_action_2_mean:        0.0284	test_ep_length_mean:      20.0000	test_return_mean:        -1593.2161	test_return_std:          95.3763
+
+2026-04-30 07:58:31,638 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - t_env: 1575020 / 2050000
+2026-04-30 07:58:31,638 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Estimated time left: 2 hours, 59 minutes, 39 seconds. Time passed: 9 hours, 47 minutes, 33 seconds
+2026-04-30 08:07:58,367 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Recent Stats | t_env:    1600000 | Episode:    80000
+action_0_mean:             0.4930	action_1_mean:             0.4626	action_2_mean:             0.0444	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 0.8242	info_nce_loss:             0.0000	loss:                      0.0199
+q_loss:                    0.0199	q_taken_mean:              0.0275	return_mean:             -2984.2773	return_std:              184.2292
+target_mean:               0.0275	td_error_abs:              0.1091	test_action_0_mean:        0.5054	test_action_1_mean:        0.4661
+test_action_2_mean:        0.0284	test_ep_length_mean:      20.0000	test_return_mean:        -1593.4489	test_return_std:          95.9822
+
+2026-04-30 08:07:58,810 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - t_env: 1600020 / 2050000
+2026-04-30 08:07:58,811 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Estimated time left: 2 hours, 50 minutes, 8 seconds. Time passed: 9 hours, 57 minutes, 0 seconds
+2026-04-30 08:08:12,853 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Saving models to work_dirs/my_experiment/IMPowf100_ExpoComm_44/my_run/20260429_221053/models/1600020
+2026-04-30 08:17:25,148 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Recent Stats | t_env:    1625000 | Episode:    81250
+action_0_mean:             0.4934	action_1_mean:             0.4621	action_2_mean:             0.0445	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 0.7828	info_nce_loss:             0.0000	loss:                      0.0203
+q_loss:                    0.0203	q_taken_mean:              0.0276	return_mean:             -2985.4982	return_std:              183.8471
+target_mean:               0.0276	td_error_abs:              0.1105	test_action_0_mean:        0.5055	test_action_1_mean:        0.4662
+test_action_2_mean:        0.0284	test_ep_length_mean:      20.0000	test_return_mean:        -1592.6317	test_return_std:          99.8158
+
+2026-04-30 08:17:25,601 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - t_env: 1625020 / 2050000
+2026-04-30 08:17:25,601 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Estimated time left: 2 hours, 40 minutes, 34 seconds. Time passed: 10 hours, 6 minutes, 27 seconds
+2026-04-30 08:26:51,755 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Recent Stats | t_env:    1650000 | Episode:    82500
+action_0_mean:             0.4941	action_1_mean:             0.4613	action_2_mean:             0.0446	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 0.5589	info_nce_loss:             0.0000	loss:                      0.0201
+q_loss:                    0.0201	q_taken_mean:              0.0277	return_mean:             -2988.6638	return_std:              182.8403
+target_mean:               0.0277	td_error_abs:              0.1101	test_action_0_mean:        0.5057	test_action_1_mean:        0.4660
+test_action_2_mean:        0.0283	test_ep_length_mean:      20.0000	test_return_mean:        -1588.0695	test_return_std:          97.7737
+
+2026-04-30 08:26:52,207 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - t_env: 1650020 / 2050000
+2026-04-30 08:26:52,208 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Estimated time left: 2 hours, 31 minutes, 5 seconds. Time passed: 10 hours, 15 minutes, 53 seconds
+2026-04-30 08:27:06,189 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Saving models to work_dirs/my_experiment/IMPowf100_ExpoComm_44/my_run/20260429_221053/models/1650020
+2026-04-30 08:36:18,860 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Recent Stats | t_env:    1675000 | Episode:    83750
+action_0_mean:             0.4946	action_1_mean:             0.4609	action_2_mean:             0.0446	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 0.4826	info_nce_loss:             0.0000	loss:                      0.0197
+q_loss:                    0.0197	q_taken_mean:              0.0277	return_mean:             -2989.1898	return_std:              181.4331
+target_mean:               0.0277	td_error_abs:              0.1092	test_action_0_mean:        0.5054	test_action_1_mean:        0.4663
+test_action_2_mean:        0.0282	test_ep_length_mean:      20.0000	test_return_mean:        -1584.5163	test_return_std:          97.3174
+
+2026-04-30 08:36:19,306 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - t_env: 1675020 / 2050000
+2026-04-30 08:36:19,307 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Estimated time left: 2 hours, 21 minutes, 46 seconds. Time passed: 10 hours, 25 minutes, 20 seconds
+2026-04-30 08:45:45,172 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Recent Stats | t_env:    1700000 | Episode:    85000
+action_0_mean:             0.4954	action_1_mean:             0.4601	action_2_mean:             0.0445	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 0.4876	info_nce_loss:             0.0000	loss:                      0.0203
+q_loss:                    0.0203	q_taken_mean:              0.0277	return_mean:             -2987.5962	return_std:              180.0643
+target_mean:               0.0277	td_error_abs:              0.1105	test_action_0_mean:        0.5058	test_action_1_mean:        0.4661
+test_action_2_mean:        0.0281	test_ep_length_mean:      20.0000	test_return_mean:        -1578.5636	test_return_std:          99.8722
+
+2026-04-30 08:45:45,610 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - t_env: 1700020 / 2050000
+2026-04-30 08:45:45,610 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Estimated time left: 2 hours, 12 minutes, 7 seconds. Time passed: 10 hours, 34 minutes, 47 seconds
+2026-04-30 08:45:59,633 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Saving models to work_dirs/my_experiment/IMPowf100_ExpoComm_44/my_run/20260429_221053/models/1700020
+2026-04-30 08:55:11,984 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Recent Stats | t_env:    1725000 | Episode:    86250
+action_0_mean:             0.4956	action_1_mean:             0.4599	action_2_mean:             0.0444	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 0.4830	info_nce_loss:             0.0000	loss:                      0.0213
+q_loss:                    0.0213	q_taken_mean:              0.0276	return_mean:             -2987.6769	return_std:              181.6584
+target_mean:               0.0276	td_error_abs:              0.1128	test_action_0_mean:        0.5059	test_action_1_mean:        0.4661
+test_action_2_mean:        0.0280	test_ep_length_mean:      20.0000	test_return_mean:        -1578.4513	test_return_std:          94.5989
+
+2026-04-30 08:55:12,442 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - t_env: 1725020 / 2050000
+2026-04-30 08:55:12,442 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Estimated time left: 2 hours, 2 minutes, 48 seconds. Time passed: 10 hours, 44 minutes, 13 seconds
+2026-04-30 09:04:38,860 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Recent Stats | t_env:    1750000 | Episode:    87500
+action_0_mean:             0.4955	action_1_mean:             0.4601	action_2_mean:             0.0444	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 0.6535	info_nce_loss:             0.0000	loss:                      0.0221
+q_loss:                    0.0217	q_taken_mean:              0.0275	return_mean:             -2987.2062	return_std:              182.2756
+target_mean:               0.0275	td_error_abs:              0.1137	test_action_0_mean:        0.5055	test_action_1_mean:        0.4665
+test_action_2_mean:        0.0280	test_ep_length_mean:      20.0000	test_return_mean:        -1577.8634	test_return_std:          93.5641
+
+2026-04-30 09:04:39,303 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - t_env: 1750020 / 2050000
+2026-04-30 09:04:39,304 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Estimated time left: 1 hours, 53 minutes, 21 seconds. Time passed: 10 hours, 53 minutes, 40 seconds
+2026-04-30 09:04:53,278 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Saving models to work_dirs/my_experiment/IMPowf100_ExpoComm_44/my_run/20260429_221053/models/1750020
+2026-04-30 09:14:06,562 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Recent Stats | t_env:    1775000 | Episode:    88750
+action_0_mean:             0.4952	action_1_mean:             0.4606	action_2_mean:             0.0442	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 0.7116	info_nce_loss:             0.0000	loss:                      0.0223
+q_loss:                    0.0218	q_taken_mean:              0.0275	return_mean:             -2985.6257	return_std:              182.2516
+target_mean:               0.0275	td_error_abs:              0.1140	test_action_0_mean:        0.5059	test_action_1_mean:        0.4659
+test_action_2_mean:        0.0281	test_ep_length_mean:      20.0000	test_return_mean:        -1585.7876	test_return_std:          93.3211
+
+2026-04-30 09:14:07,009 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - t_env: 1775020 / 2050000
+2026-04-30 09:14:07,009 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Estimated time left: 1 hours, 44 minutes, 4 seconds. Time passed: 11 hours, 3 minutes, 8 seconds
+2026-04-30 09:23:33,830 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Recent Stats | t_env:    1800000 | Episode:    90000
+action_0_mean:             0.4953	action_1_mean:             0.4605	action_2_mean:             0.0442	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 0.7263	info_nce_loss:             0.0000	loss:                      0.0225
+q_loss:                    0.0221	q_taken_mean:              0.0275	return_mean:             -2984.0068	return_std:              181.6125
+target_mean:               0.0276	td_error_abs:              0.1143	test_action_0_mean:        0.5059	test_action_1_mean:        0.4659
+test_action_2_mean:        0.0282	test_ep_length_mean:      20.0000	test_return_mean:        -1584.1599	test_return_std:          92.1504
+
+2026-04-30 09:23:34,286 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - t_env: 1800020 / 2050000
+2026-04-30 09:23:34,286 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Estimated time left: 1 hours, 34 minutes, 32 seconds. Time passed: 11 hours, 12 minutes, 35 seconds
+2026-04-30 09:23:48,288 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Saving models to work_dirs/my_experiment/IMPowf100_ExpoComm_44/my_run/20260429_221053/models/1800020
+2026-04-30 09:33:01,751 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Recent Stats | t_env:    1825000 | Episode:    91250
+action_0_mean:             0.4950	action_1_mean:             0.4608	action_2_mean:             0.0442	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 0.6302	info_nce_loss:             0.0000	loss:                      0.0229
+q_loss:                    0.0225	q_taken_mean:              0.0276	return_mean:             -2986.5332	return_std:              181.9073
+target_mean:               0.0276	td_error_abs:              0.1154	test_action_0_mean:        0.5061	test_action_1_mean:        0.4656
+test_action_2_mean:        0.0283	test_ep_length_mean:      20.0000	test_return_mean:        -1587.8653	test_return_std:          92.7018
+
+2026-04-30 09:33:02,198 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - t_env: 1825020 / 2050000
+2026-04-30 09:33:02,199 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Estimated time left: 1 hours, 25 minutes, 10 seconds. Time passed: 11 hours, 22 minutes, 3 seconds
+2026-04-30 09:42:28,965 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Recent Stats | t_env:    1850000 | Episode:    92500
+action_0_mean:             0.4949	action_1_mean:             0.4608	action_2_mean:             0.0443	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 1.2731	info_nce_loss:             0.0000	loss:                      0.0228
+q_loss:                    0.0224	q_taken_mean:              0.0277	return_mean:             -2989.1317	return_std:              182.9904
+target_mean:               0.0276	td_error_abs:              0.1153	test_action_0_mean:        0.5070	test_action_1_mean:        0.4646
+test_action_2_mean:        0.0285	test_ep_length_mean:      20.0000	test_return_mean:        -1602.0322	test_return_std:          94.1578
+
+2026-04-30 09:42:29,419 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - t_env: 1850020 / 2050000
+2026-04-30 09:42:29,419 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Estimated time left: 1 hours, 15 minutes, 37 seconds. Time passed: 11 hours, 31 minutes, 30 seconds
+2026-04-30 09:42:43,438 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Saving models to work_dirs/my_experiment/IMPowf100_ExpoComm_44/my_run/20260429_221053/models/1850020
+2026-04-30 09:51:30,486 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Recent Stats | t_env:    1875000 | Episode:    93750
+action_0_mean:             0.4951	action_1_mean:             0.4606	action_2_mean:             0.0443	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 1.2432	info_nce_loss:             0.0000	loss:                      0.0225
+q_loss:                    0.0225	q_taken_mean:              0.0277	return_mean:             -2993.4365	return_std:              183.1859
+target_mean:               0.0277	td_error_abs:              0.1151	test_action_0_mean:        0.5069	test_action_1_mean:        0.4647
+test_action_2_mean:        0.0284	test_ep_length_mean:      20.0000	test_return_mean:        -1607.6181	test_return_std:          92.8591
+
+2026-04-30 09:51:30,907 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - t_env: 1875020 / 2050000
+2026-04-30 09:51:30,908 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Estimated time left: 1 hours, 3 minutes, 9 seconds. Time passed: 11 hours, 40 minutes, 32 seconds
+2026-04-30 10:00:27,567 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Recent Stats | t_env:    1900000 | Episode:    95000
+action_0_mean:             0.4951	action_1_mean:             0.4605	action_2_mean:             0.0444	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 1.2865	info_nce_loss:             0.0000	loss:                      0.0230
+q_loss:                    0.0230	q_taken_mean:              0.0277	return_mean:             -2997.9432	return_std:              184.4746
+target_mean:               0.0277	td_error_abs:              0.1159	test_action_0_mean:        0.5069	test_action_1_mean:        0.4649
+test_action_2_mean:        0.0282	test_ep_length_mean:      20.0000	test_return_mean:        -1607.0084	test_return_std:          95.0856
+
+2026-04-30 10:00:28,012 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - t_env: 1900020 / 2050000
+2026-04-30 10:00:28,013 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Estimated time left: 53 minutes, 42 seconds. Time passed: 11 hours, 49 minutes, 29 seconds
+2026-04-30 10:00:42,066 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Saving models to work_dirs/my_experiment/IMPowf100_ExpoComm_44/my_run/20260429_221053/models/1900020
+2026-04-30 10:09:24,306 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Recent Stats | t_env:    1925000 | Episode:    96250
+action_0_mean:             0.4946	action_1_mean:             0.4610	action_2_mean:             0.0444	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 1.4547	info_nce_loss:             0.0000	loss:                      0.0236
+q_loss:                    0.0236	q_taken_mean:              0.0277	return_mean:             -2999.6564	return_std:              184.9725
+target_mean:               0.0277	td_error_abs:              0.1177	test_action_0_mean:        0.5068	test_action_1_mean:        0.4648
+test_action_2_mean:        0.0284	test_ep_length_mean:      20.0000	test_return_mean:        -1612.6482	test_return_std:          92.2658
+
+2026-04-30 10:09:24,733 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - t_env: 1925020 / 2050000
+2026-04-30 10:09:24,734 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Estimated time left: 44 minutes, 43 seconds. Time passed: 11 hours, 58 minutes, 26 seconds
+2026-04-30 10:18:20,859 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Recent Stats | t_env:    1950000 | Episode:    97500
+action_0_mean:             0.4943	action_1_mean:             0.4613	action_2_mean:             0.0444	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 1.4931	info_nce_loss:             0.0000	loss:                      0.0238
+q_loss:                    0.0238	q_taken_mean:              0.0277	return_mean:             -3000.3208	return_std:              185.1544
+target_mean:               0.0277	td_error_abs:              0.1181	test_action_0_mean:        0.5063	test_action_1_mean:        0.4654
+test_action_2_mean:        0.0282	test_ep_length_mean:      20.0000	test_return_mean:        -1618.0053	test_return_std:          97.7709
+
+2026-04-30 10:18:21,282 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - t_env: 1950020 / 2050000
+2026-04-30 10:18:21,283 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Estimated time left: 35 minutes, 45 seconds. Time passed: 12 hours, 7 minutes, 22 seconds
+2026-04-30 10:18:35,345 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Saving models to work_dirs/my_experiment/IMPowf100_ExpoComm_44/my_run/20260429_221053/models/1950020
+2026-04-30 10:27:24,333 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Recent Stats | t_env:    1975000 | Episode:    98750
+action_0_mean:             0.4943	action_1_mean:             0.4614	action_2_mean:             0.0444	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 0.9261	info_nce_loss:             0.0000	loss:                      0.0239
+q_loss:                    0.0239	q_taken_mean:              0.0278	return_mean:             -2998.2611	return_std:              184.3316
+target_mean:               0.0278	td_error_abs:              0.1186	test_action_0_mean:        0.5052	test_action_1_mean:        0.4668
+test_action_2_mean:        0.0280	test_ep_length_mean:      20.0000	test_return_mean:        -1603.1515	test_return_std:          98.8289
+
+2026-04-30 10:27:24,787 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - t_env: 1975020 / 2050000
+2026-04-30 10:27:24,788 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Estimated time left: 27 minutes, 10 seconds. Time passed: 12 hours, 16 minutes, 26 seconds
+2026-04-30 10:36:30,997 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Recent Stats | t_env:    2000000 | Episode:   100000
+action_0_mean:             0.4941	action_1_mean:             0.4615	action_2_mean:             0.0444	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 0.8491	info_nce_loss:             0.0000	loss:                      0.0240
+q_loss:                    0.0240	q_taken_mean:              0.0280	return_mean:             -2996.2434	return_std:              184.0285
+target_mean:               0.0281	td_error_abs:              0.1193	test_action_0_mean:        0.5061	test_action_1_mean:        0.4657
+test_action_2_mean:        0.0282	test_ep_length_mean:      20.0000	test_return_mean:        -1607.0267	test_return_std:         100.4693
+
+2026-04-30 10:36:31,425 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - t_env: 2000020 / 2050000
+2026-04-30 10:36:31,426 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Estimated time left: 18 minutes, 12 seconds. Time passed: 12 hours, 25 minutes, 32 seconds
+2026-04-30 10:36:45,422 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Saving models to work_dirs/my_experiment/IMPowf100_ExpoComm_44/my_run/20260429_221053/models/2000020
+2026-04-30 10:45:27,856 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Recent Stats | t_env:    2025000 | Episode:   101250
+action_0_mean:             0.4947	action_1_mean:             0.4608	action_2_mean:             0.0444	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 0.8908	info_nce_loss:             0.0000	loss:                      0.0242
+q_loss:                    0.0242	q_taken_mean:              0.0282	return_mean:             -2995.6437	return_std:              182.7119
+target_mean:               0.0283	td_error_abs:              0.1200	test_action_0_mean:        0.5067	test_action_1_mean:        0.4651
+test_action_2_mean:        0.0282	test_ep_length_mean:      20.0000	test_return_mean:        -1607.7201	test_return_std:          97.3217
+
+2026-04-30 10:45:28,280 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - t_env: 2025020 / 2050000
+2026-04-30 10:45:28,280 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Estimated time left: 8 minutes, 56 seconds. Time passed: 12 hours, 34 minutes, 29 seconds
+2026-04-30 10:54:23,521 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Recent Stats | t_env:    2050000 | Episode:   102500
+action_0_mean:             0.4957	action_1_mean:             0.4598	action_2_mean:             0.0445	ep_length_mean:           20.0000
+epsilon:                   0.0500	grad_norm:                 0.9574	info_nce_loss:             0.0000	loss:                      0.0246
+q_loss:                    0.0246	q_taken_mean:              0.0283	return_mean:             -2996.7441	return_std:              182.5346
+target_mean:               0.0283	td_error_abs:              0.1207	test_action_0_mean:        0.5073	test_action_1_mean:        0.4644
+test_action_2_mean:        0.0284	test_ep_length_mean:      20.0000	test_return_mean:        -1611.8472	test_return_std:          99.4884
+
+2026-04-30 10:54:23,957 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - t_env: 2050020 / 2050000
+2026-04-30 10:54:23,958 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Estimated time left: -. Time passed: 12 hours, 43 minutes, 25 seconds
+2026-04-30 10:54:37,969 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Saving models to work_dirs/my_experiment/IMPowf100_ExpoComm_44/my_run/20260429_221053/models/2050020
+2026-04-30 10:54:38,212 - my_experiment - IMPowf100_ExpoComm_44 - my_run - INFO - Finished Training

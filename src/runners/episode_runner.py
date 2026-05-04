@@ -83,6 +83,12 @@ class EpisodeRunner:
                 self.batch, t_ep=self.t, t_env=self.t_env, test_mode=test_mode
             )
 
+            # --- INJECT THIS TO VERIFY DETERMINISM ---
+#            if test_mode and self.t == 0:
+#                with open("advP_action_debug.txt", "a") as f:
+#                    f.write(f"[TEST DEBUG] Env_t: {self.t_env} | Actions: {actions[0].tolist()}\n")
+            # -----------------------------------------
+
             reward, terminated, env_info = self.env.step(actions[0])
             if test_mode and self.args.render:
                 self.env.render()

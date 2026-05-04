@@ -6,8 +6,11 @@
 #SBATCH --nodes=1
 #SBATCH --cpus-per-task=4
 #SBATCH --gres=gpu:1
-#SBATCH --time=2-00:00:00
-#SBATCH --exclude=tikgpu10,tikgpu[06-09],tikgpu03
+#SBATCH --time=24:00:00
+#SBATCH --exclude=tikgpu10,tikgpu08,tikgpu[02-05],artongpu[01-07]
+
+#CommentSBATCH --time=2-00:00:00
+#CommentSBATCH --exclude=tikgpu[02-05],artongpu[01-07]
 
 ALG_CONFIG=$1
 ENV_CONFIG=$2

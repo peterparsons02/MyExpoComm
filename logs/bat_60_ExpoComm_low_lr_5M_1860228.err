@@ -1,0 +1,990 @@
+Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
+Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
+Users of this version of Gym should be able to simply replace 'import gym' with 'import gymnasium as gym' in the vast majority of cases.
+See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
+src/main.py:81: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+  if isinstance(v, collections.Mapping):
+wandb: [wandb.login()] Loaded credentials for https://api.wandb.ai from /home/pparsons/.netrc.
+wandb: Currently logged in as: peterparsons02 (peterparsons02-eth-z-rich) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+wandb: setting up run g79ll3gb
+wandb: Tracking run with wandb version 0.24.1
+wandb: Run data is saved locally in /usr/itetnas04/data-scratch-01/pparsons/data/MyExpoComm/wandb/run-20260407_065846-g79ll3gb
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run my_run-bat_60_ExpoComm_5M-20260407_065845
+wandb: ⭐️ View project at https://wandb.ai/peterparsons02-eth-z-rich/my_experiment
+wandb: 🚀 View run at https://wandb.ai/peterparsons02-eth-z-rich/my_experiment/runs/g79ll3gb
+2026-04-07 06:58:48,000 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Current directory: /usr/itetnas04/data-scratch-01/pparsons/data/MyExpoComm.
+2026-04-07 06:58:48,001 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Experiment Parameters:
+2026-04-07 06:58:48,003 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - 
+
+{   'action_selector': 'epsilon_greedy',
+    'add_value_last_step': True,
+    'agent': 'ExpoComm_one_peer_cont',
+    'agent_output_type': 'q',
+    'aux_coef': 0.1,
+    'batch_size': 16,
+    'batch_size_run': 1,
+    'buffer_cpu_only': True,
+    'buffer_size': 1000,
+    'checkpoint_path': '',
+    'double_q': True,
+    'env': 'MAgent_Battle',
+    'env_args': {   'global_reward': True,
+                    'map_name': 'battle_view7',
+                    'map_size': 60,
+                    'max_cycles': 200,
+                    'minimap_mode': False,
+                    'pretrained_ckpt': None,
+                    'seed': 42},
+    'epsilon_anneal_time': 1000000,
+    'epsilon_finish': 0.05,
+    'epsilon_start': 1.0,
+    'evaluate': False,
+    'evaluation_epsilon': 0.0,
+    'exp_name': 'my_experiment',
+    'gamma': 0.99,
+    'global_reward': True,
+    'grad_norm_clip': 10,
+    'hidden_dim': 64,
+    'hypergroup': None,
+    'hypernet_embed': 64,
+    'hypernet_layers': 2,
+    'label': 'default_label',
+    'learner': 'cont_q_learner',
+    'learner_log_interval': 10000,
+    'load_step': 0,
+    'local_results_path': 'results',
+    'log_interval': 50000,
+    'lr': 0.0001,
+    'mac': 'ExpoComm_mac',
+    'mixer': 'qmix',
+    'mixing_embed_dim': 64,
+    'name': 'bat_60_ExpoComm_5M',
+    'neg_num': 20,
+    'obs_agent_id': True,
+    'obs_individual_obs': False,
+    'obs_last_action': True,
+    'one_peer': True,
+    'optim_alpha': 0.99,
+    'optim_eps': 1e-05,
+    'pos_flag': False,
+    'render': False,
+    'repeat_id': 1,
+    'run_name': 'my_run',
+    'runner': 'episode',
+    'runner_log_interval': 10000,
+    'save_model': True,
+    'save_model_interval': 500000,
+    'save_replay': False,
+    'seed': 42,
+    'standardise_returns': False,
+    'standardise_rewards': True,
+    't_max': 5050000,
+    'target_update_interval_or_tau': 200,
+    'temperature': 0.07,
+    'test_greedy': True,
+    'test_interval': 50000,
+    'test_nepisode': 50,
+    'topk_neighbors': 7,
+    'use_cuda': True,
+    'use_rnn': True,
+    'use_tensorboard': True,
+    'work_dir': 'work_dirs/my_experiment/bat_60_ExpoComm_5M/my_run/20260407_065845'}
+
+/usr/itetnas04/data-scratch-01/pparsons/data/conda_envs/ExpoComm/lib/python3.8/site-packages/pettingzoo/utils/conversions.py:41: UserWarning: The `from_parallel` function is deprecated. Use the `parallel_to_aec` function instead.
+  warnings.warn("The `from_parallel` function is deprecated. Use the `parallel_to_aec` function instead.")
+/usr/itetnas04/data-scratch-01/pparsons/data/conda_envs/ExpoComm/lib/python3.8/site-packages/pettingzoo/utils/wrappers/base.py:44: UserWarning: The `observation_spaces` dictionary is deprecated. Use the `observation_space` function instead.
+  warnings.warn("The `observation_spaces` dictionary is deprecated. Use the `observation_space` function instead.")
+/usr/itetnas04/data-scratch-01/pparsons/data/conda_envs/ExpoComm/lib/python3.8/site-packages/pettingzoo/utils/conversions.py:36: UserWarning: The `to_parallel` function is deprecated. Use the `aec_to_parallel` function instead.
+  warnings.warn("The `to_parallel` function is deprecated. Use the `aec_to_parallel` function instead.")
+/usr/itetnas04/data-scratch-01/pparsons/data/conda_envs/ExpoComm/lib/python3.8/site-packages/pettingzoo/utils/conversions.py:80: UserWarning: The `action_spaces` dictionary is deprecated. Use the `action_space` function instead.
+  warnings.warn("The `action_spaces` dictionary is deprecated. Use the `action_space` function instead.")
+/usr/itetnas04/data-scratch-01/pparsons/data/conda_envs/ExpoComm/lib/python3.8/site-packages/pettingzoo/utils/wrappers/base.py:52: UserWarning: The `action_spaces` dictionary is deprecated. Use the `action_space` function instead.
+  warnings.warn("The `action_spaces` dictionary is deprecated. Use the `action_space` function instead.")
+/usr/itetnas04/data-scratch-01/pparsons/data/conda_envs/ExpoComm/lib/python3.8/site-packages/pettingzoo/utils/conversions.py:72: UserWarning: The `observation_spaces` dictionary is deprecated. Use the `observation_space` function instead.
+  warnings.warn("The `observation_spaces` dictionary is deprecated. Use the `observation_space` function instead.")
+2026-04-07 06:59:04,174 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Beginning training for 5050000 timesteps
+/usr/itetnas04/data-scratch-01/pparsons/data/MyExpoComm/src/envs/battle_wrappers.py:258: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  actions = torch.tensor(actions, dtype=torch.long)
+2026-04-07 06:59:10,450 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - t_env: 200 / 5050000
+2026-04-07 06:59:10,451 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Estimated time left: 10 minutes, 31 seconds. Time passed: 6 seconds
+2026-04-07 07:03:35,423 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Saving models to work_dirs/my_experiment/bat_60_ExpoComm_5M/my_run/20260407_065845/models/200
+2026-04-07 07:30:13,190 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Recent Stats | t_env:      50000 | Episode:      250
+blue_team_alives_mean:   143.9920	blue_team_win_mean:        0.0000	ep_length_mean:          200.0000	episode_length_mean:     199.0000
+epsilon:                   0.9620	grad_norm:               14067.5504	info_nce_loss:             2.3615	loss:                    16834.8213
+q_loss:                  15304.3832	q_taken_mean:              0.0057	red_team_alives_mean:    144.0000	red_team_win_mean:         0.0080
+return_mean:              -1.7353	return_std:                0.0199	target_mean:               0.0580	td_error_abs:             63.8892
+test_blue_team_alives_mean:144.0000	test_blue_team_win_mean:   0.0000	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000
+test_red_team_alives_mean:144.0000	test_red_team_win_mean:    0.0000	test_return_mean:         -3.0000	test_return_std:           0.0000
+
+2026-04-07 07:30:19,710 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - t_env: 50200 / 5050000
+2026-04-07 07:30:19,712 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Estimated time left: 2 days, 3 hours, 55 minutes, 18 seconds. Time passed: 31 minutes, 15 seconds
+2026-04-07 08:02:02,611 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Recent Stats | t_env:     100000 | Episode:      500
+blue_team_alives_mean:   144.0000	blue_team_win_mean:        0.0000	ep_length_mean:          200.0000	episode_length_mean:     199.0000
+epsilon:                   0.9145	grad_norm:               528358.4359	info_nce_loss:             1.5828	loss:                    91519.9213
+q_loss:                  83199.9296	q_taken_mean:              0.8116	red_team_alives_mean:    144.0000	red_team_win_mean:         0.0000
+return_mean:              -1.7059	return_std:                0.0192	target_mean:               1.6832	td_error_abs:            167.4228
+test_blue_team_alives_mean:144.0000	test_blue_team_win_mean:   0.0000	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000
+test_red_team_alives_mean:144.0000	test_red_team_win_mean:    0.0000	test_return_mean:         -2.0000	test_return_std:           0.0000
+
+2026-04-07 08:02:09,397 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - t_env: 100200 / 5050000
+2026-04-07 08:02:09,398 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Estimated time left: 2 days, 4 hours, 30 minutes, 51 seconds. Time passed: 1 hours, 3 minutes, 5 seconds
+2026-04-07 08:34:26,613 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Recent Stats | t_env:     150000 | Episode:      750
+blue_team_alives_mean:   144.0000	blue_team_win_mean:        0.0000	ep_length_mean:          200.0000	episode_length_mean:     199.0000
+epsilon:                   0.8670	grad_norm:               2146044.4281	info_nce_loss:             1.5727	loss:                    219353.6254
+q_loss:                  199412.3918	q_taken_mean:              6.2887	red_team_alives_mean:    144.0000	red_team_win_mean:         0.0000
+return_mean:              -1.6473	return_std:                0.0311	target_mean:               7.4704	td_error_abs:            263.8877
+test_blue_team_alives_mean:144.0000	test_blue_team_win_mean:   0.0000	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000
+test_red_team_alives_mean:144.0000	test_red_team_win_mean:    0.0000	test_return_mean:         -1.6667	test_return_std:           0.0000
+
+2026-04-07 08:34:33,464 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - t_env: 150200 / 5050000
+2026-04-07 08:34:33,467 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Estimated time left: 2 days, 4 hours, 55 minutes, 10 seconds. Time passed: 1 hours, 35 minutes, 29 seconds
+2026-04-07 09:07:29,145 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Recent Stats | t_env:     200000 | Episode:     1000
+blue_team_alives_mean:   143.9760	blue_team_win_mean:        0.0000	ep_length_mean:          200.0000	episode_length_mean:     199.0000
+epsilon:                   0.8195	grad_norm:               2652859.3563	info_nce_loss:             1.0334	loss:                    438146.8688
+q_loss:                  398315.3453	q_taken_mean:             14.0883	red_team_alives_mean:    144.0000	red_team_win_mean:         0.0240
+return_mean:              -1.5467	return_std:                0.0535	target_mean:              15.6117	td_error_abs:            404.5010
+test_blue_team_alives_mean:144.0000	test_blue_team_win_mean:   0.0000	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000
+test_red_team_alives_mean:144.0000	test_red_team_win_mean:    0.0000	test_return_mean:         -1.5000	test_return_std:           0.0000
+
+2026-04-07 09:07:36,117 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - t_env: 200200 / 5050000
+2026-04-07 09:07:36,118 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Estimated time left: 2 days, 5 hours, 25 minutes, 9 seconds. Time passed: 2 hours, 8 minutes, 31 seconds
+2026-04-07 09:40:28,616 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Recent Stats | t_env:     250000 | Episode:     1250
+blue_team_alives_mean:   143.9920	blue_team_win_mean:        0.0000	ep_length_mean:          200.0000	episode_length_mean:     199.0000
+epsilon:                   0.7720	grad_norm:               15476274.5500	info_nce_loss:             1.3957	loss:                    1166766.4969
+q_loss:                  1060696.8125	q_taken_mean:             23.7474	red_team_alives_mean:    144.0000	red_team_win_mean:         0.0080
+return_mean:              -1.5775	return_std:                0.0307	target_mean:              27.1775	td_error_abs:            710.7941
+test_blue_team_alives_mean:144.0000	test_blue_team_win_mean:   0.0000	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000
+test_red_team_alives_mean:144.0000	test_red_team_win_mean:    0.0000	test_return_mean:         -1.4000	test_return_std:           0.0000
+
+2026-04-07 09:40:35,461 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - t_env: 250200 / 5050000
+2026-04-07 09:40:35,463 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Estimated time left: 2 days, 4 hours, 46 minutes, 49 seconds. Time passed: 2 hours, 41 minutes, 31 seconds
+2026-04-07 10:13:24,593 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Recent Stats | t_env:     300000 | Episode:     1500
+blue_team_alives_mean:   144.0000	blue_team_win_mean:        0.0000	ep_length_mean:          200.0000	episode_length_mean:     199.0000
+epsilon:                   0.7245	grad_norm:               19172321.1250	info_nce_loss:             1.2183	loss:                    1935050.9563
+q_loss:                  1759137.1938	q_taken_mean:             44.8373	red_team_alives_mean:    144.0000	red_team_win_mean:         0.0000
+return_mean:              -1.5678	return_std:                0.0093	target_mean:              47.2245	td_error_abs:            731.6618
+test_blue_team_alives_mean:144.0000	test_blue_team_win_mean:   0.0000	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000
+test_red_team_alives_mean:144.0000	test_red_team_win_mean:    0.0000	test_return_mean:         -1.0000	test_return_std:           0.0000
+
+2026-04-07 10:13:31,476 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - t_env: 300200 / 5050000
+2026-04-07 10:13:31,478 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Estimated time left: 2 days, 4 hours, 8 minutes, 33 seconds. Time passed: 3 hours, 14 minutes, 27 seconds
+2026-04-07 10:46:23,244 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Recent Stats | t_env:     350000 | Episode:     1750
+blue_team_alives_mean:   144.0000	blue_team_win_mean:        0.0000	ep_length_mean:          200.0000	episode_length_mean:     199.0000
+epsilon:                   0.6770	grad_norm:               41883102.5000	info_nce_loss:             0.9663	loss:                    3533404.5000
+q_loss:                  3212185.9000	q_taken_mean:             74.4978	red_team_alives_mean:    144.0000	red_team_win_mean:         0.0000
+return_mean:              -1.5341	return_std:                0.0054	target_mean:              76.0839	td_error_abs:            965.8598
+test_blue_team_alives_mean:144.0000	test_blue_team_win_mean:   0.0000	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000
+test_red_team_alives_mean:144.0000	test_red_team_win_mean:    0.0000	test_return_mean:         -1.0000	test_return_std:           0.0000
+
+2026-04-07 10:46:30,094 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - t_env: 350200 / 5050000
+2026-04-07 10:46:30,095 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Estimated time left: 2 days, 3 hours, 39 minutes, 42 seconds. Time passed: 3 hours, 47 minutes, 25 seconds
+2026-04-07 11:19:27,351 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Recent Stats | t_env:     400000 | Episode:     2000
+blue_team_alives_mean:   144.0000	blue_team_win_mean:        0.0000	ep_length_mean:          200.0000	episode_length_mean:     199.0000
+epsilon:                   0.6295	grad_norm:               56107418.2000	info_nce_loss:             0.7191	loss:                    6717481.4000
+q_loss:                  6106801.2500	q_taken_mean:            124.3963	red_team_alives_mean:    144.0000	red_team_win_mean:         0.0000
+return_mean:              -1.4980	return_std:                0.0053	target_mean:             126.8042	td_error_abs:            1307.5920
+test_blue_team_alives_mean:144.0000	test_blue_team_win_mean:   0.0000	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000
+test_red_team_alives_mean:144.0000	test_red_team_win_mean:    0.0000	test_return_mean:         -1.0000	test_return_std:           0.0000
+
+2026-04-07 11:19:34,246 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - t_env: 400200 / 5050000
+2026-04-07 11:19:34,247 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Estimated time left: 2 days, 3 hours, 15 minutes, 18 seconds. Time passed: 4 hours, 20 minutes, 30 seconds
+2026-04-07 11:52:30,856 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Recent Stats | t_env:     450000 | Episode:     2250
+blue_team_alives_mean:   144.0000	blue_team_win_mean:        0.0000	ep_length_mean:          200.0000	episode_length_mean:     199.0000
+epsilon:                   0.5820	grad_norm:               167558498.8000	info_nce_loss:             1.2603	loss:                    11358056.7000
+q_loss:                  10325506.0000	q_taken_mean:            169.5301	red_team_alives_mean:    144.0000	red_team_win_mean:         0.0000
+return_mean:              -1.4649	return_std:                0.0112	target_mean:             176.5964	td_error_abs:            1925.7862
+test_blue_team_alives_mean:144.0000	test_blue_team_win_mean:   0.0000	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000
+test_red_team_alives_mean:144.0000	test_red_team_win_mean:    0.0000	test_return_mean:         -1.0000	test_return_std:           0.0000
+
+2026-04-07 11:52:37,689 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - t_env: 450200 / 5050000
+2026-04-07 11:52:37,691 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Estimated time left: 2 days, 2 hours, 41 minutes, 8 seconds. Time passed: 4 hours, 53 minutes, 33 seconds
+2026-04-07 12:25:37,240 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Recent Stats | t_env:     500000 | Episode:     2500
+blue_team_alives_mean:   144.0000	blue_team_win_mean:        0.0000	ep_length_mean:          200.0000	episode_length_mean:     199.0000
+epsilon:                   0.5345	grad_norm:               1568037376.0000	info_nce_loss:             1.0035	loss:                    13756005.8000
+q_loss:                  12505459.8000	q_taken_mean:            239.4535	red_team_alives_mean:    144.0000	red_team_win_mean:         0.0000
+return_mean:              -1.4404	return_std:                0.0173	target_mean:             241.9313	td_error_abs:            1971.2891
+test_blue_team_alives_mean:144.0000	test_blue_team_win_mean:   0.0000	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000
+test_red_team_alives_mean:144.0000	test_red_team_win_mean:    0.0000	test_return_mean:         -1.0000	test_return_std:           0.0000
+
+2026-04-07 12:25:44,078 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - t_env: 500200 / 5050000
+2026-04-07 12:25:44,079 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Estimated time left: 2 days, 2 hours, 12 minutes, 33 seconds. Time passed: 5 hours, 26 minutes, 39 seconds
+2026-04-07 12:30:24,887 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Saving models to work_dirs/my_experiment/bat_60_ExpoComm_5M/my_run/20260407_065845/models/500200
+2026-04-07 12:58:42,103 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Recent Stats | t_env:     550000 | Episode:     2750
+blue_team_alives_mean:   144.0000	blue_team_win_mean:        0.0000	ep_length_mean:          200.0000	episode_length_mean:     199.0000
+epsilon:                   0.4870	grad_norm:               2021103692.8000	info_nce_loss:             0.6918	loss:                    16495208.0000
+q_loss:                  14995643.6000	q_taken_mean:            306.1079	red_team_alives_mean:    144.0000	red_team_win_mean:         0.0000
+return_mean:              -1.3956	return_std:                0.0079	target_mean:             312.9727	td_error_abs:            2296.7766
+test_blue_team_alives_mean:144.0000	test_blue_team_win_mean:   0.0000	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000
+test_red_team_alives_mean:144.0000	test_red_team_win_mean:    0.0000	test_return_mean:         -1.0000	test_return_std:           0.0000
+
+2026-04-07 12:58:49,000 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - t_env: 550200 / 5050000
+2026-04-07 12:58:49,001 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Estimated time left: 2 days, 1 hours, 37 minutes, 15 seconds. Time passed: 5 hours, 59 minutes, 44 seconds
+2026-04-07 13:31:48,150 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Recent Stats | t_env:     600000 | Episode:     3000
+blue_team_alives_mean:   144.0000	blue_team_win_mean:        0.0000	ep_length_mean:          200.0000	episode_length_mean:     199.0000
+epsilon:                   0.4395	grad_norm:               1769326630.4000	info_nce_loss:             0.8946	loss:                    18172371.6000
+q_loss:                  16520337.6000	q_taken_mean:            369.9947	red_team_alives_mean:    144.0000	red_team_win_mean:         0.0000
+return_mean:              -1.3613	return_std:                0.0082	target_mean:             377.4988	td_error_abs:            2351.0199
+test_blue_team_alives_mean:144.0000	test_blue_team_win_mean:   0.0000	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000
+test_red_team_alives_mean:144.0000	test_red_team_win_mean:    0.0000	test_return_mean:         -1.0000	test_return_std:           0.0000
+
+2026-04-07 13:31:55,047 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - t_env: 600200 / 5050000
+2026-04-07 13:31:55,048 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Estimated time left: 2 days, 1 hours, 5 minutes, 50 seconds. Time passed: 6 hours, 32 minutes, 50 seconds
+2026-04-07 14:04:55,921 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Recent Stats | t_env:     650000 | Episode:     3250
+blue_team_alives_mean:   144.0000	blue_team_win_mean:        0.0000	ep_length_mean:          200.0000	episode_length_mean:     199.0000
+epsilon:                   0.3920	grad_norm:               2475480832.0000	info_nce_loss:             0.9615	loss:                    27830393.2000
+q_loss:                  25300357.4000	q_taken_mean:            404.1838	red_team_alives_mean:    144.0000	red_team_win_mean:         0.0000
+return_mean:              -1.3213	return_std:                0.0060	target_mean:             414.8000	td_error_abs:            2985.3276
+test_blue_team_alives_mean:144.0000	test_blue_team_win_mean:   0.0000	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000
+test_red_team_alives_mean:144.0000	test_red_team_win_mean:    0.0000	test_return_mean:         -1.0016	test_return_std:           0.0000
+
+2026-04-07 14:05:02,793 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - t_env: 650200 / 5050000
+2026-04-07 14:05:02,795 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Estimated time left: 2 days, 35 minutes, 13 seconds. Time passed: 7 hours, 5 minutes, 58 seconds
+2026-04-07 14:37:57,524 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Recent Stats | t_env:     700000 | Episode:     3500
+blue_team_alives_mean:   144.0000	blue_team_win_mean:        0.0000	ep_length_mean:          200.0000	episode_length_mean:     199.0000
+epsilon:                   0.3445	grad_norm:               1158916756.8000	info_nce_loss:             0.7755	loss:                    16681568.8000
+q_loss:                  15165062.4000	q_taken_mean:            434.5271	red_team_alives_mean:    144.0000	red_team_win_mean:         0.0000
+return_mean:              -1.3240	return_std:                0.0454	target_mean:             438.8413	td_error_abs:            2335.0873
+test_blue_team_alives_mean:144.0000	test_blue_team_win_mean:   0.0000	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000
+test_red_team_alives_mean:144.0000	test_red_team_win_mean:    0.0000	test_return_mean:         -1.0061	test_return_std:           0.0000
+
+2026-04-07 14:38:04,211 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - t_env: 700200 / 5050000
+2026-04-07 14:38:04,212 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Estimated time left: 1 days, 23 hours, 52 minutes, 55 seconds. Time passed: 7 hours, 39 minutes, 0 seconds
+2026-04-07 15:10:11,309 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Recent Stats | t_env:     750000 | Episode:     3750
+blue_team_alives_mean:   144.0000	blue_team_win_mean:        0.0000	ep_length_mean:          200.0000	episode_length_mean:     199.0000
+epsilon:                   0.2970	grad_norm:               2467586860.8000	info_nce_loss:             1.3193	loss:                    16982439.8000
+q_loss:                  15438581.6000	q_taken_mean:            461.0882	red_team_alives_mean:    144.0000	red_team_win_mean:         0.0000
+return_mean:              -1.3628	return_std:                0.0788	target_mean:             465.3234	td_error_abs:            2339.3642
+test_blue_team_alives_mean:144.0000	test_blue_team_win_mean:   0.0000	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000
+test_red_team_alives_mean:144.0000	test_red_team_win_mean:    0.0000	test_return_mean:         -1.0686	test_return_std:           0.0000
+
+2026-04-07 15:10:18,311 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - t_env: 750200 / 5050000
+2026-04-07 15:10:18,312 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Estimated time left: 1 days, 22 hours, 12 minutes, 4 seconds. Time passed: 8 hours, 11 minutes, 14 seconds
+2026-04-07 15:43:57,713 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Recent Stats | t_env:     800000 | Episode:     4000
+blue_team_alives_mean:   144.0000	blue_team_win_mean:        0.0000	ep_length_mean:          200.0000	episode_length_mean:     199.0000
+epsilon:                   0.2495	grad_norm:               1890854246.4000	info_nce_loss:             0.7225	loss:                    14325167.0000
+q_loss:                  13022879.0000	q_taken_mean:            486.1624	red_team_alives_mean:    144.0000	red_team_win_mean:         0.0000
+return_mean:              -1.3046	return_std:                0.1090	target_mean:             489.3645	td_error_abs:            2302.4546
+test_blue_team_alives_mean:144.0000	test_blue_team_win_mean:   0.0000	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000
+test_red_team_alives_mean:144.0000	test_red_team_win_mean:    0.0000	test_return_mean:         -1.0686	test_return_std:           0.0000
+
+2026-04-07 15:44:04,758 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - t_env: 800200 / 5050000
+2026-04-07 15:44:04,759 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Estimated time left: 1 days, 23 hours, 50 minutes, 39 seconds. Time passed: 8 hours, 45 minutes, 0 seconds
+2026-04-07 16:17:43,358 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Recent Stats | t_env:     850000 | Episode:     4250
+blue_team_alives_mean:   144.0000	blue_team_win_mean:        0.0000	ep_length_mean:          200.0000	episode_length_mean:     199.0000
+epsilon:                   0.2020	grad_norm:               1908367462.4000	info_nce_loss:             1.2345	loss:                    18123460.2000
+q_loss:                  16475872.7000	q_taken_mean:            526.6776	red_team_alives_mean:    144.0000	red_team_win_mean:         0.0000
+return_mean:              -1.2421	return_std:                0.0597	target_mean:             535.4282	td_error_abs:            2429.9114
+test_blue_team_alives_mean:144.0000	test_blue_team_win_mean:   0.0000	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000
+test_red_team_alives_mean:144.0000	test_red_team_win_mean:    0.0000	test_return_mean:         -1.0793	test_return_std:           0.0000
+
+2026-04-07 16:17:50,382 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - t_env: 850200 / 5050000
+2026-04-07 16:17:50,383 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Estimated time left: 1 days, 23 hours, 15 minutes, 44 seconds. Time passed: 9 hours, 18 minutes, 46 seconds
+2026-04-07 16:51:30,567 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Recent Stats | t_env:     900000 | Episode:     4500
+blue_team_alives_mean:   144.0000	blue_team_win_mean:        0.0000	ep_length_mean:          200.0000	episode_length_mean:     199.0000
+epsilon:                   0.1545	grad_norm:               3396947353.6000	info_nce_loss:             1.0467	loss:                    21568894.6000
+q_loss:                  19608085.6000	q_taken_mean:            568.6646	red_team_alives_mean:    144.0000	red_team_win_mean:         0.0000
+return_mean:              -1.2572	return_std:                0.0900	target_mean:             571.7130	td_error_abs:            2332.0313
+test_blue_team_alives_mean:144.0000	test_blue_team_win_mean:   0.0000	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000
+test_red_team_alives_mean:144.0000	test_red_team_win_mean:    0.0000	test_return_mean:         -1.1797	test_return_std:           0.0000
+
+2026-04-07 16:51:37,576 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - t_env: 900200 / 5050000
+2026-04-07 16:51:37,577 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Estimated time left: 1 days, 22 hours, 44 minutes, 8 seconds. Time passed: 9 hours, 52 minutes, 33 seconds
+2026-04-07 17:25:15,320 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Recent Stats | t_env:     950000 | Episode:     4750
+blue_team_alives_mean:   144.0000	blue_team_win_mean:        0.0000	ep_length_mean:          200.0000	episode_length_mean:     199.0000
+epsilon:                   0.1070	grad_norm:               3328303104.0000	info_nce_loss:             1.1569	loss:                    21285496.2000
+q_loss:                  19350451.2000	q_taken_mean:            592.7522	red_team_alives_mean:    144.0000	red_team_win_mean:         0.0000
+return_mean:              -1.2112	return_std:                0.0773	target_mean:             598.9707	td_error_abs:            2477.7312
+test_blue_team_alives_mean:144.0000	test_blue_team_win_mean:   0.0000	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000
+test_red_team_alives_mean:144.0000	test_red_team_win_mean:    0.0000	test_return_mean:         -1.1775	test_return_std:           0.0000
+
+2026-04-07 17:25:22,322 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - t_env: 950200 / 5050000
+2026-04-07 17:25:22,323 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Estimated time left: 1 days, 22 hours, 7 minutes, 1 seconds. Time passed: 10 hours, 26 minutes, 18 seconds
+2026-04-07 17:59:03,579 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Recent Stats | t_env:    1000000 | Episode:     5000
+blue_team_alives_mean:   144.0000	blue_team_win_mean:        0.0000	ep_length_mean:          200.0000	episode_length_mean:     199.0000
+epsilon:                   0.0595	grad_norm:               5752495974.4000	info_nce_loss:             1.4246	loss:                    18988633.4000
+q_loss:                  17262394.0000	q_taken_mean:            605.4163	red_team_alives_mean:    144.0000	red_team_win_mean:         0.0000
+return_mean:              -1.2367	return_std:                0.0929	target_mean:             608.9000	td_error_abs:            2376.2869
+test_blue_team_alives_mean:144.0000	test_blue_team_win_mean:   0.0000	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000
+test_red_team_alives_mean:144.0000	test_red_team_win_mean:    0.0000	test_return_mean:         -1.1880	test_return_std:           0.0000
+
+2026-04-07 17:59:10,621 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - t_env: 1000200 / 5050000
+2026-04-07 17:59:10,622 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Estimated time left: 1 days, 21 hours, 38 minutes, 4 seconds. Time passed: 11 hours, 6 seconds
+2026-04-07 18:03:58,073 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Saving models to work_dirs/my_experiment/bat_60_ExpoComm_5M/my_run/20260407_065845/models/1000200
+2026-04-07 18:32:51,166 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Recent Stats | t_env:    1050000 | Episode:     5250
+blue_team_alives_mean:   144.0000	blue_team_win_mean:        0.0000	ep_length_mean:          200.0000	episode_length_mean:     199.0000
+epsilon:                   0.0500	grad_norm:               4905137510.4000	info_nce_loss:             1.3919	loss:                    17468151.8000
+q_loss:                  15880138.0000	q_taken_mean:            629.3919	red_team_alives_mean:    144.0000	red_team_win_mean:         0.0000
+return_mean:              -1.1227	return_std:                0.0365	target_mean:             631.2360	td_error_abs:            2047.5914
+test_blue_team_alives_mean:144.0000	test_blue_team_win_mean:   0.0000	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000
+test_red_team_alives_mean:144.0000	test_red_team_win_mean:    0.0000	test_return_mean:         -1.1904	test_return_std:           0.0000
+
+2026-04-07 18:32:58,154 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - t_env: 1050200 / 5050000
+2026-04-07 18:32:58,155 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Estimated time left: 1 days, 21 hours, 3 minutes, 14 seconds. Time passed: 11 hours, 33 minutes, 53 seconds
+2026-04-07 19:06:37,490 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Recent Stats | t_env:    1100000 | Episode:     5500
+blue_team_alives_mean:   144.0000	blue_team_win_mean:        0.0000	ep_length_mean:          200.0000	episode_length_mean:     199.0000
+epsilon:                   0.0500	grad_norm:               6130769510.4000	info_nce_loss:             1.1775	loss:                    13522086.4000
+q_loss:                  12292805.8000	q_taken_mean:            634.4814	red_team_alives_mean:    144.0000	red_team_win_mean:         0.0000
+return_mean:              -1.1036	return_std:                0.0254	target_mean:             635.6527	td_error_abs:            1868.2359
+test_blue_team_alives_mean:144.0000	test_blue_team_win_mean:   0.0000	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000
+test_red_team_alives_mean:144.0000	test_red_team_win_mean:    0.0000	test_return_mean:         -1.2256	test_return_std:           0.0000
+
+2026-04-07 19:06:44,503 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - t_env: 1100200 / 5050000
+2026-04-07 19:06:44,504 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Estimated time left: 1 days, 20 hours, 27 minutes, 53 seconds. Time passed: 12 hours, 7 minutes, 40 seconds
+2026-04-07 19:40:26,034 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Recent Stats | t_env:    1150000 | Episode:     5750
+blue_team_alives_mean:   144.0000	blue_team_win_mean:        0.0000	ep_length_mean:          200.0000	episode_length_mean:     199.0000
+epsilon:                   0.0500	grad_norm:               7057774694.4000	info_nce_loss:             1.2947	loss:                    12003498.8000
+q_loss:                  10912271.7000	q_taken_mean:            637.9030	red_team_alives_mean:    144.0000	red_team_win_mean:         0.0000
+return_mean:              -1.0565	return_std:                0.0124	target_mean:             637.6448	td_error_abs:            1726.6277
+test_blue_team_alives_mean:144.0000	test_blue_team_win_mean:   0.0000	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000
+test_red_team_alives_mean:144.0000	test_red_team_win_mean:    0.0000	test_return_mean:         -1.1262	test_return_std:           0.0000
+
+2026-04-07 19:40:33,103 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - t_env: 1150200 / 5050000
+2026-04-07 19:40:33,104 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Estimated time left: 1 days, 19 hours, 57 minutes, 2 seconds. Time passed: 12 hours, 41 minutes, 28 seconds
+2026-04-07 20:14:17,503 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Recent Stats | t_env:    1200000 | Episode:     6000
+blue_team_alives_mean:   144.0000	blue_team_win_mean:        0.0000	ep_length_mean:          200.0000	episode_length_mean:     199.0000
+epsilon:                   0.0500	grad_norm:               6849078732.8000	info_nce_loss:             1.6746	loss:                    11945451.6000
+q_loss:                  10859501.4000	q_taken_mean:            633.2772	red_team_alives_mean:    144.0000	red_team_win_mean:         0.0000
+return_mean:              -1.0490	return_std:                0.0056	target_mean:             634.6220	td_error_abs:            1684.1859
+test_blue_team_alives_mean:144.0000	test_blue_team_win_mean:   0.0000	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000
+test_red_team_alives_mean:144.0000	test_red_team_win_mean:    0.0000	test_return_mean:         -1.1248	test_return_std:           0.0000
+
+2026-04-07 20:14:24,589 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - t_env: 1200200 / 5050000
+2026-04-07 20:14:24,590 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Estimated time left: 1 days, 19 hours, 26 minutes, 56 seconds. Time passed: 13 hours, 15 minutes, 20 seconds
+2026-04-07 20:48:07,329 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Recent Stats | t_env:    1250000 | Episode:     6250
+blue_team_alives_mean:   144.0000	blue_team_win_mean:        0.0000	ep_length_mean:          200.0000	episode_length_mean:     199.0000
+epsilon:                   0.0500	grad_norm:               6593086566.4000	info_nce_loss:             1.2180	loss:                    13377298.8000
+q_loss:                  12161180.6000	q_taken_mean:            634.9723	red_team_alives_mean:    144.0000	red_team_win_mean:         0.0000
+return_mean:              -1.0455	return_std:                0.0026	target_mean:             634.6819	td_error_abs:            1749.8120
+test_blue_team_alives_mean:144.0000	test_blue_team_win_mean:   0.0000	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000
+test_red_team_alives_mean:144.0000	test_red_team_win_mean:    0.0000	test_return_mean:         -1.0534	test_return_std:           0.0000
+
+2026-04-07 20:48:14,331 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - t_env: 1250200 / 5050000
+2026-04-07 20:48:14,332 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Estimated time left: 1 days, 18 hours, 50 minutes, 52 seconds. Time passed: 13 hours, 49 minutes, 10 seconds
+2026-04-07 21:21:58,125 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Recent Stats | t_env:    1300000 | Episode:     6500
+blue_team_alives_mean:   144.0000	blue_team_win_mean:        0.0000	ep_length_mean:          200.0000	episode_length_mean:     199.0000
+epsilon:                   0.0500	grad_norm:               6720331878.4000	info_nce_loss:             1.6099	loss:                    12779392.2000
+q_loss:                  11617629.2000	q_taken_mean:            636.7303	red_team_alives_mean:    144.0000	red_team_win_mean:         0.0000
+return_mean:              -1.0468	return_std:                0.0029	target_mean:             637.4047	td_error_abs:            1700.2020
+test_blue_team_alives_mean:144.0000	test_blue_team_win_mean:   0.0000	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000
+test_red_team_alives_mean:144.0000	test_red_team_win_mean:    0.0000	test_return_mean:         -1.0537	test_return_std:           0.0000
+
+2026-04-07 21:22:05,128 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - t_env: 1300200 / 5050000
+2026-04-07 21:22:05,129 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Estimated time left: 1 days, 18 hours, 18 minutes, 21 seconds. Time passed: 14 hours, 23 minutes, 0 seconds
+2026-04-07 21:55:48,037 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Recent Stats | t_env:    1350000 | Episode:     6750
+blue_team_alives_mean:   144.0000	blue_team_win_mean:        0.0000	ep_length_mean:          200.0000	episode_length_mean:     199.0000
+epsilon:                   0.0500	grad_norm:               6566565171.2000	info_nce_loss:             1.5356	loss:                    12547922.4000
+q_loss:                  11407202.0000	q_taken_mean:            633.9326	red_team_alives_mean:    144.0000	red_team_win_mean:         0.0000
+return_mean:              -1.0490	return_std:                0.0037	target_mean:             633.4588	td_error_abs:            1615.8093
+test_blue_team_alives_mean:144.0000	test_blue_team_win_mean:   0.0000	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000
+test_red_team_alives_mean:144.0000	test_red_team_win_mean:    0.0000	test_return_mean:         -1.0102	test_return_std:           0.0000
+
+2026-04-07 21:55:55,087 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - t_env: 1350200 / 5050000
+2026-04-07 21:55:55,088 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Estimated time left: 1 days, 17 hours, 43 minutes, 28 seconds. Time passed: 14 hours, 56 minutes, 50 seconds
+2026-04-07 22:29:39,275 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Recent Stats | t_env:    1400000 | Episode:     7000
+blue_team_alives_mean:   144.0000	blue_team_win_mean:        0.0000	ep_length_mean:          200.0000	episode_length_mean:     199.0000
+epsilon:                   0.0500	grad_norm:               6438007091.2000	info_nce_loss:             1.4622	loss:                    13747780.4000
+q_loss:                  12497982.2000	q_taken_mean:            630.6756	red_team_alives_mean:    144.0000	red_team_win_mean:         0.0000
+return_mean:              -1.0744	return_std:                0.0050	target_mean:             630.7703	td_error_abs:            1652.0007
+test_blue_team_alives_mean:144.0000	test_blue_team_win_mean:   0.0000	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000
+test_red_team_alives_mean:144.0000	test_red_team_win_mean:    0.0000	test_return_mean:         -1.0130	test_return_std:           0.0000
+
+2026-04-07 22:29:46,283 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - t_env: 1400200 / 5050000
+2026-04-07 22:29:46,284 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Estimated time left: 1 days, 17 hours, 11 minutes, 9 seconds. Time passed: 15 hours, 30 minutes, 42 seconds
+2026-04-07 23:03:55,225 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Recent Stats | t_env:    1450000 | Episode:     7250
+blue_team_alives_mean:   144.0000	blue_team_win_mean:        0.0000	ep_length_mean:          200.0000	episode_length_mean:     199.0000
+epsilon:                   0.0500	grad_norm:               7276657868.8000	info_nce_loss:             1.9259	loss:                    14646787.2000
+q_loss:                  13315261.0000	q_taken_mean:            635.8941	red_team_alives_mean:    144.0000	red_team_win_mean:         0.0000
+return_mean:              -1.0548	return_std:                0.0040	target_mean:             634.4457	td_error_abs:            1711.6579
+test_blue_team_alives_mean:144.0000	test_blue_team_win_mean:   0.0000	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000
+test_red_team_alives_mean:144.0000	test_red_team_win_mean:    0.0000	test_return_mean:         -1.0156	test_return_std:           0.0000
+
+2026-04-07 23:04:02,352 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - t_env: 1450200 / 5050000
+2026-04-07 23:04:02,353 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Estimated time left: 1 days, 17 hours, 7 minutes, 8 seconds. Time passed: 16 hours, 4 minutes, 58 seconds
+2026-04-07 23:37:48,185 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Recent Stats | t_env:    1500000 | Episode:     7500
+blue_team_alives_mean:   144.0000	blue_team_win_mean:        0.0000	ep_length_mean:          200.0000	episode_length_mean:     199.0000
+epsilon:                   0.0500	grad_norm:               6659637760.0000	info_nce_loss:             1.1942	loss:                    12609515.2000
+q_loss:                  11463195.6000	q_taken_mean:            624.7538	red_team_alives_mean:    144.0000	red_team_win_mean:         0.0000
+return_mean:              -1.0595	return_std:                0.0040	target_mean:             624.8177	td_error_abs:            1582.5351
+test_blue_team_alives_mean:144.0000	test_blue_team_win_mean:   0.0000	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000
+test_red_team_alives_mean:144.0000	test_red_team_win_mean:    0.0000	test_return_mean:         -1.0180	test_return_std:           0.0000
+
+2026-04-07 23:37:55,217 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - t_env: 1500200 / 5050000
+2026-04-07 23:37:55,218 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Estimated time left: 1 days, 16 hours, 5 minutes, 25 seconds. Time passed: 16 hours, 38 minutes, 51 seconds
+2026-04-07 23:42:44,990 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Saving models to work_dirs/my_experiment/bat_60_ExpoComm_5M/my_run/20260407_065845/models/1500200
+2026-04-08 00:11:39,342 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Recent Stats | t_env:    1550000 | Episode:     7750
+blue_team_alives_mean:   144.0000	blue_team_win_mean:        0.0000	ep_length_mean:          200.0000	episode_length_mean:     199.0000
+epsilon:                   0.0500	grad_norm:               6946707763.2000	info_nce_loss:             1.3256	loss:                    11643913.4000
+q_loss:                  10585375.8000	q_taken_mean:            621.5076	red_team_alives_mean:    144.0000	red_team_win_mean:         0.0000
+return_mean:              -1.0600	return_std:                0.0043	target_mean:             620.1768	td_error_abs:            1560.7145
+test_blue_team_alives_mean:144.0000	test_blue_team_win_mean:   0.0000	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000
+test_red_team_alives_mean:144.0000	test_red_team_win_mean:    0.0000	test_return_mean:         -1.0199	test_return_std:           0.0000
+
+2026-04-08 00:11:46,329 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - t_env: 1550200 / 5050000
+2026-04-08 00:11:46,330 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Estimated time left: 1 days, 15 hours, 29 minutes, 29 seconds. Time passed: 17 hours, 12 minutes, 42 seconds
+2026-04-08 00:45:20,781 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Recent Stats | t_env:    1600000 | Episode:     8000
+blue_team_alives_mean:   144.0000	blue_team_win_mean:        0.0000	ep_length_mean:          200.0000	episode_length_mean:     199.0000
+epsilon:                   0.0500	grad_norm:               6995854438.4000	info_nce_loss:             1.3851	loss:                    11159717.2000
+q_loss:                  10145197.6000	q_taken_mean:            617.8694	red_team_alives_mean:    144.0000	red_team_win_mean:         0.0000
+return_mean:              -1.0635	return_std:                0.0067	target_mean:             618.1082	td_error_abs:            1517.4117
+test_blue_team_alives_mean:144.0000	test_blue_team_win_mean:   0.0000	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000
+test_red_team_alives_mean:144.0000	test_red_team_win_mean:    0.0000	test_return_mean:         -1.0203	test_return_std:           0.0000
+
+2026-04-08 00:45:27,772 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - t_env: 1600200 / 5050000
+2026-04-08 00:45:27,773 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Estimated time left: 1 days, 14 hours, 44 minutes, 31 seconds. Time passed: 17 hours, 46 minutes, 23 seconds
+2026-04-08 01:19:02,466 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Recent Stats | t_env:    1650000 | Episode:     8250
+blue_team_alives_mean:   144.0000	blue_team_win_mean:        0.0000	ep_length_mean:          200.0000	episode_length_mean:     199.0000
+epsilon:                   0.0500	grad_norm:               7086689177.6000	info_nce_loss:             1.3087	loss:                    8986163.1000
+q_loss:                  8169239.2000	q_taken_mean:            615.0206	red_team_alives_mean:    144.0000	red_team_win_mean:         0.0000
+return_mean:              -1.0668	return_std:                0.0062	target_mean:             613.0478	td_error_abs:            1470.0083
+test_blue_team_alives_mean:144.0000	test_blue_team_win_mean:   0.0000	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000
+test_red_team_alives_mean:144.0000	test_red_team_win_mean:    0.0000	test_return_mean:         -1.0246	test_return_std:           0.0000
+
+2026-04-08 01:19:09,444 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - t_env: 1650200 / 5050000
+2026-04-08 01:19:09,445 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Estimated time left: 1 days, 14 hours, 11 minutes, 5 seconds. Time passed: 18 hours, 20 minutes, 5 seconds
+2026-04-08 01:52:44,455 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Recent Stats | t_env:    1700000 | Episode:     8500
+blue_team_alives_mean:   144.0000	blue_team_win_mean:        0.0000	ep_length_mean:          200.0000	episode_length_mean:     199.0000
+epsilon:                   0.0500	grad_norm:               6672280064.0000	info_nce_loss:             1.6722	loss:                    8143005.1000
+q_loss:                  7402731.8000	q_taken_mean:            610.9673	red_team_alives_mean:    144.0000	red_team_win_mean:         0.0000
+return_mean:              -1.0551	return_std:                0.0043	target_mean:             610.8998	td_error_abs:            1384.2313
+test_blue_team_alives_mean:144.0000	test_blue_team_win_mean:   0.0000	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000
+test_red_team_alives_mean:144.0000	test_red_team_win_mean:    0.0000	test_return_mean:         -1.0262	test_return_std:           0.0000
+
+2026-04-08 01:52:51,522 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - t_env: 1700200 / 5050000
+2026-04-08 01:52:51,523 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Estimated time left: 1 days, 13 hours, 37 minutes, 51 seconds. Time passed: 18 hours, 53 minutes, 47 seconds
+2026-04-08 02:26:31,229 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Recent Stats | t_env:    1750000 | Episode:     8750
+blue_team_alives_mean:   144.0000	blue_team_win_mean:        0.0000	ep_length_mean:          200.0000	episode_length_mean:     199.0000
+epsilon:                   0.0500	grad_norm:               7579219558.4000	info_nce_loss:             1.4864	loss:                    7547507.2000
+q_loss:                  6861370.2000	q_taken_mean:            610.2233	red_team_alives_mean:    144.0000	red_team_win_mean:         0.0000
+return_mean:              -1.0512	return_std:                0.0036	target_mean:             608.4017	td_error_abs:            1387.0599
+test_blue_team_alives_mean:144.0000	test_blue_team_win_mean:   0.0000	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000
+test_red_team_alives_mean:144.0000	test_red_team_win_mean:    0.0000	test_return_mean:         -1.0253	test_return_std:           0.0000
+
+2026-04-08 02:26:38,216 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - t_env: 1750200 / 5050000
+2026-04-08 02:26:38,217 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Estimated time left: 1 days, 13 hours, 9 minutes, 13 seconds. Time passed: 19 hours, 27 minutes, 34 seconds
+2026-04-08 03:00:17,237 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Recent Stats | t_env:    1800000 | Episode:     9000
+blue_team_alives_mean:   144.0000	blue_team_win_mean:        0.0000	ep_length_mean:          200.0000	episode_length_mean:     199.0000
+epsilon:                   0.0500	grad_norm:               6583548108.8000	info_nce_loss:             1.4115	loss:                    6992040.6000
+q_loss:                  6356400.4000	q_taken_mean:            606.9320	red_team_alives_mean:    144.0000	red_team_win_mean:         0.0000
+return_mean:              -1.0429	return_std:                0.0022	target_mean:             606.3230	td_error_abs:            1290.7678
+test_blue_team_alives_mean:144.0000	test_blue_team_win_mean:   0.0000	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000
+test_red_team_alives_mean:144.0000	test_red_team_win_mean:    0.0000	test_return_mean:         -1.0223	test_return_std:           0.0000
+
+2026-04-08 03:00:24,254 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - t_env: 1800200 / 5050000
+2026-04-08 03:00:24,255 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Estimated time left: 1 days, 12 hours, 34 minutes, 44 seconds. Time passed: 20 hours, 1 minutes, 20 seconds
+2026-04-08 03:34:01,650 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Recent Stats | t_env:    1850000 | Episode:     9250
+blue_team_alives_mean:   144.0000	blue_team_win_mean:        0.0000	ep_length_mean:          200.0000	episode_length_mean:     199.0000
+epsilon:                   0.0500	grad_norm:               7980335308.8000	info_nce_loss:             1.5604	loss:                    6980303.0000
+q_loss:                  6345730.0000	q_taken_mean:            606.7530	red_team_alives_mean:    144.0000	red_team_win_mean:         0.0000
+return_mean:              -1.0494	return_std:                0.0037	target_mean:             604.2899	td_error_abs:            1369.5186
+test_blue_team_alives_mean:144.0000	test_blue_team_win_mean:   0.0000	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000
+test_red_team_alives_mean:144.0000	test_red_team_win_mean:    0.0000	test_return_mean:         -1.0237	test_return_std:           0.0000
+
+2026-04-08 03:34:08,635 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - t_env: 1850200 / 5050000
+2026-04-08 03:34:08,636 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Estimated time left: 1 days, 11 hours, 59 minutes, 12 seconds. Time passed: 20 hours, 35 minutes, 4 seconds
+2026-04-08 04:07:44,900 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Recent Stats | t_env:    1900000 | Episode:     9500
+blue_team_alives_mean:   144.0000	blue_team_win_mean:        0.0000	ep_length_mean:          200.0000	episode_length_mean:     199.0000
+epsilon:                   0.0500	grad_norm:               7815756800.0000	info_nce_loss:             1.8687	loss:                    6701607.5000
+q_loss:                  6092370.5000	q_taken_mean:            606.7094	red_team_alives_mean:    144.0000	red_team_win_mean:         0.0000
+return_mean:              -1.0470	return_std:                0.0046	target_mean:             606.2891	td_error_abs:            1272.5318
+test_blue_team_alives_mean:144.0000	test_blue_team_win_mean:   0.0000	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000
+test_red_team_alives_mean:144.0000	test_red_team_win_mean:    0.0000	test_return_mean:         -1.0214	test_return_std:           0.0000
+
+2026-04-08 04:07:51,945 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - t_env: 1900200 / 5050000
+2026-04-08 04:07:51,946 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Estimated time left: 1 days, 11 hours, 24 minutes, 20 seconds. Time passed: 21 hours, 8 minutes, 47 seconds
+2026-04-08 04:41:28,860 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Recent Stats | t_env:    1950000 | Episode:     9750
+blue_team_alives_mean:   144.0000	blue_team_win_mean:        0.0000	ep_length_mean:          200.0000	episode_length_mean:     199.0000
+epsilon:                   0.0500	grad_norm:               8588309606.4000	info_nce_loss:             1.1447	loss:                    6750943.5000
+q_loss:                  6137221.2500	q_taken_mean:            605.3729	red_team_alives_mean:    144.0000	red_team_win_mean:         0.0000
+return_mean:              -1.0483	return_std:                0.0029	target_mean:             603.9546	td_error_abs:            1273.2949
+test_blue_team_alives_mean:144.0000	test_blue_team_win_mean:   0.0000	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000
+test_red_team_alives_mean:144.0000	test_red_team_win_mean:    0.0000	test_return_mean:         -1.0227	test_return_std:           0.0000
+
+2026-04-08 04:41:35,848 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - t_env: 1950200 / 5050000
+2026-04-08 04:41:35,849 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Estimated time left: 1 days, 10 hours, 51 minutes, 13 seconds. Time passed: 21 hours, 42 minutes, 31 seconds
+2026-04-08 05:15:14,958 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Recent Stats | t_env:    2000000 | Episode:    10000
+blue_team_alives_mean:   144.0000	blue_team_win_mean:        0.0000	ep_length_mean:          200.0000	episode_length_mean:     199.0000
+epsilon:                   0.0500	grad_norm:               7618721382.4000	info_nce_loss:             1.2655	loss:                    5767660.5000
+q_loss:                  5243327.7000	q_taken_mean:            602.9694	red_team_alives_mean:    144.0000	red_team_win_mean:         0.0000
+return_mean:              -1.0409	return_std:                0.0025	target_mean:             602.0884	td_error_abs:            1190.7594
+test_blue_team_alives_mean:144.0000	test_blue_team_win_mean:   0.0000	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000
+test_red_team_alives_mean:144.0000	test_red_team_win_mean:    0.0000	test_return_mean:         -1.0199	test_return_std:           0.0000
+
+2026-04-08 05:15:22,025 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - t_env: 2000200 / 5050000
+2026-04-08 05:15:22,026 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Estimated time left: 1 days, 10 hours, 19 minutes, 48 seconds. Time passed: 22 hours, 16 minutes, 17 seconds
+2026-04-08 05:20:09,848 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Saving models to work_dirs/my_experiment/bat_60_ExpoComm_5M/my_run/20260407_065845/models/2000200
+2026-04-08 05:48:59,478 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Recent Stats | t_env:    2050000 | Episode:    10250
+blue_team_alives_mean:   144.0000	blue_team_win_mean:        0.0000	ep_length_mean:          200.0000	episode_length_mean:     199.0000
+epsilon:                   0.0500	grad_norm:               9344517017.6000	info_nce_loss:             1.7793	loss:                    7133001.3500
+q_loss:                  6484546.6500	q_taken_mean:            604.9748	red_team_alives_mean:    144.0000	red_team_win_mean:         0.0000
+return_mean:              -1.0405	return_std:                0.0020	target_mean:             602.8623	td_error_abs:            1267.2666
+test_blue_team_alives_mean:144.0000	test_blue_team_win_mean:   0.0000	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000
+test_red_team_alives_mean:144.0000	test_red_team_win_mean:    0.0000	test_return_mean:         -1.0189	test_return_std:           0.0000
+
+2026-04-08 05:49:06,467 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - t_env: 2050200 / 5050000
+2026-04-08 05:49:06,468 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Estimated time left: 1 days, 9 hours, 44 minutes, 18 seconds. Time passed: 22 hours, 50 minutes, 2 seconds
+2026-04-08 06:22:40,700 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Recent Stats | t_env:    2100000 | Episode:    10500
+blue_team_alives_mean:   144.0000	blue_team_win_mean:        0.0000	ep_length_mean:          200.0000	episode_length_mean:     199.0000
+epsilon:                   0.0500	grad_norm:               8920694272.0000	info_nce_loss:             1.5404	loss:                    6267261.3000
+q_loss:                  5697510.3500	q_taken_mean:            603.9341	red_team_alives_mean:    144.0000	red_team_win_mean:         0.0000
+return_mean:              -1.0460	return_std:                0.0035	target_mean:             602.8075	td_error_abs:            1186.3158
+test_blue_team_alives_mean:144.0000	test_blue_team_win_mean:   0.0000	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000
+test_red_team_alives_mean:144.0000	test_red_team_win_mean:    0.0000	test_return_mean:         -1.0155	test_return_std:           0.0000
+
+2026-04-08 06:22:47,689 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - t_env: 2100200 / 5050000
+2026-04-08 06:22:47,690 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Estimated time left: 1 days, 9 hours, 7 minutes, 23 seconds. Time passed: 23 hours, 23 minutes, 43 seconds
+2026-04-08 06:56:20,772 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Recent Stats | t_env:    2150000 | Episode:    10750
+blue_team_alives_mean:   144.0000	blue_team_win_mean:        0.0000	ep_length_mean:          200.0000	episode_length_mean:     199.0000
+epsilon:                   0.0500	grad_norm:               10437072691.2000	info_nce_loss:             1.3490	loss:                    7635962.2000
+q_loss:                  6941783.7500	q_taken_mean:            598.1950	red_team_alives_mean:    144.0000	red_team_win_mean:         0.0000
+return_mean:              -1.0516	return_std:                0.0053	target_mean:             596.0904	td_error_abs:            1171.5841
+test_blue_team_alives_mean:144.0000	test_blue_team_win_mean:   0.0000	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000
+test_red_team_alives_mean:144.0000	test_red_team_win_mean:    0.0000	test_return_mean:         -1.0092	test_return_std:           0.0000
+
+2026-04-08 06:56:27,753 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - t_env: 2150200 / 5050000
+2026-04-08 06:56:27,754 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Estimated time left: 1 days, 8 hours, 32 minutes, 35 seconds. Time passed: 23 hours, 57 minutes, 23 seconds
+2026-04-08 07:30:02,383 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Recent Stats | t_env:    2200000 | Episode:    11000
+blue_team_alives_mean:   144.0000	blue_team_win_mean:        0.0000	ep_length_mean:          200.0000	episode_length_mean:     199.0000
+epsilon:                   0.0500	grad_norm:               9269928857.6000	info_nce_loss:             1.6490	loss:                    6492060.8500
+q_loss:                  5901873.5000	q_taken_mean:            598.3648	red_team_alives_mean:    144.0000	red_team_win_mean:         0.0000
+return_mean:              -1.0457	return_std:                0.0039	target_mean:             597.4046	td_error_abs:            1102.9578
+test_blue_team_alives_mean:144.0000	test_blue_team_win_mean:   0.0000	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000
+test_red_team_alives_mean:144.0000	test_red_team_win_mean:    0.0000	test_return_mean:         -1.0062	test_return_std:           0.0000
+
+2026-04-08 07:30:09,396 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - t_env: 2200200 / 5050000
+2026-04-08 07:30:09,397 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Estimated time left: 1 days, 8 hours, 25 seconds. Time passed: 1 days, 31 minutes, 5 seconds
+2026-04-08 08:03:38,360 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Recent Stats | t_env:    2250000 | Episode:    11250
+blue_team_alives_mean:   144.0000	blue_team_win_mean:        0.0000	ep_length_mean:          200.0000	episode_length_mean:     199.0000
+epsilon:                   0.0500	grad_norm:               12105080524.8000	info_nce_loss:             1.4535	loss:                    8503275.7500
+q_loss:                  7730250.6500	q_taken_mean:            596.2788	red_team_alives_mean:    144.0000	red_team_win_mean:         0.0000
+return_mean:              -1.0438	return_std:                0.0026	target_mean:             594.1005	td_error_abs:            1201.4414
+test_blue_team_alives_mean:144.0000	test_blue_team_win_mean:   0.0000	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000
+test_red_team_alives_mean:144.0000	test_red_team_win_mean:    0.0000	test_return_mean:         -1.0099	test_return_std:           0.0000
+
+2026-04-08 08:03:45,308 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - t_env: 2250200 / 5050000
+2026-04-08 08:03:45,309 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Estimated time left: 1 days, 7 hours, 21 minutes, 22 seconds. Time passed: 1 days, 1 hours, 4 minutes, 41 seconds
+2026-04-08 08:37:13,612 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Recent Stats | t_env:    2300000 | Episode:    11500
+blue_team_alives_mean:   144.0000	blue_team_win_mean:        0.0000	ep_length_mean:          200.0000	episode_length_mean:     199.0000
+epsilon:                   0.0500	grad_norm:               11617005977.6000	info_nce_loss:             1.4054	loss:                    7684251.4000
+q_loss:                  6985683.0000	q_taken_mean:            588.8798	red_team_alives_mean:    144.0000	red_team_win_mean:         0.0000
+return_mean:              -1.0419	return_std:                0.0022	target_mean:             589.8009	td_error_abs:            1269.2703
+test_blue_team_alives_mean:144.0000	test_blue_team_win_mean:   0.0000	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000
+test_red_team_alives_mean:144.0000	test_red_team_win_mean:    0.0000	test_return_mean:         -1.0099	test_return_std:           0.0000
+
+2026-04-08 08:37:20,586 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - t_env: 2300200 / 5050000
+2026-04-08 08:37:20,587 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Estimated time left: 1 days, 6 hours, 47 minutes, 12 seconds. Time passed: 1 days, 1 hours, 38 minutes, 16 seconds
+2026-04-08 09:11:09,492 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Recent Stats | t_env:    2350000 | Episode:    11750
+blue_team_alives_mean:   144.0000	blue_team_win_mean:        0.0000	ep_length_mean:          200.0000	episode_length_mean:     199.0000
+epsilon:                   0.0500	grad_norm:               12690397593.6000	info_nce_loss:             1.9864	loss:                    6998250.1000
+q_loss:                  6362045.6000	q_taken_mean:            584.7151	red_team_alives_mean:    144.0000	red_team_win_mean:         0.0000
+return_mean:              -1.0416	return_std:                0.0032	target_mean:             586.5344	td_error_abs:            1210.2466
+test_blue_team_alives_mean:144.0000	test_blue_team_win_mean:   0.0000	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000
+test_red_team_alives_mean:144.0000	test_red_team_win_mean:    0.0000	test_return_mean:         -1.0091	test_return_std:           0.0000
+
+2026-04-08 09:11:16,687 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - t_env: 2350200 / 5050000
+2026-04-08 09:11:16,689 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Estimated time left: 1 days, 6 hours, 32 minutes, 21 seconds. Time passed: 1 days, 2 hours, 12 minutes, 12 seconds
+2026-04-08 09:45:44,891 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Recent Stats | t_env:    2400000 | Episode:    12000
+blue_team_alives_mean:   144.0000	blue_team_win_mean:        0.0000	ep_length_mean:          200.0000	episode_length_mean:     199.0000
+epsilon:                   0.0500	grad_norm:               13941142528.0000	info_nce_loss:             1.2200	loss:                    7141119.8000
+q_loss:                  6491927.1000	q_taken_mean:            586.7555	red_team_alives_mean:    144.0000	red_team_win_mean:         0.0000
+return_mean:              -1.0456	return_std:                0.0034	target_mean:             586.0683	td_error_abs:            1098.1216
+test_blue_team_alives_mean:144.0000	test_blue_team_win_mean:   0.0000	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000
+test_red_team_alives_mean:144.0000	test_red_team_win_mean:    0.0000	test_return_mean:         -1.0092	test_return_std:           0.0000
+
+2026-04-08 09:45:52,053 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - t_env: 2400200 / 5050000
+2026-04-08 09:45:52,054 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Estimated time left: 1 days, 6 hours, 33 minutes, 6 seconds. Time passed: 1 days, 2 hours, 46 minutes, 47 seconds
+2026-04-08 10:20:23,981 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Recent Stats | t_env:    2450000 | Episode:    12250
+blue_team_alives_mean:   144.0000	blue_team_win_mean:        0.0000	ep_length_mean:          200.0000	episode_length_mean:     199.0000
+epsilon:                   0.0500	grad_norm:               15717770240.0000	info_nce_loss:             1.5365	loss:                    8570374.9500
+q_loss:                  7791249.8500	q_taken_mean:            588.1790	red_team_alives_mean:    144.0000	red_team_win_mean:         0.0000
+return_mean:              -1.0432	return_std:                0.0032	target_mean:             586.5293	td_error_abs:            1309.2045
+test_blue_team_alives_mean:144.0000	test_blue_team_win_mean:   0.0000	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000
+test_red_team_alives_mean:144.0000	test_red_team_win_mean:    0.0000	test_return_mean:         -1.0105	test_return_std:           0.0000
+
+2026-04-08 10:20:31,165 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - t_env: 2450200 / 5050000
+2026-04-08 10:20:31,166 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Estimated time left: 1 days, 6 hours, 1 minutes, 45 seconds. Time passed: 1 days, 3 hours, 21 minutes, 26 seconds
+2026-04-08 10:54:59,112 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Recent Stats | t_env:    2500000 | Episode:    12500
+blue_team_alives_mean:   144.0000	blue_team_win_mean:        0.0000	ep_length_mean:          200.0000	episode_length_mean:     199.0000
+epsilon:                   0.0500	grad_norm:               13386819174.4000	info_nce_loss:             1.3806	loss:                    6736816.8500
+q_loss:                  6124378.9500	q_taken_mean:            591.1067	red_team_alives_mean:    144.0000	red_team_win_mean:         0.0000
+return_mean:              -1.0402	return_std:                0.0029	target_mean:             589.2753	td_error_abs:            1235.5274
+test_blue_team_alives_mean:144.0000	test_blue_team_win_mean:   0.0000	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000
+test_red_team_alives_mean:144.0000	test_red_team_win_mean:    0.0000	test_return_mean:         -1.0066	test_return_std:           0.0000
+
+2026-04-08 10:55:06,265 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - t_env: 2500200 / 5050000
+2026-04-08 10:55:06,266 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Estimated time left: 1 days, 5 hours, 23 minutes, 41 seconds. Time passed: 1 days, 3 hours, 56 minutes, 2 seconds
+2026-04-08 11:00:01,864 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Saving models to work_dirs/my_experiment/bat_60_ExpoComm_5M/my_run/20260407_065845/models/2500200
+2026-04-08 11:29:17,263 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Recent Stats | t_env:    2550000 | Episode:    12750
+blue_team_alives_mean:   144.0000	blue_team_win_mean:        0.0000	ep_length_mean:          200.0000	episode_length_mean:     199.0000
+epsilon:                   0.0500	grad_norm:               12597576192.0000	info_nce_loss:             1.8787	loss:                    5968006.1500
+q_loss:                  5425460.1500	q_taken_mean:            581.5350	red_team_alives_mean:    144.0000	red_team_win_mean:         0.0000
+return_mean:              -1.0424	return_std:                0.0033	target_mean:             578.8881	td_error_abs:            1148.2840
+test_blue_team_alives_mean:144.0000	test_blue_team_win_mean:   0.0000	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000
+test_red_team_alives_mean:144.0000	test_red_team_win_mean:    0.0000	test_return_mean:         -1.0076	test_return_std:           0.0000
+
+2026-04-08 11:29:24,217 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - t_env: 2550200 / 5050000
+2026-04-08 11:29:24,217 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Estimated time left: 1 days, 4 hours, 34 minutes, 49 seconds. Time passed: 1 days, 4 hours, 30 minutes, 20 seconds
+2026-04-08 12:02:52,509 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Recent Stats | t_env:    2600000 | Episode:    13000
+blue_team_alives_mean:   144.0000	blue_team_win_mean:        0.0000	ep_length_mean:          200.0000	episode_length_mean:     199.0000
+epsilon:                   0.0500	grad_norm:               11746677555.2000	info_nce_loss:             1.7439	loss:                    5413207.7500
+q_loss:                  4921097.9000	q_taken_mean:            571.4650	red_team_alives_mean:    144.0000	red_team_win_mean:         0.0000
+return_mean:              -1.0414	return_std:                0.0037	target_mean:             573.2959	td_error_abs:            1166.7134
+test_blue_team_alives_mean:144.0000	test_blue_team_win_mean:   0.0000	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000
+test_red_team_alives_mean:144.0000	test_red_team_win_mean:    0.0000	test_return_mean:         -1.0076	test_return_std:           0.0000
+
+2026-04-08 12:02:59,471 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - t_env: 2600200 / 5050000
+2026-04-08 12:02:59,472 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Estimated time left: 1 days, 3 hours, 25 minutes, 39 seconds. Time passed: 1 days, 5 hours, 3 minutes, 55 seconds
+2026-04-08 12:36:28,059 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Recent Stats | t_env:    2650000 | Episode:    13250
+blue_team_alives_mean:   144.0000	blue_team_win_mean:        0.0000	ep_length_mean:          200.0000	episode_length_mean:     199.0000
+epsilon:                   0.0500	grad_norm:               13122916556.8000	info_nce_loss:             1.7894	loss:                    6851941.8000
+q_loss:                  6229038.0000	q_taken_mean:            577.4207	red_team_alives_mean:    144.0000	red_team_win_mean:         0.0000
+return_mean:              -1.0478	return_std:                0.0060	target_mean:             572.9217	td_error_abs:            1372.5595
+test_blue_team_alives_mean:144.0000	test_blue_team_win_mean:   0.0000	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000
+test_red_team_alives_mean:144.0000	test_red_team_win_mean:    0.0000	test_return_mean:         -1.0114	test_return_std:           0.0000
+
+2026-04-08 12:36:35,002 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - t_env: 2650200 / 5050000
+2026-04-08 12:36:35,003 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Estimated time left: 1 days, 2 hours, 52 minutes, 17 seconds. Time passed: 1 days, 5 hours, 37 minutes, 30 seconds
+2026-04-08 13:10:04,118 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Recent Stats | t_env:    2700000 | Episode:    13500
+blue_team_alives_mean:   144.0000	blue_team_win_mean:        0.0000	ep_length_mean:          200.0000	episode_length_mean:     199.0000
+epsilon:                   0.0500	grad_norm:               12163806720.0000	info_nce_loss:             1.0355	loss:                    5559001.7500
+q_loss:                  5053637.8500	q_taken_mean:            557.7436	red_team_alives_mean:    144.0000	red_team_win_mean:         0.0000
+return_mean:              -1.0452	return_std:                0.0060	target_mean:             557.7783	td_error_abs:            1078.4378
+test_blue_team_alives_mean:144.0000	test_blue_team_win_mean:   0.0000	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000
+test_red_team_alives_mean:144.0000	test_red_team_win_mean:    0.0000	test_return_mean:         -1.0087	test_return_std:           0.0000
+
+2026-04-08 13:10:11,078 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - t_env: 2700200 / 5050000
+2026-04-08 13:10:11,079 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Estimated time left: 1 days, 2 hours, 19 minutes, 7 seconds. Time passed: 1 days, 6 hours, 11 minutes, 6 seconds
+2026-04-08 13:43:40,212 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Recent Stats | t_env:    2750000 | Episode:    13750
+blue_team_alives_mean:   144.0000	blue_team_win_mean:        0.0000	ep_length_mean:          200.0000	episode_length_mean:     199.0000
+epsilon:                   0.0500	grad_norm:               13259274035.2000	info_nce_loss:             1.1446	loss:                    6001883.3500
+q_loss:                  5456257.7000	q_taken_mean:            559.9323	red_team_alives_mean:    144.0000	red_team_win_mean:         0.0000
+return_mean:              -1.0422	return_std:                0.0042	target_mean:             558.8946	td_error_abs:            1075.6675
+test_blue_team_alives_mean:144.0000	test_blue_team_win_mean:   0.0000	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000
+test_red_team_alives_mean:144.0000	test_red_team_win_mean:    0.0000	test_return_mean:         -1.0089	test_return_std:           0.0000
+
+2026-04-08 13:43:47,168 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - t_env: 2750200 / 5050000
+2026-04-08 13:43:47,170 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Estimated time left: 1 days, 1 hours, 45 minutes, 32 seconds. Time passed: 1 days, 6 hours, 44 minutes, 42 seconds
+2026-04-08 14:17:15,680 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Recent Stats | t_env:    2800000 | Episode:    14000
+blue_team_alives_mean:   144.0000	blue_team_win_mean:        0.0000	ep_length_mean:          200.0000	episode_length_mean:     199.0000
+epsilon:                   0.0500	grad_norm:               11573934489.6000	info_nce_loss:             1.4109	loss:                    5065661.5500
+q_loss:                  4605146.9000	q_taken_mean:            556.0841	red_team_alives_mean:    144.0000	red_team_win_mean:         0.0000
+return_mean:              -1.0415	return_std:                0.0042	target_mean:             554.8817	td_error_abs:            1064.4670
+test_blue_team_alives_mean:144.0000	test_blue_team_win_mean:   0.0000	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000
+test_red_team_alives_mean:144.0000	test_red_team_win_mean:    0.0000	test_return_mean:         -1.0111	test_return_std:           0.0000
+
+2026-04-08 14:17:22,630 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - t_env: 2800200 / 5050000
+2026-04-08 14:17:22,631 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Estimated time left: 1 days, 1 hours, 11 minutes, 27 seconds. Time passed: 1 days, 7 hours, 18 minutes, 18 seconds
+2026-04-08 14:50:59,145 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Recent Stats | t_env:    2850000 | Episode:    14250
+blue_team_alives_mean:   144.0000	blue_team_win_mean:        0.0000	ep_length_mean:          200.0000	episode_length_mean:     199.0000
+epsilon:                   0.0500	grad_norm:               13589708390.4000	info_nce_loss:             1.0329	loss:                    6876131.2500
+q_loss:                  6251028.8000	q_taken_mean:            559.8904	red_team_alives_mean:    144.0000	red_team_win_mean:         0.0000
+return_mean:              -1.0436	return_std:                0.0043	target_mean:             560.3910	td_error_abs:            1313.9057
+test_blue_team_alives_mean:144.0000	test_blue_team_win_mean:   0.0000	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000
+test_red_team_alives_mean:144.0000	test_red_team_win_mean:    0.0000	test_return_mean:         -1.0126	test_return_std:           0.0000
+
+2026-04-08 14:51:06,106 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - t_env: 2850200 / 5050000
+2026-04-08 14:51:06,107 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Estimated time left: 1 days, 43 minutes, 44 seconds. Time passed: 1 days, 7 hours, 52 minutes, 1 seconds
+2026-04-08 15:24:29,650 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Recent Stats | t_env:    2900000 | Episode:    14500
+blue_team_alives_mean:   144.0000	blue_team_win_mean:        0.0000	ep_length_mean:          200.0000	episode_length_mean:     199.0000
+epsilon:                   0.0500	grad_norm:               11497904947.2000	info_nce_loss:             1.5394	loss:                    5600857.2000
+q_loss:                  5091688.4500	q_taken_mean:            558.9148	red_team_alives_mean:    144.0000	red_team_win_mean:         0.0000
+return_mean:              -1.0444	return_std:                0.0049	target_mean:             559.4386	td_error_abs:            1312.0091
+test_blue_team_alives_mean:144.0000	test_blue_team_win_mean:   0.0000	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000
+test_red_team_alives_mean:144.0000	test_red_team_win_mean:    0.0000	test_return_mean:         -1.0075	test_return_std:           0.0000
+
+2026-04-08 15:24:36,611 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - t_env: 2900200 / 5050000
+2026-04-08 15:24:36,612 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Estimated time left: 1 days, 43 seconds. Time passed: 1 days, 8 hours, 25 minutes, 32 seconds
+2026-04-08 15:58:05,671 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Recent Stats | t_env:    2950000 | Episode:    14750
+blue_team_alives_mean:   144.0000	blue_team_win_mean:        0.0000	ep_length_mean:          200.0000	episode_length_mean:     199.0000
+epsilon:                   0.0500	grad_norm:               11831939276.8000	info_nce_loss:             1.7678	loss:                    5689468.3500
+q_loss:                  5172244.0000	q_taken_mean:            551.6754	red_team_alives_mean:    144.0000	red_team_win_mean:         0.0000
+return_mean:              -1.0431	return_std:                0.0045	target_mean:             552.6527	td_error_abs:            1236.1405
+test_blue_team_alives_mean:144.0000	test_blue_team_win_mean:   0.0000	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000
+test_red_team_alives_mean:144.0000	test_red_team_win_mean:    0.0000	test_return_mean:         -1.0067	test_return_std:           0.0000
+
+2026-04-08 15:58:12,652 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - t_env: 2950200 / 5050000
+2026-04-08 15:58:12,653 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Estimated time left: 23 hours, 31 minutes, 5 seconds. Time passed: 1 days, 8 hours, 59 minutes, 8 seconds
+2026-04-08 16:31:43,727 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Recent Stats | t_env:    3000000 | Episode:    15000
+blue_team_alives_mean:   144.0000	blue_team_win_mean:        0.0000	ep_length_mean:          200.0000	episode_length_mean:     199.0000
+epsilon:                   0.0500	grad_norm:               11464805785.6000	info_nce_loss:             0.8120	loss:                    5208872.6000
+q_loss:                  4735338.8000	q_taken_mean:            553.0389	red_team_alives_mean:    144.0000	red_team_win_mean:         0.0000
+return_mean:              -1.0422	return_std:                0.0035	target_mean:             551.5061	td_error_abs:            1161.3705
+test_blue_team_alives_mean:144.0000	test_blue_team_win_mean:   0.0000	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000
+test_red_team_alives_mean:144.0000	test_red_team_win_mean:    0.0000	test_return_mean:         -1.0072	test_return_std:           0.0000
+
+2026-04-08 16:31:50,767 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - t_env: 3000200 / 5050000
+2026-04-08 16:31:50,767 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Estimated time left: 22 hours, 58 minutes, 54 seconds. Time passed: 1 days, 9 hours, 32 minutes, 46 seconds
+2026-04-08 16:36:38,541 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Saving models to work_dirs/my_experiment/bat_60_ExpoComm_5M/my_run/20260407_065845/models/3000200
+2026-04-08 17:05:22,316 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Recent Stats | t_env:    3050000 | Episode:    15250
+blue_team_alives_mean:   144.0000	blue_team_win_mean:        0.0000	ep_length_mean:          200.0000	episode_length_mean:     199.0000
+epsilon:                   0.0500	grad_norm:               12825081241.6000	info_nce_loss:             0.9614	loss:                    6735707.9000
+q_loss:                  6123370.7500	q_taken_mean:            549.6378	red_team_alives_mean:    144.0000	red_team_win_mean:         0.0000
+return_mean:              -1.0443	return_std:                0.0036	target_mean:             550.7173	td_error_abs:            1377.6327
+test_blue_team_alives_mean:144.0000	test_blue_team_win_mean:   0.0000	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000
+test_red_team_alives_mean:144.0000	test_red_team_win_mean:    0.0000	test_return_mean:         -1.0036	test_return_std:           0.0000
+
+2026-04-08 17:05:29,280 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - t_env: 3050200 / 5050000
+2026-04-08 17:05:29,281 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Estimated time left: 22 hours, 25 minutes, 32 seconds. Time passed: 1 days, 10 hours, 6 minutes, 25 seconds
+2026-04-08 17:39:02,163 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Recent Stats | t_env:    3100000 | Episode:    15500
+blue_team_alives_mean:   144.0000	blue_team_win_mean:        0.0000	ep_length_mean:          200.0000	episode_length_mean:     199.0000
+epsilon:                   0.0500	grad_norm:               10043046809.6000	info_nce_loss:             1.4266	loss:                    4720015.2000
+q_loss:                  4290922.8500	q_taken_mean:            548.3706	red_team_alives_mean:    144.0000	red_team_win_mean:         0.0000
+return_mean:              -1.0460	return_std:                0.0058	target_mean:             550.6033	td_error_abs:            1145.3319
+test_blue_team_alives_mean:144.0000	test_blue_team_win_mean:   0.0000	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000
+test_red_team_alives_mean:144.0000	test_red_team_win_mean:    0.0000	test_return_mean:         -1.0063	test_return_std:           0.0000
+
+2026-04-08 17:39:09,155 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - t_env: 3100200 / 5050000
+2026-04-08 17:39:09,156 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Estimated time left: 21 hours, 52 minutes, 47 seconds. Time passed: 1 days, 10 hours, 40 minutes, 4 seconds
+2026-04-08 18:12:39,762 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Recent Stats | t_env:    3150000 | Episode:    15750
+blue_team_alives_mean:   144.0000	blue_team_win_mean:        0.0000	ep_length_mean:          200.0000	episode_length_mean:     199.0000
+epsilon:                   0.0500	grad_norm:               12252272844.8000	info_nce_loss:             1.2942	loss:                    6926729.5000
+q_loss:                  6297026.7000	q_taken_mean:            546.8905	red_team_alives_mean:    144.0000	red_team_win_mean:         0.0000
+return_mean:              -1.0434	return_std:                0.0051	target_mean:             550.2694	td_error_abs:            1419.5535
+test_blue_team_alives_mean:144.0000	test_blue_team_win_mean:   0.0000	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000
+test_red_team_alives_mean:144.0000	test_red_team_win_mean:    0.0000	test_return_mean:         -1.0079	test_return_std:           0.0000
+
+2026-04-08 18:12:46,747 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - t_env: 3150200 / 5050000
+2026-04-08 18:12:46,748 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Estimated time left: 21 hours, 17 minutes, 40 seconds. Time passed: 1 days, 11 hours, 13 minutes, 42 seconds
+2026-04-08 18:46:17,552 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Recent Stats | t_env:    3200000 | Episode:    16000
+blue_team_alives_mean:   144.0000	blue_team_win_mean:        0.0000	ep_length_mean:          200.0000	episode_length_mean:     199.0000
+epsilon:                   0.0500	grad_norm:               11050668134.4000	info_nce_loss:             0.6348	loss:                    5018385.1000
+q_loss:                  4562168.2500	q_taken_mean:            549.1131	red_team_alives_mean:    144.0000	red_team_win_mean:         0.0000
+return_mean:              -1.0397	return_std:                0.0023	target_mean:             548.8922	td_error_abs:            1100.4696
+test_blue_team_alives_mean:144.0000	test_blue_team_win_mean:   0.0000	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000
+test_red_team_alives_mean:144.0000	test_red_team_win_mean:    0.0000	test_return_mean:         -1.0067	test_return_std:           0.0000
+
+2026-04-08 18:46:24,528 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - t_env: 3200200 / 5050000
+2026-04-08 18:46:24,529 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Estimated time left: 20 hours, 44 minutes, 9 seconds. Time passed: 1 days, 11 hours, 47 minutes, 20 seconds
+2026-04-08 19:19:53,661 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Recent Stats | t_env:    3250000 | Episode:    16250
+blue_team_alives_mean:   144.0000	blue_team_win_mean:        0.0000	ep_length_mean:          200.0000	episode_length_mean:     199.0000
+epsilon:                   0.0500	grad_norm:               13336876851.2000	info_nce_loss:             1.4100	loss:                    6761287.1000
+q_loss:                  6146666.5500	q_taken_mean:            555.9570	red_team_alives_mean:    144.0000	red_team_win_mean:         0.0000
+return_mean:              -1.0406	return_std:                0.0025	target_mean:             555.4398	td_error_abs:            1274.3138
+test_blue_team_alives_mean:144.0000	test_blue_team_win_mean:   0.0000	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000
+test_red_team_alives_mean:144.0000	test_red_team_win_mean:    0.0000	test_return_mean:         -1.0066	test_return_std:           0.0000
+
+2026-04-08 19:20:00,644 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - t_env: 3250200 / 5050000
+2026-04-08 19:20:00,645 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Estimated time left: 20 hours, 9 minutes, 32 seconds. Time passed: 1 days, 12 hours, 20 minutes, 56 seconds
+2026-04-08 19:53:29,674 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Recent Stats | t_env:    3300000 | Episode:    16500
+blue_team_alives_mean:   144.0000	blue_team_win_mean:        0.0000	ep_length_mean:          200.0000	episode_length_mean:     199.0000
+epsilon:                   0.0500	grad_norm:               11805942374.4000	info_nce_loss:             1.3261	loss:                    5995488.5000
+q_loss:                  5450445.1500	q_taken_mean:            565.4223	red_team_alives_mean:    144.0000	red_team_win_mean:         0.0000
+return_mean:              -1.0458	return_std:                0.0046	target_mean:             562.4923	td_error_abs:            1396.4584
+test_blue_team_alives_mean:144.0000	test_blue_team_win_mean:   0.0000	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000
+test_red_team_alives_mean:144.0000	test_red_team_win_mean:    0.0000	test_return_mean:         -1.0078	test_return_std:           0.0000
+
+2026-04-08 19:53:36,632 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - t_env: 3300200 / 5050000
+2026-04-08 19:53:36,633 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Estimated time left: 19 hours, 35 minutes, 51 seconds. Time passed: 1 days, 12 hours, 54 minutes, 32 seconds
+2026-04-08 20:27:04,333 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Recent Stats | t_env:    3350000 | Episode:    16750
+blue_team_alives_mean:   144.0000	blue_team_win_mean:        0.0000	ep_length_mean:          200.0000	episode_length_mean:     199.0000
+epsilon:                   0.0500	grad_norm:               11312822169.6000	info_nce_loss:             1.4038	loss:                    6025711.9500
+q_loss:                  5477919.9500	q_taken_mean:            572.6800	red_team_alives_mean:    144.0000	red_team_win_mean:         0.0000
+return_mean:              -1.0415	return_std:                0.0030	target_mean:             568.4418	td_error_abs:            1412.5310
+test_blue_team_alives_mean:144.0000	test_blue_team_win_mean:   0.0000	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000
+test_red_team_alives_mean:144.0000	test_red_team_win_mean:    0.0000	test_return_mean:         -1.0055	test_return_std:           0.0000
+
+2026-04-08 20:27:11,296 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - t_env: 3350200 / 5050000
+2026-04-08 20:27:11,297 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Estimated time left: 19 hours, 1 minutes, 30 seconds. Time passed: 1 days, 13 hours, 28 minutes, 7 seconds
+2026-04-08 21:00:41,301 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Recent Stats | t_env:    3400000 | Episode:    17000
+blue_team_alives_mean:   144.0000	blue_team_win_mean:        0.0000	ep_length_mean:          200.0000	episode_length_mean:     199.0000
+epsilon:                   0.0500	grad_norm:               11282798950.4000	info_nce_loss:             1.3638	loss:                    5911662.0000
+q_loss:                  5374238.2000	q_taken_mean:            576.8032	red_team_alives_mean:    144.0000	red_team_win_mean:         0.0000
+return_mean:              -1.0392	return_std:                0.0019	target_mean:             576.2928	td_error_abs:            1173.5373
+test_blue_team_alives_mean:144.0000	test_blue_team_win_mean:   0.0000	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000
+test_red_team_alives_mean:144.0000	test_red_team_win_mean:    0.0000	test_return_mean:         -1.0040	test_return_std:           0.0000
+
+2026-04-08 21:00:48,258 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - t_env: 3400200 / 5050000
+2026-04-08 21:00:48,259 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Estimated time left: 18 hours, 29 minutes, 11 seconds. Time passed: 1 days, 14 hours, 1 minutes, 44 seconds
+2026-04-08 21:34:18,345 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Recent Stats | t_env:    3450000 | Episode:    17250
+blue_team_alives_mean:   144.0000	blue_team_win_mean:        0.0000	ep_length_mean:          200.0000	episode_length_mean:     199.0000
+epsilon:                   0.0500	grad_norm:               13233570508.8000	info_nce_loss:             0.9555	loss:                    7251045.8500
+q_loss:                  6591859.7000	q_taken_mean:            581.7278	red_team_alives_mean:    144.0000	red_team_win_mean:         0.0000
+return_mean:              -1.0430	return_std:                0.0037	target_mean:             579.7872	td_error_abs:            1325.5614
+test_blue_team_alives_mean:144.0000	test_blue_team_win_mean:   0.0000	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000
+test_red_team_alives_mean:144.0000	test_red_team_win_mean:    0.0000	test_return_mean:         -1.0051	test_return_std:           0.0000
+
+2026-04-08 21:34:25,325 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - t_env: 3450200 / 5050000
+2026-04-08 21:34:25,326 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Estimated time left: 17 hours, 55 minutes, 38 seconds. Time passed: 1 days, 14 hours, 35 minutes, 21 seconds
+2026-04-08 22:07:56,123 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Recent Stats | t_env:    3500000 | Episode:    17500
+blue_team_alives_mean:   144.0000	blue_team_win_mean:        0.0000	ep_length_mean:          200.0000	episode_length_mean:     199.0000
+epsilon:                   0.0500	grad_norm:               10647996313.6000	info_nce_loss:             1.4003	loss:                    5554312.0500
+q_loss:                  5049374.6500	q_taken_mean:            581.7862	red_team_alives_mean:    144.0000	red_team_win_mean:         0.0000
+return_mean:              -1.0460	return_std:                0.0066	target_mean:             580.6832	td_error_abs:            1213.4800
+test_blue_team_alives_mean:144.0000	test_blue_team_win_mean:   0.0000	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000
+test_red_team_alives_mean:144.0000	test_red_team_win_mean:    0.0000	test_return_mean:         -1.0045	test_return_std:           0.0000
+
+2026-04-08 22:08:03,092 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - t_env: 3500200 / 5050000
+2026-04-08 22:08:03,094 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Estimated time left: 17 hours, 22 minutes, 22 seconds. Time passed: 1 days, 15 hours, 8 minutes, 58 seconds
+2026-04-08 22:12:50,629 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Saving models to work_dirs/my_experiment/bat_60_ExpoComm_5M/my_run/20260407_065845/models/3500200
+2026-04-08 22:41:43,083 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Recent Stats | t_env:    3550000 | Episode:    17750
+blue_team_alives_mean:   144.0000	blue_team_win_mean:        0.0000	ep_length_mean:          200.0000	episode_length_mean:     199.0000
+epsilon:                   0.0500	grad_norm:               13153424691.2000	info_nce_loss:             1.5706	loss:                    6803678.9000
+q_loss:                  6185162.6500	q_taken_mean:            583.4813	red_team_alives_mean:    144.0000	red_team_win_mean:         0.0000
+return_mean:              -1.0442	return_std:                0.0028	target_mean:             582.2689	td_error_abs:            1255.3617
+test_blue_team_alives_mean:144.0000	test_blue_team_win_mean:   0.0000	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000
+test_red_team_alives_mean:144.0000	test_red_team_win_mean:    0.0000	test_return_mean:         -1.0036	test_return_std:           0.0000
+
+2026-04-08 22:41:50,069 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - t_env: 3550200 / 5050000
+2026-04-08 22:41:50,070 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Estimated time left: 16 hours, 53 minutes, 21 seconds. Time passed: 1 days, 15 hours, 42 minutes, 45 seconds
+2026-04-08 23:15:29,993 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Recent Stats | t_env:    3600000 | Episode:    18000
+blue_team_alives_mean:   144.0000	blue_team_win_mean:        0.0000	ep_length_mean:          200.0000	episode_length_mean:     199.0000
+epsilon:                   0.0500	grad_norm:               11454240153.6000	info_nce_loss:             0.7155	loss:                    5965211.0000
+q_loss:                  5422919.8250	q_taken_mean:            592.1088	red_team_alives_mean:    144.0000	red_team_win_mean:         0.0000
+return_mean:              -1.0461	return_std:                0.0068	target_mean:             591.8167	td_error_abs:            1215.1816
+test_blue_team_alives_mean:144.0000	test_blue_team_win_mean:   0.0000	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000
+test_red_team_alives_mean:144.0000	test_red_team_win_mean:    0.0000	test_return_mean:         -1.0017	test_return_std:           0.0000
+
+2026-04-08 23:15:37,019 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - t_env: 3600200 / 5050000
+2026-04-08 23:15:37,020 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Estimated time left: 16 hours, 19 minutes, 33 seconds. Time passed: 1 days, 16 hours, 16 minutes, 32 seconds
+2026-04-08 23:49:17,471 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Recent Stats | t_env:    3650000 | Episode:    18250
+blue_team_alives_mean:   144.0000	blue_team_win_mean:        0.0000	ep_length_mean:          200.0000	episode_length_mean:     199.0000
+epsilon:                   0.0500	grad_norm:               13070749696.0000	info_nce_loss:             1.2405	loss:                    7149172.0500
+q_loss:                  6499247.2500	q_taken_mean:            581.3294	red_team_alives_mean:    144.0000	red_team_win_mean:         0.0000
+return_mean:              -1.0462	return_std:                0.0066	target_mean:             579.5976	td_error_abs:            1306.8043
+test_blue_team_alives_mean:144.0000	test_blue_team_win_mean:   0.0000	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000
+test_red_team_alives_mean:144.0000	test_red_team_win_mean:    0.0000	test_return_mean:         -1.0043	test_return_std:           0.0000
+
+2026-04-08 23:49:24,476 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - t_env: 3650200 / 5050000
+2026-04-08 23:49:24,477 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Estimated time left: 15 hours, 46 minutes, 0 seconds. Time passed: 1 days, 16 hours, 50 minutes, 20 seconds
+2026-04-09 00:22:02,830 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Recent Stats | t_env:    3700000 | Episode:    18500
+blue_team_alives_mean:   144.0000	blue_team_win_mean:        0.0000	ep_length_mean:          200.0000	episode_length_mean:     199.0000
+epsilon:                   0.0500	grad_norm:               11220571955.2000	info_nce_loss:             1.3697	loss:                    5747354.4500
+q_loss:                  5224867.6000	q_taken_mean:            588.9545	red_team_alives_mean:    144.0000	red_team_win_mean:         0.0000
+return_mean:              -1.0426	return_std:                0.0039	target_mean:             588.1563	td_error_abs:            1191.1826
+test_blue_team_alives_mean:144.0000	test_blue_team_win_mean:   0.0000	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000
+test_red_team_alives_mean:144.0000	test_red_team_win_mean:    0.0000	test_return_mean:         -1.0049	test_return_std:           0.0000
+
+2026-04-09 00:22:09,115 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - t_env: 3700200 / 5050000
+2026-04-09 00:22:09,116 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Estimated time left: 14 hours, 43 minutes, 57 seconds. Time passed: 1 days, 17 hours, 23 minutes, 4 seconds
+2026-04-09 00:52:24,362 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Recent Stats | t_env:    3750000 | Episode:    18750
+blue_team_alives_mean:   144.0000	blue_team_win_mean:        0.0000	ep_length_mean:          200.0000	episode_length_mean:     199.0000
+epsilon:                   0.0500	grad_norm:               13073492736.0000	info_nce_loss:             1.1145	loss:                    7042991.4000
+q_loss:                  6402719.3500	q_taken_mean:            590.8440	red_team_alives_mean:    144.0000	red_team_win_mean:         0.0000
+return_mean:              -1.0476	return_std:                0.0073	target_mean:             588.5019	td_error_abs:            1275.4764
+test_blue_team_alives_mean:144.0000	test_blue_team_win_mean:   0.0000	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000
+test_red_team_alives_mean:144.0000	test_red_team_win_mean:    0.0000	test_return_mean:         -1.0050	test_return_std:           0.0000
+
+2026-04-09 00:52:30,656 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - t_env: 3750200 / 5050000
+2026-04-09 00:52:30,657 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Estimated time left: 13 hours, 9 minutes, 12 seconds. Time passed: 1 days, 17 hours, 53 minutes, 26 seconds
+2026-04-09 01:22:44,467 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Recent Stats | t_env:    3800000 | Episode:    19000
+blue_team_alives_mean:   144.0000	blue_team_win_mean:        0.0000	ep_length_mean:          200.0000	episode_length_mean:     199.0000
+epsilon:                   0.0500	grad_norm:               11289627545.6000	info_nce_loss:             1.0482	loss:                    5743462.0000
+q_loss:                  5221364.6750	q_taken_mean:            583.5823	red_team_alives_mean:    144.0000	red_team_win_mean:         0.0000
+return_mean:              -1.0507	return_std:                0.0112	target_mean:             582.7863	td_error_abs:            1181.7925
+test_blue_team_alives_mean:144.0000	test_blue_team_win_mean:   0.0000	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000
+test_red_team_alives_mean:144.0000	test_red_team_win_mean:    0.0000	test_return_mean:         -1.0046	test_return_std:           0.0000
+
+2026-04-09 01:22:50,754 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - t_env: 3800200 / 5050000
+2026-04-09 01:22:50,755 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Estimated time left: 12 hours, 38 minutes, 15 seconds. Time passed: 1 days, 18 hours, 23 minutes, 46 seconds
+2026-04-09 01:53:03,852 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Recent Stats | t_env:    3850000 | Episode:    19250
+blue_team_alives_mean:   144.0000	blue_team_win_mean:        0.0000	ep_length_mean:          200.0000	episode_length_mean:     199.0000
+epsilon:                   0.0500	grad_norm:               12914579456.0000	info_nce_loss:             0.9733	loss:                    6877488.7000
+q_loss:                  6252262.3500	q_taken_mean:            585.5370	red_team_alives_mean:    144.0000	red_team_win_mean:         0.0000
+return_mean:              -1.0433	return_std:                0.0067	target_mean:             583.7641	td_error_abs:            1281.4753
+test_blue_team_alives_mean:144.0000	test_blue_team_win_mean:   0.0000	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000
+test_red_team_alives_mean:144.0000	test_red_team_win_mean:    0.0000	test_return_mean:         -1.0046	test_return_std:           0.0000
+
+2026-04-09 01:53:10,146 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - t_env: 3850200 / 5050000
+2026-04-09 01:53:10,147 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Estimated time left: 12 hours, 7 minutes, 38 seconds. Time passed: 1 days, 18 hours, 54 minutes, 5 seconds
+2026-04-09 02:23:24,210 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Recent Stats | t_env:    3900000 | Episode:    19500
+blue_team_alives_mean:   144.0000	blue_team_win_mean:        0.0000	ep_length_mean:          200.0000	episode_length_mean:     199.0000
+epsilon:                   0.0500	grad_norm:               11253215027.2000	info_nce_loss:             1.0838	loss:                    5617686.3500
+q_loss:                  5106987.5500	q_taken_mean:            591.3165	red_team_alives_mean:    144.0000	red_team_win_mean:         0.0000
+return_mean:              -1.0492	return_std:                0.0109	target_mean:             591.9590	td_error_abs:            1200.2599
+test_blue_team_alives_mean:144.0000	test_blue_team_win_mean:   0.0000	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000
+test_red_team_alives_mean:144.0000	test_red_team_win_mean:    0.0000	test_return_mean:         -1.0027	test_return_std:           0.0000
+
+2026-04-09 02:23:30,517 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - t_env: 3900200 / 5050000
+2026-04-09 02:23:30,518 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Estimated time left: 11 hours, 37 minutes, 41 seconds. Time passed: 1 days, 19 hours, 24 minutes, 26 seconds
+2026-04-09 02:53:45,244 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Recent Stats | t_env:    3950000 | Episode:    19750
+blue_team_alives_mean:   144.0000	blue_team_win_mean:        0.0000	ep_length_mean:          200.0000	episode_length_mean:     199.0000
+epsilon:                   0.0500	grad_norm:               14008289894.4000	info_nce_loss:             1.0682	loss:                    7310669.6000
+q_loss:                  6646063.3000	q_taken_mean:            599.4070	red_team_alives_mean:    144.0000	red_team_win_mean:         0.0000
+return_mean:              -1.0471	return_std:                0.0093	target_mean:             598.1736	td_error_abs:            1269.8026
+test_blue_team_alives_mean:144.0000	test_blue_team_win_mean:   0.0000	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000
+test_red_team_alives_mean:144.0000	test_red_team_win_mean:    0.0000	test_return_mean:         -1.0011	test_return_std:           0.0000
+
+2026-04-09 02:53:51,514 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - t_env: 3950200 / 5050000
+2026-04-09 02:53:51,515 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Estimated time left: 11 hours, 7 minutes, 34 seconds. Time passed: 1 days, 19 hours, 54 minutes, 47 seconds
+2026-04-09 03:24:02,722 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Recent Stats | t_env:    4000000 | Episode:    20000
+blue_team_alives_mean:   144.0000	blue_team_win_mean:        0.0000	ep_length_mean:          200.0000	episode_length_mean:     199.0000
+epsilon:                   0.0500	grad_norm:               11914029875.2000	info_nce_loss:             1.0424	loss:                    6215129.4500
+q_loss:                  5650117.7000	q_taken_mean:            608.5779	red_team_alives_mean:    144.0000	red_team_win_mean:         0.0000
+return_mean:              -1.0473	return_std:                0.0102	target_mean:             608.9723	td_error_abs:            1235.9108
+test_blue_team_alives_mean:144.0000	test_blue_team_win_mean:   0.0000	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000
+test_red_team_alives_mean:144.0000	test_red_team_win_mean:    0.0000	test_return_mean:         -1.0010	test_return_std:           0.0000
+
+2026-04-09 03:24:08,999 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - t_env: 4000200 / 5050000
+2026-04-09 03:24:09,000 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Estimated time left: 10 hours, 35 minutes, 59 seconds. Time passed: 1 days, 20 hours, 25 minutes, 4 seconds
+2026-04-09 03:28:26,815 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Saving models to work_dirs/my_experiment/bat_60_ExpoComm_5M/my_run/20260407_065845/models/4000200
+2026-04-09 03:54:11,032 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Recent Stats | t_env:    4050000 | Episode:    20250
+blue_team_alives_mean:   144.0000	blue_team_win_mean:        0.0000	ep_length_mean:          200.0000	episode_length_mean:     199.0000
+epsilon:                   0.0500	grad_norm:               13511127756.8000	info_nce_loss:             0.9441	loss:                    7560836.8500
+q_loss:                  6873488.1500	q_taken_mean:            596.7580	red_team_alives_mean:    144.0000	red_team_win_mean:         0.0000
+return_mean:              -1.0460	return_std:                0.0095	target_mean:             596.2474	td_error_abs:            1351.0645
+test_blue_team_alives_mean:144.0000	test_blue_team_win_mean:   0.0000	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000
+test_red_team_alives_mean:144.0000	test_red_team_win_mean:    0.0000	test_return_mean:         -1.0022	test_return_std:           0.0000
+
+2026-04-09 03:54:17,260 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - t_env: 4050200 / 5050000
+2026-04-09 03:54:17,261 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Estimated time left: 10 hours, 2 minutes, 37 seconds. Time passed: 1 days, 20 hours, 55 minutes, 13 seconds
+2026-04-09 04:24:18,421 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Recent Stats | t_env:    4100000 | Episode:    20500
+blue_team_alives_mean:   144.0000	blue_team_win_mean:        0.0000	ep_length_mean:          200.0000	episode_length_mean:     199.0000
+epsilon:                   0.0500	grad_norm:               10637851750.4000	info_nce_loss:             1.0214	loss:                    5405639.4000
+q_loss:                  4914217.7000	q_taken_mean:            599.4364	red_team_alives_mean:    144.0000	red_team_win_mean:         0.0000
+return_mean:              -1.0536	return_std:                0.0152	target_mean:             598.6856	td_error_abs:            1182.5077
+test_blue_team_alives_mean:144.0000	test_blue_team_win_mean:   0.0000	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000
+test_red_team_alives_mean:144.0000	test_red_team_win_mean:    0.0000	test_return_mean:         -1.0084	test_return_std:           0.0000
+
+2026-04-09 04:24:24,748 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - t_env: 4100200 / 5050000
+2026-04-09 04:24:24,749 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Estimated time left: 9 hours, 32 minutes, 15 seconds. Time passed: 1 days, 21 hours, 25 minutes, 20 seconds
+2026-04-09 04:54:24,754 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Recent Stats | t_env:    4150000 | Episode:    20750
+blue_team_alives_mean:   144.0000	blue_team_win_mean:        0.0000	ep_length_mean:          200.0000	episode_length_mean:     199.0000
+epsilon:                   0.0500	grad_norm:               12085439590.4000	info_nce_loss:             1.6010	loss:                    6564489.2000
+q_loss:                  5967717.5750	q_taken_mean:            594.6430	red_team_alives_mean:    144.0000	red_team_win_mean:         0.0000
+return_mean:              -1.0493	return_std:                0.0110	target_mean:             593.7467	td_error_abs:            1242.7446
+test_blue_team_alives_mean:144.0000	test_blue_team_win_mean:   0.0000	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000
+test_red_team_alives_mean:144.0000	test_red_team_win_mean:    0.0000	test_return_mean:         -1.0079	test_return_std:           0.0000
+
+2026-04-09 04:54:30,972 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - t_env: 4150200 / 5050000
+2026-04-09 04:54:30,972 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Estimated time left: 9 hours, 1 minutes, 44 seconds. Time passed: 1 days, 21 hours, 55 minutes, 26 seconds
+2026-04-09 05:24:29,201 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Recent Stats | t_env:    4200000 | Episode:    21000
+blue_team_alives_mean:   144.0000	blue_team_win_mean:        0.0000	ep_length_mean:          200.0000	episode_length_mean:     199.0000
+epsilon:                   0.0500	grad_norm:               10299095654.4000	info_nce_loss:             0.8375	loss:                    5260830.4250
+q_loss:                  4782573.1250	q_taken_mean:            599.4174	red_team_alives_mean:    144.0000	red_team_win_mean:         0.0000
+return_mean:              -1.0434	return_std:                0.0050	target_mean:             598.6523	td_error_abs:            1149.5741
+test_blue_team_alives_mean:144.0000	test_blue_team_win_mean:   0.0000	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000
+test_red_team_alives_mean:144.0000	test_red_team_win_mean:    0.0000	test_return_mean:         -1.0079	test_return_std:           0.0000
+
+2026-04-09 05:24:35,446 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - t_env: 4200200 / 5050000
+2026-04-09 05:24:35,446 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Estimated time left: 8 hours, 31 minutes, 8 seconds. Time passed: 1 days, 22 hours, 25 minutes, 31 seconds
+2026-04-09 05:54:34,985 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Recent Stats | t_env:    4250000 | Episode:    21250
+blue_team_alives_mean:   144.0000	blue_team_win_mean:        0.0000	ep_length_mean:          200.0000	episode_length_mean:     199.0000
+epsilon:                   0.0500	grad_norm:               13246751027.2000	info_nce_loss:             1.4902	loss:                    7128175.8000
+q_loss:                  6480159.8250	q_taken_mean:            604.6604	red_team_alives_mean:    144.0000	red_team_win_mean:         0.0000
+return_mean:              -1.0527	return_std:                0.0120	target_mean:             603.3045	td_error_abs:            1292.4449
+test_blue_team_alives_mean:144.0000	test_blue_team_win_mean:   0.0000	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000
+test_red_team_alives_mean:144.0000	test_red_team_win_mean:    0.0000	test_return_mean:         -1.0090	test_return_std:           0.0000
+
+2026-04-09 05:54:41,246 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - t_env: 4250200 / 5050000
+2026-04-09 05:54:41,247 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Estimated time left: 8 hours, 1 minutes, 25 seconds. Time passed: 1 days, 22 hours, 55 minutes, 37 seconds
+2026-04-09 06:24:39,454 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Recent Stats | t_env:    4300000 | Episode:    21500
+blue_team_alives_mean:   144.0000	blue_team_win_mean:        0.0000	ep_length_mean:          200.0000	episode_length_mean:     199.0000
+epsilon:                   0.0500	grad_norm:               11188107468.8000	info_nce_loss:             1.6469	loss:                    5907013.8500
+q_loss:                  5370012.6500	q_taken_mean:            606.7088	red_team_alives_mean:    144.0000	red_team_win_mean:         0.0000
+return_mean:              -1.0523	return_std:                0.0110	target_mean:             606.1054	td_error_abs:            1212.4367
+test_blue_team_alives_mean:144.0000	test_blue_team_win_mean:   0.0000	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000
+test_red_team_alives_mean:144.0000	test_red_team_win_mean:    0.0000	test_return_mean:         -1.0143	test_return_std:           0.0000
+
+2026-04-09 06:24:45,675 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - t_env: 4300200 / 5050000
+2026-04-09 06:24:45,675 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Estimated time left: 7 hours, 30 minutes, 59 seconds. Time passed: 1 days, 23 hours, 25 minutes, 41 seconds
+2026-04-09 06:54:45,153 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Recent Stats | t_env:    4350000 | Episode:    21750
+blue_team_alives_mean:   144.0000	blue_team_win_mean:        0.0000	ep_length_mean:          200.0000	episode_length_mean:     199.0000
+epsilon:                   0.0500	grad_norm:               10957757849.6000	info_nce_loss:             1.4778	loss:                    5548612.0500
+q_loss:                  5044192.8250	q_taken_mean:            601.6819	red_team_alives_mean:    144.0000	red_team_win_mean:         0.0000
+return_mean:              -1.0478	return_std:                0.0110	target_mean:             601.1540	td_error_abs:            1171.2040
+test_blue_team_alives_mean:144.0000	test_blue_team_win_mean:   0.0000	test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000
+test_red_team_alives_mean:144.0000	test_red_team_win_mean:    0.0000	test_return_mean:         -1.0101	test_return_std:           0.0000
+
+2026-04-09 06:54:51,409 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - t_env: 4350200 / 5050000
+2026-04-09 06:54:51,410 - my_experiment - bat_60_ExpoComm_5M - my_run - INFO - Estimated time left: 7 hours, 1 minutes, 13 seconds. Time passed: 1 days, 23 hours, 55 minutes, 47 seconds
+slurmstepd: error: *** JOB 1860228 ON tikgpu02 CANCELLED AT 2026-04-09T06:59:07 DUE TO TIME LIMIT ***

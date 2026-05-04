@@ -35,6 +35,7 @@ def parallel_env(
 ):
     env_reward_args = dict(**default_reward_args)
     env_reward_args.update(reward_args)
+
     return _parallel_env(
         map_size, minimap_mode, env_reward_args, max_cycles, extra_features
     )
