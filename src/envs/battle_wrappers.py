@@ -14,7 +14,7 @@ from .magent import PettingZooEnv
 REGISTRY = {}
 REGISTRY["battle_view7"] = battle_v3_view7.parallel_env
 
-processed_channel_dim_dict = {"battle_view7": (5, 2, 2)} # SANDBOX: changed 9 to 5
+processed_channel_dim_dict = {"battle_view7": (9, 2, 2)} # SANDBOX: changed 9 to 5
 
 MAPSIZE2N = {
     25: 20,
@@ -53,7 +53,7 @@ class _BattleWrapper(MultiAgentEnv):
         self.env = PettingZooEnv(env)
 
         self.processed_channel_dim = processed_channel_dim_dict[map][1]
-        self.raw_channel_dim = processed_channel_dim_dict[map][0]  # before processed
+        self.raw_channel_dim = processed_channel_dim_dict[map][0] # before processed
         self.state_channel_dim = processed_channel_dim_dict[map][2]
         self.action_space = self.env.action_space
 

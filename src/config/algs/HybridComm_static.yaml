@@ -1,0 +1,53 @@
+# --- HybridComm Static Specific Parameters ---
+
+action_selector: "epsilon_greedy"
+epsilon_start: 1.0
+epsilon_finish: 0.05
+epsilon_anneal_time: 500000 
+evaluation_epsilon: 0.0
+runner: "episode"
+
+global_reward: True 
+
+buffer_cpu_only: True 
+
+buffer_size: 500 
+target_update_interval_or_tau: 50 
+
+batch_size: 16 
+t_max: 2000000 
+
+# ==========================================
+# --- Architecture (THE ONLY CHANGES) ---
+# ==========================================
+mac: "ExpoComm_mac"            
+agent: "ExpoComm_static_cont"  # 1. Switched to the static agent
+topk_neighbors: 7
+attention_dim: 16              # 2. Adjusted to match static baseline
+# 3. Removed 'one_peer: True'
+# ==========================================
+
+# --- Learner & Critics ---
+learner: "hybrid_comm_learner" 
+agent_output_type: "q"
+double_q: True
+mixer: # None! (HybridComm uses independent local critics)
+
+# --- Standardization ---
+standardise_returns: False
+standardise_rewards: True
+
+# --- Contrastive Parameters ---
+aux_coef: 0.1
+temperature: 0.07 
+neg_num: 20
+use_rnn: True
+
+# --- Optimization ---
+lr: 0.0005
+gamma: 0.99 
+obs_agent_id: True
+obs_last_action: True
+obs_individual_obs: False
+
+name: "HybridComm_static"      # 4. Updated experiment name
