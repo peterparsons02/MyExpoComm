@@ -14,7 +14,7 @@ from .magent import PettingZooEnv
 REGISTRY = {}
 REGISTRY["battle_view7"] = battle_v3_view7.parallel_env
 
-processed_channel_dim_dict = {"battle_view7": (9, 2, 2)} # SANDBOX: changed 9 to 5
+processed_channel_dim_dict = {"battle_view7": (5, 2, 2)} # SANDBOX: changed 9 to 5
 
 MAPSIZE2N = {
     25: 20,
@@ -148,8 +148,11 @@ class _BattleWrapper(MultiAgentEnv):
             self.observation_space["obs"].shape[1],
             self.raw_channel_dim,
         )
+
+        other_hp_idx = 5 if self.raw_channel_dim == 9 else 4
+
         my_team_hp = obs_processed[:, :, :, 2] - obs_processed[:, :, :, 0]
-        other_team_hp = obs_processed[:, :, :, 4] - obs_processed[:, :, :, 0] # SANDBOX: changed 5 to 4
+        other_team_hp = obs_processed[:, :, :, other_hp_idx] - obs_processed[:, :, :, 0] # SANDBOX: adjusting dimension dynamically
         obs_processed = np.concatenate((my_team_hp, other_team_hp), axis=-1)
         obs_processed = obs_processed.reshape(self.n_agents, -1)
 
@@ -167,8 +170,12 @@ class _BattleWrapper(MultiAgentEnv):
             self.observation_space["obs"].shape[1],
             self.raw_channel_dim,
         )
-        my_team_minimap = obs[:, :, :, 1] # SANDBOX: changed 3 to 1
-        other_team_minimap = obs[:, :, :, 3] # SANDBOX: changed 6 to 3
+
+        my_map_idx = 3 if self.raw_channel_dim == 9 else 1
+        other_map_idx = 6 if self.raw_channel_dim == 9 else 3
+
+        my_team_minimap = obs[:, :, :, my_map_idx] # SANDBOX: changed 3 to 1
+        other_team_minimap = obs[:, :, :, other_map_idx] # SANDBOX: changed 6 to 3
         state = np.concatenate((my_team_minimap, other_team_minimap), axis=-1)
         state = state.reshape(self.n_agents, -1)
 

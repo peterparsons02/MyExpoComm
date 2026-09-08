@@ -15,7 +15,7 @@ REGISTRY = {}
 REGISTRY["adversarial_pursuit_view8"] = adversarial_pursuit_view8_v3.parallel_env
 
 
-processed_channel_dim_dict = {"adversarial_pursuit_view8": (9, 2, 2)}
+processed_channel_dim_dict = {"adversarial_pursuit_view8": (5, 2, 2)}
 
 MAPSIZE2N = {
     45: (25, 50),
@@ -140,8 +140,11 @@ class _AdvPursuitWrapper(MultiAgentEnv):
             self.observation_space["obs"].shape[1],
             self.raw_channel_dim,
         )
+
+        other_hp_idx = 5 if self.raw_channel_dim == 9 else 4
+
         my_team_hp = obs_processed[:, :, :, 2] - obs_processed[:, :, :, 0]
-        other_team_hp = obs_processed[:, :, :, 5] - obs_processed[:, :, :, 0]
+        other_team_hp = obs_processed[:, :, :, other_hp_idx] - obs_processed[:, :, :, 0]
         obs_processed = np.concatenate((my_team_hp, other_team_hp), axis=-1)
         obs_processed = obs_processed.reshape(self.n_agents, -1)
 
@@ -159,8 +162,12 @@ class _AdvPursuitWrapper(MultiAgentEnv):
             self.observation_space["obs"].shape[1],
             self.raw_channel_dim,
         )
-        my_team_minimap = obs[:, :, :, 3]
-        other_team_minimap = obs[:, :, :, 6]
+
+        my_map_idx = 3 if self.raw_channel_dim == 9 else 1
+        other_map_idx = 6 if self.raw_channel_dim == 9 else 3
+
+        my_team_minimap = obs[:, :, :, my_map_idx]
+        other_team_minimap = obs[:, :, :, other_map_idx]
         state = np.concatenate((my_team_minimap, other_team_minimap), axis=-1)
         state = state.reshape(self.n_agents, -1)
 

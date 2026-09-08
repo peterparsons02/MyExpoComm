@@ -1,0 +1,945 @@
+Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
+Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
+Users of this version of Gym should be able to simply replace 'import gym' with 'import gymnasium as gym' in the vast majority of cases.
+See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
+src/main.py:81: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+  if isinstance(v, collections.Mapping):
+wandb: [wandb.login()] Loaded credentials for https://api.wandb.ai from /home/pparsons/.netrc.
+wandb: Currently logged in as: peterparsons02 (peterparsons02-eth-z-rich) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+wandb: setting up run 9e8b9wvt
+wandb: Tracking run with wandb version 0.24.1
+wandb: Run data is saved locally in /usr/itetnas04/data-scratch-01/pparsons/data/MyExpoComm/wandb/run-20260821_154619-9e8b9wvt
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run my_run-advP_EC_st_nomm_43-20260821_154619
+wandb: ⭐️ View project at https://wandb.ai/peterparsons02-eth-z-rich/my_experiment
+wandb: 🚀 View run at https://wandb.ai/peterparsons02-eth-z-rich/my_experiment/runs/9e8b9wvt
+2026-08-21 15:46:21,752 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Current directory: /usr/itetnas04/data-scratch-01/pparsons/data/MyExpoComm.
+2026-08-21 15:46:21,752 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Experiment Parameters:
+2026-08-21 15:46:21,753 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - 
+
+{   'action_selector': 'epsilon_greedy',
+    'add_value_last_step': True,
+    'agent': 'ExpoComm_static_cont',
+    'agent_output_type': 'q',
+    'attention_dim': 16,
+    'aux_coef': 0.1,
+    'batch_size': 32,
+    'batch_size_run': 1,
+    'buffer_cpu_only': True,
+    'buffer_size': 2000,
+    'checkpoint_path': '',
+    'double_q': True,
+    'env': 'MAgent_AdvPursuit',
+    'env_args': {   'global_reward': True,
+                    'map_name': 'adversarial_pursuit_view8',
+                    'map_size': 45,
+                    'max_cycles': 200,
+                    'minimap_mode': False,
+                    'pretrained_ckpt': 'prey_params.pt',
+                    'seed': 43},
+    'epsilon_anneal_time': 1000000,
+    'epsilon_finish': 0.05,
+    'epsilon_start': 1.0,
+    'evaluate': False,
+    'evaluation_epsilon': 0.0,
+    'exp_name': 'my_experiment',
+    'gamma': 0.99,
+    'global_reward': True,
+    'grad_norm_clip': 10,
+    'hidden_dim': 64,
+    'hypergroup': None,
+    'hypernet_embed': 64,
+    'hypernet_layers': 2,
+    'label': 'default_label',
+    'learner': 'cont_q_learner',
+    'learner_log_interval': 10000,
+    'load_step': 0,
+    'local_results_path': 'results',
+    'log_interval': 50000,
+    'lr': 0.0005,
+    'mac': 'ExpoComm_mac',
+    'mixer': 'qmix',
+    'mixing_embed_dim': 64,
+    'name': 'advP_EC_st_nomm_43',
+    'neg_num': 20,
+    'obs_agent_id': True,
+    'obs_individual_obs': False,
+    'obs_last_action': True,
+    'optim_alpha': 0.99,
+    'optim_eps': 1e-05,
+    'pos_flag': False,
+    'render': False,
+    'repeat_id': 1,
+    'run_name': 'my_run',
+    'runner': 'episode',
+    'runner_log_interval': 10000,
+    'save_model': True,
+    'save_model_interval': 200000,
+    'save_replay': False,
+    'seed': 43,
+    'standardise_returns': False,
+    'standardise_rewards': True,
+    't_max': 5050000,
+    'target_update_interval_or_tau': 200,
+    'temperature': 0.07,
+    'test_greedy': True,
+    'test_interval': 50000,
+    'test_nepisode': 100,
+    'topk_neighbors': 7,
+    'use_cuda': True,
+    'use_rnn': True,
+    'use_tensorboard': True,
+    'work_dir': 'work_dirs/my_experiment/advP_EC_st_nomm_43/my_run/20260821_154619'}
+
+/usr/itetnas04/data-scratch-01/pparsons/data/conda_envs/ExpoComm/lib/python3.8/site-packages/pettingzoo/utils/conversions.py:41: UserWarning: The `from_parallel` function is deprecated. Use the `parallel_to_aec` function instead.
+  warnings.warn("The `from_parallel` function is deprecated. Use the `parallel_to_aec` function instead.")
+/usr/itetnas04/data-scratch-01/pparsons/data/conda_envs/ExpoComm/lib/python3.8/site-packages/pettingzoo/utils/wrappers/base.py:44: UserWarning: The `observation_spaces` dictionary is deprecated. Use the `observation_space` function instead.
+  warnings.warn("The `observation_spaces` dictionary is deprecated. Use the `observation_space` function instead.")
+/usr/itetnas04/data-scratch-01/pparsons/data/conda_envs/ExpoComm/lib/python3.8/site-packages/pettingzoo/utils/conversions.py:36: UserWarning: The `to_parallel` function is deprecated. Use the `aec_to_parallel` function instead.
+  warnings.warn("The `to_parallel` function is deprecated. Use the `aec_to_parallel` function instead.")
+/usr/itetnas04/data-scratch-01/pparsons/data/conda_envs/ExpoComm/lib/python3.8/site-packages/pettingzoo/utils/conversions.py:80: UserWarning: The `action_spaces` dictionary is deprecated. Use the `action_space` function instead.
+  warnings.warn("The `action_spaces` dictionary is deprecated. Use the `action_space` function instead.")
+/usr/itetnas04/data-scratch-01/pparsons/data/conda_envs/ExpoComm/lib/python3.8/site-packages/pettingzoo/utils/wrappers/base.py:52: UserWarning: The `action_spaces` dictionary is deprecated. Use the `action_space` function instead.
+  warnings.warn("The `action_spaces` dictionary is deprecated. Use the `action_space` function instead.")
+/usr/itetnas04/data-scratch-01/pparsons/data/conda_envs/ExpoComm/lib/python3.8/site-packages/pettingzoo/utils/conversions.py:72: UserWarning: The `observation_spaces` dictionary is deprecated. Use the `observation_space` function instead.
+  warnings.warn("The `observation_spaces` dictionary is deprecated. Use the `observation_space` function instead.")
+2026-08-21 15:46:25,080 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Beginning training for 5050000 timesteps
+/usr/itetnas04/data-scratch-01/pparsons/data/MyExpoComm/src/envs/adv_pursuit_wrappers.py:247: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  actions = th.tensor(actions, dtype=th.long)
+2026-08-21 15:46:27,485 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - t_env: 200 / 5050000
+2026-08-21 15:46:27,486 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Estimated time left: 4 minutes, 2 seconds. Time passed: 2 seconds
+2026-08-21 15:49:30,952 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Saving models to work_dirs/my_experiment/advP_EC_st_nomm_43/my_run/20260821_154619/models/200
+2026-08-21 15:59:56,336 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Recent Stats | t_env:      50000 | Episode:      250
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.9620	grad_norm:               210607.1688
+info_nce_loss:             2.8259	loss:                    37433.6543	q_loss:                  34030.5957	q_taken_mean:             -0.1073
+return_mean:             -19.9447	return_std:                1.2119	target_mean:               2.4734	td_error_abs:             78.4741
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:          0.0000	test_return_std:           0.0000
+
+2026-08-21 15:59:58,939 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - t_env: 50200 / 5050000
+2026-08-21 15:59:58,941 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Estimated time left: 22 hours, 32 minutes, 22 seconds. Time passed: 13 minutes, 33 seconds
+2026-08-21 16:13:51,811 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Recent Stats | t_env:     100000 | Episode:      500
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.9145	grad_norm:               15550876.3500
+info_nce_loss:             2.8594	loss:                    35207.9680	q_loss:                  32007.2432	q_taken_mean:             13.8070
+return_mean:             -19.2850	return_std:                1.4670	target_mean:              13.7035	td_error_abs:            125.0816
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:          3.4844	test_return_std:           2.5934
+
+2026-08-21 16:13:54,416 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - t_env: 100200 / 5050000
+2026-08-21 16:13:54,417 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Estimated time left: 22 hours, 58 minutes, 28 seconds. Time passed: 27 minutes, 29 seconds
+2026-08-21 16:27:48,970 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Recent Stats | t_env:     150000 | Episode:      750
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.8670	grad_norm:               3595521.1500
+info_nce_loss:             2.8436	loss:                    12515.1305	q_loss:                  11377.3913	q_taken_mean:             16.4506
+return_mean:             -19.2864	return_std:                1.5259	target_mean:              18.0853	td_error_abs:             75.8027
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:         -0.9859	test_return_std:           4.7723
+
+2026-08-21 16:27:51,566 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - t_env: 150200 / 5050000
+2026-08-21 16:27:51,568 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Estimated time left: 22 hours, 47 minutes, 17 seconds. Time passed: 41 minutes, 26 seconds
+2026-08-21 16:41:44,191 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Recent Stats | t_env:     200000 | Episode:     1000
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.8195	grad_norm:               2393498.1187
+info_nce_loss:             2.8931	loss:                    11984.3711	q_loss:                  10894.8827	q_taken_mean:             21.1162
+return_mean:             -18.5545	return_std:                1.5056	target_mean:              23.1148	td_error_abs:             70.6941
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:         -2.4225	test_return_std:           4.1019
+
+2026-08-21 16:41:46,779 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - t_env: 200200 / 5050000
+2026-08-21 16:41:46,781 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Estimated time left: 22 hours, 30 minutes, 12 seconds. Time passed: 55 minutes, 21 seconds
+2026-08-21 16:44:52,015 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Saving models to work_dirs/my_experiment/advP_EC_st_nomm_43/my_run/20260821_154619/models/200200
+2026-08-21 16:55:40,090 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Recent Stats | t_env:     250000 | Episode:     1250
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.7720	grad_norm:               5053177.6312
+info_nce_loss:             2.8752	loss:                    21751.0838	q_loss:                  19773.7129	q_taken_mean:             30.5858
+return_mean:             -16.7694	return_std:                1.6910	target_mean:              31.0652	td_error_abs:            102.0501
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:         -3.0557	test_return_std:           3.6063
+
+2026-08-21 16:55:42,704 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - t_env: 250200 / 5050000
+2026-08-21 16:55:42,706 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Estimated time left: 22 hours, 17 minutes, 25 seconds. Time passed: 1 hours, 9 minutes, 17 seconds
+2026-08-21 17:09:37,066 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Recent Stats | t_env:     300000 | Episode:     1500
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.7245	grad_norm:               3559452.7000
+info_nce_loss:             2.2827	loss:                    17191.8284	q_loss:                  15628.9348	q_taken_mean:             34.8642
+return_mean:             -14.5725	return_std:                1.9079	target_mean:              33.2426	td_error_abs:             92.0347
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:         -5.0945	test_return_std:           4.2536
+
+2026-08-21 17:09:39,677 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - t_env: 300200 / 5050000
+2026-08-21 17:09:39,679 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Estimated time left: 22 hours, 5 minutes, 9 seconds. Time passed: 1 hours, 23 minutes, 14 seconds
+2026-08-21 17:23:33,697 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Recent Stats | t_env:     350000 | Episode:     1750
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.6770	grad_norm:               1140593.4688
+info_nce_loss:             2.9025	loss:                    11990.7270	q_loss:                  10900.6607	q_taken_mean:             38.3147
+return_mean:             -13.3964	return_std:                2.0288	target_mean:              38.9650	td_error_abs:             64.2100
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:         -6.4039	test_return_std:           3.2853
+
+2026-08-21 17:23:36,284 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - t_env: 350200 / 5050000
+2026-08-21 17:23:36,286 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Estimated time left: 21 hours, 50 minutes, 37 seconds. Time passed: 1 hours, 37 minutes, 11 seconds
+2026-08-21 17:37:20,436 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Recent Stats | t_env:     400000 | Episode:     2000
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.6295	grad_norm:               1624248.2937
+info_nce_loss:             2.8769	loss:                    15486.4305	q_loss:                  14078.5732	q_taken_mean:             43.7491
+return_mean:             -10.1603	return_std:                2.6403	target_mean:              43.8232	td_error_abs:             73.2306
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:         -4.4278	test_return_std:           2.2876
+
+2026-08-21 17:37:23,022 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - t_env: 400200 / 5050000
+2026-08-21 17:37:23,024 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Estimated time left: 21 hours, 21 minutes, 23 seconds. Time passed: 1 hours, 50 minutes, 57 seconds
+2026-08-21 17:40:28,041 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Saving models to work_dirs/my_experiment/advP_EC_st_nomm_43/my_run/20260821_154619/models/400200
+2026-08-21 17:51:04,610 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Recent Stats | t_env:     450000 | Episode:     2250
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.5820	grad_norm:               722107.3344
+info_nce_loss:             2.8454	loss:                    14032.7797	q_loss:                  12757.0727	q_taken_mean:             47.4331
+return_mean:              -6.7773	return_std:                3.6275	target_mean:              48.8331	td_error_abs:             62.5459
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:         -3.2585	test_return_std:           2.8309
+
+2026-08-21 17:51:07,135 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - t_env: 450200 / 5050000
+2026-08-21 17:51:07,137 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Estimated time left: 21 hours, 3 minutes, 35 seconds. Time passed: 2 hours, 4 minutes, 42 seconds
+2026-08-21 18:04:40,533 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Recent Stats | t_env:     500000 | Episode:     2500
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.5345	grad_norm:               633928.4977
+info_nce_loss:             2.7080	loss:                    16965.9779	q_loss:                  15423.6164	q_taken_mean:             53.4351
+return_mean:              -5.6576	return_std:                4.6146	target_mean:              54.2482	td_error_abs:             66.9909
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:         -2.0159	test_return_std:           3.8569
+
+2026-08-21 18:04:43,072 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - t_env: 500200 / 5050000
+2026-08-21 18:04:43,073 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Estimated time left: 20 hours, 37 minutes, 26 seconds. Time passed: 2 hours, 18 minutes, 17 seconds
+2026-08-21 18:18:13,576 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Recent Stats | t_env:     550000 | Episode:     2750
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.4870	grad_norm:               357003.1266
+info_nce_loss:             1.9058	loss:                    18869.9139	q_loss:                  17154.4674	q_taken_mean:             60.1010
+return_mean:              -1.2998	return_std:                5.5675	target_mean:              60.9065	td_error_abs:             59.0907
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:          1.0264	test_return_std:           4.7714
+
+2026-08-21 18:18:16,115 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - t_env: 550200 / 5050000
+2026-08-21 18:18:16,116 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Estimated time left: 20 hours, 19 minutes, 30 seconds. Time passed: 2 hours, 31 minutes, 51 seconds
+2026-08-21 18:31:48,519 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Recent Stats | t_env:     600000 | Episode:     3000
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.4395	grad_norm:               466494.9641
+info_nce_loss:             2.4886	loss:                    22947.0277	q_loss:                  20860.9346	q_taken_mean:             65.6148
+return_mean:               4.2544	return_std:                6.9618	target_mean:              67.2163	td_error_abs:             74.3775
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:          2.7472	test_return_std:           6.2240
+
+2026-08-21 18:31:51,049 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - t_env: 600200 / 5050000
+2026-08-21 18:31:51,049 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Estimated time left: 20 hours, 8 minutes, 45 seconds. Time passed: 2 hours, 45 minutes, 25 seconds
+2026-08-21 18:34:53,646 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Saving models to work_dirs/my_experiment/advP_EC_st_nomm_43/my_run/20260821_154619/models/600200
+2026-08-21 18:45:24,076 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Recent Stats | t_env:     650000 | Episode:     3250
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.3920	grad_norm:               683967.9750
+info_nce_loss:             1.8268	loss:                    31127.9246	q_loss:                  28298.1133	q_taken_mean:             73.6610
+return_mean:               8.6202	return_std:                6.9353	target_mean:              75.7759	td_error_abs:             91.1475
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:          4.8438	test_return_std:           7.1636
+
+2026-08-21 18:45:26,601 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - t_env: 650200 / 5050000
+2026-08-21 18:45:26,603 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Estimated time left: 19 hours, 56 minutes, 5 seconds. Time passed: 2 hours, 59 minutes, 1 seconds
+2026-08-21 18:59:00,419 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Recent Stats | t_env:     700000 | Episode:     3500
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.3445	grad_norm:               353583.8422
+info_nce_loss:             2.1394	loss:                    27323.6336	q_loss:                  24839.6668	q_taken_mean:             77.6877
+return_mean:              11.0910	return_std:                7.9292	target_mean:              78.1733	td_error_abs:             64.6225
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:         11.1412	test_return_std:           8.3682
+
+2026-08-21 18:59:02,950 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - t_env: 700200 / 5050000
+2026-08-21 18:59:02,952 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Estimated time left: 19 hours, 43 minutes, 39 seconds. Time passed: 3 hours, 12 minutes, 37 seconds
+2026-08-21 19:12:36,192 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Recent Stats | t_env:     750000 | Episode:     3750
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.2970	grad_norm:               1720866.3750
+info_nce_loss:             1.8619	loss:                    35824.9352	q_loss:                  32568.1227	q_taken_mean:             82.8082
+return_mean:              16.6701	return_std:                8.7145	target_mean:              83.2336	td_error_abs:             77.5889
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:         15.6654	test_return_std:           9.5112
+
+2026-08-21 19:12:38,780 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - t_env: 750200 / 5050000
+2026-08-21 19:12:38,782 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Estimated time left: 19 hours, 29 minutes, 18 seconds. Time passed: 3 hours, 26 minutes, 13 seconds
+2026-08-21 19:26:11,949 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Recent Stats | t_env:     800000 | Episode:     4000
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.2495	grad_norm:               3456011.9937
+info_nce_loss:             0.8196	loss:                    39733.8441	q_loss:                  36121.6766	q_taken_mean:             87.5921
+return_mean:              22.4962	return_std:               10.5184	target_mean:              88.0974	td_error_abs:             88.7185
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:         23.5011	test_return_std:          10.2860
+
+2026-08-21 19:26:14,504 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - t_env: 800200 / 5050000
+2026-08-21 19:26:14,506 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Estimated time left: 19 hours, 15 minutes, 33 seconds. Time passed: 3 hours, 39 minutes, 49 seconds
+2026-08-21 19:29:16,928 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Saving models to work_dirs/my_experiment/advP_EC_st_nomm_43/my_run/20260821_154619/models/800200
+2026-08-21 19:39:48,854 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Recent Stats | t_env:     850000 | Episode:     4250
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.2020	grad_norm:               1813785.0500
+info_nce_loss:             0.4951	loss:                    36915.7773	q_loss:                  33559.7973	q_taken_mean:             92.2674
+return_mean:              31.3239	return_std:                8.7094	target_mean:              94.0285	td_error_abs:             93.4126
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:         29.3409	test_return_std:          11.6686
+
+2026-08-21 19:39:51,399 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - t_env: 850200 / 5050000
+2026-08-21 19:39:51,400 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Estimated time left: 19 hours, 3 minutes, 35 seconds. Time passed: 3 hours, 53 minutes, 26 seconds
+2026-08-21 19:53:22,447 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Recent Stats | t_env:     900000 | Episode:     4500
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.1545	grad_norm:               2297345.6719
+info_nce_loss:             0.3537	loss:                    27818.0984	q_loss:                  25289.1805	q_taken_mean:             98.1563
+return_mean:              30.5201	return_std:                7.7215	target_mean:              98.2894	td_error_abs:             68.2431
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:         33.9134	test_return_std:          12.2092
+
+2026-08-21 19:53:24,999 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - t_env: 900200 / 5050000
+2026-08-21 19:53:25,000 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Estimated time left: 18 hours, 45 minutes, 25 seconds. Time passed: 4 hours, 6 minutes, 59 seconds
+2026-08-21 20:06:57,743 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Recent Stats | t_env:     950000 | Episode:     4750
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.1070	grad_norm:               4268575.6000
+info_nce_loss:             0.5358	loss:                    26174.4021	q_loss:                  23794.9109	q_taken_mean:            103.0513
+return_mean:              36.3270	return_std:                8.0734	target_mean:             103.2972	td_error_abs:             69.6505
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:         34.4729	test_return_std:          12.1121
+
+2026-08-21 20:07:00,290 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - t_env: 950200 / 5050000
+2026-08-21 20:07:00,291 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Estimated time left: 18 hours, 34 minutes, 10 seconds. Time passed: 4 hours, 20 minutes, 35 seconds
+2026-08-21 20:20:32,922 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Recent Stats | t_env:    1000000 | Episode:     5000
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0595	grad_norm:               7882866.3000
+info_nce_loss:             0.2768	loss:                    16256.4695	q_loss:                  14778.6086	q_taken_mean:            104.7092
+return_mean:              40.3942	return_std:                8.9728	target_mean:             105.7941	td_error_abs:             60.9904
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:         39.5192	test_return_std:          11.8462
+
+2026-08-21 20:20:35,461 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - t_env: 1000200 / 5050000
+2026-08-21 20:20:35,463 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Estimated time left: 18 hours, 20 minutes, 25 seconds. Time passed: 4 hours, 34 minutes, 10 seconds
+2026-08-21 20:23:38,762 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Saving models to work_dirs/my_experiment/advP_EC_st_nomm_43/my_run/20260821_154619/models/1000200
+2026-08-21 20:34:09,334 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Recent Stats | t_env:    1050000 | Episode:     5250
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               8634912.0000
+info_nce_loss:             0.1236	loss:                    16183.7180	q_loss:                  14712.4709	q_taken_mean:            108.1445
+return_mean:              36.4673	return_std:                9.5321	target_mean:             109.3422	td_error_abs:             64.3660
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:         39.3460	test_return_std:          11.5542
+
+2026-08-21 20:34:11,853 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - t_env: 1050200 / 5050000
+2026-08-21 20:34:11,854 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Estimated time left: 18 hours, 8 minutes, 28 seconds. Time passed: 4 hours, 47 minutes, 46 seconds
+2026-08-21 20:47:43,594 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Recent Stats | t_env:    1100000 | Episode:     5500
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               11323437.6000
+info_nce_loss:             0.3551	loss:                    16538.7857	q_loss:                  15035.2598	q_taken_mean:            112.9321
+return_mean:              37.4829	return_std:                9.4327	target_mean:             113.5578	td_error_abs:             58.6315
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:         39.6722	test_return_std:          10.7002
+
+2026-08-21 20:47:46,115 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - t_env: 1100200 / 5050000
+2026-08-21 20:47:46,116 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Estimated time left: 17 hours, 52 minutes, 3 seconds. Time passed: 5 hours, 1 minutes, 21 seconds
+2026-08-21 21:01:18,678 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Recent Stats | t_env:    1150000 | Episode:     5750
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               10342544.2000
+info_nce_loss:             0.2956	loss:                    24744.1852	q_loss:                  22494.7137	q_taken_mean:            115.7527
+return_mean:              34.1348	return_std:                9.1677	target_mean:             116.3357	td_error_abs:             62.6466
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:         41.2830	test_return_std:          10.6244
+
+2026-08-21 21:01:21,211 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - t_env: 1150200 / 5050000
+2026-08-21 21:01:21,212 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Estimated time left: 17 hours, 39 minutes, 34 seconds. Time passed: 5 hours, 14 minutes, 56 seconds
+2026-08-21 21:14:53,530 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Recent Stats | t_env:    1200000 | Episode:     6000
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               16012661.2000
+info_nce_loss:             0.4608	loss:                    29723.5635	q_loss:                  27021.4213	q_taken_mean:            117.6204
+return_mean:              37.2162	return_std:                9.4446	target_mean:             117.7067	td_error_abs:             71.0749
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:         41.4778	test_return_std:          10.6285
+
+2026-08-21 21:14:56,059 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - t_env: 1200200 / 5050000
+2026-08-21 21:14:56,061 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Estimated time left: 17 hours, 25 minutes, 40 seconds. Time passed: 5 hours, 28 minutes, 30 seconds
+2026-08-21 21:17:58,591 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Saving models to work_dirs/my_experiment/advP_EC_st_nomm_43/my_run/20260821_154619/models/1200200
+2026-08-21 21:28:28,738 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Recent Stats | t_env:    1250000 | Episode:     6250
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               15156141.7000
+info_nce_loss:             0.5976	loss:                    27285.9215	q_loss:                  24805.3832	q_taken_mean:            115.9485
+return_mean:              40.6090	return_std:                9.2746	target_mean:             116.3146	td_error_abs:             72.3184
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:         41.7844	test_return_std:          10.6229
+
+2026-08-21 21:28:31,261 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - t_env: 1250200 / 5050000
+2026-08-21 21:28:31,262 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Estimated time left: 17 hours, 12 minutes, 32 seconds. Time passed: 5 hours, 42 minutes, 6 seconds
+2026-08-21 21:42:03,243 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Recent Stats | t_env:    1300000 | Episode:     6500
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               21249650.6000
+info_nce_loss:             0.4047	loss:                    28097.9686	q_loss:                  25543.6075	q_taken_mean:            114.0928
+return_mean:              29.2728	return_std:                9.2685	target_mean:             114.4814	td_error_abs:             74.3566
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:         39.7452	test_return_std:          10.7737
+
+2026-08-21 21:42:05,839 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - t_env: 1300200 / 5050000
+2026-08-21 21:42:05,840 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Estimated time left: 16 hours, 58 minutes, 10 seconds. Time passed: 5 hours, 55 minutes, 40 seconds
+2026-08-21 21:55:38,820 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Recent Stats | t_env:    1350000 | Episode:     6750
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               24308334.4000
+info_nce_loss:             0.3860	loss:                    45604.8480	q_loss:                  41458.9523	q_taken_mean:            111.5528
+return_mean:              18.7952	return_std:                9.3559	target_mean:             111.7522	td_error_abs:             92.6461
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:         34.9622	test_return_std:          10.8054
+
+2026-08-21 21:55:41,398 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - t_env: 1350200 / 5050000
+2026-08-21 21:55:41,399 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Estimated time left: 16 hours, 45 minutes, 48 seconds. Time passed: 6 hours, 9 minutes, 16 seconds
+2026-08-21 22:09:13,918 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Recent Stats | t_env:    1400000 | Episode:     7000
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               16416376.2000
+info_nce_loss:             0.3237	loss:                    23173.9240	q_loss:                  21067.2031	q_taken_mean:            108.9429
+return_mean:              35.1033	return_std:                9.6065	target_mean:             109.5707	td_error_abs:             73.6161
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:         33.2286	test_return_std:          10.3447
+
+2026-08-21 22:09:16,432 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - t_env: 1400200 / 5050000
+2026-08-21 22:09:16,433 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Estimated time left: 16 hours, 31 minutes, 34 seconds. Time passed: 6 hours, 22 minutes, 51 seconds
+2026-08-21 22:12:19,343 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Saving models to work_dirs/my_experiment/advP_EC_st_nomm_43/my_run/20260821_154619/models/1400200
+2026-08-21 22:22:49,782 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Recent Stats | t_env:    1450000 | Episode:     7250
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               16790764.0000
+info_nce_loss:             0.4998	loss:                    22367.9811	q_loss:                  20334.5278	q_taken_mean:            110.9632
+return_mean:              41.8325	return_std:               10.0822	target_mean:             111.3805	td_error_abs:             68.1320
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:         34.4127	test_return_std:          10.4516
+
+2026-08-21 22:22:52,307 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - t_env: 1450200 / 5050000
+2026-08-21 22:22:52,308 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Estimated time left: 16 hours, 18 minutes, 59 seconds. Time passed: 6 hours, 36 minutes, 27 seconds
+2026-08-21 22:36:24,507 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Recent Stats | t_env:    1500000 | Episode:     7500
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               22111083.0000
+info_nce_loss:             0.3282	loss:                    31758.8508	q_loss:                  28871.6824	q_taken_mean:            112.8295
+return_mean:              44.9314	return_std:                8.9639	target_mean:             112.7096	td_error_abs:             82.4830
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:         35.0232	test_return_std:          10.4327
+
+2026-08-21 22:36:27,030 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - t_env: 1500200 / 5050000
+2026-08-21 22:36:27,031 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Estimated time left: 16 hours, 4 minutes, 2 seconds. Time passed: 6 hours, 50 minutes, 1 seconds
+2026-08-21 22:50:11,888 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Recent Stats | t_env:    1550000 | Episode:     7750
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               37045444.0000
+info_nce_loss:             0.3929	loss:                    51495.7898	q_loss:                  46814.3547	q_taken_mean:            113.7634
+return_mean:              43.8545	return_std:                9.0475	target_mean:             114.8331	td_error_abs:             97.8214
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:         38.6037	test_return_std:          10.4933
+
+2026-08-21 22:50:14,497 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - t_env: 1550200 / 5050000
+2026-08-21 22:50:14,498 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Estimated time left: 16 hours, 5 minutes, 19 seconds. Time passed: 7 hours, 3 minutes, 49 seconds
+2026-08-21 23:04:15,769 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Recent Stats | t_env:    1600000 | Episode:     8000
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               22038452.6000
+info_nce_loss:             0.3475	loss:                    49271.1668	q_loss:                  44791.9695	q_taken_mean:            122.5090
+return_mean:              36.9070	return_std:                9.9010	target_mean:             122.5134	td_error_abs:             85.7344
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:         46.1459	test_return_std:          10.8537
+
+2026-08-21 23:04:18,372 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - t_env: 1600200 / 5050000
+2026-08-21 23:04:18,374 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Estimated time left: 16 hours, 10 minutes, 24 seconds. Time passed: 7 hours, 17 minutes, 53 seconds
+2026-08-21 23:07:26,891 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Saving models to work_dirs/my_experiment/advP_EC_st_nomm_43/my_run/20260821_154619/models/1600200
+2026-08-21 23:18:13,758 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Recent Stats | t_env:    1650000 | Episode:     8250
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               30765570.8000
+info_nce_loss:             0.4244	loss:                    39719.6188	q_loss:                  36108.7449	q_taken_mean:            118.3129
+return_mean:              45.4783	return_std:               10.0986	target_mean:             120.6291	td_error_abs:             89.3198
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:         47.5244	test_return_std:          11.2914
+
+2026-08-21 23:18:16,362 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - t_env: 1650200 / 5050000
+2026-08-21 23:18:16,364 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Estimated time left: 15 hours, 49 minutes, 39 seconds. Time passed: 7 hours, 31 minutes, 51 seconds
+2026-08-21 23:32:09,969 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Recent Stats | t_env:    1700000 | Episode:     8500
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               27201511.8000
+info_nce_loss:             0.2749	loss:                    42564.3330	q_loss:                  38694.8480	q_taken_mean:            121.8585
+return_mean:              47.3709	return_std:               10.6643	target_mean:             122.9931	td_error_abs:             90.9568
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:         49.6169	test_return_std:          11.3234
+
+2026-08-21 23:32:12,549 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - t_env: 1700200 / 5050000
+2026-08-21 23:32:12,551 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Estimated time left: 15 hours, 33 minutes, 41 seconds. Time passed: 7 hours, 45 minutes, 47 seconds
+2026-08-21 23:46:05,443 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Recent Stats | t_env:    1750000 | Episode:     8750
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               24116159.6000
+info_nce_loss:             0.6070	loss:                    45708.1641	q_loss:                  41552.8766	q_taken_mean:            124.8865
+return_mean:              41.6771	return_std:               12.0097	target_mean:             124.8356	td_error_abs:             91.5664
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:         50.1550	test_return_std:          11.8993
+
+2026-08-21 23:46:08,084 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - t_env: 1750200 / 5050000
+2026-08-21 23:46:08,085 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Estimated time left: 15 hours, 19 minutes, 1 seconds. Time passed: 7 hours, 59 minutes, 43 seconds
+2026-08-22 00:00:01,636 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Recent Stats | t_env:    1800000 | Episode:     9000
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               22564966.8000
+info_nce_loss:             0.2882	loss:                    41085.1988	q_loss:                  37350.1805	q_taken_mean:            125.4249
+return_mean:              32.5615	return_std:               14.0339	target_mean:             127.1516	td_error_abs:            108.8890
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:         50.6353	test_return_std:          12.1028
+
+2026-08-22 00:00:04,232 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - t_env: 1800200 / 5050000
+2026-08-22 00:00:04,233 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Estimated time left: 15 hours, 5 minutes, 46 seconds. Time passed: 8 hours, 13 minutes, 39 seconds
+2026-08-22 00:03:12,521 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Saving models to work_dirs/my_experiment/advP_EC_st_nomm_43/my_run/20260821_154619/models/1800200
+2026-08-22 00:13:58,111 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Recent Stats | t_env:    1850000 | Episode:     9250
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               19752332.0000
+info_nce_loss:             0.5077	loss:                    52211.0977	q_loss:                  47464.6340	q_taken_mean:            127.8034
+return_mean:              30.8238	return_std:               10.8976	target_mean:             130.8661	td_error_abs:            124.6202
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:         47.0652	test_return_std:          11.9631
+
+2026-08-22 00:14:00,708 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - t_env: 1850200 / 5050000
+2026-08-22 00:14:00,709 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Estimated time left: 14 hours, 52 minutes, 11 seconds. Time passed: 8 hours, 27 minutes, 35 seconds
+2026-08-22 00:27:53,199 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Recent Stats | t_env:    1900000 | Episode:     9500
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               33430897.4000
+info_nce_loss:             0.2695	loss:                    53080.7336	q_loss:                  48255.2131	q_taken_mean:            124.5298
+return_mean:              39.6514	return_std:               10.1633	target_mean:             124.9466	td_error_abs:            127.2794
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:         47.7972	test_return_std:          12.0480
+
+2026-08-22 00:27:55,780 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - t_env: 1900200 / 5050000
+2026-08-22 00:27:55,782 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Estimated time left: 14 hours, 36 minutes, 46 seconds. Time passed: 8 hours, 41 minutes, 30 seconds
+2026-08-22 00:41:49,389 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Recent Stats | t_env:    1950000 | Episode:     9750
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               33091160.4000
+info_nce_loss:             0.2975	loss:                    46775.1320	q_loss:                  42522.8480	q_taken_mean:            120.9483
+return_mean:              36.2230	return_std:                9.5426	target_mean:             121.2271	td_error_abs:             99.4735
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:         45.0583	test_return_std:          12.0268
+
+2026-08-22 00:41:52,022 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - t_env: 1950200 / 5050000
+2026-08-22 00:41:52,023 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Estimated time left: 14 hours, 24 minutes, 3 seconds. Time passed: 8 hours, 55 minutes, 26 seconds
+2026-08-22 00:55:43,834 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Recent Stats | t_env:    2000000 | Episode:    10000
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               33469721.6000
+info_nce_loss:             0.3251	loss:                    43582.4195	q_loss:                  39620.3809	q_taken_mean:            119.2452
+return_mean:              38.9019	return_std:                9.0099	target_mean:             118.8659	td_error_abs:            100.3595
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:         41.4261	test_return_std:          11.4681
+
+2026-08-22 00:55:46,464 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - t_env: 2000200 / 5050000
+2026-08-22 00:55:46,465 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Estimated time left: 14 hours, 8 minutes, 17 seconds. Time passed: 9 hours, 9 minutes, 21 seconds
+2026-08-22 00:58:54,053 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Saving models to work_dirs/my_experiment/advP_EC_st_nomm_43/my_run/20260821_154619/models/2000200
+2026-08-22 01:09:40,138 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Recent Stats | t_env:    2050000 | Episode:    10250
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               21729285.1000
+info_nce_loss:             0.2921	loss:                    32560.6861	q_loss:                  29600.6237	q_taken_mean:            115.8169
+return_mean:              43.7320	return_std:                9.5488	target_mean:             116.7999	td_error_abs:             83.1986
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:         39.8584	test_return_std:          10.9659
+
+2026-08-22 01:09:42,718 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - t_env: 2050200 / 5050000
+2026-08-22 01:09:42,719 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Estimated time left: 13 hours, 56 minutes, 11 seconds. Time passed: 9 hours, 23 minutes, 17 seconds
+2026-08-22 01:23:37,628 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Recent Stats | t_env:    2100000 | Episode:    10500
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               48068529.2000
+info_nce_loss:             0.3546	loss:                    92594.5063	q_loss:                  84176.8227	q_taken_mean:            117.9245
+return_mean:              42.3064	return_std:               10.1335	target_mean:             120.8504	td_error_abs:            138.9329
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:         40.4887	test_return_std:          10.9040
+
+2026-08-22 01:23:40,223 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - t_env: 2100200 / 5050000
+2026-08-22 01:23:40,224 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Estimated time left: 13 hours, 43 minutes, 29 seconds. Time passed: 9 hours, 37 minutes, 15 seconds
+2026-08-22 01:37:34,403 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Recent Stats | t_env:    2150000 | Episode:    10750
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               31088846.8000
+info_nce_loss:             0.3620	loss:                    50536.4037	q_loss:                  45942.1852	q_taken_mean:            119.2917
+return_mean:              32.1235	return_std:               10.8810	target_mean:             120.5190	td_error_abs:            104.6257
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:         37.4573	test_return_std:          10.6320
+
+2026-08-22 01:37:37,024 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - t_env: 2150200 / 5050000
+2026-08-22 01:37:37,025 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Estimated time left: 13 hours, 28 minutes, 51 seconds. Time passed: 9 hours, 51 minutes, 11 seconds
+2026-08-22 01:51:30,925 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Recent Stats | t_env:    2200000 | Episode:    11000
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               21216319.0000
+info_nce_loss:             0.3588	loss:                    26077.7348	q_loss:                  23707.0320	q_taken_mean:            120.5662
+return_mean:              38.3947	return_std:               10.1114	target_mean:             120.3622	td_error_abs:             82.1208
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:         39.3106	test_return_std:          10.6260
+
+2026-08-22 01:51:33,513 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - t_env: 2200200 / 5050000
+2026-08-22 01:51:33,514 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Estimated time left: 13 hours, 14 minutes, 36 seconds. Time passed: 10 hours, 5 minutes, 8 seconds
+2026-08-22 01:54:40,700 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Saving models to work_dirs/my_experiment/advP_EC_st_nomm_43/my_run/20260821_154619/models/2200200
+2026-08-22 02:05:26,404 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Recent Stats | t_env:    2250000 | Episode:    11250
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               27375759.2000
+info_nce_loss:             0.2823	loss:                    32146.9805	q_loss:                  29224.5281	q_taken_mean:            116.1669
+return_mean:              45.3474	return_std:               10.9308	target_mean:             117.9227	td_error_abs:             89.0432
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:         43.2294	test_return_std:          10.6161
+
+2026-08-22 02:05:28,986 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - t_env: 2250200 / 5050000
+2026-08-22 02:05:28,988 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Estimated time left: 12 hours, 59 minutes, 43 seconds. Time passed: 10 hours, 19 minutes, 3 seconds
+2026-08-22 02:19:23,381 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Recent Stats | t_env:    2300000 | Episode:    11500
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               32419436.0000
+info_nce_loss:             0.3647	loss:                    40048.4717	q_loss:                  36407.7008	q_taken_mean:            112.8389
+return_mean:              51.8608	return_std:               10.1337	target_mean:             112.7981	td_error_abs:             99.3789
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:         42.9602	test_return_std:          11.0047
+
+2026-08-22 02:19:25,979 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - t_env: 2300200 / 5050000
+2026-08-22 02:19:25,981 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Estimated time left: 12 hours, 47 minutes, 11 seconds. Time passed: 10 hours, 33 minutes, 0 seconds
+2026-08-22 02:33:20,783 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Recent Stats | t_env:    2350000 | Episode:    11750
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               26690056.8000
+info_nce_loss:             0.3401	loss:                    27659.1543	q_loss:                  25144.6861	q_taken_mean:            113.5627
+return_mean:              42.2317	return_std:               10.3128	target_mean:             115.1519	td_error_abs:             89.3311
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:         44.0499	test_return_std:          10.7693
+
+2026-08-22 02:33:23,446 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - t_env: 2350200 / 5050000
+2026-08-22 02:33:23,448 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Estimated time left: 12 hours, 33 minutes, 39 seconds. Time passed: 10 hours, 46 minutes, 58 seconds
+2026-08-22 02:47:17,717 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Recent Stats | t_env:    2400000 | Episode:    12000
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               45063808.0000
+info_nce_loss:             0.3808	loss:                    84214.6023	q_loss:                  76558.7289	q_taken_mean:            121.9640
+return_mean:              42.0063	return_std:               11.1916	target_mean:             121.8764	td_error_abs:            151.0617
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:         47.6016	test_return_std:          10.8815
+
+2026-08-22 02:47:20,341 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - t_env: 2400200 / 5050000
+2026-08-22 02:47:20,343 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Estimated time left: 12 hours, 19 minutes, 12 seconds. Time passed: 11 hours, 55 seconds
+2026-08-22 02:50:27,790 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Saving models to work_dirs/my_experiment/advP_EC_st_nomm_43/my_run/20260821_154619/models/2400200
+2026-08-22 03:01:13,356 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Recent Stats | t_env:    2450000 | Episode:    12250
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               47169858.4000
+info_nce_loss:             0.3482	loss:                    65452.8773	q_loss:                  59502.6164	q_taken_mean:            122.7005
+return_mean:              41.8145	return_std:               10.4675	target_mean:             124.2389	td_error_abs:            131.1245
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:         45.9742	test_return_std:          11.0753
+
+2026-08-22 03:01:15,965 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - t_env: 2450200 / 5050000
+2026-08-22 03:01:15,966 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Estimated time left: 12 hours, 4 minutes, 9 seconds. Time passed: 11 hours, 14 minutes, 50 seconds
+2026-08-22 03:15:09,229 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Recent Stats | t_env:    2500000 | Episode:    12500
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               28009837.5000
+info_nce_loss:             0.2787	loss:                    49084.5540	q_loss:                  44622.3217	q_taken_mean:            121.4163
+return_mean:              49.1284	return_std:                9.9325	target_mean:             121.7907	td_error_abs:            108.2918
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:         44.9573	test_return_std:          10.9734
+
+2026-08-22 03:15:11,826 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - t_env: 2500200 / 5050000
+2026-08-22 03:15:11,827 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Estimated time left: 11 hours, 50 minutes, 25 seconds. Time passed: 11 hours, 28 minutes, 46 seconds
+2026-08-22 03:29:04,771 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Recent Stats | t_env:    2550000 | Episode:    12750
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               32081763.2000
+info_nce_loss:             0.2591	loss:                    42150.7588	q_loss:                  38318.8725	q_taken_mean:            126.7695
+return_mean:              57.9254	return_std:                9.3447	target_mean:             125.2546	td_error_abs:            103.4769
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:         47.9811	test_return_std:          11.0860
+
+2026-08-22 03:29:07,357 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - t_env: 2550200 / 5050000
+2026-08-22 03:29:07,359 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Estimated time left: 11 hours, 36 minutes, 13 seconds. Time passed: 11 hours, 42 minutes, 42 seconds
+2026-08-22 03:43:01,571 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Recent Stats | t_env:    2600000 | Episode:    13000
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               21169986.7000
+info_nce_loss:             0.3026	loss:                    59289.4095	q_loss:                  53899.4621	q_taken_mean:            128.4195
+return_mean:              53.9817	return_std:               11.6073	target_mean:             129.3336	td_error_abs:            152.2073
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:         52.2614	test_return_std:          11.2965
+
+2026-08-22 03:43:04,154 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - t_env: 2600200 / 5050000
+2026-08-22 03:43:04,156 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Estimated time left: 11 hours, 23 minutes, 19 seconds. Time passed: 11 hours, 56 minutes, 39 seconds
+2026-08-22 03:46:11,525 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Saving models to work_dirs/my_experiment/advP_EC_st_nomm_43/my_run/20260821_154619/models/2600200
+2026-08-22 03:56:56,649 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Recent Stats | t_env:    2650000 | Episode:    13250
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               36414024.4000
+info_nce_loss:             0.4854	loss:                    67733.2926	q_loss:                  61575.7211	q_taken_mean:            130.1916
+return_mean:              47.3830	return_std:               10.5017	target_mean:             129.4176	td_error_abs:            123.7658
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:         53.5812	test_return_std:          11.1755
+
+2026-08-22 03:56:59,243 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - t_env: 2650200 / 5050000
+2026-08-22 03:56:59,245 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Estimated time left: 11 hours, 8 minutes, 0 seconds. Time passed: 12 hours, 10 minutes, 34 seconds
+2026-08-22 04:10:51,422 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Recent Stats | t_env:    2700000 | Episode:    13500
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               26389584.0000
+info_nce_loss:             0.3156	loss:                    24787.6080	q_loss:                  22534.1893	q_taken_mean:            130.3758
+return_mean:              55.2391	return_std:                8.9657	target_mean:             130.2038	td_error_abs:             80.2658
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:         55.2117	test_return_std:          10.9647
+
+2026-08-22 04:10:54,026 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - t_env: 2700200 / 5050000
+2026-08-22 04:10:54,028 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Estimated time left: 10 hours, 53 minutes, 51 seconds. Time passed: 12 hours, 24 minutes, 28 seconds
+2026-08-22 04:24:47,165 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Recent Stats | t_env:    2750000 | Episode:    13750
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               29271067.6000
+info_nce_loss:             0.3240	loss:                    32546.8215	q_loss:                  29588.0191	q_taken_mean:            130.2019
+return_mean:              46.7108	return_std:               11.2789	target_mean:             130.5669	td_error_abs:             92.5346
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:         54.0039	test_return_std:          10.7416
+
+2026-08-22 04:24:49,809 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - t_env: 2750200 / 5050000
+2026-08-22 04:24:49,810 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Estimated time left: 10 hours, 40 minutes, 42 seconds. Time passed: 12 hours, 38 minutes, 24 seconds
+2026-08-22 04:38:44,816 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Recent Stats | t_env:    2800000 | Episode:    14000
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               22759842.0000
+info_nce_loss:             0.3336	loss:                    21348.6248	q_loss:                  19407.8404	q_taken_mean:            128.5900
+return_mean:              55.7269	return_std:               10.8920	target_mean:             129.1028	td_error_abs:             74.5233
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:         52.9927	test_return_std:          10.2948
+
+2026-08-22 04:38:47,433 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - t_env: 2800200 / 5050000
+2026-08-22 04:38:47,434 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Estimated time left: 10 hours, 28 minutes, 9 seconds. Time passed: 12 hours, 52 minutes, 22 seconds
+2026-08-22 04:41:55,092 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Saving models to work_dirs/my_experiment/advP_EC_st_nomm_43/my_run/20260821_154619/models/2800200
+2026-08-22 04:52:41,297 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Recent Stats | t_env:    2850000 | Episode:    14250
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               23622447.8000
+info_nce_loss:             0.4263	loss:                    31854.7615	q_loss:                  28958.8738	q_taken_mean:            129.7198
+return_mean:              58.7728	return_std:                9.7211	target_mean:             130.3849	td_error_abs:             88.6264
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:         52.4864	test_return_std:          10.1154
+
+2026-08-22 04:52:43,893 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - t_env: 2850200 / 5050000
+2026-08-22 04:52:43,894 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Estimated time left: 10 hours, 13 minutes, 20 seconds. Time passed: 13 hours, 6 minutes, 18 seconds
+2026-08-22 05:06:38,454 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Recent Stats | t_env:    2900000 | Episode:    14500
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               43902910.4000
+info_nce_loss:             0.2396	loss:                    55286.6504	q_loss:                  50260.5906	q_taken_mean:            128.4899
+return_mean:              60.4279	return_std:                9.8361	target_mean:             127.6274	td_error_abs:            113.9384
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:         54.8238	test_return_std:          10.3780
+
+2026-08-22 05:06:41,051 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - t_env: 2900200 / 5050000
+2026-08-22 05:06:41,053 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Estimated time left: 9 hours, 59 minutes, 54 seconds. Time passed: 13 hours, 20 minutes, 15 seconds
+2026-08-22 05:20:34,980 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Recent Stats | t_env:    2950000 | Episode:    14750
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               35803521.2000
+info_nce_loss:             0.4341	loss:                    42067.4717	q_loss:                  38243.1559	q_taken_mean:            125.0896
+return_mean:              56.1097	return_std:               10.0371	target_mean:             126.4862	td_error_abs:            112.6170
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:         58.3294	test_return_std:          10.5104
+
+2026-08-22 05:20:37,603 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - t_env: 2950200 / 5050000
+2026-08-22 05:20:37,605 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Estimated time left: 9 hours, 45 minutes, 31 seconds. Time passed: 13 hours, 34 minutes, 12 seconds
+2026-08-22 05:34:30,953 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Recent Stats | t_env:    3000000 | Episode:    15000
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               40359222.0000
+info_nce_loss:             0.1852	loss:                    55276.4242	q_loss:                  50251.2949	q_taken_mean:            126.4482
+return_mean:              50.0991	return_std:               10.2385	target_mean:             125.0749	td_error_abs:            116.3716
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:         56.7796	test_return_std:          10.9276
+
+2026-08-22 05:34:33,551 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - t_env: 3000200 / 5050000
+2026-08-22 05:34:33,553 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Estimated time left: 9 hours, 31 minutes, 10 seconds. Time passed: 13 hours, 48 minutes, 8 seconds
+2026-08-22 05:37:41,501 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Saving models to work_dirs/my_experiment/advP_EC_st_nomm_43/my_run/20260821_154619/models/3000200
+2026-08-22 05:48:27,827 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Recent Stats | t_env:    3050000 | Episode:    15250
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               28523129.6000
+info_nce_loss:             0.2549	loss:                    46747.1293	q_loss:                  42497.3906	q_taken_mean:            121.4277
+return_mean:              56.4354	return_std:                9.5089	target_mean:             122.6894	td_error_abs:            104.5149
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:         58.9485	test_return_std:          11.5587
+
+2026-08-22 05:48:30,419 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - t_env: 3050200 / 5050000
+2026-08-22 05:48:30,420 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Estimated time left: 9 hours, 17 minutes, 51 seconds. Time passed: 14 hours, 2 minutes, 5 seconds
+2026-08-22 06:02:24,544 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Recent Stats | t_env:    3100000 | Episode:    15500
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               27566125.6000
+info_nce_loss:             0.2301	loss:                    33944.2932	q_loss:                  30858.4479	q_taken_mean:            123.9408
+return_mean:              55.0164	return_std:               11.5516	target_mean:             123.2459	td_error_abs:             96.3278
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:         59.1540	test_return_std:          11.8016
+
+2026-08-22 06:02:27,148 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - t_env: 3100200 / 5050000
+2026-08-22 06:02:27,149 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Estimated time left: 9 hours, 3 minutes, 49 seconds. Time passed: 14 hours, 16 minutes, 2 seconds
+2026-08-22 06:16:21,365 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Recent Stats | t_env:    3150000 | Episode:    15750
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               29243851.2000
+info_nce_loss:             0.3029	loss:                    38415.9125	q_loss:                  34923.5570	q_taken_mean:            122.8835
+return_mean:              45.3676	return_std:                9.5810	target_mean:             122.8487	td_error_abs:             96.7153
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:         56.3992	test_return_std:          11.7817
+
+2026-08-22 06:16:23,964 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - t_env: 3150200 / 5050000
+2026-08-22 06:16:23,965 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Estimated time left: 8 hours, 49 minutes, 55 seconds. Time passed: 14 hours, 29 minutes, 58 seconds
+2026-08-22 06:30:16,825 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Recent Stats | t_env:    3200000 | Episode:    16000
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               44279520.8000
+info_nce_loss:             0.3457	loss:                    57011.7027	q_loss:                  51828.8199	q_taken_mean:            121.6849
+return_mean:              44.3380	return_std:               12.5372	target_mean:             122.1569	td_error_abs:            119.0545
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:         52.3100	test_return_std:          11.8811
+
+2026-08-22 06:30:19,451 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - t_env: 3200200 / 5050000
+2026-08-22 06:30:19,452 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Estimated time left: 8 hours, 35 minutes, 9 seconds. Time passed: 14 hours, 43 minutes, 54 seconds
+2026-08-22 06:33:27,820 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Saving models to work_dirs/my_experiment/advP_EC_st_nomm_43/my_run/20260821_154619/models/3200200
+2026-08-22 06:44:15,260 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Recent Stats | t_env:    3250000 | Episode:    16250
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               36888939.2000
+info_nce_loss:             0.4737	loss:                    40792.2211	q_loss:                  37083.8375	q_taken_mean:            125.8336
+return_mean:              48.0679	return_std:                9.8096	target_mean:             126.3499	td_error_abs:            102.4523
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:         53.6447	test_return_std:          11.4381
+
+2026-08-22 06:44:17,859 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - t_env: 3250200 / 5050000
+2026-08-22 06:44:17,860 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Estimated time left: 8 hours, 22 minutes, 59 seconds. Time passed: 14 hours, 57 minutes, 52 seconds
+2026-08-22 06:58:11,567 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Recent Stats | t_env:    3300000 | Episode:    16500
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               31660757.3000
+info_nce_loss:             0.4663	loss:                    47731.5467	q_loss:                  43392.3141	q_taken_mean:            120.3513
+return_mean:              42.7666	return_std:               14.2753	target_mean:             122.3270	td_error_abs:            107.5687
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:         50.6688	test_return_std:          11.1120
+
+2026-08-22 06:58:14,232 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - t_env: 3300200 / 5050000
+2026-08-22 06:58:14,233 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Estimated time left: 8 hours, 7 minutes, 49 seconds. Time passed: 15 hours, 11 minutes, 49 seconds
+2026-08-22 07:12:07,792 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Recent Stats | t_env:    3350000 | Episode:    16750
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               35636256.4000
+info_nce_loss:             0.2817	loss:                    47284.0820	q_loss:                  42985.5283	q_taken_mean:            122.2069
+return_mean:              32.9440	return_std:               10.6887	target_mean:             120.8255	td_error_abs:            106.3175
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:         42.4682	test_return_std:          10.7323
+
+2026-08-22 07:12:10,447 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - t_env: 3350200 / 5050000
+2026-08-22 07:12:10,448 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Estimated time left: 7 hours, 53 minutes, 47 seconds. Time passed: 15 hours, 25 minutes, 45 seconds
+2026-08-22 07:26:05,883 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Recent Stats | t_env:    3400000 | Episode:    17000
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               28360263.0000
+info_nce_loss:             0.2157	loss:                    39901.3742	q_loss:                  36273.9766	q_taken_mean:            115.4331
+return_mean:              42.2925	return_std:               10.0973	target_mean:             117.4892	td_error_abs:            103.4360
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:         40.1402	test_return_std:          10.9168
+
+2026-08-22 07:26:08,509 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - t_env: 3400200 / 5050000
+2026-08-22 07:26:08,511 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Estimated time left: 7 hours, 40 minutes, 52 seconds. Time passed: 15 hours, 39 minutes, 43 seconds
+2026-08-22 07:29:16,770 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Saving models to work_dirs/my_experiment/advP_EC_st_nomm_43/my_run/20260821_154619/models/3400200
+2026-08-22 07:40:04,045 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Recent Stats | t_env:    3450000 | Episode:    17250
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               22848275.2000
+info_nce_loss:             0.2897	loss:                    28895.4238	q_loss:                  26268.5664	q_taken_mean:            113.7962
+return_mean:              46.7936	return_std:                9.6780	target_mean:             114.5774	td_error_abs:             87.4567
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:         42.4591	test_return_std:          10.9935
+
+2026-08-22 07:40:06,669 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - t_env: 3450200 / 5050000
+2026-08-22 07:40:06,671 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Estimated time left: 7 hours, 26 minutes, 57 seconds. Time passed: 15 hours, 53 minutes, 41 seconds
+2026-08-22 07:53:58,730 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Recent Stats | t_env:    3500000 | Episode:    17500
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               34522539.2000
+info_nce_loss:             0.4665	loss:                    52522.5445	q_loss:                  47747.7680	q_taken_mean:            113.6164
+return_mean:              39.4214	return_std:                9.4806	target_mean:             115.3435	td_error_abs:            125.6882
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:         41.9337	test_return_std:          11.0554
+
+2026-08-22 07:54:01,322 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - t_env: 3500200 / 5050000
+2026-08-22 07:54:01,324 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Estimated time left: 7 hours, 11 minutes, 10 seconds. Time passed: 16 hours, 7 minutes, 36 seconds
+2026-08-22 08:07:56,424 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Recent Stats | t_env:    3550000 | Episode:    17750
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               43398899.4000
+info_nce_loss:             0.2633	loss:                    70840.0670	q_loss:                  64400.0607	q_taken_mean:            121.2766
+return_mean:              36.8165	return_std:                9.9233	target_mean:             121.9367	td_error_abs:            135.9869
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:         38.5967	test_return_std:          10.9789
+
+2026-08-22 08:07:59,026 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - t_env: 3550200 / 5050000
+2026-08-22 08:07:59,027 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Estimated time left: 6 hours, 58 minutes, 47 seconds. Time passed: 16 hours, 21 minutes, 33 seconds
+2026-08-22 08:21:53,980 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Recent Stats | t_env:    3600000 | Episode:    18000
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               46284184.8000
+info_nce_loss:             0.3230	loss:                    83617.5109	q_loss:                  76015.9195	q_taken_mean:            127.0331
+return_mean:              39.5194	return_std:               10.4477	target_mean:             126.8396	td_error_abs:            149.2359
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:         39.1233	test_return_std:          11.2859
+
+2026-08-22 08:21:56,573 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - t_env: 3600200 / 5050000
+2026-08-22 08:21:56,575 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Estimated time left: 6 hours, 44 minutes, 45 seconds. Time passed: 16 hours, 35 minutes, 31 seconds
+2026-08-22 08:25:03,999 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Saving models to work_dirs/my_experiment/advP_EC_st_nomm_43/my_run/20260821_154619/models/3600200
+2026-08-22 08:35:52,091 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Recent Stats | t_env:    3650000 | Episode:    18250
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               46277807.2000
+info_nce_loss:             0.3740	loss:                    65627.2645	q_loss:                  59661.1492	q_taken_mean:            126.6357
+return_mean:              40.5281	return_std:               11.1097	target_mean:             126.7489	td_error_abs:            151.2362
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:         40.4312	test_return_std:          11.6562
+
+2026-08-22 08:35:54,699 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - t_env: 3650200 / 5050000
+2026-08-22 08:35:54,700 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Estimated time left: 6 hours, 31 minutes, 4 seconds. Time passed: 16 hours, 49 minutes, 29 seconds
+2026-08-22 08:49:49,558 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Recent Stats | t_env:    3700000 | Episode:    18500
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               32117140.4000
+info_nce_loss:             0.3868	loss:                    31374.4434	q_loss:                  28522.2205	q_taken_mean:            123.1504
+return_mean:              46.3604	return_std:               10.2888	target_mean:             122.1877	td_error_abs:             91.5701
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:         37.3580	test_return_std:          12.1645
+
+2026-08-22 08:49:52,145 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - t_env: 3700200 / 5050000
+2026-08-22 08:49:52,146 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Estimated time left: 6 hours, 16 minutes, 47 seconds. Time passed: 17 hours, 3 minutes, 27 seconds
+2026-08-22 09:03:44,934 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Recent Stats | t_env:    3750000 | Episode:    18750
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               32048057.2000
+info_nce_loss:             0.2120	loss:                    33852.2316	q_loss:                  30774.7561	q_taken_mean:            120.8273
+return_mean:              47.3963	return_std:                9.8671	target_mean:             119.8863	td_error_abs:             97.8081
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:         39.4743	test_return_std:          12.4240
+
+2026-08-22 09:03:47,575 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - t_env: 3750200 / 5050000
+2026-08-22 09:03:47,577 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Estimated time left: 6 hours, 1 minutes, 57 seconds. Time passed: 17 hours, 17 minutes, 22 seconds
+2026-08-22 09:17:40,943 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Recent Stats | t_env:    3800000 | Episode:    19000
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               41183689.6000
+info_nce_loss:             0.4263	loss:                    58803.5355	q_loss:                  53457.7605	q_taken_mean:            118.0115
+return_mean:              43.8084	return_std:                9.6803	target_mean:             116.0381	td_error_abs:            124.8082
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:         41.9192	test_return_std:          12.3693
+
+2026-08-22 09:17:43,547 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - t_env: 3800200 / 5050000
+2026-08-22 09:17:43,548 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Estimated time left: 5 hours, 48 minutes, 15 seconds. Time passed: 17 hours, 31 minutes, 18 seconds
+2026-08-22 09:20:51,519 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Saving models to work_dirs/my_experiment/advP_EC_st_nomm_43/my_run/20260821_154619/models/3800200
+2026-08-22 09:31:37,968 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Recent Stats | t_env:    3850000 | Episode:    19250
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               47436117.8000
+info_nce_loss:             0.4074	loss:                    94245.8953	q_loss:                  85678.0875	q_taken_mean:            118.5019
+return_mean:              45.1768	return_std:                9.5776	target_mean:             118.2443	td_error_abs:            148.6324
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:         46.8035	test_return_std:          12.3981
+
+2026-08-22 09:31:40,562 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - t_env: 3850200 / 5050000
+2026-08-22 09:31:40,563 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Estimated time left: 5 hours, 34 minutes, 45 seconds. Time passed: 17 hours, 45 minutes, 15 seconds
+2026-08-22 09:45:33,917 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Recent Stats | t_env:    3900000 | Episode:    19500
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               46307532.6000
+info_nce_loss:             0.1805	loss:                    95595.8813	q_loss:                  86905.3469	q_taken_mean:            114.1018
+return_mean:              39.4956	return_std:                9.2528	target_mean:             114.3794	td_error_abs:            152.7900
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:         46.5161	test_return_std:          11.6329
+
+2026-08-22 09:45:36,504 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - t_env: 3900200 / 5050000
+2026-08-22 09:45:36,505 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Estimated time left: 5 hours, 20 minutes, 23 seconds. Time passed: 17 hours, 59 minutes, 11 seconds
+2026-08-22 09:59:30,790 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Recent Stats | t_env:    3950000 | Episode:    19750
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               33843942.6000
+info_nce_loss:             0.3487	loss:                    55350.9223	q_loss:                  50319.0199	q_taken_mean:            112.6296
+return_mean:              31.8999	return_std:               10.1750	target_mean:             112.8597	td_error_abs:            125.1176
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:         43.3694	test_return_std:          10.4429
+
+2026-08-22 09:59:33,408 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - t_env: 3950200 / 5050000
+2026-08-22 09:59:33,410 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Estimated time left: 5 hours, 6 minutes, 48 seconds. Time passed: 18 hours, 13 minutes, 8 seconds
+2026-08-22 10:13:26,607 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Recent Stats | t_env:    4000000 | Episode:    20000
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               49055967.5000
+info_nce_loss:             0.4449	loss:                    95810.7949	q_loss:                  87100.7223	q_taken_mean:            117.9525
+return_mean:              38.4937	return_std:               11.0678	target_mean:             115.6230	td_error_abs:            164.7372
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:         41.4215	test_return_std:          10.4272
+
+2026-08-22 10:13:29,259 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - t_env: 4000200 / 5050000
+2026-08-22 10:13:29,260 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Estimated time left: 4 hours, 52 minutes, 29 seconds. Time passed: 18 hours, 27 minutes, 4 seconds
+2026-08-22 10:16:37,307 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Saving models to work_dirs/my_experiment/advP_EC_st_nomm_43/my_run/20260821_154619/models/4000200
+2026-08-22 10:27:24,217 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Recent Stats | t_env:    4050000 | Episode:    20250
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               27246363.4000
+info_nce_loss:             0.2835	loss:                    32132.6918	q_loss:                  29211.5383	q_taken_mean:            116.2895
+return_mean:              34.3446	return_std:                9.7737	target_mean:             116.6993	td_error_abs:            103.0620
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:         39.9117	test_return_std:          10.1767
+
+2026-08-22 10:27:26,816 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - t_env: 4050200 / 5050000
+2026-08-22 10:27:26,818 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Estimated time left: 4 hours, 39 minutes, 7 seconds. Time passed: 18 hours, 41 minutes, 1 seconds
+2026-08-22 10:41:19,280 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Recent Stats | t_env:    4100000 | Episode:    20500
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               38666221.2000
+info_nce_loss:             0.3466	loss:                    65213.5500	q_loss:                  59285.0453	q_taken_mean:            120.2826
+return_mean:              39.5540	return_std:                8.7763	target_mean:             121.9393	td_error_abs:            150.0656
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:         38.2459	test_return_std:          10.0054
+
+2026-08-22 10:41:21,893 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - t_env: 4100200 / 5050000
+2026-08-22 10:41:21,895 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Estimated time left: 4 hours, 24 minutes, 23 seconds. Time passed: 18 hours, 54 minutes, 56 seconds
+2026-08-22 10:55:14,815 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Recent Stats | t_env:    4150000 | Episode:    20750
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               18904907.6000
+info_nce_loss:             0.3561	loss:                    30172.2551	q_loss:                  27429.3227	q_taken_mean:            117.1372
+return_mean:              29.9830	return_std:                9.1365	target_mean:             117.4910	td_error_abs:             93.3968
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:         35.8158	test_return_std:           9.8941
+
+2026-08-22 10:55:17,405 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - t_env: 4150200 / 5050000
+2026-08-22 10:55:17,406 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Estimated time left: 4 hours, 10 minutes, 35 seconds. Time passed: 19 hours, 8 minutes, 52 seconds
+2026-08-22 11:09:12,529 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Recent Stats | t_env:    4200000 | Episode:    21000
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               15139975.8000
+info_nce_loss:             0.2914	loss:                    15023.7334	q_loss:                  13657.9395	q_taken_mean:            114.6025
+return_mean:              41.8423	return_std:                8.8435	target_mean:             114.4194	td_error_abs:             68.1392
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:         41.0395	test_return_std:          10.0245
+
+2026-08-22 11:09:15,137 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - t_env: 4200200 / 5050000
+2026-08-22 11:09:15,139 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Estimated time left: 3 hours, 57 minutes, 18 seconds. Time passed: 19 hours, 22 minutes, 50 seconds
+2026-08-22 11:12:23,079 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Saving models to work_dirs/my_experiment/advP_EC_st_nomm_43/my_run/20260821_154619/models/4200200
+2026-08-22 11:23:11,347 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Recent Stats | t_env:    4250000 | Episode:    21250
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               12764771.9000
+info_nce_loss:             0.3101	loss:                    17162.1796	q_loss:                  15601.9813	q_taken_mean:            110.8431
+return_mean:              38.9472	return_std:                8.7672	target_mean:             111.5094	td_error_abs:             72.5220
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:         42.6302	test_return_std:           9.7915
+
+2026-08-22 11:23:13,966 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - t_env: 4250200 / 5050000
+2026-08-22 11:23:13,967 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Estimated time left: 3 hours, 43 minutes, 37 seconds. Time passed: 19 hours, 36 minutes, 48 seconds
+2026-08-22 11:37:07,831 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Recent Stats | t_env:    4300000 | Episode:    21500
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               20054473.4000
+info_nce_loss:             0.3962	loss:                    61044.5740	q_loss:                  55495.0682	q_taken_mean:            108.8370
+return_mean:              19.4514	return_std:                9.5700	target_mean:             111.2106	td_error_abs:            151.3815
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:         41.6884	test_return_std:           9.8048
+
+2026-08-22 11:37:10,453 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - t_env: 4300200 / 5050000
+2026-08-22 11:37:10,454 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Estimated time left: 3 hours, 29 minutes, 3 seconds. Time passed: 19 hours, 50 minutes, 45 seconds
+2026-08-22 11:51:03,400 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Recent Stats | t_env:    4350000 | Episode:    21750
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               21642272.6500
+info_nce_loss:             0.2467	loss:                    25243.7631	q_loss:                  22948.8756	q_taken_mean:            109.5736
+return_mean:              28.5017	return_std:                9.2996	target_mean:             110.4767	td_error_abs:             83.3353
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:         38.7248	test_return_std:           9.8085
+
+2026-08-22 11:51:06,048 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - t_env: 4350200 / 5050000
+2026-08-22 11:51:06,049 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Estimated time left: 3 hours, 14 minutes, 54 seconds. Time passed: 20 hours, 4 minutes, 40 seconds
+2026-08-22 12:04:58,633 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Recent Stats | t_env:    4400000 | Episode:    22000
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               26227942.7000
+info_nce_loss:             0.3185	loss:                    41002.7439	q_loss:                  37275.2219	q_taken_mean:            106.6780
+return_mean:              32.3612	return_std:                8.8766	target_mean:             107.5313	td_error_abs:             93.0154
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:         40.7481	test_return_std:           9.7720
+
+2026-08-22 12:05:01,299 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - t_env: 4400200 / 5050000
+2026-08-22 12:05:01,301 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Estimated time left: 3 hours, 54 seconds. Time passed: 20 hours, 18 minutes, 36 seconds
+2026-08-22 12:08:09,560 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Saving models to work_dirs/my_experiment/advP_EC_st_nomm_43/my_run/20260821_154619/models/4400200
+2026-08-22 12:18:55,746 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Recent Stats | t_env:    4450000 | Episode:    22250
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               24642363.6000
+info_nce_loss:             0.4107	loss:                    31793.3613	q_loss:                  28903.0559	q_taken_mean:            112.3524
+return_mean:              34.2468	return_std:                9.6360	target_mean:             112.3039	td_error_abs:             91.7042
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:         40.0996	test_return_std:           9.9476
+
+2026-08-22 12:18:58,351 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - t_env: 4450200 / 5050000
+2026-08-22 12:18:58,352 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Estimated time left: 2 hours, 47 minutes, 21 seconds. Time passed: 20 hours, 32 minutes, 33 seconds
+2026-08-22 12:32:53,078 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Recent Stats | t_env:    4500000 | Episode:    22500
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               20229485.9000
+info_nce_loss:             0.3585	loss:                    24394.6854	q_loss:                  22176.9865	q_taken_mean:            115.8567
+return_mean:              36.0177	return_std:                9.5969	target_mean:             114.7636	td_error_abs:             82.9786
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:         38.6348	test_return_std:           9.9317
+
+2026-08-22 12:32:55,696 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - t_env: 4500200 / 5050000
+2026-08-22 12:32:55,697 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Estimated time left: 2 hours, 33 minutes, 27 seconds. Time passed: 20 hours, 46 minutes, 30 seconds
+2026-08-22 12:46:49,808 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Recent Stats | t_env:    4550000 | Episode:    22750
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               29682194.9500
+info_nce_loss:             0.2989	loss:                    77012.9180	q_loss:                  70011.7424	q_taken_mean:            120.3189
+return_mean:              39.8720	return_std:                9.7637	target_mean:             118.6086	td_error_abs:            115.0989
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:         40.3831	test_return_std:          10.3092
+
+2026-08-22 12:46:52,413 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - t_env: 4550200 / 5050000
+2026-08-22 12:46:52,415 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Estimated time left: 2 hours, 19 minutes, 23 seconds. Time passed: 21 hours, 27 seconds
+2026-08-22 13:00:46,121 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Recent Stats | t_env:    4600000 | Episode:    23000
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               28519073.2000
+info_nce_loss:             0.2947	loss:                    30534.6418	q_loss:                  27758.7652	q_taken_mean:            116.5518
+return_mean:              35.1617	return_std:               11.1397	target_mean:             116.0667	td_error_abs:             99.4662
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:         41.6217	test_return_std:          10.3734
+
+2026-08-22 13:00:48,699 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - t_env: 4600200 / 5050000
+2026-08-22 13:00:48,701 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Estimated time left: 2 hours, 5 minutes, 23 seconds. Time passed: 21 hours, 14 minutes, 23 seconds
+2026-08-22 13:03:56,886 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Saving models to work_dirs/my_experiment/advP_EC_st_nomm_43/my_run/20260821_154619/models/4600200
+2026-08-22 13:14:42,340 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Recent Stats | t_env:    4650000 | Episode:    23250
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               17918499.8000
+info_nce_loss:             0.2384	loss:                    20987.7072	q_loss:                  19079.7338	q_taken_mean:            116.0943
+return_mean:              44.2589	return_std:               10.2327	target_mean:             116.3556	td_error_abs:             84.9734
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:         43.3062	test_return_std:          11.0585
+
+2026-08-22 13:14:44,916 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - t_env: 4650200 / 5050000
+2026-08-22 13:14:44,918 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Estimated time left: 1 hours, 51 minutes, 26 seconds. Time passed: 21 hours, 28 minutes, 19 seconds
+2026-08-22 13:28:38,684 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Recent Stats | t_env:    4700000 | Episode:    23500
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               26395492.2000
+info_nce_loss:             0.2613	loss:                    27131.6773	q_loss:                  24665.1609	q_taken_mean:            117.4156
+return_mean:              46.9127	return_std:                9.2157	target_mean:             116.7851	td_error_abs:             92.3600
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:         43.7820	test_return_std:          11.1709
+
+2026-08-22 13:28:41,295 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - t_env: 4700200 / 5050000
+2026-08-22 13:28:41,297 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Estimated time left: 1 hours, 37 minutes, 31 seconds. Time passed: 21 hours, 42 minutes, 16 seconds
+2026-08-22 13:42:35,172 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Recent Stats | t_env:    4750000 | Episode:    23750
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               34071146.8000
+info_nce_loss:             0.4446	loss:                    40478.6922	q_loss:                  36798.8109	q_taken_mean:            124.5859
+return_mean:              57.8463	return_std:                9.6634	target_mean:             124.3299	td_error_abs:            109.7937
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:         47.4946	test_return_std:          11.3176
+
+2026-08-22 13:42:37,798 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - t_env: 4750200 / 5050000
+2026-08-22 13:42:37,800 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Estimated time left: 1 hours, 23 minutes, 35 seconds. Time passed: 21 hours, 56 minutes, 12 seconds
+2026-08-22 13:56:32,009 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Recent Stats | t_env:    4800000 | Episode:    24000
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               28889977.8000
+info_nce_loss:             0.2808	loss:                    29960.0498	q_loss:                  27236.4090	q_taken_mean:            124.6767
+return_mean:              56.1830	return_std:               10.1512	target_mean:             125.5453	td_error_abs:             98.6946
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:         52.0264	test_return_std:          11.1242
+
+2026-08-22 13:56:34,632 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - t_env: 4800200 / 5050000
+2026-08-22 13:56:34,633 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Estimated time left: 1 hours, 9 minutes, 40 seconds. Time passed: 22 hours, 10 minutes, 9 seconds
+2026-08-22 13:59:42,886 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Saving models to work_dirs/my_experiment/advP_EC_st_nomm_43/my_run/20260821_154619/models/4800200
+2026-08-22 14:10:29,323 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Recent Stats | t_env:    4850000 | Episode:    24250
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               26968969.2000
+info_nce_loss:             0.3267	loss:                    40846.9137	q_loss:                  37133.5586	q_taken_mean:            131.8413
+return_mean:              57.3916	return_std:               10.1869	target_mean:             130.4057	td_error_abs:            107.0432
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:         56.0134	test_return_std:          11.2503
+
+2026-08-22 14:10:31,927 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - t_env: 4850200 / 5050000
+2026-08-22 14:10:31,928 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Estimated time left: 55 minutes, 45 seconds. Time passed: 22 hours, 24 minutes, 6 seconds
+2026-08-22 14:24:28,084 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Recent Stats | t_env:    4900000 | Episode:    24500
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               30340677.4000
+info_nce_loss:             0.3080	loss:                    42072.4074	q_loss:                  38247.6436	q_taken_mean:            129.3106
+return_mean:              59.6434	return_std:               10.3922	target_mean:             129.5049	td_error_abs:            112.1877
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:         58.6810	test_return_std:          10.8862
+
+2026-08-22 14:24:30,707 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - t_env: 4900200 / 5050000
+2026-08-22 14:24:30,708 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Estimated time left: 41 minutes, 52 seconds. Time passed: 22 hours, 38 minutes, 5 seconds
+2026-08-22 14:38:25,942 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Recent Stats | t_env:    4950000 | Episode:    24750
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               47557656.3000
+info_nce_loss:             0.2769	loss:                    85850.0250	q_loss:                  78045.4766	q_taken_mean:            129.8275
+return_mean:              51.1459	return_std:               10.0270	target_mean:             126.1200	td_error_abs:            145.6110
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:         60.6025	test_return_std:          11.2387
+
+2026-08-22 14:38:28,515 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - t_env: 4950200 / 5050000
+2026-08-22 14:38:28,517 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Estimated time left: 27 minutes, 52 seconds. Time passed: 22 hours, 52 minutes, 3 seconds
+2026-08-22 14:52:20,668 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Recent Stats | t_env:    5000000 | Episode:    25000
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               25319181.8000
+info_nce_loss:             0.2726	loss:                    43629.3498	q_loss:                  39663.0445	q_taken_mean:            117.5102
+return_mean:              45.7876	return_std:               10.2875	target_mean:             118.5473	td_error_abs:            122.6423
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:         59.1566	test_return_std:          11.2157
+
+2026-08-22 14:52:23,305 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - t_env: 5000200 / 5050000
+2026-08-22 14:52:23,307 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Estimated time left: 13 minutes, 51 seconds. Time passed: 23 hours, 5 minutes, 58 seconds
+2026-08-22 14:55:30,551 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Saving models to work_dirs/my_experiment/advP_EC_st_nomm_43/my_run/20260821_154619/models/5000200
+2026-08-22 15:06:16,586 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Recent Stats | t_env:    5050000 | Episode:    25250
+ep_length_mean:          200.0000	episode_length_mean:     199.0000	epsilon:                   0.0500	grad_norm:               19904381.6000
+info_nce_loss:             0.3700	loss:                    36544.5387	q_loss:                  33222.3078	q_taken_mean:            114.8386
+return_mean:              31.0873	return_std:               10.8765	target_mean:             115.3968	td_error_abs:            108.5037
+test_ep_length_mean:     200.0000	test_episode_length_mean:199.0000	test_return_mean:         50.3090	test_return_std:          11.0152
+
+2026-08-22 15:06:19,173 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - t_env: 5050200 / 5050000
+2026-08-22 15:06:19,175 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Estimated time left: -. Time passed: 23 hours, 19 minutes, 54 seconds
+2026-08-22 15:09:26,968 - my_experiment - advP_EC_st_nomm_43 - my_run - INFO - Finished Training
