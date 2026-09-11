@@ -49,6 +49,10 @@ Please refer to those repo for more documentation.
 
 ## Run an experiment 
 
+For Tiger-Deer with HybridComm and ExpoComm, see [TIGER_DEER.md](TIGER_DEER.md)
+for the cluster smoke test, matched configurations, Slurm commands, scaling,
+and checkpoint evaluation.
+
 ```shell
 python src/main.py --config=[Algorithm name] --env-config=[Env name] --exp-config=[Experiment name]
 ```
