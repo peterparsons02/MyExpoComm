@@ -104,3 +104,15 @@ wandb: 🚀 View run at https://wandb.ai/peterparsons02-eth-z-rich/my_experiment
 2026-09-21 11:49:05,181 - my_experiment - bat_60_ExpoComm_IDQN_5M_43 - my_run - INFO - t_env: 200 / 5050000
 2026-09-21 11:49:05,182 - my_experiment - bat_60_ExpoComm_IDQN_5M_43 - my_run - INFO - Estimated time left: 10 minutes, 42 seconds. Time passed: 6 seconds
 2026-09-21 11:49:10,995 - my_experiment - bat_60_ExpoComm_IDQN_5M_43 - my_run - INFO - Saving models to work_dirs/my_experiment/bat_60_ExpoComm_IDQN_5M_43/my_run/20260921_114841/models/200
+Traceback (most recent call last):
+  File "src/main.py", line 122, in <module>
+    main(config_dict)
+  File "src/main.py", line 50, in main
+    run(config, console_logger)
+  File "/usr/itetnas04/data-scratch-01/pparsons/data/MyExpoComm/src/run.py", line 40, in run
+    run_sequential(args=args, logger=logger)
+  File "/usr/itetnas04/data-scratch-01/pparsons/data/MyExpoComm/src/run.py", line 201, in run_sequential
+    learner.train(episode_sample, runner.t_env, episode)
+  File "/usr/itetnas04/data-scratch-01/pparsons/data/MyExpoComm/src/learners/q_learner.py", line 356, in train
+    masked_predict_states_error = predict_states_error * predict_mask
+torch.cuda.OutOfMemoryError: CUDA out of memory. Tried to allocate 596.00 MiB (GPU 0; 11.90 GiB total capacity; 11.10 GiB already allocated; 273.69 MiB free; 11.33 GiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF
