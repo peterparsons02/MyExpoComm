@@ -1,0 +1,51 @@
+# Run with --config=iql_ExpoComm_one_peer_n7 --env-config=MAgent_Battle.
+# Paper's MAgent method (Appendix B.3): IDQN + individual rewards + state reconstruction.
+# Match results.ipynb's Battle 60 one-peer runs for the remaining benchmark settings.
+# This is a matched-budget adaptation, not an exact paper benchmark reproduction:
+# preserve n7, minimap=False, last-action/ID inputs, evaluation and training schedules.
+# Preserve the existing untrained opponent (null); the paper uses a pretrained opponent.
+# Reward type and auxiliary objective intentionally differ from the existing baselines.
+
+agent: "ExpoComm_one_peer"
+learner: "aux_q_learner"
+mixer: null
+global_reward: False
+aux_coef: 0.1
+standardise_rewards: True
+standardise_returns: False
+double_q: True
+use_rnn: True
+hidden_dim: 64
+
+# Override the IDQN algorithm's False defaults to match the existing agent inputs.
+obs_agent_id: True
+obs_last_action: True
+
+test_greedy: True
+test_nepisode: 1
+test_interval: 50000
+log_interval: 50000
+runner_log_interval: 10000
+learner_log_interval: 10000
+
+epsilon_anneal_time: 1000000
+buffer_size: 1000
+batch_size: 16
+target_update_interval_or_tau: 200
+t_max: 5050000
+save_model_interval: 500000
+gamma: 0.99
+lr: 0.0005
+grad_norm_clip: 10
+
+seed: 43
+env_args:
+  map_name: "battle_view7"
+  map_size: 60
+  max_cycles: 200
+  minimap_mode: False
+  global_reward: False
+  pretrained_ckpt: null
+  seed: 43
+
+name: "bat_60_ExpoComm_IDQN_5M_43"
